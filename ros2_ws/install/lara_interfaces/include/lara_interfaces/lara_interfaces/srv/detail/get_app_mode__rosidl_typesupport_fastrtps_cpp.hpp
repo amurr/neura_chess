@@ -1,0 +1,1 @@
+/workspace/neura_chess/ros2_ws/build/lara_interfaces/rosidl_typesupport_fastrtps_cpp/lara_interfaces/srv/detail/get_app_mode__rosidl_typesupport_fastrtps_cpp.hpp

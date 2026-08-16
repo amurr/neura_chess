@@ -10,12 +10,22 @@ from launch_ros.actions import Node
 from moveit_configs_utils import MoveItConfigsBuilder
 
 
-def _spawner(controller: str) -> Node:
+def _dds_env(cyclonedds_config: str) -> dict:
+    return {
+        'ROS_DOMAIN_ID': os.environ.get('ROS_DOMAIN_ID', '0'),
+        'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp',
+        'ROS_LOCALHOST_ONLY': '1',
+        'CYCLONEDDS_URI': f'file://{cyclonedds_config}',
+    }
+
+
+def _spawner(controller: str, dds_env: dict) -> Node:
     return Node(
         package='controller_manager',
         executable='spawner',
         arguments=[controller, '--controller-manager', '/controller_manager'],
         output='screen',
+        additional_env=dds_env,
     )
 
 
@@ -30,24 +40,27 @@ def generate_launch_description():
         'capabilities': 'move_group/ExecuteTaskSolutionCapability',
     }
 
+    pkg_share = get_package_share_directory('lara5_moveit_config')
+    cyclonedds_config = os.path.join(pkg_share, 'config', 'cyclonedds.localhost.xml')
+    dds_env = _dds_env(cyclonedds_config)
+
     move_group_node = Node(
         package='moveit_ros_move_group',
         executable='move_group',
         output='screen',
+        additional_env=dds_env,
         parameters=[
             moveit_config.to_dict(),
             move_group_capabilities,
         ],
     )
 
-    pkg_share = get_package_share_directory('lara5_moveit_config')
-    cyclonedds_config = os.path.join(pkg_share, 'config', 'cyclonedds.localhost.xml')
-
     robot_state_publisher = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
         name='robot_state_publisher',
         output='both',
+        additional_env=dds_env,
         parameters=[moveit_config.robot_description],
     )
 
@@ -56,6 +69,7 @@ def generate_launch_description():
     ros2_control_node = Node(
         package='controller_manager',
         executable='ros2_control_node',
+        additional_env=dds_env,
         parameters=[moveit_config.robot_description, ros2_controllers_path],
         output='both',
     )
@@ -68,20 +82,20 @@ def generate_launch_description():
 
     return LaunchDescription(
         [
-            SetEnvironmentVariable('ROS_DOMAIN_ID', '0'),
-            SetEnvironmentVariable('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'),
+            SetEnvironmentVariable('ROS_DOMAIN_ID', dds_env['ROS_DOMAIN_ID']),
+            SetEnvironmentVariable('RMW_IMPLEMENTATION', dds_env['RMW_IMPLEMENTATION']),
             SetEnvironmentVariable('ROS_LOCALHOST_ONLY', '1'),
-            SetEnvironmentVariable('CYCLONEDDS_URI', f'file://{cyclonedds_config}'),
+            SetEnvironmentVariable('CYCLONEDDS_URI', dds_env['CYCLONEDDS_URI']),
             robot_state_publisher,
             static_virtual_joint_tfs,
             ros2_control_node,
             move_group_node,
-            TimerAction(period=2.0, actions=[_spawner('joint_state_broadcaster')]),
+            TimerAction(period=2.0, actions=[_spawner('joint_state_broadcaster', dds_env)]),
             TimerAction(
                 period=3.0,
                 actions=[
-                    _spawner('arm_controller'),
-                    _spawner('gripper_controller'),
+                    _spawner('arm_controller', dds_env),
+                    _spawner('gripper_controller', dds_env),
                 ],
             ),
         ]

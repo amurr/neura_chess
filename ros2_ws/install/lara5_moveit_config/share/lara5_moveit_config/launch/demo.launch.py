@@ -1,0 +1,1 @@
+/workspace/neura_chess/ros2_ws/src/lara5_moveit_config/launch/demo.launch.py

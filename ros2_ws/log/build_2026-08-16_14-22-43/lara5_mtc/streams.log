@@ -1,0 +1,87 @@
+[0.262s] Invoking command in '/workspace/neura_chess/ros2_ws/build/lara5_mtc': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/workspace/neura_chess/ros2_ws/install/lara5_moveit_config:/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:/opt/ros/humble CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/opt/ros/humble /usr/bin/cmake /workspace/neura_chess/ros2_ws/src/lara5_mtc -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspace/neura_chess/ros2_ws/install/lara5_mtc
+[0.357s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.021s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.126s] -- Found ament_index_cpp: 1.4.1 (/opt/ros/humble/share/ament_index_cpp/cmake)
+[1.128s] -- Found geometry_msgs: 4.9.2 (/opt/ros/humble/share/geometry_msgs/cmake)
+[1.220s] -- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.227s] -- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.242s] -- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.275s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.310s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.399s] -- Found moveit_common: 2.5.9 (/opt/ros/humble/share/moveit_common/cmake)
+[1.729s] lara5_mtc: You did not request a specific build type: Choosing 'Release' for maximum performance
+[1.730s] -- Found moveit_core: 2.5.9 (/opt/ros/humble/share/moveit_core/cmake)
+[1.770s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread 
+[2.002s] -- Found parameter_traits: 0.7.5 (/opt/ros/humble/share/parameter_traits/cmake)
+[2.072s] -- Found rmw_implementation_cmake: 6.1.3 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[2.079s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[2.995s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[3.094s] -- Found rclcpp_lifecycle: 16.0.19 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)
+[3.383s] -- library: /usr/lib/x86_64-linux-gnu/libcurl.so
+[3.495s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[3.889s] -- Found moveit_task_constructor_core: 0.1.3 (/opt/ros/humble/share/moveit_task_constructor_core/cmake)
+[3.900s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread chrono 
+[3.931s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: date_time filesystem program_options system thread 
+[3.946s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: thread system filesystem regex date_time program_options 
+[3.967s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread 
+[4.384s] -- Configuring done
+[5.322s] -- Generating done
+[5.597s] -- Build files have been written to: /workspace/neura_chess/ros2_ws/build/lara5_mtc
+[5.621s] Invoked command in '/workspace/neura_chess/ros2_ws/build/lara5_mtc' returned '0': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/workspace/neura_chess/ros2_ws/install/lara5_moveit_config:/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:/opt/ros/humble CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/opt/ros/humble /usr/bin/cmake /workspace/neura_chess/ros2_ws/src/lara5_mtc -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspace/neura_chess/ros2_ws/install/lara5_mtc
+[5.636s] Invoking command in '/workspace/neura_chess/ros2_ws/build/lara5_mtc': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/workspace/neura_chess/ros2_ws/install/lara5_moveit_config:/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:/opt/ros/humble CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/opt/ros/humble /usr/bin/cmake --build /workspace/neura_chess/ros2_ws/build/lara5_mtc -- -j128 -l128
+[6.180s] [ 16%] Building CXX object CMakeFiles/lara5_mtc_chess_occupancy.dir/src/chess_occupancy.cpp.o
+[10.426s] [ 33%] Linking CXX shared library liblara5_mtc_chess_occupancy.so
+[11.010s] [ 33%] Built target lara5_mtc_chess_occupancy
+[11.221s] [ 50%] Building CXX object CMakeFiles/lara5_mtc_pick_place.dir/src/pick_place_task.cpp.o
+[24.065s] [ 66%] Linking CXX shared library liblara5_mtc_pick_place.so
+[24.734s] [ 66%] Built target lara5_mtc_pick_place
+[24.941s] [ 83%] Building CXX object CMakeFiles/lara5_mtc_chess_cylinders_pick_place.dir/src/lara5_mtc_chess_cylinders_pick_place.cpp.o
+[33.626s] /workspace/neura_chess/ros2_ws/src/lara5_mtc/src/lara5_mtc_chess_cylinders_pick_place.cpp: In function ‘void {anonymous}::collectSolutionPreview(const moveit::task_constructor::SolutionBase&, const RobotModelConstPtr&, nlohmann::json&, int)’:
+[33.627s] /workspace/neura_chess/ros2_ws/src/lara5_mtc/src/lara5_mtc_chess_cylinders_pick_place.cpp:318:52: error: ISO C++ forbids declaration of ‘type name’ with no type [-fpermissive]
+[33.627s]   318 |     if (const auto* container = dynamic_cast<const mtc::Container*>(solution.creator());
+[33.628s]       |                                                    ^~~
+[33.629s] /workspace/neura_chess/ros2_ws/src/lara5_mtc/src/lara5_mtc_chess_cylinders_pick_place.cpp:318:52: error: expected ‘>’
+[33.629s] /workspace/neura_chess/ros2_ws/src/lara5_mtc/src/lara5_mtc_chess_cylinders_pick_place.cpp:318:52: error: expected ‘(’
+[33.630s]   318 |     if (const auto* container = dynamic_cast<const mtc::Container*>(solution.creator());
+[33.630s]       |                                                    ^~~
+[33.631s]       |                                                    (
+[33.631s] /workspace/neura_chess/ros2_ws/src/lara5_mtc/src/lara5_mtc_chess_cylinders_pick_place.cpp:318:57: error: ‘Container’ is not a member of ‘mtc’; did you mean ‘is_container’?
+[33.632s]   318 |     if (const auto* container = dynamic_cast<const mtc::Container*>(solution.creator());
+[33.632s]       |                                                         ^~~~~~~~~
+[33.633s]       |                                                         is_container
+[33.633s] /workspace/neura_chess/ros2_ws/src/lara5_mtc/src/lara5_mtc_chess_cylinders_pick_place.cpp:318:67: error: expected primary-expression before ‘>’ token
+[33.633s]   318 |     if (const auto* container = dynamic_cast<const mtc::Container*>(solution.creator());
+[33.634s]       |                                                                   ^
+[33.635s] /workspace/neura_chess/ros2_ws/src/lara5_mtc/src/lara5_mtc_chess_cylinders_pick_place.cpp:318:88: error: expected ‘)’ before ‘;’ token
+[33.635s]   318 |     if (const auto* container = dynamic_cast<const mtc::Container*>(solution.creator());
+[33.636s]       |                                                                                        ^
+[33.636s]       |                                                                                        )
+[33.638s] /workspace/neura_chess/ros2_ws/src/lara5_mtc/src/lara5_mtc_chess_cylinders_pick_place.cpp:330:61: error: ‘kGripperGroup’ was not declared in this scope
+[33.639s]   330 |         entry["gripper_joints_rad"] = jointGroupJson(state, kGripperGroup, model);
+[33.639s]       |                                                             ^~~~~~~~~~~~~
+[33.647s] /workspace/neura_chess/ros2_ws/src/lara5_mtc/src/lara5_mtc_chess_cylinders_pick_place.cpp:341:54: error: ISO C++ forbids declaration of ‘type name’ with no type [-fpermissive]
+[33.647s]   341 |     const bool nested_container = dynamic_cast<const mtc::Container*>(solution.creator()) != nullptr;
+[33.648s]       |                                                      ^~~
+[33.648s] /workspace/neura_chess/ros2_ws/src/lara5_mtc/src/lara5_mtc_chess_cylinders_pick_place.cpp:341:54: error: expected ‘>’
+[33.649s] /workspace/neura_chess/ros2_ws/src/lara5_mtc/src/lara5_mtc_chess_cylinders_pick_place.cpp:341:54: error: expected ‘(’
+[33.649s]   341 |     const bool nested_container = dynamic_cast<const mtc::Container*>(solution.creator()) != nullptr;
+[33.650s]       |                                                      ^~~
+[33.650s]       |                                                      (
+[33.651s] /workspace/neura_chess/ros2_ws/src/lara5_mtc/src/lara5_mtc_chess_cylinders_pick_place.cpp:341:59: error: ‘Container’ is not a member of ‘mtc’; did you mean ‘is_container’?
+[33.651s]   341 |     const bool nested_container = dynamic_cast<const mtc::Container*>(solution.creator()) != nullptr;
+[33.651s]       |                                                           ^~~~~~~~~
+[33.652s]       |                                                           is_container
+[33.652s] /workspace/neura_chess/ros2_ws/src/lara5_mtc/src/lara5_mtc_chess_cylinders_pick_place.cpp:341:69: error: expected primary-expression before ‘>’ token
+[33.653s]   341 |     const bool nested_container = dynamic_cast<const mtc::Container*>(solution.creator()) != nullptr;
+[33.653s]       |                                                                     ^
+[33.654s] /workspace/neura_chess/ros2_ws/src/lara5_mtc/src/lara5_mtc_chess_cylinders_pick_place.cpp:341:101: error: expected ‘)’ before ‘;’ token
+[33.654s]   341 |     const bool nested_container = dynamic_cast<const mtc::Container*>(solution.creator()) != nullptr;
+[33.655s]       |                                                                                                     ^
+[33.655s]       |                                                                                                     )
+[33.663s] /workspace/neura_chess/ros2_ws/src/lara5_mtc/src/lara5_mtc_chess_cylinders_pick_place.cpp:369:57: error: ‘kGripperGroup’ was not declared in this scope
+[33.663s]   369 |     entry["gripper_joints_rad"] = jointGroupJson(state, kGripperGroup, model);
+[33.664s]       |                                                         ^~~~~~~~~~~~~
+[37.544s] gmake[2]: *** [CMakeFiles/lara5_mtc_chess_cylinders_pick_place.dir/build.make:76: CMakeFiles/lara5_mtc_chess_cylinders_pick_place.dir/src/lara5_mtc_chess_cylinders_pick_place.cpp.o] Error 1
+[37.545s] gmake[1]: *** [CMakeFiles/Makefile2:194: CMakeFiles/lara5_mtc_chess_cylinders_pick_place.dir/all] Error 2
+[37.546s] gmake: *** [Makefile:146: all] Error 2
+[37.552s] Invoked command in '/workspace/neura_chess/ros2_ws/build/lara5_mtc' returned '2': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/workspace/neura_chess/ros2_ws/install/lara5_moveit_config:/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:/opt/ros/humble CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/opt/ros/humble /usr/bin/cmake --build /workspace/neura_chess/ros2_ws/build/lara5_mtc -- -j128 -l128

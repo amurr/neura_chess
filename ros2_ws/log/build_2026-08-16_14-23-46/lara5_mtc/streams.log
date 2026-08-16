@@ -1,0 +1,42 @@
+[0.253s] Invoking command in '/workspace/neura_chess/ros2_ws/build/lara5_mtc': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/workspace/neura_chess/ros2_ws/install/lara5_moveit_config:/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:/opt/ros/humble CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/opt/ros/humble /usr/bin/cmake --build /workspace/neura_chess/ros2_ws/build/lara5_mtc -- -j128 -l128
+[0.726s] Consolidate compiler generated dependencies of target lara5_mtc_chess_occupancy
+[0.846s] [ 33%] Built target lara5_mtc_chess_occupancy
+[1.369s] Consolidate compiler generated dependencies of target lara5_mtc_pick_place
+[1.548s] [ 66%] Built target lara5_mtc_pick_place
+[2.075s] Consolidate compiler generated dependencies of target lara5_mtc_chess_cylinders_pick_place
+[2.259s] [ 83%] Building CXX object CMakeFiles/lara5_mtc_chess_cylinders_pick_place.dir/src/lara5_mtc_chess_cylinders_pick_place.cpp.o
+[18.426s] [100%] Linking CXX executable lara5_mtc_chess_cylinders_pick_place
+[19.595s] [100%] Built target lara5_mtc_chess_cylinders_pick_place
+[19.673s] Invoked command in '/workspace/neura_chess/ros2_ws/build/lara5_mtc' returned '0': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/workspace/neura_chess/ros2_ws/install/lara5_moveit_config:/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:/opt/ros/humble CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/opt/ros/humble /usr/bin/cmake --build /workspace/neura_chess/ros2_ws/build/lara5_mtc -- -j128 -l128
+[19.747s] Invoking command in '/workspace/neura_chess/ros2_ws/build/lara5_mtc': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/workspace/neura_chess/ros2_ws/install/lara5_moveit_config:/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:/opt/ros/humble CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/opt/ros/humble /usr/bin/cmake --install /workspace/neura_chess/ros2_ws/build/lara5_mtc
+[19.803s] -- Install configuration: "Release"
+[19.820s] -- Execute custom install script
+[19.838s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/lib/liblara5_mtc_chess_occupancy.so
+[19.908s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/lib/liblara5_mtc_pick_place.so
+[19.988s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/lib/lara5_mtc/lara5_mtc_chess_cylinders_pick_place
+[20.086s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/include/lara5_mtc/chess_occupancy.hpp
+[20.154s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/include/lara5_mtc/pick_place_task.hpp
+[20.239s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/launch/mtc_chess_cylinders_pick_place.launch.py
+[20.321s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/config/lara5_mtc_chess_cylinders.yaml
+[20.399s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/arm_styles/README.md
+[20.466s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/arm_styles/catalog.yaml
+[20.534s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/arm_styles/examples/e2_to_e4_default.json
+[20.592s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/arm_styles/examples/planning_retry_transit.json
+[20.656s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/arm_styles/schema/task_request.schema.json
+[20.721s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/arm_styles/selection_rules.yaml
+[20.770s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/ament_index/resource_index/package_run_dependencies/lara5_mtc
+[20.838s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/ament_index/resource_index/parent_prefix_path/lara5_mtc
+[20.883s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/environment/ament_prefix_path.sh
+[20.932s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/environment/ament_prefix_path.dsv
+[20.973s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/environment/path.sh
+[21.023s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/environment/path.dsv
+[21.065s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/local_setup.bash
+[21.121s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/local_setup.sh
+[21.176s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/local_setup.zsh
+[21.243s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/local_setup.dsv
+[21.299s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/package.dsv
+[21.374s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/ament_index/resource_index/packages/lara5_mtc
+[21.443s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/cmake/lara5_mtcConfig.cmake
+[21.503s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/cmake/lara5_mtcConfig-version.cmake
+[21.572s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/package.xml
+[21.633s] Invoked command in '/workspace/neura_chess/ros2_ws/build/lara5_mtc' returned '0': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/workspace/neura_chess/ros2_ws/install/lara5_moveit_config:/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:/opt/ros/humble CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/opt/ros/humble /usr/bin/cmake --install /workspace/neura_chess/ros2_ws/build/lara5_mtc

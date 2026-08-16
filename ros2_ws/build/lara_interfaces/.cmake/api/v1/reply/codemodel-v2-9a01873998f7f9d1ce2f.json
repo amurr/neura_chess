@@ -1,0 +1,258 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-cd5978e0fcdcc1c4e534.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						17,
+						18
+					]
+				},
+				{
+					"build" : "lara_interfaces__py",
+					"jsonFile" : "directory-lara_interfaces__py-23c198bd1065b8e7f580.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/workspace/neura_chess/ros2_ws/build/lara_interfaces/lara_interfaces__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "lara_interfaces__rs",
+					"jsonFile" : "directory-lara_interfaces__rs-46323151175c00eceb38.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/workspace/neura_chess/ros2_ws/build/lara_interfaces/lara_interfaces__rs",
+					"targetIndexes" : 
+					[
+						16
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "lara_interfaces",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_lara_interfaces_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_lara_interfaces_egg-aac3620ee51d7d255d2d.json",
+					"name" : "ament_cmake_python_build_lara_interfaces_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_symlink_lara_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_symlink_lara_interfaces-cd115cf8df6b26a740bf.json",
+					"name" : "ament_cmake_python_symlink_lara_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lara_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lara_interfaces-0a3de6a55332d803fd9c.json",
+					"name" : "lara_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lara_interfaces__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lara_interfaces__cpp-28cee3e55e5e304906bd.json",
+					"name" : "lara_interfaces__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "lara_interfaces__py::@f62eb0fae8bc1524ae44",
+					"jsonFile" : "target-lara_interfaces__py-684859623e518bd11135.json",
+					"name" : "lara_interfaces__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lara_interfaces__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lara_interfaces__rosidl_generator_c-70477d4c2e26284628ae.json",
+					"name" : "lara_interfaces__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lara_interfaces__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lara_interfaces__rosidl_generator_py-a673c077ceedb579790a.json",
+					"name" : "lara_interfaces__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lara_interfaces__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lara_interfaces__rosidl_typesupport_c-1c931fa4881c2333449e.json",
+					"name" : "lara_interfaces__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lara_interfaces__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lara_interfaces__rosidl_typesupport_c__pyext-88f8b4a2f82b5cfe1b0a.json",
+					"name" : "lara_interfaces__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lara_interfaces__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lara_interfaces__rosidl_typesupport_cpp-c6d56faa87e2c9fd763a.json",
+					"name" : "lara_interfaces__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lara_interfaces__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lara_interfaces__rosidl_typesupport_fastrtps_c-2c9ad9481c8587390a6a.json",
+					"name" : "lara_interfaces__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lara_interfaces__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lara_interfaces__rosidl_typesupport_fastrtps_c__pyext-4aec5a5f6067a85bd320.json",
+					"name" : "lara_interfaces__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lara_interfaces__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lara_interfaces__rosidl_typesupport_fastrtps_cpp-8eb0efed56380d6ef4a4.json",
+					"name" : "lara_interfaces__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lara_interfaces__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lara_interfaces__rosidl_typesupport_introspection_c-aea7c26c78b730a60703.json",
+					"name" : "lara_interfaces__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lara_interfaces__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lara_interfaces__rosidl_typesupport_introspection_c__pyext-14bd35d19374608741a2.json",
+					"name" : "lara_interfaces__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lara_interfaces__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lara_interfaces__rosidl_typesupport_introspection_cpp-dd3bd67bfdbeba72a9b0.json",
+					"name" : "lara_interfaces__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "lara_interfaces__rs::@9439634a0f70a1d2e638",
+					"jsonFile" : "target-lara_interfaces__rs-ca29acb2a2985b52e057.json",
+					"name" : "lara_interfaces__rs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lara_interfaces_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lara_interfaces_uninstall-e6f5c5101a2fe0d2a33b.json",
+					"name" : "lara_interfaces_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-90a0d4959065f5d88078.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/workspace/neura_chess/ros2_ws/build/lara_interfaces",
+		"source" : "/workspace/neura_chess/ros2_ws/src/lara_interfaces"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

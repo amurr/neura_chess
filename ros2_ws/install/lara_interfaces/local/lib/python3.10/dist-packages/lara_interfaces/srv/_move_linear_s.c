@@ -1,0 +1,1 @@
+/workspace/neura_chess/ros2_ws/build/lara_interfaces/rosidl_generator_py/lara_interfaces/srv/_move_linear_s.c

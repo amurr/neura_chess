@@ -1,0 +1,6 @@
+/workspace/neura_chess/ros2_ws/build/lara_interfaces/rosidl_adapter/lara_interfaces:msg/XyzRpyGoal.idl
+/workspace/neura_chess/ros2_ws/build/lara_interfaces/rosidl_adapter/lara_interfaces:srv/GetTCPPose.idl
+/workspace/neura_chess/ros2_ws/build/lara_interfaces/rosidl_adapter/lara_interfaces:srv/MoveJoints.idl
+/workspace/neura_chess/ros2_ws/build/lara_interfaces/rosidl_adapter/lara_interfaces:srv/MoveLinear.idl
+/workspace/neura_chess/ros2_ws/build/lara_interfaces/rosidl_adapter/lara_interfaces:srv/GetAppMode.idl
+/workspace/neura_chess/ros2_ws/build/lara_interfaces/rosidl_adapter/lara_interfaces:srv/ComputeIK.idl

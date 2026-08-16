@@ -1,0 +1,90 @@
+running egg_info
+creating ../../build/lara_ros/lara_ros.egg-info
+writing ../../build/lara_ros/lara_ros.egg-info/PKG-INFO
+writing dependency_links to ../../build/lara_ros/lara_ros.egg-info/dependency_links.txt
+writing entry points to ../../build/lara_ros/lara_ros.egg-info/entry_points.txt
+writing requirements to ../../build/lara_ros/lara_ros.egg-info/requires.txt
+writing top-level names to ../../build/lara_ros/lara_ros.egg-info/top_level.txt
+writing manifest file '../../build/lara_ros/lara_ros.egg-info/SOURCES.txt'
+reading manifest file '../../build/lara_ros/lara_ros.egg-info/SOURCES.txt'
+writing manifest file '../../build/lara_ros/lara_ros.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros
+copying lara_ros/__init__.py -> /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros
+copying lara_ros/yolo_cam.py -> /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros
+copying lara_ros/toast_node.py -> /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros
+copying lara_ros/tcp_service.py -> /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros
+copying lara_ros/power.py -> /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros
+copying lara_ros/odom_publisher.py -> /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros
+copying lara_ros/music_node.py -> /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros
+copying lara_ros/move_linear_service.py -> /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros
+copying lara_ros/move_joint_service.py -> /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros
+copying lara_ros/motion_util.py -> /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros
+copying lara_ros/motion_prep.py -> /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros
+copying lara_ros/gummy_bear_node.py -> /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros
+copying lara_ros/gripper_node.py -> /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros
+copying lara_ros/dance_node.py -> /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros
+copying lara_ros/command_node.py -> /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros
+creating /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros/neurapy
+copying lara_ros/neurapy/__init__.py -> /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros/neurapy
+copying lara_ros/neurapy/robot.py -> /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros/neurapy
+running install
+running install_lib
+creating /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros
+creating /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros/neurapy
+copying /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros/neurapy/robot.py -> /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros/neurapy
+copying /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros/neurapy/__init__.py -> /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros/neurapy
+copying /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros/command_node.py -> /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros
+copying /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros/dance_node.py -> /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros
+copying /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros/gripper_node.py -> /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros
+copying /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros/gummy_bear_node.py -> /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros
+copying /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros/motion_prep.py -> /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros
+copying /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros/motion_util.py -> /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros
+copying /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros/move_joint_service.py -> /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros
+copying /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros/move_linear_service.py -> /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros
+copying /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros/music_node.py -> /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros
+copying /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros/odom_publisher.py -> /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros
+copying /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros/power.py -> /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros
+copying /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros/tcp_service.py -> /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros
+copying /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros/toast_node.py -> /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros
+copying /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros/yolo_cam.py -> /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros
+copying /workspace/neura_chess/ros2_ws/build/lara_ros/build/lib/lara_ros/__init__.py -> /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros
+byte-compiling /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros/neurapy/robot.py to robot.cpython-310.pyc
+byte-compiling /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros/neurapy/__init__.py to __init__.cpython-310.pyc
+byte-compiling /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros/command_node.py to command_node.cpython-310.pyc
+byte-compiling /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros/dance_node.py to dance_node.cpython-310.pyc
+byte-compiling /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros/gripper_node.py to gripper_node.cpython-310.pyc
+byte-compiling /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros/gummy_bear_node.py to gummy_bear_node.cpython-310.pyc
+byte-compiling /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros/motion_prep.py to motion_prep.cpython-310.pyc
+byte-compiling /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros/motion_util.py to motion_util.cpython-310.pyc
+byte-compiling /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros/move_joint_service.py to move_joint_service.cpython-310.pyc
+byte-compiling /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros/move_linear_service.py to move_linear_service.cpython-310.pyc
+byte-compiling /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros/music_node.py to music_node.cpython-310.pyc
+byte-compiling /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros/odom_publisher.py to odom_publisher.cpython-310.pyc
+byte-compiling /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros/power.py to power.cpython-310.pyc
+byte-compiling /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros/tcp_service.py to tcp_service.cpython-310.pyc
+byte-compiling /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros/toast_node.py to toast_node.cpython-310.pyc
+byte-compiling /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros/yolo_cam.py to yolo_cam.cpython-310.pyc
+byte-compiling /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /workspace/neura_chess/ros2_ws/install/lara_ros/share/ament_index/resource_index/packages
+copying resource/lara_ros -> /workspace/neura_chess/ros2_ws/install/lara_ros/share/ament_index/resource_index/packages
+copying package.xml -> /workspace/neura_chess/ros2_ws/install/lara_ros/share/lara_ros
+creating /workspace/neura_chess/ros2_ws/install/lara_ros/share/lara_ros/launch
+copying launch/bringup.launch.py -> /workspace/neura_chess/ros2_ws/install/lara_ros/share/lara_ros/launch
+running install_egg_info
+Copying ../../build/lara_ros/lara_ros.egg-info to /workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages/lara_ros-0.0.1-py3.10.egg-info
+running install_scripts
+Installing command_node script to /workspace/neura_chess/ros2_ws/install/lara_ros/lib/lara_ros
+Installing dance_node script to /workspace/neura_chess/ros2_ws/install/lara_ros/lib/lara_ros
+Installing gripper_node script to /workspace/neura_chess/ros2_ws/install/lara_ros/lib/lara_ros
+Installing gummy_bear_node script to /workspace/neura_chess/ros2_ws/install/lara_ros/lib/lara_ros
+Installing move_joint_service script to /workspace/neura_chess/ros2_ws/install/lara_ros/lib/lara_ros
+Installing move_linear_service script to /workspace/neura_chess/ros2_ws/install/lara_ros/lib/lara_ros
+Installing music_node script to /workspace/neura_chess/ros2_ws/install/lara_ros/lib/lara_ros
+Installing odom_publisher script to /workspace/neura_chess/ros2_ws/install/lara_ros/lib/lara_ros
+Installing power script to /workspace/neura_chess/ros2_ws/install/lara_ros/lib/lara_ros
+Installing tcp_service script to /workspace/neura_chess/ros2_ws/install/lara_ros/lib/lara_ros
+Installing toast_node script to /workspace/neura_chess/ros2_ws/install/lara_ros/lib/lara_ros
+writing list of installed files to '/workspace/neura_chess/ros2_ws/build/lara_ros/install.log'

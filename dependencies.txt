@@ -1,0 +1,39 @@
+# Machine-checkable list for scripts/check_dependencies.sh
+# Format: kind name
+#   cmd      — executable on PATH
+#   ros_pkg  — `ros2 pkg prefix`
+#   python   — `python3 -c import name`
+#   deb      — dpkg -s
+
+cmd ros2
+cmd colcon
+cmd python3
+ros_pkg rclcpp
+ros_pkg rclpy
+ros_pkg tf2_ros
+ros_pkg tf2_eigen
+ros_pkg tf2_geometry_msgs
+ros_pkg geometry_msgs
+ros_pkg std_msgs
+ros_pkg moveit_core
+ros_pkg moveit_ros_planning_interface
+ros_pkg moveit_task_constructor_core
+ros_pkg moveit_msgs
+ros_pkg robot_state_publisher
+ros_pkg controller_manager
+ros_pkg joint_state_broadcaster
+ros_pkg joint_trajectory_controller
+ros_pkg gripper_controllers
+ros_pkg position_controllers
+python numpy
+python yaml
+python pytest
+python rclpy
+python launch
+python launch_ros
+python ament_index_python
+python tf2_ros
+python geometry_msgs
+python std_msgs
+python moveit_msgs
+deb nlohmann-json3-dev

@@ -1,0 +1,1 @@
+/workspace/neura_chess/ros2_ws/src/lara5_description/lara5/urdf/README.txt

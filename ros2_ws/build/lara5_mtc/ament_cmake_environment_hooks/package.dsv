@@ -1,0 +1,4 @@
+source;share/lara5_mtc/local_setup.bash
+source;share/lara5_mtc/local_setup.dsv
+source;share/lara5_mtc/local_setup.sh
+source;share/lara5_mtc/local_setup.zsh

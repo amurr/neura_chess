@@ -1,13 +1,12 @@
 /*********************************************************************
  * Lara5 chess cylinder pick-and-place with MoveIt Task Constructor.
  *
- * Flat MTC tree: seed → pick hover (world Δ) → approach → lift → slide to place.
- * Minimal collision allows (picked piece + source/target board squares).
+ * TF-backed MTC chess pick-and-place: lookup grasp/<sq> frames, parametrized tree.
  *
  * Run:
- *   ros2 launch xyz_motion chess_scene.launch.py use_cylinder_collision:=true
+ *   ros2 launch xyz_motion chess_scene.launch.py use_cylinder_collision:=true planning_scene_only:=true
  *   ros2 launch lara5_moveit_config mtc_demo_headless.launch.py
- *   ros2 launch lara5_mtc mtc_chess_cylinders_pick_place.launch.py
+ *   ros2 launch lara5_mtc mtc_chess_cylinders_pick_place.launch.py keep_alive_s:=0
  *********************************************************************/
 
 #include <algorithm>
@@ -42,10 +41,15 @@
 #include <rclcpp/rclcpp.hpp>
 #include <tf2/LinearMath/Matrix3x3.h>
 #include <tf2/LinearMath/Quaternion.h>
+#include <tf2/exceptions.h>
+#include <tf2/time.h>
 #include <tf2_eigen/tf2_eigen.hpp>
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
+#include <tf2_ros/buffer.h>
+#include <tf2_ros/transform_listener.h>
 
 #include "lara5_mtc/chess_occupancy.hpp"
+#include "lara5_mtc/pick_place_task.hpp"
 
 namespace mtc = moveit::task_constructor;
 
@@ -58,15 +62,6 @@ constexpr const char* kArmGroup = "arm";
 constexpr const char* kGripperGroup = "gripper";
 constexpr const char* kEefLink = "lara5_gripper";
 constexpr const char* kWorldFrame = "world";
-constexpr const char* kHomePose = "stand";
-constexpr const char* kGripperOpen = "open";
-constexpr const char* kGripperClose = "close";
-
-// Default top-down RPY in world frame (EEF perpendicular to XY board, approach along world −Z).
-// Override via chess_top_down_roll/pitch/yaw if the ghost arm still looks horizontal in RViz.
-constexpr double kDefaultTopDownRoll = 0.0;
-constexpr double kDefaultTopDownPitch = M_PI_2;
-constexpr double kDefaultTopDownYaw = 0.0;
 
 std::string envOrEmpty(const char* name)
 {
@@ -180,94 +175,19 @@ SolutionPreviewPaths resolveSolutionPreviewPaths(const rclcpp::Node::SharedPtr& 
   return paths;
 }
 
-geometry_msgs::msg::Quaternion eulerToQuaternion(const double roll, const double pitch, const double yaw)
+geometry_msgs::msg::PoseStamped lookupTfPose(tf2_ros::Buffer& buffer, const std::string& parent_frame,
+                                             const std::string& child_frame, const double timeout_s)
 {
-  tf2::Quaternion q;
-  q.setRPY(roll, pitch, yaw);
-  return tf2::toMsg(q);
-}
-
-geometry_msgs::msg::PoseStamped makeWorldPose(const double x,
-                                              const double y,
-                                              const double z,
-                                              const geometry_msgs::msg::Quaternion& orientation)
-{
+  const auto tf = buffer.lookupTransform(parent_frame, child_frame, tf2::TimePointZero,
+                                         tf2::durationFromSec(timeout_s));
   geometry_msgs::msg::PoseStamped pose;
-  pose.header.frame_id = kWorldFrame;
-  pose.pose.position.x = x;
-  pose.pose.position.y = y;
-  pose.pose.position.z = z;
-  pose.pose.orientation = orientation;
+  pose.header = tf.header;
+  pose.header.frame_id = parent_frame;
+  pose.pose.position.x = tf.transform.translation.x;
+  pose.pose.position.y = tf.transform.translation.y;
+  pose.pose.position.z = tf.transform.translation.z;
+  pose.pose.orientation = tf.transform.rotation;
   return pose;
-}
-
-std::vector<std::string> gripperCollisionLinks(const moveit::core::RobotModelConstPtr& model)
-{
-  return model->getJointModelGroup(kGripperGroup)->getLinkModelNamesWithCollisionGeometry();
-}
-
-std::unique_ptr<mtc::stages::ModifyPlanningScene>
-makeAllowPieceCollisions(const std::string& name,
-                         const std::string& object_id,
-                         const moveit::core::RobotModelConstPtr& model)
-{
-  auto stage = std::make_unique<mtc::stages::ModifyPlanningScene>(name);
-  stage->allowCollisions(object_id, gripperCollisionLinks(model), true);
-  return stage;
-}
-
-std::unique_ptr<mtc::stages::ModifyPlanningScene>
-makeAllowGripperBoardCollisions(const moveit::core::RobotModelConstPtr& model)
-{
-  auto stage = std::make_unique<mtc::stages::ModifyPlanningScene>("allow gripper on board squares");
-  const auto links = gripperCollisionLinks(model);
-  for (const char file : { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' })
-  {
-    for (const char rank : { '1', '2', '3', '4', '5', '6', '7', '8' })
-    {
-      const std::string object_id = std::string("board_sq_") + file + rank;
-      stage->allowCollisions(object_id, true);
-      stage->allowCollisions(object_id, links, true);
-    }
-  }
-  return stage;
-}
-
-std::unique_ptr<mtc::stages::ModifyPlanningScene>
-makeAllowGripperAllPieceCollisions(const moveit::core::RobotModelConstPtr& model)
-{
-  auto stage = std::make_unique<mtc::stages::ModifyPlanningScene>("allow gripper on all pieces");
-  const auto links = gripperCollisionLinks(model);
-  for (const char file : { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' })
-  {
-    for (const char rank : { '1', '2', '3', '4', '5', '6', '7', '8' })
-    {
-      const std::string object_id = lara5_mtc::pieceObjectId(std::string(1, file) + rank);
-      stage->allowCollisions(object_id, true);
-      stage->allowCollisions(object_id, links, true);
-    }
-  }
-  return stage;
-}
-
-geometry_msgs::msg::Quaternion orientationFromNamedState(const moveit::core::RobotModelConstPtr& model,
-                                                           const std::string& named_state)
-{
-  moveit::core::RobotState state(model);
-  state.setToDefaultValues();
-  if (!named_state.empty())
-  {
-    state.setToDefaultValues(model->getJointModelGroup(kArmGroup), named_state);
-  }
-  return tf2::toMsg(state.getGlobalLinkTransform(kEefLink)).orientation;
-}
-
-geometry_msgs::msg::PoseStamped makeTopDownIkFrame()
-{
-  geometry_msgs::msg::PoseStamped ik_frame;
-  ik_frame.header.frame_id = kEefLink;
-  ik_frame.pose.orientation.w = 1.0;
-  return ik_frame;
 }
 
 moveit::core::RobotState namedArmState(const moveit::core::RobotModelConstPtr& model, const std::string& named)
@@ -279,10 +199,8 @@ moveit::core::RobotState namedArmState(const moveit::core::RobotModelConstPtr& m
   return state;
 }
 
-bool solveIkForPose(const moveit::core::RobotModelConstPtr& model,
-                    moveit::core::RobotState& state,
-                    const geometry_msgs::msg::Pose& pose,
-                    std::string* error = nullptr)
+bool solveIkForPose(const moveit::core::RobotModelConstPtr& model, moveit::core::RobotState& state,
+                    const geometry_msgs::msg::Pose& pose, std::string* error = nullptr)
 {
   const auto* jmg = model->getJointModelGroup(kArmGroup);
   if (!state.setFromIK(jmg, pose, kEefLink, 0.05))
@@ -295,151 +213,6 @@ bool solveIkForPose(const moveit::core::RobotModelConstPtr& model,
   }
   state.update();
   return true;
-}
-
-void addMoveArmToNamed(mtc::Task& task,
-                       const std::string& name,
-                       const mtc::solvers::PlannerInterfacePtr& planner,
-                       const std::string& goal)
-{
-  auto stage = std::make_unique<mtc::stages::MoveTo>(name, planner);
-  stage->setGroup(kArmGroup);
-  stage->setGoal(goal);
-  stage->restrictDirection(mtc::PropagatingEitherWay::FORWARD);
-  task.add(std::move(stage));
-}
-
-std::unique_ptr<mtc::stages::ModifyPlanningScene>
-makeAllowReleaseCollisions(const std::string& object_id,
-                           const std::string& target_square,
-                           const moveit::core::RobotModelConstPtr& model)
-{
-  auto stage = std::make_unique<mtc::stages::ModifyPlanningScene>("allow release collisions");
-  const std::string board_id = "board_sq_" + target_square;
-  const auto gripper_links = gripperCollisionLinks(model);
-  stage->allowCollisions(object_id, true);
-  stage->allowCollisions(object_id, board_id, true);
-  stage->allowCollisions(object_id, gripper_links, true);
-  stage->allowCollisions(board_id, gripper_links, true);
-  return stage;
-}
-
-std::unique_ptr<mtc::stages::ModifyPlanningScene>
-makeAllowArmOtherPieceCollisions(const std::string& source_square,
-                                 const moveit::core::RobotModelConstPtr& model)
-{
-  auto stage = std::make_unique<mtc::stages::ModifyPlanningScene>("allow arm on other pieces");
-  const auto arm_links = model->getJointModelGroup(kArmGroup)->getLinkModelNamesWithCollisionGeometry();
-  for (const char file : { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' })
-  {
-    for (const char rank : { '1', '2', '3', '4', '5', '6', '7', '8' })
-    {
-      const std::string square = std::string(1, file) + rank;
-      if (square == source_square)
-      {
-        continue;
-      }
-      stage->allowCollisions(lara5_mtc::pieceObjectId(square), arm_links, true);
-    }
-  }
-  return stage;
-}
-
-std::unique_ptr<mtc::stages::MoveRelative>
-makeWorldDeltaMove(const std::string& name,
-                   const mtc::solvers::PlannerInterfacePtr& planner,
-                   const double dx,
-                   const double dy,
-                   const double dz,
-                   const mtc::PropagatingEitherWay::Direction propagation)
-{
-  const double dist = std::sqrt(dx * dx + dy * dy + dz * dz);
-  if (dist < 1e-4)
-  {
-    return nullptr;
-  }
-
-  auto stage = std::make_unique<mtc::stages::MoveRelative>(name, planner);
-  stage->properties().configureInitFrom(mtc::Stage::PARENT, { "group" });
-  stage->setIKFrame(makeTopDownIkFrame());
-  stage->setMinMaxDistance(std::min(0.001, dist * 0.05), dist);
-
-  geometry_msgs::msg::Vector3Stamped direction;
-  direction.header.frame_id = kWorldFrame;
-  direction.vector.x = dx / dist;
-  direction.vector.y = dy / dist;
-  direction.vector.z = dz / dist;
-  stage->setDirection(direction);
-  stage->restrictDirection(propagation);
-  return stage;
-}
-
-void addWorldDeltaMove(mtc::Task& task,
-                       const std::string& name,
-                       const mtc::solvers::PlannerInterfacePtr& planner,
-                       const double dx,
-                       const double dy,
-                       const double dz,
-                       const mtc::PropagatingEitherWay::Direction propagation)
-{
-  if (auto stage = makeWorldDeltaMove(name, planner, dx, dy, dz, propagation))
-  {
-    task.add(std::move(stage));
-  }
-}
-
-std::unique_ptr<mtc::stages::MoveRelative>
-makeWorldZMove(const std::string& name,
-               const mtc::solvers::PlannerInterfacePtr& planner,
-               const double distance_m,
-               const double axis_sign,
-               const mtc::PropagatingEitherWay::Direction propagation)
-{
-  auto stage = std::make_unique<mtc::stages::MoveRelative>(name, planner);
-  stage->properties().configureInitFrom(mtc::Stage::PARENT, { "group" });
-  stage->setIKFrame(makeTopDownIkFrame());
-  stage->setMinMaxDistance(std::min(0.001, distance_m * 0.05), distance_m);
-
-  geometry_msgs::msg::Vector3Stamped direction;
-  direction.header.frame_id = kWorldFrame;
-  direction.vector.x = 0.0;
-  direction.vector.y = 0.0;
-  direction.vector.z = axis_sign;
-  stage->setDirection(direction);
-  stage->restrictDirection(propagation);
-  return stage;
-}
-
-void addPickHoverTransit(mtc::Task& task,
-                         const mtc::solvers::PlannerInterfacePtr& cartesian_planner,
-                         const moveit::core::RobotModelConstPtr& model,
-                         const std::string& seed_pose,
-                         const geometry_msgs::msg::PoseStamped& pick_hover_pose)
-{
-  const moveit::core::RobotState seed_state = namedArmState(model, seed_pose);
-  const auto& seed_tf = seed_state.getGlobalLinkTransform(kEefLink);
-  const double seed_x = seed_tf.translation().x();
-  const double seed_y = seed_tf.translation().y();
-  const double seed_z = seed_tf.translation().z();
-
-  const double dx = pick_hover_pose.pose.position.x - seed_x;
-  const double dy = pick_hover_pose.pose.position.y - seed_y;
-  const double dz = pick_hover_pose.pose.position.z - seed_z;
-
-  // Single stage so RViz/MTC panel shows the hover end pose on one click (not only on a child).
-  addWorldDeltaMove(task, "pick hover", cartesian_planner, dx, dy, dz, mtc::PropagatingEitherWay::FORWARD);
-}
-
-void addPlaceHoverTransit(mtc::Task& task,
-                          const mtc::solvers::PlannerInterfacePtr& cartesian_planner,
-                          const geometry_msgs::msg::PoseStamped& pick_hover_pose,
-                          const geometry_msgs::msg::PoseStamped& place_hover_pose)
-{
-  addWorldDeltaMove(task, "place hover slide", cartesian_planner,
-                    place_hover_pose.pose.position.x - pick_hover_pose.pose.position.x,
-                    place_hover_pose.pose.position.y - pick_hover_pose.pose.position.y,
-                    place_hover_pose.pose.position.z - pick_hover_pose.pose.position.z,
-                    mtc::PropagatingEitherWay::FORWARD);
 }
 
 bool waitForPlanningSceneObject(const rclcpp::Node::SharedPtr& node,
@@ -543,7 +316,7 @@ void collectSolutionPreview(const mtc::SolutionBase& solution,
 
   if (const auto* seq = dynamic_cast<const mtc::SolutionSequence*>(&solution))
   {
-    if (const auto* container = dynamic_cast<const mtc::Container*>(solution.creator());
+    if (const auto* container = dynamic_cast<const mtc::ContainerBase*>(solution.creator());
         container != nullptr && !seq->solutions().empty())
     {
       nlohmann::json entry;
@@ -566,7 +339,7 @@ void collectSolutionPreview(const mtc::SolutionBase& solution,
       }
     }
 
-    const bool nested_container = dynamic_cast<const mtc::Container*>(solution.creator()) != nullptr;
+    const bool nested_container = dynamic_cast<const mtc::ContainerBase*>(solution.creator()) != nullptr;
     for (const mtc::SolutionBase* sub : seq->solutions())
     {
       collectSolutionPreview(*sub, model, stages, nested_container ? depth + 1 : depth);
@@ -676,15 +449,19 @@ int main(int argc, char** argv)
   node->declare_parameter<std::string>("chess_source_square", "e2");
   node->declare_parameter<std::string>("chess_target_square", "e4");
   node->declare_parameter<std::string>("chess_occupancy_file", "");
+  node->declare_parameter<std::string>("chess_grasp_frame_prefix", "grasp");
+  node->declare_parameter<std::string>("chess_pick_frame", "");
+  node->declare_parameter<std::string>("chess_place_frame", "");
+  node->declare_parameter<std::string>("chess_world_frame", kWorldFrame);
+  node->declare_parameter<double>("chess_tf_timeout_s", 10.0);
+  node->declare_parameter<std::string>("chess_approach_frame", "world");
+  node->declare_parameter<std::string>("chess_hover_mode", "cartesian");
   node->declare_parameter<double>("chess_square_size_m", 0.04);
   node->declare_parameter<double>("chess_grasp_clearance_m", 0.015);
   node->declare_parameter<double>("chess_approach_m", 0.08);
   node->declare_parameter<double>("chess_lift_m", 0.08);
   node->declare_parameter<double>("chess_place_descent_m", 0.04);
   node->declare_parameter<std::string>("chess_seed_pose", "pre_pick");
-  node->declare_parameter<double>("chess_top_down_roll", kDefaultTopDownRoll);
-  node->declare_parameter<double>("chess_top_down_pitch", kDefaultTopDownPitch);
-  node->declare_parameter<double>("chess_top_down_yaw", kDefaultTopDownYaw);
   node->declare_parameter<double>("planning_scene_timeout_s", 30.0);
   node->declare_parameter<bool>("auto_execute", false);
   // -1 = spin until Ctrl+C (RViz inspect/execute); 0 = exit immediately (CI); >0 = seconds
@@ -727,16 +504,16 @@ int main(int argc, char** argv)
   }();
 
   const double square_size_m = node->get_parameter("chess_square_size_m").as_double();
+  (void)square_size_m;
   const double approach_m = node->get_parameter("chess_approach_m").as_double();
   const double lift_m = node->get_parameter("chess_lift_m").as_double();
-  (void)node->get_parameter("chess_place_descent_m").as_double();  // legacy; hover uses approach_m
-  const double grasp_clearance_m = [&]() {
-    if (const std::string env = envOrEmpty("CHESS_GRASP_CLEARANCE_M"); !env.empty())
-    {
-      return std::stod(env);
-    }
-    return node->get_parameter("chess_grasp_clearance_m").as_double();
-  }();
+  (void)node->get_parameter("chess_place_descent_m").as_double();
+  (void)node->get_parameter("chess_grasp_clearance_m").as_double();
+  const std::string grasp_prefix = node->get_parameter("chess_grasp_frame_prefix").as_string();
+  const std::string world_frame = node->get_parameter("chess_world_frame").as_string();
+  const double tf_timeout_s = node->get_parameter("chess_tf_timeout_s").as_double();
+  const std::string approach_frame = node->get_parameter("chess_approach_frame").as_string();
+  const std::string hover_mode = node->get_parameter("chess_hover_mode").as_string();
   const double planning_scene_timeout_s = node->get_parameter("planning_scene_timeout_s").as_double();
   const bool auto_execute = [&]() {
     if (const std::string env = envOrEmpty("AUTO_EXECUTE"); !env.empty())
@@ -760,9 +537,9 @@ int main(int argc, char** argv)
     }
     return node->get_parameter("chess_seed_pose").as_string();
   }();
-  const double top_down_roll = node->get_parameter("chess_top_down_roll").as_double();
-  const double top_down_pitch = node->get_parameter("chess_top_down_pitch").as_double();
-  const double top_down_yaw = node->get_parameter("chess_top_down_yaw").as_double();
+
+  tf2_ros::Buffer tf_buffer(node->get_clock());
+  tf2_ros::TransformListener tf_listener(tf_buffer);
 
   nlohmann::json occupancy;
   try
@@ -781,26 +558,34 @@ int main(int argc, char** argv)
   try
   {
     move = lara5_mtc::resolveChessMove(occupancy, source_override, target_override);
-    const auto source_pose = lara5_mtc::inferSquarePose(occupancy, move.source, move.source, square_size_m);
-    const auto target_pose = lara5_mtc::inferSquarePose(occupancy, move.target, move.source, square_size_m);
-
-    const double pick_grasp_z = source_pose.z + move.piece_height + grasp_clearance_m;
-    const double pick_hover_z = pick_grasp_z + approach_m;
-    const double place_grasp_z = target_pose.z + move.piece_height + grasp_clearance_m;
-    const double place_hover_z = place_grasp_z + approach_m;
+    const std::string pick_frame = [&]() {
+      const std::string override_frame = node->get_parameter("chess_pick_frame").as_string();
+      if (!override_frame.empty())
+      {
+        return override_frame;
+      }
+      return grasp_prefix + "/" + move.source;
+    }();
+    const std::string place_frame = [&]() {
+      const std::string override_frame = node->get_parameter("chess_place_frame").as_string();
+      if (!override_frame.empty())
+      {
+        return override_frame;
+      }
+      return grasp_prefix + "/" + move.target;
+    }();
 
     RCLCPP_INFO(LOGGER,
-                "Move %s -> %s  type=%s  cylinder(d=%.3f, h=%.3f)  object=%s  "
-                "seed=%s  top_down_rpy=(%.2f, %.2f, %.2f)  "
-                "pick_hover_z=%.3f  pick_grasp_z=%.3f  place_hover_z=%.3f  place_grasp_z=%.3f",
-                move.source.c_str(), move.target.c_str(), move.piece_type.c_str(), move.piece_diameter,
-                move.piece_height, move.object_id.c_str(), seed_pose.c_str(), top_down_roll, top_down_pitch,
-                top_down_yaw, pick_hover_z, pick_grasp_z, place_hover_z, place_grasp_z);
+                "Move %s -> %s  type=%s  object=%s  seed=%s  pick_tf=%s  place_tf=%s  "
+                "hover_mode=%s  approach_frame=%s",
+                move.source.c_str(), move.target.c_str(), move.piece_type.c_str(), move.object_id.c_str(),
+                seed_pose.c_str(), pick_frame.c_str(), place_frame.c_str(), hover_mode.c_str(),
+                approach_frame.c_str());
 
     if (!waitForPlanningSceneObject(node, move.object_id, planning_scene_timeout_s))
     {
       RCLCPP_ERROR(LOGGER,
-                   "Object %s not in move_group planning scene — start T2 first: "
+                   "Object %s not in move_group planning scene — start chess_scene first: "
                    "ros2 launch xyz_motion chess_scene.launch.py "
                    "use_cylinder_collision:=true planning_scene_only:=true",
                    move.object_id.c_str());
@@ -809,43 +594,42 @@ int main(int argc, char** argv)
       return 1;
     }
 
-    mtc::Task task;
-    task.stages()->setName("lara5_mtc_chess_cylinders_pick_place");
-    task.loadRobotModel(node);
-
-    task.setProperty("group", kArmGroup);
-    task.setProperty("eef", kEefLink);
-
-    const auto joint_planner = std::make_shared<mtc::solvers::JointInterpolationPlanner>();
-    auto pipeline_planner = std::make_shared<mtc::solvers::PipelinePlanner>(node, "ompl");
-    auto cartesian_planner = std::make_shared<mtc::solvers::CartesianPath>();
-    cartesian_planner->setMaxVelocityScalingFactor(1.0);
-    cartesian_planner->setMaxAccelerationScalingFactor(1.0);
-    cartesian_planner->setStepSize(0.005);
-    cartesian_planner->setMinFraction(0.05);
-
-    const mtc::solvers::PlannerInterfacePtr arm_planner = pipeline_planner;
-
-    const std::string orientation_seed = seed_pose.empty() ? kHomePose : seed_pose;
-    const bool use_explicit_rpy = top_down_roll != kDefaultTopDownRoll || top_down_pitch != kDefaultTopDownPitch ||
-                                  top_down_yaw != kDefaultTopDownYaw;
-    const auto grasp_orientation = use_explicit_rpy ?
-                                       eulerToQuaternion(top_down_roll, top_down_pitch, top_down_yaw) :
-                                       orientationFromNamedState(task.getRobotModel(), orientation_seed);
-
-    const geometry_msgs::msg::PoseStamped pick_hover_pose =
-        makeWorldPose(source_pose.x, source_pose.y, pick_hover_z, grasp_orientation);
-    const geometry_msgs::msg::PoseStamped place_hover_pose =
-        makeWorldPose(target_pose.x, target_pose.y, place_hover_z, grasp_orientation);
+    geometry_msgs::msg::PoseStamped pick_grasp;
+    geometry_msgs::msg::PoseStamped place_grasp;
+    try
+    {
+      pick_grasp = lookupTfPose(tf_buffer, world_frame, pick_frame, tf_timeout_s);
+      place_grasp = lookupTfPose(tf_buffer, world_frame, place_frame, tf_timeout_s);
+    }
+    catch (const tf2::TransformException& e)
+    {
+      RCLCPP_ERROR(LOGGER,
+                   "TF lookup failed for %s / %s in %s (timeout %.1fs): %s — start "
+                   "ros2 launch xyz_motion grasp_tf.launch.py occupancy_file:=<same occupancy>",
+                   pick_frame.c_str(), place_frame.c_str(), world_frame.c_str(), tf_timeout_s, e.what());
+      rclcpp::shutdown();
+      spinner.join();
+      return 1;
+    }
 
     RCLCPP_INFO(LOGGER,
-                "EEF orientation: %s",
-                use_explicit_rpy ? "explicit RPY params" : ("FK from seed '" + orientation_seed + "'").c_str());
+                "TF pick %s xyz=(%.3f, %.3f, %.3f)  place %s xyz=(%.3f, %.3f, %.3f)",
+                pick_frame.c_str(), pick_grasp.pose.position.x, pick_grasp.pose.position.y, pick_grasp.pose.position.z,
+                place_frame.c_str(), place_grasp.pose.position.x, place_grasp.pose.position.y,
+                place_grasp.pose.position.z);
+
+    mtc::Task task;
+    task.loadRobotModel(node);
 
     {
+      auto pick_hover = lara5_mtc::hoverFromGrasp(pick_grasp, approach_m);
       moveit::core::RobotState ik_check = namedArmState(task.getRobotModel(), seed_pose);
+      if (hover_mode == "cartesian")
+      {
+        pick_hover.pose.orientation = tf2::toMsg(ik_check.getGlobalLinkTransform(kEefLink)).orientation;
+      }
       std::string ik_error;
-      if (!solveIkForPose(task.getRobotModel(), ik_check, pick_hover_pose.pose, &ik_error))
+      if (!solveIkForPose(task.getRobotModel(), ik_check, pick_hover.pose, &ik_error))
       {
         RCLCPP_ERROR(LOGGER, "pick hover pose unreachable from seed: %s", ik_error.c_str());
         rclcpp::shutdown();
@@ -854,85 +638,19 @@ int main(int argc, char** argv)
       }
     }
 
-    // --- Current state ---
-    {
-      auto current = std::make_unique<mtc::stages::CurrentState>("current state");
-      current->properties().set("timeout", planning_scene_timeout_s);
-      task.add(std::move(current));
-    }
-
-    // --- Open gripper ---
-    {
-      auto stage = std::make_unique<mtc::stages::MoveTo>("open gripper", joint_planner);
-      stage->setGroup(kGripperGroup);
-      stage->setGoal(kGripperOpen);
-      task.add(std::move(stage));
-    }
-
-    // Joint-space seed over the board (orientation reference for hover IK goals).
-    if (!seed_pose.empty())
-    {
-      auto stage = std::make_unique<mtc::stages::MoveTo>("seed arm", joint_planner);
-      stage->setGroup(kArmGroup);
-      stage->setGoal(seed_pose);
-      stage->restrictDirection(mtc::PropagatingEitherWay::FORWARD);
-      task.add(std::move(stage));
-    }
-
-    // Minimal collision allows (piece + all board squares / pieces for vertical approach).
-    task.add(makeAllowPieceCollisions("allow collision (gripper,piece)", move.object_id,
-                                      task.getRobotModel()));
-    task.add(makeAllowGripperBoardCollisions(task.getRobotModel()));
-    task.add(makeAllowGripperAllPieceCollisions(task.getRobotModel()));
-    task.add(makeAllowArmOtherPieceCollisions(move.source, task.getRobotModel()));
-
-    if (seed_pose.empty())
-    {
-      RCLCPP_ERROR(LOGGER, "chess_seed_pose is required (e.g. pre_pick)");
-      rclcpp::shutdown();
-      spinner.join();
-      return 1;
-    }
-
-    // --- Pick: Cartesian hover (world −Z then XY at height) → vertical descend → lift ---
-    addPickHoverTransit(task, cartesian_planner, task.getRobotModel(), seed_pose, pick_hover_pose);
-    task.add(makeWorldZMove("approach pick", cartesian_planner, approach_m, -1.0,
-                            mtc::PropagatingEitherWay::FORWARD));
-    {
-      auto stage = std::make_unique<mtc::stages::MoveTo>("close gripper", joint_planner);
-      stage->setGroup(kGripperGroup);
-      stage->setGoal(kGripperClose);
-      task.add(std::move(stage));
-    }
-    {
-      auto attach = std::make_unique<mtc::stages::ModifyPlanningScene>("attach piece");
-      attach->attachObject(move.object_id, kEefLink);
-      task.add(std::move(attach));
-    }
-    task.add(makeWorldZMove("lift from pick", cartesian_planner, lift_m, 1.0,
-                            mtc::PropagatingEitherWay::FORWARD));
-
-    addPlaceHoverTransit(task, cartesian_planner, pick_hover_pose, place_hover_pose);
-
-    // --- Place: vertical descend → release → retreat ---
-    task.add(makeWorldZMove("descend place", cartesian_planner, approach_m, -1.0,
-                            mtc::PropagatingEitherWay::FORWARD));
-    task.add(makeAllowReleaseCollisions(move.object_id, move.target, task.getRobotModel()));
-    {
-      auto detach = std::make_unique<mtc::stages::ModifyPlanningScene>("detach piece");
-      detach->detachObject(move.object_id, kEefLink);
-      task.add(std::move(detach));
-    }
-    task.add(makeWorldZMove("retreat after place", cartesian_planner, approach_m, 1.0,
-                            mtc::PropagatingEitherWay::FORWARD));
-    {
-      auto stage = std::make_unique<mtc::stages::MoveTo>("open gripper after place", joint_planner);
-      stage->setGroup(kGripperGroup);
-      stage->setGoal(kGripperOpen);
-      task.add(std::move(stage));
-    }
-
-    addMoveArmToNamed(task, "move to stand", arm_planner, kHomePose);
+    lara5_mtc::PickPlaceRequest req;
+    req.object_id = move.object_id;
+    req.source_square = move.source;
+    req.target_square = move.target;
+    req.seed_pose = seed_pose;
+    req.pick_grasp = pick_grasp;
+    req.place_grasp = place_grasp;
+    req.approach_m = approach_m;
+    req.lift_m = lift_m;
+    req.planning_scene_timeout_s = planning_scene_timeout_s;
+    req.approach_frame = approach_frame;
+    req.hover_mode = hover_mode;
+    lara5_mtc::populatePickPlaceTask(task, req, node);
 
     try
     {

@@ -1,0 +1,15 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from lara_interfaces/srv/GetAppMode.srv
+// generated code does not contain a copyright notice
+
+
+module lara_interfaces {
+  module srv {
+    struct GetAppMode_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    struct GetAppMode_Response {
+      string mode;
+    };
+  };
+};

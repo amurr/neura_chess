@@ -134,7 +134,7 @@ def test_point_to_ik_solution_full_flow(monkeypatch):
         assert len(ik_pub.msgs) == 1
         out = ik_pub.msgs[0]
         assert out.name == ["j1", "j2"]
-        assert out.position == [0.5, -0.5]
+        assert list(out.position) == [0.5, -0.5]
     finally:
         rclpy.shutdown()
 

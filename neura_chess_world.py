@@ -375,6 +375,47 @@ def _piece_kind_from_prim_name(name: str) -> Optional[str]:
     return None
 
 
+def isaac_square_algebraic(row: int, col: int, *, file_mirror: bool = False) -> str:
+    """Map procedural ``sq_{row}_{col}`` (row→+Y/file, col→+X/rank) to algebraic."""
+    files = "abcdefgh"
+    ranks = "12345678"
+    rank_i = int(col)
+    file_i = 7 - int(row) if file_mirror else int(row)
+    return f"{files[file_i]}{ranks[rank_i]}"
+
+
+def log_chess_board_frames(stage, parent_path: str = CHESS_PRIM_PATH) -> None:
+    """Log board normal and a1/e2/e4 world poses for TF alignment with ROS grasp_tf."""
+    from pxr import UsdGeom
+
+    root = stage.GetPrimAtPath(parent_path)
+    if not root.IsValid():
+        return
+    xform = UsdGeom.Xformable(root)
+    world_tf = xform.ComputeLocalToWorldTransform(Usd.TimeCode.Default())
+    rot = world_tf.ExtractRotationQuat()
+    # Gf.Quatd: GetReal/GetImaginary; rotate local +Z into world.
+    try:
+        from pxr import Gf
+
+        local_z = Gf.Vec3d(0, 0, 1)
+        normal = Gf.Rotation(rot).TransformDir(local_z)
+    except Exception:
+        normal = (0.0, 0.0, 1.0)
+    log(f"ChessSet world origin={tuple(world_tf.ExtractTranslation())} normal={tuple(normal)}")
+    for name in ("sq_0_0", "sq_4_1", "sq_4_3"):  # a1, e2, e4 when file_mirror=false
+        prim = stage.GetPrimAtPath(f"{parent_path}/{name}")
+        if not prim.IsValid():
+            continue
+        xf = UsdGeom.Xformable(prim)
+        tf = xf.ComputeLocalToWorldTransform(Usd.TimeCode.Default())
+        pos = tf.ExtractTranslation()
+        row_col = name.replace("sq_", "").split("_")
+        square = isaac_square_algebraic(int(row_col[0]), int(row_col[1]))
+        log(f"  {name} → {square} world=({pos[0]:.3f}, {pos[1]:.3f}, {pos[2]:.3f})")
+    log("ROS grasp TF is published by xyz_motion/publish_grasp_tf (not Isaac).")
+
+
 def apply_chess_physics(stage, parent_path: str = CHESS_PRIM_PATH) -> None:
     """Static board squares + dynamic piece rigid bodies."""
     from pxr import PhysxSchema, Usd, UsdGeom, UsdPhysics, UsdShade
@@ -679,6 +720,7 @@ def run(app, *, headless: bool, enable_ros: bool) -> None:
     app.update()
     apply_chess_physics(stage, CHESS_PRIM_PATH)
     app.update()
+    log_chess_board_frames(stage, CHESS_PRIM_PATH)
 
     cam_eye = np.array([1.15, -1.15, 0.85])
     cam_target = np.array([BOARD_CENTER_X * 0.5, 0.0, 0.12])

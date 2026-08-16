@@ -1,0 +1,1 @@
+/workspace/neura_chess/ros2_ws/build/lara_interfaces/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake

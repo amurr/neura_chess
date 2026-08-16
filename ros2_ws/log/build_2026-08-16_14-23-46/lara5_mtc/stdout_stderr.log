@@ -1,0 +1,38 @@
+Consolidate compiler generated dependencies of target lara5_mtc_chess_occupancy
+[ 33%] Built target lara5_mtc_chess_occupancy
+Consolidate compiler generated dependencies of target lara5_mtc_pick_place
+[ 66%] Built target lara5_mtc_pick_place
+Consolidate compiler generated dependencies of target lara5_mtc_chess_cylinders_pick_place
+[ 83%] Building CXX object CMakeFiles/lara5_mtc_chess_cylinders_pick_place.dir/src/lara5_mtc_chess_cylinders_pick_place.cpp.o
+[100%] Linking CXX executable lara5_mtc_chess_cylinders_pick_place
+[100%] Built target lara5_mtc_chess_cylinders_pick_place
+-- Install configuration: "Release"
+-- Execute custom install script
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/lib/liblara5_mtc_chess_occupancy.so
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/lib/liblara5_mtc_pick_place.so
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/lib/lara5_mtc/lara5_mtc_chess_cylinders_pick_place
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/include/lara5_mtc/chess_occupancy.hpp
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/include/lara5_mtc/pick_place_task.hpp
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/launch/mtc_chess_cylinders_pick_place.launch.py
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/config/lara5_mtc_chess_cylinders.yaml
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/arm_styles/README.md
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/arm_styles/catalog.yaml
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/arm_styles/examples/e2_to_e4_default.json
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/arm_styles/examples/planning_retry_transit.json
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/arm_styles/schema/task_request.schema.json
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/arm_styles/selection_rules.yaml
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/ament_index/resource_index/package_run_dependencies/lara5_mtc
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/ament_index/resource_index/parent_prefix_path/lara5_mtc
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/environment/ament_prefix_path.sh
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/environment/ament_prefix_path.dsv
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/environment/path.sh
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/environment/path.dsv
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/local_setup.bash
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/local_setup.sh
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/local_setup.zsh
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/local_setup.dsv
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/package.dsv
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/ament_index/resource_index/packages/lara5_mtc
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/cmake/lara5_mtcConfig.cmake
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/cmake/lara5_mtcConfig-version.cmake
+-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/package.xml

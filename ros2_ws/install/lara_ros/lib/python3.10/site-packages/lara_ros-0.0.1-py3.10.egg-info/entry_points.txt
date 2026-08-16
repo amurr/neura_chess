@@ -1,0 +1,12 @@
+[console_scripts]
+command_node = lara_ros.command_node:main
+dance_node = lara_ros.dance_node:main
+gripper_node = lara_ros.gripper_node:main
+gummy_bear_node = lara_ros.gummy_bear_node:main
+move_joint_service = lara_ros.move_joint_service:main
+move_linear_service = lara_ros.move_linear_service:main
+music_node = lara_ros.music_node:main
+odom_publisher = lara_ros.odom_publisher:main
+power = lara_ros.power:main
+tcp_service = lara_ros.tcp_service:main
+toast_node = lara_ros.toast_node:main

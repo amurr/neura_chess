@@ -1,0 +1,14 @@
+chess_move:
+  ros__parameters:
+    use_moveit_ik: true
+    ik_service_name: /compute_ik
+    move_group_name: arm
+    planning_frame: world
+    joint_states_topic: /joint_states
+    approach_z_offset: 0.08
+    avoid_collisions: false
+    ik_call_timeout_sec: 10.0
+    attach_piece_in_scene: true
+    use_convex_hull_collision: true
+    planning_scene_topic: /planning_scene
+    ee_link: lara5_gripper

@@ -1,0 +1,15 @@
+[0.000000] (-) TimerEvent: {}
+[0.000226] (-) JobUnselected: {'identifier': 'lara5_gazebo'}
+[0.000520] (-) JobUnselected: {'identifier': 'lara_interfaces'}
+[0.000657] (-) JobUnselected: {'identifier': 'lara_ros'}
+[0.000763] (lara5_description) JobQueued: {'identifier': 'lara5_description', 'dependencies': OrderedDict()}
+[0.000983] (xyz_motion) JobQueued: {'identifier': 'xyz_motion', 'dependencies': OrderedDict([('lara_interfaces', '/workspace/neura_chess/ros2_ws/install/lara_interfaces'), ('lara_ros', '/workspace/neura_chess/ros2_ws/install/lara_ros')])}
+[0.001189] (lara5_moveit_config) JobQueued: {'identifier': 'lara5_moveit_config', 'dependencies': OrderedDict([('lara5_description', '/workspace/neura_chess/ros2_ws/install/lara5_description'), ('lara_interfaces', '/workspace/neura_chess/ros2_ws/install/lara_interfaces'), ('lara_ros', '/workspace/neura_chess/ros2_ws/install/lara_ros'), ('xyz_motion', '/workspace/neura_chess/ros2_ws/install/xyz_motion')])}
+[0.001313] (lara5_mtc) JobQueued: {'identifier': 'lara5_mtc', 'dependencies': OrderedDict([('lara5_description', '/workspace/neura_chess/ros2_ws/install/lara5_description'), ('lara_interfaces', '/workspace/neura_chess/ros2_ws/install/lara_interfaces'), ('lara_ros', '/workspace/neura_chess/ros2_ws/install/lara_ros'), ('xyz_motion', '/workspace/neura_chess/ros2_ws/install/xyz_motion'), ('lara5_moveit_config', '/workspace/neura_chess/ros2_ws/install/lara5_moveit_config')])}
+[0.001452] (lara5_description) JobStarted: {'identifier': 'lara5_description'}
+[0.035280] (xyz_motion) JobStarted: {'identifier': 'xyz_motion'}
+[0.079154] (xyz_motion) JobEnded: {'identifier': 'xyz_motion', 'rc': 1}
+[0.087493] (lara5_description) JobEnded: {'identifier': 'lara5_description', 'rc': 'SIGINT'}
+[0.093966] (lara5_moveit_config) JobSkipped: {'identifier': 'lara5_moveit_config'}
+[0.094105] (lara5_mtc) JobSkipped: {'identifier': 'lara5_mtc'}
+[0.094223] (-) EventReactorShutdown: {}

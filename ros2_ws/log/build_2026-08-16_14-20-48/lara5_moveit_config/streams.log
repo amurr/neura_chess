@@ -1,0 +1,75 @@
+[0.147s] Invoking command in '/workspace/neura_chess/ros2_ws/build/lara5_moveit_config': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:/opt/ros/humble LD_LIBRARY_PATH=/workspace/neura_chess/ros2_ws/install/lara_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /workspace/neura_chess/ros2_ws/src/lara5_moveit_config -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspace/neura_chess/ros2_ws/install/lara5_moveit_config
+[0.564s] -- The C compiler identification is GNU 11.4.0
+[0.880s] -- The CXX compiler identification is GNU 11.4.0
+[0.947s] -- Detecting C compiler ABI info
+[1.694s] -- Detecting C compiler ABI info - done
+[1.735s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.736s] -- Detecting C compile features
+[1.737s] -- Detecting C compile features - done
+[1.776s] -- Detecting CXX compiler ABI info
+[2.533s] -- Detecting CXX compiler ABI info - done
+[2.565s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[2.565s] -- Detecting CXX compile features
+[2.567s] -- Detecting CXX compile features - done
+[2.642s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[4.174s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[4.536s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[5.857s] -- Configuring done
+[6.101s] -- Generating done
+[6.260s] -- Build files have been written to: /workspace/neura_chess/ros2_ws/build/lara5_moveit_config
+[6.269s] Invoked command in '/workspace/neura_chess/ros2_ws/build/lara5_moveit_config' returned '0': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:/opt/ros/humble LD_LIBRARY_PATH=/workspace/neura_chess/ros2_ws/install/lara_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /workspace/neura_chess/ros2_ws/src/lara5_moveit_config -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspace/neura_chess/ros2_ws/install/lara5_moveit_config
+[6.281s] Invoking command in '/workspace/neura_chess/ros2_ws/build/lara5_moveit_config': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:/opt/ros/humble LD_LIBRARY_PATH=/workspace/neura_chess/ros2_ws/install/lara_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /workspace/neura_chess/ros2_ws/build/lara5_moveit_config -- -j128 -l128
+[6.567s] Invoked command in '/workspace/neura_chess/ros2_ws/build/lara5_moveit_config' returned '0': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:/opt/ros/humble LD_LIBRARY_PATH=/workspace/neura_chess/ros2_ws/install/lara_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /workspace/neura_chess/ros2_ws/build/lara5_moveit_config -- -j128 -l128
+[6.584s] Invoking command in '/workspace/neura_chess/ros2_ws/build/lara5_moveit_config': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:/opt/ros/humble LD_LIBRARY_PATH=/workspace/neura_chess/ros2_ws/install/lara_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /workspace/neura_chess/ros2_ws/build/lara5_moveit_config
+[6.638s] -- Install configuration: ""
+[6.647s] -- Execute custom install script
+[6.665s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/ament_index/resource_index/package_run_dependencies/lara5_moveit_config
+[6.734s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/ament_index/resource_index/parent_prefix_path/lara5_moveit_config
+[6.801s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/environment/ament_prefix_path.sh
+[6.874s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/environment/ament_prefix_path.dsv
+[6.943s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/environment/path.sh
+[7.003s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/environment/path.dsv
+[7.068s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/local_setup.bash
+[7.128s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/local_setup.sh
+[7.189s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/local_setup.zsh
+[7.258s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/local_setup.dsv
+[7.323s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/package.dsv
+[7.388s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/ament_index/resource_index/packages/lara5_moveit_config
+[7.458s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/cmake/lara5_moveit_configConfig.cmake
+[7.528s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/cmake/lara5_moveit_configConfig-version.cmake
+[7.587s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/package.xml
+[7.698s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/demo.launch.py
+[7.773s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/demo_with_gripper.launch.py
+[7.840s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/localhost_dds_env.launch.py
+[7.896s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/move_group.launch.py
+[7.963s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/moveit_ik_headless.launch.py
+[8.027s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/moveit_rviz.launch.py
+[8.083s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/mtc_chess_pick_place.launch.py
+[8.152s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/mtc_demo.launch.py
+[8.224s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/mtc_demo_headless.launch.py
+[8.298s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/mtc_run.launch.py
+[8.369s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/rsp.launch.py
+[8.440s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/setup_assistant.launch.py
+[8.505s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/spawn_controllers.launch.py
+[8.575s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/static_virtual_joint_tfs.launch.py
+[8.645s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/warehouse_db.launch.py
+[8.742s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/config/cyclonedds.localhost.xml
+[8.799s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/config/initial_positions.yaml
+[8.868s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/config/joint_limits.yaml
+[8.930s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/config/kinematics.yaml
+[8.992s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/config/lara5.ros2_control.xacro
+[9.058s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/config/lara5.srdf
+[9.122s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/config/lara5.urdf.xacro
+[9.179s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/config/lara5_mtc_config.yaml
+[9.250s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/config/moveit.rviz
+[9.328s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/config/moveit_controllers.yaml
+[9.387s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/config/mtc.rviz
+[9.457s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/config/mtc_full.rviz
+[9.525s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/config/pilz_cartesian_limits.yaml
+[9.587s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/config/ros2_controllers.yaml
+[9.656s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/.setup_assistant
+[9.728s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/lib/lara5_moveit_config/lara5_cartesian.py
+[9.785s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/lib/lara5_moveit_config/lara5_simple_move.py
+[9.851s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/lib/lara5_moveit_config/lara5_chess_pick_place.py
+[9.917s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/lib/lara5_moveit_config/lara5_chess_mtc_pick_place.py
+[9.973s] Invoked command in '/workspace/neura_chess/ros2_ws/build/lara5_moveit_config' returned '0': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:/opt/ros/humble LD_LIBRARY_PATH=/workspace/neura_chess/ros2_ws/install/lara_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /workspace/neura_chess/ros2_ws/build/lara5_moveit_config

@@ -1,0 +1,72 @@
+[0.226s] Invoking command in '/workspace/neura_chess/ros2_ws/build/lara5_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/opt/ros/humble /usr/bin/cmake --build /workspace/neura_chess/ros2_ws/build/lara5_description -- -j128 -l128
+[0.973s] Invoked command in '/workspace/neura_chess/ros2_ws/build/lara5_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/opt/ros/humble /usr/bin/cmake --build /workspace/neura_chess/ros2_ws/build/lara5_description -- -j128 -l128
+[1.054s] Invoking command in '/workspace/neura_chess/ros2_ws/build/lara5_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/opt/ros/humble /usr/bin/cmake --install /workspace/neura_chess/ros2_ws/build/lara5_description
+[1.115s] -- Install configuration: ""
+[1.122s] -- Execute custom install script
+[1.213s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/collision/.gitkeep
+[1.221s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/collision/Link0_body.stl
+[1.227s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/collision/Link0_connector.stl
+[1.234s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/collision/Link1_body.stl
+[1.241s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/collision/Link1_rings.stl
+[1.248s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/collision/Link2_body.stl
+[1.254s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/collision/Link3_body.stl
+[1.261s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/collision/Link3_rings.stl
+[1.267s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/collision/Link4_body.stl
+[1.275s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/collision/Link5_body.stl
+[1.282s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/collision/Link5_rings.stl
+[1.288s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/collision/Link6_body.stl
+[1.295s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/meshes/Link0_body.stl
+[1.320s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/meshes/Link0_connector.stl
+[1.326s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/meshes/Link1_body.stl
+[1.332s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/meshes/Link1_rings.stl
+[1.339s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/meshes/Link2_body.stl
+[1.346s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/meshes/Link3_body.stl
+[1.352s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/meshes/Link3_rings.stl
+[1.358s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/meshes/Link4_body.stl
+[1.365s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/meshes/Link5_body.stl
+[1.371s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/meshes/Link5_rings.stl
+[1.378s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/meshes/Link6_body.stl
+[1.385s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/meshes/README.md
+[1.391s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/meshes/so101/README.md
+[1.398s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/meshes/so101/moving_jaw_so101_v1.stl
+[1.414s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/meshes/so101/wrist_roll_follower_so101_v1.stl
+[1.423s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/15_März/1lara5_issacsim.usd
+[1.429s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/15_März/lara5.urdf
+[1.437s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/15_März/lara5/configuration/lara5_base.usd
+[1.444s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/15_März/lara5/configuration/lara5_physics.usd
+[1.451s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/15_März/lara5/configuration/lara5_robot.usd
+[1.457s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/15_März/lara5/configuration/lara5_sensor.usd
+[1.464s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/15_März/lara5/lara5.usd
+[1.470s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/15_März/lara5_issacsim.usd
+[1.476s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/README.txt
+[1.482s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/lara5.urdf
+[1.489s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/lara5.urdf.xacro
+[1.496s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/lara5/configuration/lara5_base.usd
+[1.513s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/lara5/configuration/lara5_physics.usd
+[1.520s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/lara5/configuration/lara5_robot.usd
+[1.526s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/lara5/configuration/lara5_sensor.usd
+[1.533s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/lara5/lara5.usd
+[1.540s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/lara5_dynamic_parameters_nominal.xacro
+[1.546s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/lara5_gazebo.xacro
+[1.557s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/lara5_kinematic_parameters_nominal.xacro
+[1.563s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/lara5_limits.xacro
+[1.571s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/lara5_macro.xacro
+[1.577s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/lerobot_gripper.xacro
+[1.583s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/so101_follower.urdf.xacro
+[1.591s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/lara5/urdf/so101_gripper.xacro
+[1.611s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/ament_index/resource_index/package_run_dependencies/lara5_description
+[1.618s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/ament_index/resource_index/parent_prefix_path/lara5_description
+[1.625s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/environment/ament_prefix_path.sh
+[1.634s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/environment/ament_prefix_path.dsv
+[1.639s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/environment/path.sh
+[1.646s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/environment/path.dsv
+[1.654s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/local_setup.bash
+[1.661s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/local_setup.sh
+[1.668s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/local_setup.zsh
+[1.677s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/local_setup.dsv
+[1.682s] -- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/package.dsv
+[1.755s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/ament_index/resource_index/packages/lara5_description
+[1.763s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/cmake/lara5_descriptionConfig.cmake
+[1.771s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/cmake/lara5_descriptionConfig-version.cmake
+[1.779s] -- Up-to-date symlink: /workspace/neura_chess/ros2_ws/install/lara5_description/share/lara5_description/package.xml
+[1.785s] Invoked command in '/workspace/neura_chess/ros2_ws/build/lara5_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/opt/ros/humble /usr/bin/cmake --install /workspace/neura_chess/ros2_ws/build/lara5_description

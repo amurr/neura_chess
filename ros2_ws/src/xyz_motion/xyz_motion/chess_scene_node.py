@@ -127,6 +127,8 @@ class ChessSceneNode(Node):
 
         self.create_subscription(String, occ_topic, self._on_chess_occupancy, 10)
         self.create_service(Trigger, '~/reset_scene', self._reset_scene)
+        self._startup_republish_done = False
+        self._startup_timer = self.create_timer(2.0, self._startup_republish_scene)
         self.get_logger().info(
             f'chess_scene ready frame={self._frame_id!r} topic={scene_topic!r} '
             f'occupancy={occ_topic!r} reset=~/reset_scene '
@@ -309,6 +311,16 @@ class ChessSceneNode(Node):
             f'planning scene pieces updated ({mode}): {len(self._active_pieces)} active, '
             f'layout={self._board_layout}'
         )
+
+    def _startup_republish_scene(self) -> None:
+        if self._startup_republish_done:
+            return
+        self._startup_republish_done = True
+        try:
+            self._startup_timer.cancel()
+        except Exception:
+            pass
+        self._reset_scene(None, Trigger.Response())
 
     def _reset_scene(self, _request, response):
         """Re-publish board + standard 32-piece start (recovery)."""

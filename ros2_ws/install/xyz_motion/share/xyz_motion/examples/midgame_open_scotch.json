@@ -1,0 +1,209 @@
+{
+  "turn": "white",
+  "squares": {
+    "c1": {
+      "x": 0.29,
+      "y": 0.06,
+      "z": 0.03,
+      "type": "king",
+      "color": "white"
+    },
+    "d1": {
+      "x": 0.29,
+      "y": 0.02,
+      "z": 0.03,
+      "type": "rook",
+      "color": "white"
+    },
+    "g1": {
+      "x": 0.29,
+      "y": -0.1,
+      "z": 0.03,
+      "type": "rook",
+      "color": "white"
+    },
+    "a2": {
+      "x": 0.33,
+      "y": 0.14,
+      "z": 0.03,
+      "type": "pawn",
+      "color": "white"
+    },
+    "b2": {
+      "x": 0.33,
+      "y": 0.1,
+      "z": 0.03,
+      "type": "pawn",
+      "color": "white"
+    },
+    "c2": {
+      "x": 0.33,
+      "y": 0.06,
+      "z": 0.03,
+      "type": "pawn",
+      "color": "white"
+    },
+    "e2": {
+      "x": 0.33,
+      "y": -0.02,
+      "z": 0.03,
+      "type": "queen",
+      "color": "white"
+    },
+    "f2": {
+      "x": 0.33,
+      "y": -0.06,
+      "z": 0.03,
+      "type": "pawn",
+      "color": "white"
+    },
+    "g2": {
+      "x": 0.33,
+      "y": -0.1,
+      "z": 0.03,
+      "type": "pawn",
+      "color": "white"
+    },
+    "h2": {
+      "x": 0.33,
+      "y": -0.14,
+      "z": 0.03,
+      "type": "pawn",
+      "color": "white"
+    },
+    "c3": {
+      "x": 0.37,
+      "y": 0.06,
+      "z": 0.03,
+      "type": "knight",
+      "color": "white"
+    },
+    "d3": {
+      "x": 0.37,
+      "y": 0.02,
+      "z": 0.03,
+      "type": "bishop",
+      "color": "white"
+    },
+    "f3": {
+      "x": 0.37,
+      "y": -0.06,
+      "z": 0.03,
+      "type": "knight",
+      "color": "white"
+    },
+    "d4": {
+      "x": 0.41,
+      "y": 0.02,
+      "z": 0.03,
+      "type": "pawn",
+      "color": "white"
+    },
+    "d5": {
+      "x": 0.45,
+      "y": 0.02,
+      "z": 0.03,
+      "type": "pawn",
+      "color": "black"
+    },
+    "e5": {
+      "x": 0.45,
+      "y": -0.02,
+      "z": 0.03,
+      "type": "pawn",
+      "color": "white"
+    },
+    "c6": {
+      "x": 0.49,
+      "y": 0.06,
+      "z": 0.03,
+      "type": "knight",
+      "color": "black"
+    },
+    "e6": {
+      "x": 0.49,
+      "y": -0.02,
+      "z": 0.03,
+      "type": "pawn",
+      "color": "black"
+    },
+    "g6": {
+      "x": 0.49,
+      "y": -0.1,
+      "z": 0.03,
+      "type": "knight",
+      "color": "black"
+    },
+    "a7": {
+      "x": 0.53,
+      "y": 0.14,
+      "z": 0.03,
+      "type": "pawn",
+      "color": "black"
+    },
+    "b7": {
+      "x": 0.53,
+      "y": 0.1,
+      "z": 0.03,
+      "type": "pawn",
+      "color": "black"
+    },
+    "e7": {
+      "x": 0.53,
+      "y": -0.02,
+      "z": 0.03,
+      "type": "bishop",
+      "color": "black"
+    },
+    "g7": {
+      "x": 0.53,
+      "y": -0.1,
+      "z": 0.03,
+      "type": "pawn",
+      "color": "black"
+    },
+    "h7": {
+      "x": 0.53,
+      "y": -0.14,
+      "z": 0.03,
+      "type": "pawn",
+      "color": "black"
+    },
+    "a8": {
+      "x": 0.57,
+      "y": 0.14,
+      "z": 0.03,
+      "type": "rook",
+      "color": "black"
+    },
+    "c8": {
+      "x": 0.57,
+      "y": 0.06,
+      "z": 0.03,
+      "type": "bishop",
+      "color": "black"
+    },
+    "d8": {
+      "x": 0.57,
+      "y": 0.02,
+      "z": 0.03,
+      "type": "queen",
+      "color": "black"
+    },
+    "f8": {
+      "x": 0.57,
+      "y": -0.06,
+      "z": 0.03,
+      "type": "king",
+      "color": "black"
+    },
+    "h8": {
+      "x": 0.57,
+      "y": -0.14,
+      "z": 0.03,
+      "type": "rook",
+      "color": "black"
+    }
+  },
+  "note": "Scotch Game \u2014 center pawns exchanged, both sides missing b-pawns (29 pieces)"
+}

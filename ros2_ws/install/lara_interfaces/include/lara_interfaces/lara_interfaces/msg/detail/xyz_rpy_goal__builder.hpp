@@ -1,0 +1,1 @@
+/workspace/neura_chess/ros2_ws/build/lara_interfaces/rosidl_generator_cpp/lara_interfaces/msg/detail/xyz_rpy_goal__builder.hpp

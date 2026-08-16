@@ -1,0 +1,1 @@
+/workspace/neura_chess/ros2_ws/build/lara_interfaces/rosidl_generator_rs/lara_interfaces/rust/src/lib.rs

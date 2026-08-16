@@ -1,5 +1,5 @@
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, OpaqueFunction
+from launch.actions import DeclareLaunchArgument, OpaqueFunction, SetEnvironmentVariable
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
@@ -8,6 +8,22 @@ import os
 
 def _is_true(value: str) -> bool:
     return value.strip().lower() in ('1', 'true', 'yes', 'on')
+
+
+def _cyclone_env():
+    try:
+        moveit_share = get_package_share_directory('lara5_moveit_config')
+    except Exception:
+        return []
+    cyclone = os.path.join(moveit_share, 'config', 'cyclonedds.localhost.xml')
+    if not os.path.isfile(cyclone):
+        return []
+    return [
+        SetEnvironmentVariable('ROS_DOMAIN_ID', os.environ.get('ROS_DOMAIN_ID', '0')),
+        SetEnvironmentVariable('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'),
+        SetEnvironmentVariable('ROS_LOCALHOST_ONLY', '1'),
+        SetEnvironmentVariable('CYCLONEDDS_URI', f'file://{cyclone}'),
+    ]
 
 
 def _launch_setup(context, *args, **kwargs):
@@ -26,13 +42,22 @@ def _launch_setup(context, *args, **kwargs):
         params_path = os.path.join(pkg_share, 'config', 'chess_scene.yaml')
 
     publish_initial_pieces = LaunchConfiguration('publish_initial_pieces')
-
     return [
         Node(
             package='xyz_motion',
             executable='chess_scene',
             name='chess_scene',
             output='screen',
+            additional_env={
+                'RMW_IMPLEMENTATION': os.environ.get('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'),
+                'ROS_LOCALHOST_ONLY': os.environ.get('ROS_LOCALHOST_ONLY', '1'),
+                'ROS_DOMAIN_ID': os.environ.get('ROS_DOMAIN_ID', '0'),
+                **(
+                    {'CYCLONEDDS_URI': os.environ['CYCLONEDDS_URI']}
+                    if os.environ.get('CYCLONEDDS_URI')
+                    else {}
+                ),
+            },
             parameters=[
                 params_path,
                 {'publish_initial_pieces': publish_initial_pieces},
@@ -44,6 +69,7 @@ def _launch_setup(context, *args, **kwargs):
 def generate_launch_description() -> LaunchDescription:
     return LaunchDescription(
         [
+            *_cyclone_env(),
             DeclareLaunchArgument(
                 'params_file',
                 default_value='',

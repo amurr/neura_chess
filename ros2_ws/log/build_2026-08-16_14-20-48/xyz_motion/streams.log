@@ -1,0 +1,124 @@
+[2.891s] Invoking command in '/workspace/neura_chess/ros2_ws/src/xyz_motion': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/lara_ros:/workspace/neura_chess/ros2_ws/install/lara_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/lara_interfaces LD_LIBRARY_PATH=/workspace/neura_chess/ros2_ws/install/lara_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/workspace/neura_chess/ros2_ws/build/xyz_motion/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/xyz_motion build --build-base /workspace/neura_chess/ros2_ws/build/xyz_motion/build install --record /workspace/neura_chess/ros2_ws/build/xyz_motion/install.log --install-scripts $base/lib/xyz_motion --single-version-externally-managed install_data
+[3.540s] running egg_info
+[3.578s] creating ../../build/xyz_motion/xyz_motion.egg-info
+[3.579s] writing ../../build/xyz_motion/xyz_motion.egg-info/PKG-INFO
+[3.608s] writing dependency_links to ../../build/xyz_motion/xyz_motion.egg-info/dependency_links.txt
+[3.616s] writing entry points to ../../build/xyz_motion/xyz_motion.egg-info/entry_points.txt
+[3.636s] writing requirements to ../../build/xyz_motion/xyz_motion.egg-info/requires.txt
+[3.658s] writing top-level names to ../../build/xyz_motion/xyz_motion.egg-info/top_level.txt
+[3.675s] writing manifest file '../../build/xyz_motion/xyz_motion.egg-info/SOURCES.txt'
+[3.836s] reading manifest file '../../build/xyz_motion/xyz_motion.egg-info/SOURCES.txt'
+[3.888s] writing manifest file '../../build/xyz_motion/xyz_motion.egg-info/SOURCES.txt'
+[3.895s] running build
+[3.895s] running build_py
+[3.897s] creating /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion
+[3.901s] copying xyz_motion/publish_grasp_tf.py -> /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion
+[3.914s] copying xyz_motion/grasp_poses.py -> /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion
+[3.925s] copying xyz_motion/__init__.py -> /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion
+[3.936s] copying xyz_motion/publish_chess_occupancy.py -> /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion
+[3.948s] copying xyz_motion/poses.py -> /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion
+[3.959s] copying xyz_motion/moveit_ik.py -> /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion
+[3.978s] copying xyz_motion/mock_move_joints.py -> /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion
+[4.002s] copying xyz_motion/ik_service.py -> /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion
+[4.015s] copying xyz_motion/gripper_planning_scene.py -> /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion
+[4.027s] copying xyz_motion/gripper_joint_bridge.py -> /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion
+[4.037s] copying xyz_motion/chess_xyz.py -> /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion
+[4.050s] copying xyz_motion/chess_scene_node.py -> /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion
+[4.061s] copying xyz_motion/chess_scene.py -> /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion
+[4.082s] copying xyz_motion/chess_piece_meshes.py -> /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion
+[4.093s] copying xyz_motion/chess_move_node.py -> /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion
+[4.105s] copying xyz_motion/camera_xyz_to_joints.py -> /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion
+[4.129s] copying xyz_motion/board_calibration.py -> /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion
+[4.142s] running install
+[4.152s] running install_lib
+[4.205s] creating /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion
+[4.209s] copying /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion/board_calibration.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion
+[4.222s] copying /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion/camera_xyz_to_joints.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion
+[4.236s] copying /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion/chess_move_node.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion
+[4.249s] copying /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion/chess_piece_meshes.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion
+[4.273s] copying /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion/chess_scene.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion
+[4.289s] copying /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion/chess_scene_node.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion
+[4.303s] copying /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion/chess_xyz.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion
+[4.316s] copying /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion/gripper_joint_bridge.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion
+[4.330s] copying /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion/gripper_planning_scene.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion
+[4.345s] copying /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion/ik_service.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion
+[4.361s] copying /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion/mock_move_joints.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion
+[4.384s] copying /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion/moveit_ik.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion
+[4.410s] copying /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion/poses.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion
+[4.425s] copying /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion/publish_chess_occupancy.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion
+[4.436s] copying /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion/__init__.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion
+[4.473s] copying /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion/grasp_poses.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion
+[4.488s] copying /workspace/neura_chess/ros2_ws/build/xyz_motion/build/lib/xyz_motion/publish_grasp_tf.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion
+[4.503s] byte-compiling /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion/board_calibration.py to board_calibration.cpython-310.pyc
+[4.519s] byte-compiling /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion/camera_xyz_to_joints.py to camera_xyz_to_joints.cpython-310.pyc
+[4.538s] byte-compiling /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion/chess_move_node.py to chess_move_node.cpython-310.pyc
+[4.574s] byte-compiling /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion/chess_piece_meshes.py to chess_piece_meshes.cpython-310.pyc
+[4.604s] byte-compiling /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion/chess_scene.py to chess_scene.cpython-310.pyc
+[4.629s] byte-compiling /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion/chess_scene_node.py to chess_scene_node.cpython-310.pyc
+[4.646s] byte-compiling /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion/chess_xyz.py to chess_xyz.cpython-310.pyc
+[4.660s] byte-compiling /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion/gripper_joint_bridge.py to gripper_joint_bridge.cpython-310.pyc
+[4.686s] byte-compiling /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion/gripper_planning_scene.py to gripper_planning_scene.cpython-310.pyc
+[4.705s] byte-compiling /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion/ik_service.py to ik_service.cpython-310.pyc
+[4.725s] byte-compiling /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion/mock_move_joints.py to mock_move_joints.cpython-310.pyc
+[4.739s] byte-compiling /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion/moveit_ik.py to moveit_ik.cpython-310.pyc
+[4.757s] byte-compiling /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion/poses.py to poses.cpython-310.pyc
+[4.783s] byte-compiling /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion/publish_chess_occupancy.py to publish_chess_occupancy.cpython-310.pyc
+[4.797s] byte-compiling /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion/__init__.py to __init__.cpython-310.pyc
+[4.813s] byte-compiling /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion/grasp_poses.py to grasp_poses.cpython-310.pyc
+[4.830s] byte-compiling /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion/publish_grasp_tf.py to publish_grasp_tf.cpython-310.pyc
+[4.844s] running install_data
+[4.846s] creating /workspace/neura_chess/ros2_ws/install/xyz_motion/share/ament_index/resource_index/packages
+[4.852s] copying resource/xyz_motion -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/ament_index/resource_index/packages
+[4.860s] copying package.xml -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion
+[4.892s] creating /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/launch
+[4.895s] copying launch/grasp_tf.launch.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/launch
+[4.907s] copying launch/ik_service.launch.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/launch
+[4.920s] copying launch/gripper_bridge.launch.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/launch
+[4.932s] copying launch/chess_scene.launch.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/launch
+[4.946s] copying launch/chess_pick_place.launch.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/launch
+[4.957s] copying launch/camera_xyz_to_joints.launch.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/launch
+[4.976s] creating /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/config
+[4.979s] copying config/grasp_tf.yaml -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/config
+[4.991s] copying config/ik_service.yaml -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/config
+[5.003s] copying config/gripper_bridge.yaml -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/config
+[5.014s] copying config/chess_scene_cylinders_mtc.yaml -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/config
+[5.025s] copying config/chess_scene_cylinders.yaml -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/config
+[5.045s] copying config/chess_scene.yaml -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/config
+[5.057s] copying config/chess_move.yaml -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/config
+[5.079s] copying config/camera_xyz_to_joints.yaml -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/config
+[5.089s] creating /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/examples
+[5.092s] copying config/examples/standard_start.json -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/examples
+[5.105s] copying config/examples/midgame_sicilian_exchanged.json -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/examples
+[5.116s] copying config/examples/midgame_open_scotch.json -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/examples
+[5.129s] copying config/examples/full_board_after_queens_gambit.json -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/examples
+[5.141s] copying config/examples/full_board_after_nf3_nc6.json -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/examples
+[5.155s] copying config/examples/full_board_after_london_attack.json -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/examples
+[5.177s] copying config/examples/full_board_after_italian.json -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/examples
+[5.189s] copying config/examples/full_board_after_e4_e5.json -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/examples
+[5.203s] copying config/examples/full_board_after_e4_c5_sicilian.json -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/examples
+[5.219s] copying config/examples/full_board_after_d4_d5.json -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/examples
+[5.234s] copying config/examples/full_board_after_d2d3.json -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/examples
+[5.248s] copying config/examples/fen_to_occupancy.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/examples
+[5.262s] copying config/examples/endgame_kq_vs_k.json -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/examples
+[5.284s] copying config/examples/e2_to_e4.json -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/examples
+[5.295s] creating /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/meshes/chess_pieces/collision_hulls
+[5.304s] copying meshes/chess_pieces/collision_hulls/rook.stl -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/meshes/chess_pieces/collision_hulls
+[5.320s] copying meshes/chess_pieces/collision_hulls/queen.stl -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/meshes/chess_pieces/collision_hulls
+[5.335s] copying meshes/chess_pieces/collision_hulls/piece_mesh.yaml -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/meshes/chess_pieces/collision_hulls
+[5.349s] copying meshes/chess_pieces/collision_hulls/pawn.stl -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/meshes/chess_pieces/collision_hulls
+[5.371s] copying meshes/chess_pieces/collision_hulls/knight.stl -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/meshes/chess_pieces/collision_hulls
+[5.382s] copying meshes/chess_pieces/collision_hulls/king.stl -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/meshes/chess_pieces/collision_hulls
+[5.393s] copying meshes/chess_pieces/collision_hulls/bishop.stl -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/meshes/chess_pieces/collision_hulls
+[5.404s] running install_egg_info
+[5.458s] Copying ../../build/xyz_motion/xyz_motion.egg-info to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion-0.0.1-py3.10.egg-info
+[5.562s] running install_scripts
+[5.678s] Installing camera_xyz_to_joints script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+[5.685s] Installing chess_move script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+[5.691s] Installing chess_scene script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+[5.697s] Installing gripper_joint_bridge script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+[5.703s] Installing ik_service script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+[5.710s] Installing mock_move_joints script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+[5.717s] Installing publish_chess_occupancy script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+[5.725s] Installing publish_grasp_tf script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+[5.736s] writing list of installed files to '/workspace/neura_chess/ros2_ws/build/xyz_motion/install.log'
+[5.777s] Invoked command in '/workspace/neura_chess/ros2_ws/src/xyz_motion' returned '0': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/lara_ros:/workspace/neura_chess/ros2_ws/install/lara_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/lara_interfaces LD_LIBRARY_PATH=/workspace/neura_chess/ros2_ws/install/lara_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/workspace/neura_chess/ros2_ws/build/xyz_motion/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/xyz_motion build --build-base /workspace/neura_chess/ros2_ws/build/xyz_motion/build install --record /workspace/neura_chess/ros2_ws/build/xyz_motion/install.log --install-scripts $base/lib/xyz_motion --single-version-externally-managed install_data

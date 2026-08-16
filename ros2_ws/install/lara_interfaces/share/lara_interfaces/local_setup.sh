@@ -1,0 +1,1 @@
+/workspace/neura_chess/ros2_ws/build/lara_interfaces/ament_cmake_environment_hooks/local_setup.sh

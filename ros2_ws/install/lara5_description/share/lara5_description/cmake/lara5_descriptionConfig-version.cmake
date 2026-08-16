@@ -1,0 +1,1 @@
+/workspace/neura_chess/ros2_ws/build/lara5_description/ament_cmake_core/lara5_descriptionConfig-version.cmake

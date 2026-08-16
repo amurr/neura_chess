@@ -1,0 +1,36 @@
+# Perpendicular grasp / hover TF publisher (Phase A).
+# Board corners must match chess_scene so planning-scene objects and TF agree.
+publish_grasp_tf:
+  ros__parameters:
+    planning_frame: world
+    board_frame: board
+    square_frame_prefix: square
+    grasp_frame_prefix: grasp
+    hover_frame_prefix: hover
+
+    board_a1: [0.27, -0.16, 0.02]
+    board_b1: [0.31, -0.16, 0.02]
+    board_a2: [0.27, -0.12, 0.02]
+    square_size: 0.04
+    board_thickness: 0.02
+    board_layout: ranks_x_files_y
+    board_file_mirror: true
+
+    chess_occupancy_topic: /chess_occupancy
+    occupancy_file: ""
+    approach_m: 0.08
+    grasp_clearance_m: 0.015
+    gripper_z_offset_m: 0.0
+    # false: occupancy z is square/board surface; grasp = z + piece_height + clearance
+    # true: occupancy z is detected piece top; grasp = z + gripper_z_offset_m
+    z_is_piece_top: false
+    grasp_yaw_rad: 0.0
+    publish_rate_hz: 20.0
+    broadcast_all_squares: true
+
+    piece_dims.pawn: [0.018, 0.034]
+    piece_dims.bishop: [0.022, 0.047]
+    piece_dims.knight: [0.024, 0.049]
+    piece_dims.rook: [0.026, 0.044]
+    piece_dims.queen: [0.027, 0.058]
+    piece_dims.king: [0.029, 0.066]

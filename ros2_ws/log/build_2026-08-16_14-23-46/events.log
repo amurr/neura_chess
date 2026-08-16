@@ -1,0 +1,276 @@
+[0.000000] (-) TimerEvent: {}
+[0.000248] (-) JobUnselected: {'identifier': 'lara5_description'}
+[0.000512] (-) JobUnselected: {'identifier': 'lara5_gazebo'}
+[0.000715] (-) JobUnselected: {'identifier': 'lara5_moveit_config'}
+[0.001166] (-) JobUnselected: {'identifier': 'lara_interfaces'}
+[0.001384] (-) JobUnselected: {'identifier': 'lara_ros'}
+[0.001676] (-) JobUnselected: {'identifier': 'xyz_motion'}
+[0.001842] (lara5_mtc) JobQueued: {'identifier': 'lara5_mtc', 'dependencies': OrderedDict([('lara5_description', '/workspace/neura_chess/ros2_ws/install/lara5_description'), ('lara_interfaces', '/workspace/neura_chess/ros2_ws/install/lara_interfaces'), ('lara_ros', '/workspace/neura_chess/ros2_ws/install/lara_ros'), ('xyz_motion', '/workspace/neura_chess/ros2_ws/install/xyz_motion'), ('lara5_moveit_config', '/workspace/neura_chess/ros2_ws/install/lara5_moveit_config')])}
+[0.001993] (lara5_mtc) JobStarted: {'identifier': 'lara5_mtc'}
+[0.097633] (-) TimerEvent: {}
+[0.197925] (-) TimerEvent: {}
+[0.211029] (lara5_mtc) JobProgress: {'identifier': 'lara5_mtc', 'progress': 'cmake'}
+[0.239430] (lara5_mtc) JobProgress: {'identifier': 'lara5_mtc', 'progress': 'build'}
+[0.243541] (lara5_mtc) Command: {'cmd': ['/usr/bin/cmake', '--build', '/workspace/neura_chess/ros2_ws/build/lara5_mtc', '--', '-j128', '-l128'], 'cwd': '/workspace/neura_chess/ros2_ws/build/lara5_mtc', 'env': OrderedDict([('RUNPOD_PUBLIC_IP', '157.157.221.29'), ('RUNPOD_POD_HOSTNAME', 'nndn36ves0rv8n-64411bc2'), ('VSCODE_CWD', '/root'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('HF_XET_HIGH_PERFORMANCE', '1'), ('PIP_ROOT_USER_ACTION', 'ignore'), ('RUNPOD_POD_ID', 'nndn36ves0rv8n'), ('USER', 'root'), ('SSH_CLIENT', '10.0.31.253 6619 22'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/root/.cursor-server/bin/linux-x64/6b2afae0257df2bb5e1835f15165dc2f0de056b0/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('RUNPOD_GPU_NAME', 'NVIDIA+RTX+4000+Ada+Generation'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('HOSTNAME', '700e0159a861'), ('CURSOR_RIPGREP_PATH', '/root/.cursor-server/bin/linux-x64/6b2afae0257df2bb5e1835f15165dc2f0de056b0/node_modules/@vscode/ripgrep/bin/rg'), ('PIP_CACHE_DIR', '/workspace/.cache/pip/'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/workspace/neura_chess/ros2_ws/install/lara_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/root/.cursor-server/bin/linux-x64/6b2afae0257df2bb5e1835f15165dc2f0de056b0/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/root'), ('OLDPWD', '/workspace/neura_chess/ros2_ws'), ('RUNPOD_API_KEY', 'rpa_102WNQYJVX08X7N7RSART2P6ZZZ8MTJMD517RNG9dehh9c'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-d44f4e72-60fc-479e-8910-7f01bfa5d6ca.sock'), ('PYTHONUNBUFFERED', 'True'), ('ROS_PYTHON_VERSION', '3'), ('HF_HOME', '/workspace/.cache/huggingface/'), ('LC_CTYPE', 'C.UTF-8'), ('VIRTUALENV_OVERRIDE_APP_DATA', '/workspace/.cache/virtualenv/'), ('NO_COLOR', '1'), ('JUPYTER_PASSWORD', 'c5m8xmolli356uhf1mu8'), ('RUNPOD_VOLUME_ID', 'nqw4a6fyi4'), ('VSCODE_L10N_BUNDLE_LOCATION', ''), ('COLCON_PREFIX_PATH', '/workspace/neura_chess/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('OVSX_REGISTRY_URL', 'https://open-vsx.org'), ('LOGNAME', 'root'), ('FORCE_COLOR', '0'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('NVIDIA_DRIVER_CAPABILITIES', 'compute,display,graphics,utility,video'), ('PIP_BREAK_SYSTEM_PACKAGES', '1'), ('CURSOR_LAYOUT', 'unifiedAgent'), ('TERM', 'dumb'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('VSCODE_AGENT_FOLDER', '/root/.cursor-server'), ('UV_CACHE_DIR', '/workspace/.cache/uv/'), ('AGENT_TRANSCRIPTS', '/root/.cursor/projects/workspace-neura-chess/agent-transcripts'), ('CURSOR_AGENT', '1'), ('RUNPOD_CPU_COUNT', '16'), ('LS_COLORS', ''), ('AMENT_PREFIX_PATH', '/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/workspace/neura_chess/ros2_ws/install/lara5_moveit_config:/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('SHELL', '/bin/bash'), ('VSCODE_SERVER_SHUTDOWN_TIMEOUT', '300'), ('RUNPOD_DC_ID', 'EUR-IS-1'), ('RUNPOD_GPU_COUNT', '1'), ('PWD', '/workspace/neura_chess/ros2_ws/build/lara5_mtc'), ('HF_HUB_ENABLE_HF_TRANSFER', '1'), ('RUNPOD_MEM_GB', '54'), ('RP_WORKSPACE', '/workspace'), ('SSH_CONNECTION', '10.0.31.253 6619 192.168.0.2 22'), ('RUNPOD_TCP_PORT_22', '24276'), ('CURSOR_CONVERSATION_ID', '17eedf50-02e6-49a4-a158-fec2fc8ae895'), ('PYTHONPATH', '/workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('NVIDIA_VISIBLE_DEVICES', 'GPU-0d09ff6a-dd40-3e5d-75ef-703a4c2d407d'), ('TZ', 'Etc/UTC'), ('COLCON', '1'), ('__CURSOR_SANDBOX_ENV_RESTORE', "builtin unset CURSOR_CONVERSATION_ID CURSOR_AGENT_STORE_FILES_DIR CURSOR_AGENT_STORE_SHARED_PATHS 2>/dev/null || true; builtin export CURSOR_CONVERSATION_ID='17eedf50-02e6-49a4-a158-fec2fc8ae895'"), ('_ZO_DOCTOR', '0'), ('CMAKE_PREFIX_PATH', '/workspace/neura_chess/ros2_ws/install/lara5_moveit_config:/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/opt/ros/humble')]), 'shell': False}
+[0.298010] (-) TimerEvent: {}
+[0.398437] (-) TimerEvent: {}
+[0.498819] (-) TimerEvent: {}
+[0.599190] (-) TimerEvent: {}
+[0.699603] (-) TimerEvent: {}
+[0.727849] (lara5_mtc) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target lara5_mtc_chess_occupancy\n'}
+[0.799716] (-) TimerEvent: {}
+[0.847957] (lara5_mtc) StdoutLine: {'line': b'[ 33%] Built target lara5_mtc_chess_occupancy\n'}
+[0.899846] (-) TimerEvent: {}
+[1.000123] (-) TimerEvent: {}
+[1.100389] (-) TimerEvent: {}
+[1.200623] (-) TimerEvent: {}
+[1.300839] (-) TimerEvent: {}
+[1.371119] (lara5_mtc) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target lara5_mtc_pick_place\n'}
+[1.400940] (-) TimerEvent: {}
+[1.501223] (-) TimerEvent: {}
+[1.550093] (lara5_mtc) StdoutLine: {'line': b'[ 66%] Built target lara5_mtc_pick_place\n'}
+[1.601353] (-) TimerEvent: {}
+[1.701701] (-) TimerEvent: {}
+[1.802050] (-) TimerEvent: {}
+[1.902387] (-) TimerEvent: {}
+[2.002723] (-) TimerEvent: {}
+[2.076473] (lara5_mtc) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target lara5_mtc_chess_cylinders_pick_place\n'}
+[2.102842] (-) TimerEvent: {}
+[2.203144] (-) TimerEvent: {}
+[2.261001] (lara5_mtc) StdoutLine: {'line': b'[ 83%] Building CXX object CMakeFiles/lara5_mtc_chess_cylinders_pick_place.dir/src/lara5_mtc_chess_cylinders_pick_place.cpp.o\n'}
+[2.303271] (-) TimerEvent: {}
+[2.403619] (-) TimerEvent: {}
+[2.503982] (-) TimerEvent: {}
+[2.604369] (-) TimerEvent: {}
+[2.704838] (-) TimerEvent: {}
+[2.805229] (-) TimerEvent: {}
+[2.905725] (-) TimerEvent: {}
+[3.006112] (-) TimerEvent: {}
+[3.106526] (-) TimerEvent: {}
+[3.206865] (-) TimerEvent: {}
+[3.307184] (-) TimerEvent: {}
+[3.407505] (-) TimerEvent: {}
+[3.507885] (-) TimerEvent: {}
+[3.608185] (-) TimerEvent: {}
+[3.708503] (-) TimerEvent: {}
+[3.808831] (-) TimerEvent: {}
+[3.909077] (-) TimerEvent: {}
+[4.009424] (-) TimerEvent: {}
+[4.109779] (-) TimerEvent: {}
+[4.210186] (-) TimerEvent: {}
+[4.310632] (-) TimerEvent: {}
+[4.411046] (-) TimerEvent: {}
+[4.511452] (-) TimerEvent: {}
+[4.611815] (-) TimerEvent: {}
+[4.712138] (-) TimerEvent: {}
+[4.812495] (-) TimerEvent: {}
+[4.912845] (-) TimerEvent: {}
+[5.013217] (-) TimerEvent: {}
+[5.113542] (-) TimerEvent: {}
+[5.213830] (-) TimerEvent: {}
+[5.314217] (-) TimerEvent: {}
+[5.414565] (-) TimerEvent: {}
+[5.514899] (-) TimerEvent: {}
+[5.615390] (-) TimerEvent: {}
+[5.715797] (-) TimerEvent: {}
+[5.816216] (-) TimerEvent: {}
+[5.916651] (-) TimerEvent: {}
+[6.017024] (-) TimerEvent: {}
+[6.117467] (-) TimerEvent: {}
+[6.217844] (-) TimerEvent: {}
+[6.318122] (-) TimerEvent: {}
+[6.418514] (-) TimerEvent: {}
+[6.518880] (-) TimerEvent: {}
+[6.619151] (-) TimerEvent: {}
+[6.719523] (-) TimerEvent: {}
+[6.819887] (-) TimerEvent: {}
+[6.920249] (-) TimerEvent: {}
+[7.020605] (-) TimerEvent: {}
+[7.120934] (-) TimerEvent: {}
+[7.221238] (-) TimerEvent: {}
+[7.321687] (-) TimerEvent: {}
+[7.422077] (-) TimerEvent: {}
+[7.522510] (-) TimerEvent: {}
+[7.622918] (-) TimerEvent: {}
+[7.723254] (-) TimerEvent: {}
+[7.823522] (-) TimerEvent: {}
+[7.923869] (-) TimerEvent: {}
+[8.024221] (-) TimerEvent: {}
+[8.124615] (-) TimerEvent: {}
+[8.224876] (-) TimerEvent: {}
+[8.325236] (-) TimerEvent: {}
+[8.425532] (-) TimerEvent: {}
+[8.525892] (-) TimerEvent: {}
+[8.626196] (-) TimerEvent: {}
+[8.726484] (-) TimerEvent: {}
+[8.826787] (-) TimerEvent: {}
+[8.927162] (-) TimerEvent: {}
+[9.027554] (-) TimerEvent: {}
+[9.127942] (-) TimerEvent: {}
+[9.228418] (-) TimerEvent: {}
+[9.328851] (-) TimerEvent: {}
+[9.429218] (-) TimerEvent: {}
+[9.529624] (-) TimerEvent: {}
+[9.630043] (-) TimerEvent: {}
+[9.730532] (-) TimerEvent: {}
+[9.830878] (-) TimerEvent: {}
+[9.931362] (-) TimerEvent: {}
+[10.031708] (-) TimerEvent: {}
+[10.131989] (-) TimerEvent: {}
+[10.232177] (-) TimerEvent: {}
+[10.332400] (-) TimerEvent: {}
+[10.432587] (-) TimerEvent: {}
+[10.532791] (-) TimerEvent: {}
+[10.633058] (-) TimerEvent: {}
+[10.733377] (-) TimerEvent: {}
+[10.833671] (-) TimerEvent: {}
+[10.933980] (-) TimerEvent: {}
+[11.034232] (-) TimerEvent: {}
+[11.134533] (-) TimerEvent: {}
+[11.234810] (-) TimerEvent: {}
+[11.335128] (-) TimerEvent: {}
+[11.435370] (-) TimerEvent: {}
+[11.535634] (-) TimerEvent: {}
+[11.636004] (-) TimerEvent: {}
+[11.736389] (-) TimerEvent: {}
+[11.836731] (-) TimerEvent: {}
+[11.937165] (-) TimerEvent: {}
+[12.037584] (-) TimerEvent: {}
+[12.138063] (-) TimerEvent: {}
+[12.238606] (-) TimerEvent: {}
+[12.339090] (-) TimerEvent: {}
+[12.439551] (-) TimerEvent: {}
+[12.539979] (-) TimerEvent: {}
+[12.640445] (-) TimerEvent: {}
+[12.740832] (-) TimerEvent: {}
+[12.841277] (-) TimerEvent: {}
+[12.941744] (-) TimerEvent: {}
+[13.042181] (-) TimerEvent: {}
+[13.142656] (-) TimerEvent: {}
+[13.243197] (-) TimerEvent: {}
+[13.343715] (-) TimerEvent: {}
+[13.444158] (-) TimerEvent: {}
+[13.544529] (-) TimerEvent: {}
+[13.644989] (-) TimerEvent: {}
+[13.745395] (-) TimerEvent: {}
+[13.845809] (-) TimerEvent: {}
+[13.946152] (-) TimerEvent: {}
+[14.046612] (-) TimerEvent: {}
+[14.146991] (-) TimerEvent: {}
+[14.247423] (-) TimerEvent: {}
+[14.347790] (-) TimerEvent: {}
+[14.448288] (-) TimerEvent: {}
+[14.548777] (-) TimerEvent: {}
+[14.649133] (-) TimerEvent: {}
+[14.749569] (-) TimerEvent: {}
+[14.850026] (-) TimerEvent: {}
+[14.950426] (-) TimerEvent: {}
+[15.050939] (-) TimerEvent: {}
+[15.151281] (-) TimerEvent: {}
+[15.251736] (-) TimerEvent: {}
+[15.352153] (-) TimerEvent: {}
+[15.452682] (-) TimerEvent: {}
+[15.553124] (-) TimerEvent: {}
+[15.653512] (-) TimerEvent: {}
+[15.753889] (-) TimerEvent: {}
+[15.854204] (-) TimerEvent: {}
+[15.954534] (-) TimerEvent: {}
+[16.054891] (-) TimerEvent: {}
+[16.155264] (-) TimerEvent: {}
+[16.255571] (-) TimerEvent: {}
+[16.356036] (-) TimerEvent: {}
+[16.456403] (-) TimerEvent: {}
+[16.556784] (-) TimerEvent: {}
+[16.657093] (-) TimerEvent: {}
+[16.757554] (-) TimerEvent: {}
+[16.858013] (-) TimerEvent: {}
+[16.958491] (-) TimerEvent: {}
+[17.058845] (-) TimerEvent: {}
+[17.159179] (-) TimerEvent: {}
+[17.259534] (-) TimerEvent: {}
+[17.359990] (-) TimerEvent: {}
+[17.460380] (-) TimerEvent: {}
+[17.560726] (-) TimerEvent: {}
+[17.661125] (-) TimerEvent: {}
+[17.761549] (-) TimerEvent: {}
+[17.861921] (-) TimerEvent: {}
+[17.962347] (-) TimerEvent: {}
+[18.062863] (-) TimerEvent: {}
+[18.163263] (-) TimerEvent: {}
+[18.263714] (-) TimerEvent: {}
+[18.364032] (-) TimerEvent: {}
+[18.427614] (lara5_mtc) StdoutLine: {'line': b'[100%] Linking CXX executable lara5_mtc_chess_cylinders_pick_place\n'}
+[18.464137] (-) TimerEvent: {}
+[18.564345] (-) TimerEvent: {}
+[18.664855] (-) TimerEvent: {}
+[18.765211] (-) TimerEvent: {}
+[18.865653] (-) TimerEvent: {}
+[18.965942] (-) TimerEvent: {}
+[19.066422] (-) TimerEvent: {}
+[19.166807] (-) TimerEvent: {}
+[19.267221] (-) TimerEvent: {}
+[19.367679] (-) TimerEvent: {}
+[19.468096] (-) TimerEvent: {}
+[19.568433] (-) TimerEvent: {}
+[19.596292] (lara5_mtc) StdoutLine: {'line': b'[100%] Built target lara5_mtc_chess_cylinders_pick_place\n'}
+[19.668568] (-) TimerEvent: {}
+[19.674608] (lara5_mtc) CommandEnded: {'returncode': 0}
+[19.682152] (lara5_mtc) JobProgress: {'identifier': 'lara5_mtc', 'progress': 'install'}
+[19.744354] (lara5_mtc) Command: {'cmd': ['/usr/bin/cmake', '--install', '/workspace/neura_chess/ros2_ws/build/lara5_mtc'], 'cwd': '/workspace/neura_chess/ros2_ws/build/lara5_mtc', 'env': OrderedDict([('RUNPOD_PUBLIC_IP', '157.157.221.29'), ('RUNPOD_POD_HOSTNAME', 'nndn36ves0rv8n-64411bc2'), ('VSCODE_CWD', '/root'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('HF_XET_HIGH_PERFORMANCE', '1'), ('PIP_ROOT_USER_ACTION', 'ignore'), ('RUNPOD_POD_ID', 'nndn36ves0rv8n'), ('USER', 'root'), ('SSH_CLIENT', '10.0.31.253 6619 22'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/root/.cursor-server/bin/linux-x64/6b2afae0257df2bb5e1835f15165dc2f0de056b0/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('RUNPOD_GPU_NAME', 'NVIDIA+RTX+4000+Ada+Generation'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('HOSTNAME', '700e0159a861'), ('CURSOR_RIPGREP_PATH', '/root/.cursor-server/bin/linux-x64/6b2afae0257df2bb5e1835f15165dc2f0de056b0/node_modules/@vscode/ripgrep/bin/rg'), ('PIP_CACHE_DIR', '/workspace/.cache/pip/'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/workspace/neura_chess/ros2_ws/install/lara_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/root/.cursor-server/bin/linux-x64/6b2afae0257df2bb5e1835f15165dc2f0de056b0/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/root'), ('OLDPWD', '/workspace/neura_chess/ros2_ws'), ('RUNPOD_API_KEY', 'rpa_102WNQYJVX08X7N7RSART2P6ZZZ8MTJMD517RNG9dehh9c'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-d44f4e72-60fc-479e-8910-7f01bfa5d6ca.sock'), ('PYTHONUNBUFFERED', 'True'), ('ROS_PYTHON_VERSION', '3'), ('HF_HOME', '/workspace/.cache/huggingface/'), ('LC_CTYPE', 'C.UTF-8'), ('VIRTUALENV_OVERRIDE_APP_DATA', '/workspace/.cache/virtualenv/'), ('NO_COLOR', '1'), ('JUPYTER_PASSWORD', 'c5m8xmolli356uhf1mu8'), ('RUNPOD_VOLUME_ID', 'nqw4a6fyi4'), ('VSCODE_L10N_BUNDLE_LOCATION', ''), ('COLCON_PREFIX_PATH', '/workspace/neura_chess/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('OVSX_REGISTRY_URL', 'https://open-vsx.org'), ('LOGNAME', 'root'), ('FORCE_COLOR', '0'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('NVIDIA_DRIVER_CAPABILITIES', 'compute,display,graphics,utility,video'), ('PIP_BREAK_SYSTEM_PACKAGES', '1'), ('CURSOR_LAYOUT', 'unifiedAgent'), ('TERM', 'dumb'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('VSCODE_AGENT_FOLDER', '/root/.cursor-server'), ('UV_CACHE_DIR', '/workspace/.cache/uv/'), ('AGENT_TRANSCRIPTS', '/root/.cursor/projects/workspace-neura-chess/agent-transcripts'), ('CURSOR_AGENT', '1'), ('RUNPOD_CPU_COUNT', '16'), ('LS_COLORS', ''), ('AMENT_PREFIX_PATH', '/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/workspace/neura_chess/ros2_ws/install/lara5_moveit_config:/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('SHELL', '/bin/bash'), ('VSCODE_SERVER_SHUTDOWN_TIMEOUT', '300'), ('RUNPOD_DC_ID', 'EUR-IS-1'), ('RUNPOD_GPU_COUNT', '1'), ('PWD', '/workspace/neura_chess/ros2_ws/build/lara5_mtc'), ('HF_HUB_ENABLE_HF_TRANSFER', '1'), ('RUNPOD_MEM_GB', '54'), ('RP_WORKSPACE', '/workspace'), ('SSH_CONNECTION', '10.0.31.253 6619 192.168.0.2 22'), ('RUNPOD_TCP_PORT_22', '24276'), ('CURSOR_CONVERSATION_ID', '17eedf50-02e6-49a4-a158-fec2fc8ae895'), ('PYTHONPATH', '/workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('NVIDIA_VISIBLE_DEVICES', 'GPU-0d09ff6a-dd40-3e5d-75ef-703a4c2d407d'), ('TZ', 'Etc/UTC'), ('COLCON', '1'), ('__CURSOR_SANDBOX_ENV_RESTORE', "builtin unset CURSOR_CONVERSATION_ID CURSOR_AGENT_STORE_FILES_DIR CURSOR_AGENT_STORE_SHARED_PATHS 2>/dev/null || true; builtin export CURSOR_CONVERSATION_ID='17eedf50-02e6-49a4-a158-fec2fc8ae895'"), ('_ZO_DOCTOR', '0'), ('CMAKE_PREFIX_PATH', '/workspace/neura_chess/ros2_ws/install/lara5_moveit_config:/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_ros:/opt/ros/humble')]), 'shell': False}
+[19.768677] (-) TimerEvent: {}
+[19.804640] (lara5_mtc) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[19.822280] (lara5_mtc) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[19.839764] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/lib/liblara5_mtc_chess_occupancy.so\n'}
+[19.869348] (-) TimerEvent: {}
+[19.909568] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/lib/liblara5_mtc_pick_place.so\n'}
+[19.969505] (-) TimerEvent: {}
+[19.990036] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/lib/lara5_mtc/lara5_mtc_chess_cylinders_pick_place\n'}
+[20.069618] (-) TimerEvent: {}
+[20.087666] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/include/lara5_mtc/chess_occupancy.hpp\n'}
+[20.155524] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/include/lara5_mtc/pick_place_task.hpp\n'}
+[20.169709] (-) TimerEvent: {}
+[20.240779] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/launch/mtc_chess_cylinders_pick_place.launch.py\n'}
+[20.269829] (-) TimerEvent: {}
+[20.322603] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/config/lara5_mtc_chess_cylinders.yaml\n'}
+[20.369965] (-) TimerEvent: {}
+[20.400655] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/arm_styles/README.md\n'}
+[20.467900] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/arm_styles/catalog.yaml\n'}
+[20.470017] (-) TimerEvent: {}
+[20.536243] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/arm_styles/examples/e2_to_e4_default.json\n'}
+[20.570094] (-) TimerEvent: {}
+[20.594125] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/arm_styles/examples/planning_retry_transit.json\n'}
+[20.657908] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/arm_styles/schema/task_request.schema.json\n'}
+[20.670213] (-) TimerEvent: {}
+[20.723219] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/arm_styles/selection_rules.yaml\n'}
+[20.770402] (-) TimerEvent: {}
+[20.771847] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/ament_index/resource_index/package_run_dependencies/lara5_mtc\n'}
+[20.839233] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/ament_index/resource_index/parent_prefix_path/lara5_mtc\n'}
+[20.870547] (-) TimerEvent: {}
+[20.884734] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/environment/ament_prefix_path.sh\n'}
+[20.933927] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/environment/ament_prefix_path.dsv\n'}
+[20.970653] (-) TimerEvent: {}
+[20.974721] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/environment/path.sh\n'}
+[21.025208] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/environment/path.dsv\n'}
+[21.067560] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/local_setup.bash\n'}
+[21.070702] (-) TimerEvent: {}
+[21.122658] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/local_setup.sh\n'}
+[21.170792] (-) TimerEvent: {}
+[21.177555] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/local_setup.zsh\n'}
+[21.244799] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/local_setup.dsv\n'}
+[21.270893] (-) TimerEvent: {}
+[21.301162] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/package.dsv\n'}
+[21.370989] (-) TimerEvent: {}
+[21.375467] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/ament_index/resource_index/packages/lara5_mtc\n'}
+[21.444636] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/cmake/lara5_mtcConfig.cmake\n'}
+[21.471155] (-) TimerEvent: {}
+[21.505204] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/cmake/lara5_mtcConfig-version.cmake\n'}
+[21.571515] (-) TimerEvent: {}
+[21.573247] (lara5_mtc) StdoutLine: {'line': b'-- Symlinking: /workspace/neura_chess/ros2_ws/install/lara5_mtc/share/lara5_mtc/package.xml\n'}
+[21.634733] (lara5_mtc) CommandEnded: {'returncode': 0}
+[21.671478] (-) TimerEvent: {}
+[21.772169] (-) TimerEvent: {}
+[21.872784] (-) TimerEvent: {}
+[21.974064] (-) TimerEvent: {}
+[22.075009] (-) TimerEvent: {}
+[22.082120] (lara5_mtc) JobEnded: {'identifier': 'lara5_mtc', 'rc': 0}
+[22.088594] (-) EventReactorShutdown: {}

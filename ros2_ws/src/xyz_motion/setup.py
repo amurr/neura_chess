@@ -40,6 +40,7 @@ setup(
             'chess_move = xyz_motion.chess_move_node:main',
             'chess_scene = xyz_motion.chess_scene_node:main',
             'publish_chess_occupancy = xyz_motion.publish_chess_occupancy:main',
+            'publish_grasp_tf = xyz_motion.publish_grasp_tf:main',
             'mock_move_joints = xyz_motion.mock_move_joints:main',
             'ik_service = xyz_motion.ik_service:main',
             'camera_xyz_to_joints = xyz_motion.camera_xyz_to_joints:main',

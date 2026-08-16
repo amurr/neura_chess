@@ -1,0 +1,6 @@
+source;share/lara_ros/hook/pythonpath.ps1
+source;share/lara_ros/hook/pythonpath.dsv
+source;share/lara_ros/hook/pythonpath.sh
+source;share/lara_ros/hook/ament_prefix_path.ps1
+source;share/lara_ros/hook/ament_prefix_path.dsv
+source;share/lara_ros/hook/ament_prefix_path.sh

@@ -1,0 +1,28 @@
+[3.228s] Invoking command in '/workspace/neura_chess/ros2_ws/src/xyz_motion': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/lara_ros:/workspace/neura_chess/ros2_ws/install/lara5_moveit_config:/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:/opt/ros/humble CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_moveit_config:/workspace/neura_chess/ros2_ws/install/lara5_description PYTHONPATH=/workspace/neura_chess/ros2_ws/build/xyz_motion/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/xyz_motion build --build-base /workspace/neura_chess/ros2_ws/build/xyz_motion/build install --record /workspace/neura_chess/ros2_ws/build/xyz_motion/install.log --install-scripts $base/lib/xyz_motion --single-version-externally-managed install_data
+[4.155s] running egg_info
+[4.201s] writing ../../build/xyz_motion/xyz_motion.egg-info/PKG-INFO
+[4.211s] writing dependency_links to ../../build/xyz_motion/xyz_motion.egg-info/dependency_links.txt
+[4.218s] writing entry points to ../../build/xyz_motion/xyz_motion.egg-info/entry_points.txt
+[4.227s] writing requirements to ../../build/xyz_motion/xyz_motion.egg-info/requires.txt
+[4.232s] writing top-level names to ../../build/xyz_motion/xyz_motion.egg-info/top_level.txt
+[4.414s] reading manifest file '../../build/xyz_motion/xyz_motion.egg-info/SOURCES.txt'
+[4.517s] writing manifest file '../../build/xyz_motion/xyz_motion.egg-info/SOURCES.txt'
+[4.523s] running build
+[4.524s] running build_py
+[4.589s] running install
+[4.598s] running install_lib
+[4.746s] running install_data
+[4.863s] running install_egg_info
+[4.909s] removing '/workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion-0.0.1-py3.10.egg-info' (and everything under it)
+[4.919s] Copying ../../build/xyz_motion/xyz_motion.egg-info to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion-0.0.1-py3.10.egg-info
+[5.016s] running install_scripts
+[5.119s] Installing camera_xyz_to_joints script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+[5.127s] Installing chess_move script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+[5.134s] Installing chess_scene script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+[5.143s] Installing gripper_joint_bridge script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+[5.160s] Installing ik_service script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+[5.168s] Installing mock_move_joints script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+[5.176s] Installing publish_chess_occupancy script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+[5.183s] Installing publish_grasp_tf script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+[5.195s] writing list of installed files to '/workspace/neura_chess/ros2_ws/build/xyz_motion/install.log'
+[5.237s] Invoked command in '/workspace/neura_chess/ros2_ws/src/xyz_motion' returned '0': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/lara_ros:/workspace/neura_chess/ros2_ws/install/lara5_moveit_config:/workspace/neura_chess/ros2_ws/install/xyz_motion:/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_description:/opt/ros/humble CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/install/lara_interfaces:/workspace/neura_chess/ros2_ws/install/lara5_moveit_config:/workspace/neura_chess/ros2_ws/install/lara5_description PYTHONPATH=/workspace/neura_chess/ros2_ws/build/xyz_motion/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_ros/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/install/lara_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/xyz_motion build --build-base /workspace/neura_chess/ros2_ws/build/xyz_motion/build install --record /workspace/neura_chess/ros2_ws/build/xyz_motion/install.log --install-scripts $base/lib/xyz_motion --single-version-externally-managed install_data

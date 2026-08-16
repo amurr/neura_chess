@@ -1,0 +1,27 @@
+running egg_info
+writing ../../build/xyz_motion/xyz_motion.egg-info/PKG-INFO
+writing dependency_links to ../../build/xyz_motion/xyz_motion.egg-info/dependency_links.txt
+writing entry points to ../../build/xyz_motion/xyz_motion.egg-info/entry_points.txt
+writing requirements to ../../build/xyz_motion/xyz_motion.egg-info/requires.txt
+writing top-level names to ../../build/xyz_motion/xyz_motion.egg-info/top_level.txt
+reading manifest file '../../build/xyz_motion/xyz_motion.egg-info/SOURCES.txt'
+writing manifest file '../../build/xyz_motion/xyz_motion.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+copying launch/chess_scene.launch.py -> /workspace/neura_chess/ros2_ws/install/xyz_motion/share/xyz_motion/launch
+running install_egg_info
+removing '/workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion-0.0.1-py3.10.egg-info' (and everything under it)
+Copying ../../build/xyz_motion/xyz_motion.egg-info to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/python3.10/site-packages/xyz_motion-0.0.1-py3.10.egg-info
+running install_scripts
+Installing camera_xyz_to_joints script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+Installing chess_move script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+Installing chess_scene script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+Installing gripper_joint_bridge script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+Installing ik_service script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+Installing mock_move_joints script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+Installing publish_chess_occupancy script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+Installing publish_grasp_tf script to /workspace/neura_chess/ros2_ws/install/xyz_motion/lib/xyz_motion
+writing list of installed files to '/workspace/neura_chess/ros2_ws/build/xyz_motion/install.log'
