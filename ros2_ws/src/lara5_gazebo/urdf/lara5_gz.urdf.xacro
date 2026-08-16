@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="lara5">
+  <xacro:arg name="initial_positions_file" default="$(find lara5_moveit_config)/config/initial_positions.yaml"/>
+
+  <xacro:include filename="$(find lara5_description)/lara5/urdf/lara5.urdf.xacro"/>
+  <xacro:include filename="$(find lara5_description)/lara5/urdf/lara5_gazebo.xacro"/>
+  <xacro:include filename="$(find lara5_moveit_config)/config/lara5.ros2_control.xacro"/>
+
+  <xacro:lara5_gazebo_tags prefix="lara5_"/>
+  <xacro:lara5_ros2_control
+    name="GazeboSim"
+    initial_positions_file="$(arg initial_positions_file)"
+    hardware_plugin="gz_ros2_control/GazeboSimSystem"/>
+
+  <gazebo>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>$(find lara5_moveit_config)/config/ros2_controllers.yaml</parameters>
+    </plugin>
+  </gazebo>
+</robot>

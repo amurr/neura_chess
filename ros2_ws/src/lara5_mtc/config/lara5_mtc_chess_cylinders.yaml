@@ -1,0 +1,26 @@
+# Parameters for lara5_mtc_chess_cylinders_pick_place (cylinder collision scene).
+/**:
+  ros__parameters:
+    planning_scene_timeout_s: 30.0
+
+    chess_source_square: "e2"
+    chess_target_square: "e4"
+    chess_occupancy_file: ""  # empty = share/xyz_motion/examples/standard_start.json
+    chess_seed_pose: "pre_pick"
+    # Board geometry (must match chess_scene_cylinders.yaml)
+    chess_square_size_m: 0.04
+    chess_grasp_clearance_m: 0.015
+    # Top-down EEF orientation in world (gripper ⊥ board; approach along world −Z).
+    chess_top_down_roll: 0.0
+    chess_top_down_pitch: 1.5707963267948966
+    chess_top_down_yaw: 0.0
+    # Perpendicular world-Z motions (metres)
+    chess_approach_m: 0.08
+    chess_lift_m: 0.08
+    chess_place_descent_m: 0.04
+    auto_execute: false
+    keep_alive_s: -1.0  # RViz: stay up until Ctrl+C when auto_execute is false
+    dump_solution_preview: true
+    # Empty → <repo>/src/lara5_mtc/log/solution_<src>_to_<tgt>_<timestamp>.json (+ solution_latest.json)
+    solution_preview_dir: ""
+    solution_preview_file: ""

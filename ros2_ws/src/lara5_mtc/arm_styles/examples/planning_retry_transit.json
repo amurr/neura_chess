@@ -1,0 +1,15 @@
+{
+  "mtc_tree": "chess_cylinders_pick_place",
+  "move": {
+    "source": "a7",
+    "target": "a5"
+  },
+  "arm_style": "mid_move_transit",
+  "approach": {
+    "mode": "from_seed_fk"
+  },
+  "retry": {
+    "on_planning_failure": true
+  },
+  "_comment": "If pre_pick fails on queenside, retry_sequence tries mid_move_transit before joint-level edits"
+}

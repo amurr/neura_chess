@@ -1,0 +1,17 @@
+gripper_joint_bridge:
+  ros__parameters:
+    finger_joint_name: lara5_gripper_finger_joint
+    open_position: 1.74533
+    close_position: -0.174533
+    # Lara gripper Dynamixel goal positions (ticks); used for open/close and numeric commands
+    dynamixel_open: 1500
+    dynamixel_close: 600
+    use_dynamixel_ticks: true
+    gripper_commands_topic: gripper_controller/commands
+    gripper_action_name: gripper_controller/gripper_cmd
+    use_forward_command: true
+    use_gripper_action: false
+    controller_wait_sec: 15.0
+    forward_to_robot: false
+    robot_host: "192.168.2.13"
+    robot_port: 5000

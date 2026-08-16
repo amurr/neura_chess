@@ -1,0 +1,18 @@
+camera_xyz_to_joints:
+  ros__parameters:
+    object_xyz_topic: "/object_xyz"
+    base_frame: "lara5_link0"
+    camera_frame: "camera_optical_frame"
+    assume_base_frame: false
+    ik_service_name: "/compute_ik"
+    move_group_name: "arm"
+    joint_states_topic: "/joint_states"
+    joint_names: ["lara5_joint1", "lara5_joint2", "lara5_joint3", "lara5_joint4", "lara5_joint5", "lara5_joint6"]
+    view_roll: 3.14159
+    view_pitch: 0.0
+    view_yaw: 0.0
+    approach_z_offset: 0.0
+    avoid_collisions: false
+    ik_call_timeout_sec: 10.0
+    tf_lookup_timeout_sec: 1.0
+    use_last_ik_as_seed: true

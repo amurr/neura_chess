@@ -1,0 +1,5 @@
+__pycache__/
+*.py[cod]
+*.pyo
+.kit_portable/
+assets/neura_lara5/urdf/lara5_relmeshes.urdf

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="lara5">
+    <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
+
+    <!-- Robot model (regenerate lara5.urdf with xacro for non-MoveIt tools) -->
+    <xacro:include filename="$(find lara5_description)/lara5/urdf/lara5.urdf.xacro" />
+
+    <!-- Import control_xacro -->
+    <xacro:include filename="lara5.ros2_control.xacro" />
+
+
+    <xacro:lara5_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/>
+
+</robot>

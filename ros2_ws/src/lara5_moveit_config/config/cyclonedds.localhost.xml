@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Localhost-only DDS (WSL / Docker). ParticipantIndex none avoids index exhaustion. -->
+<CycloneDDS xmlns="https://cdds.io/config">
+  <Domain>
+    <Discovery>
+      <ParticipantIndex>none</ParticipantIndex>
+    </Discovery>
+  </Domain>
+</CycloneDDS>

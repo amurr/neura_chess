@@ -1,0 +1,10 @@
+# Default initial positions for lara5's ros2_control fake system
+
+initial_positions:
+  lara5_joint1: 0
+  lara5_joint2: 0
+  lara5_joint3: 0
+  lara5_joint4: 0
+  lara5_joint5: 0
+  lara5_joint6: 0
+  lara5_gripper_finger_joint: -0.174533

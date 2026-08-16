@@ -1,0 +1,27 @@
+{
+  "turn": "white",
+  "squares": {
+    "e1": {
+      "x": 0.29,
+      "y": -0.02,
+      "z": 0.03,
+      "type": "king",
+      "color": "white"
+    },
+    "f3": {
+      "x": 0.37,
+      "y": -0.06,
+      "z": 0.03,
+      "type": "queen",
+      "color": "white"
+    },
+    "f7": {
+      "x": 0.53,
+      "y": -0.06,
+      "z": 0.03,
+      "type": "king",
+      "color": "black"
+    }
+  },
+  "note": "K+Q vs K \u2014 minimal 3-piece endgame (diff mode)"
+}

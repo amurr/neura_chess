@@ -1,0 +1,114 @@
+# Lara5 arm style library — named configuration families for MTC / LLM control.
+#
+# Styles map to SRDF group_state names in lara5_moveit_config/config/lara5.srdf.
+# LLMs and task builders should select a style by id (not raw joint radians).
+# Joint values live in SRDF; this file adds semantics and selection hints.
+#
+# Install path (after colcon build):
+#   share/lara5_mtc/arm_styles/catalog.yaml
+
+version: 1
+robot: lara5
+arm_group: arm
+gripper_group: gripper
+eef_link: lara5_gripper
+srdf_package: lara5_moveit_config
+srdf_file: config/lara5.srdf
+
+# Default style for chess pick-place (matches chess_seed_pose param).
+default_style: pre_pick_over_board
+
+styles:
+  stand_home:
+    srdf_state: stand
+    group: arm
+    role: retreat
+    description: >
+      Vertical home posture; safe idle and end-of-task retreat.
+      Use after place or when clearing the workspace.
+    tags: [home, safe, retreat]
+    mtc_usage:
+      stage: MoveTo
+      planner: ompl  # PipelinePlanner in C++
+    joint_summary_rad:
+      lara5_joint1: 0.0
+      lara5_joint2: 0.0
+      lara5_joint3: 0.0
+      lara5_joint4: 0.0
+      lara5_joint5: 0.0
+      lara5_joint6: 0.0
+
+  mid_move_transit:
+    srdf_state: mid_move
+    group: arm
+    role: transit
+    description: >
+      Raised elbow transit posture between home and board.
+      Useful when pre_pick collides or arm must clear obstacles.
+    tags: [transit, elevated_elbow]
+    mtc_usage:
+      stage: MoveTo
+      planner: joint_interpolation
+    joint_summary_rad:
+      lara5_joint1: 0.0
+      lara5_joint2: 0.0
+      lara5_joint3: 1.5
+      lara5_joint4: 0.0
+      lara5_joint5: 1.5
+      lara5_joint6: 0.0
+
+  pre_pick_over_board:
+    srdf_state: pre_pick
+    group: arm
+    role: seed
+    description: >
+      Default over-board seed for top-down chess pick-place.
+      Fixes IK branch before Cartesian hover / approach stages.
+      Orientation for 6D hover goals is derived from this pose via FK
+      unless explicit chess_top_down_roll/pitch/yaw params override.
+    tags: [seed, over_board, top_down, default, chess]
+    mtc_usage:
+      stage: MoveTo
+      planner: joint_interpolation
+      param: chess_seed_pose
+    joint_summary_rad:
+      lara5_joint1: 0.55
+      lara5_joint2: 0.35
+      lara5_joint3: 1.25
+      lara5_joint4: 0.0
+      lara5_joint5: 1.05
+      lara5_joint6: 0.0
+    ik_hints:
+      elbow_bias: up
+      shoulder_side: right
+      wrist_flip: none
+
+gripper_styles:
+  gripper_open:
+    srdf_state: open
+    group: gripper
+    role: release
+    description: Fingers open for pre-grasp and after place.
+    mtc_usage:
+      stage: MoveTo
+      planner: joint_interpolation
+    joint_summary_rad:
+      lara5_gripper_finger_joint: 1.74533
+
+  gripper_close:
+    srdf_state: close
+    group: gripper
+    role: grasp
+    description: Fingers closed on cylinder piece.
+    mtc_usage:
+      stage: MoveTo
+      planner: joint_interpolation
+    joint_summary_rad:
+      lara5_gripper_finger_joint: -0.174533
+
+# Planned extensions — add matching group_state entries to lara5.srdf before use.
+planned_styles:
+  pre_pick_kingside:
+  pre_pick_queenside:
+  pre_pick_far_rank:
+  pre_pick_elbow_down:

@@ -1,0 +1,49 @@
+# Parameters for moveit_task_constructor_demo scripts (Lara5).
+# pickplace.py needs gripper group states open/close in lara5.srdf.
+/**:
+  ros__parameters:
+    max_solutions: 10
+
+    arm_group_name: "arm"
+    eef_name: "lerobot_gripper"
+    hand_group_name: "gripper"
+    hand_frame: "lara5_gripper"
+
+    arm_home_pose: "stand"
+
+    world_frame: "world"
+    table_reference_frame: "world"
+    object_reference_frame: "world"
+    surface_link: "lara5_link0"
+
+    object_name: "object"
+    object_dimensions: [0.05, 0.02]
+    object_pose: [0.4, 0.0, 0.15, 0.0, 0.0, 0.0]
+
+    spawn_table: false
+    table_name: "table"
+    table_dimensions: [0.4, 0.4, 0.02]
+    table_pose: [0.4, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+    grasp_frame_transform: [0.0, 0.0, 0.02, 0.0, 0.0, 0.0]
+    place_pose: [0.35, 0.15, 0.15, 0.0, 0.0, 0.0]
+    place_surface_offset: 0.0001
+
+    approach_object_min_dist: 0.05
+    approach_object_max_dist: 0.12
+    lift_object_min_dist: 0.01
+    lift_object_max_dist: 0.08
+
+    # lara5_chess_pick_place.py (manual IK tree) / lara5_chess_mtc_pick_place.py (Pick/Place)
+    chess_source_square: "e2"
+    chess_target_square: "e4"
+    chess_occupancy_file: ""  # empty = xyz_motion/config/examples/standard_start.json
+
+    pick_xyz: [0.30, 0.08, 0.12]
+    place_xyz: [0.30, 0.22, 0.12]
+    pick_rpy: [0.0, 1.5708, 0.0]
+    place_rpy: [0.0, 1.5708, 0.0]
+    approach_m: 0.08
+    lift_m: 0.08
+    place_descent_m: 0.04
+    hover_z_offset_m: 0.0
