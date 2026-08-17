@@ -10,6 +10,7 @@
  *********************************************************************/
 
 #include <algorithm>
+#include <atomic>
 #include <chrono>
 #include <cmath>
 #include <cstdlib>
@@ -438,6 +439,46 @@ void dumpSolutionPreview(const mtc::SolutionBase& solution,
               paths.archive_file.c_str(), paths.latest_file.c_str());
 }
 
+const std::vector<std::string> kDefaultLogLinks = {
+    "lara5_root_link",       "lara5_link0",          "lara5_link1",
+    "lara5_link2",           "lara5_link3",          "lara5_link4",
+    "lara5_link5",           "lara5_link6",          "lara5_gripper_adapter",
+    "lara5_gripper",         "lara5_gripper_body",   "lara5_gripper_jaw",
+    "camera_optical_frame",
+};
+
+void logLinkPosesOnce(tf2_ros::Buffer& tf_buffer, const std::string& world_frame,
+                      const std::vector<std::string>& links, double t_sec, std::ofstream* csv)
+{
+  std::ostringstream line;
+  line << std::fixed << std::setprecision(4) << "links t=" << t_sec;
+  for (const auto& link : links)
+  {
+    try
+    {
+      const auto tf = tf_buffer.lookupTransform(world_frame, link, tf2::TimePointZero);
+      const auto& p = tf.transform.translation;
+      const auto& q = tf.transform.rotation;
+      line << " " << link << "=(" << p.x << "," << p.y << "," << p.z << ")";
+      if (csv && csv->good())
+      {
+        *csv << t_sec << "," << link << "," << p.x << "," << p.y << "," << p.z << "," << q.x << "," << q.y << ","
+             << q.z << "," << q.w << "\n";
+      }
+    }
+    catch (const tf2::TransformException& ex)
+    {
+      line << " " << link << "=MISSING";
+      RCLCPP_DEBUG(LOGGER, "TF %s->%s: %s", world_frame.c_str(), link.c_str(), ex.what());
+    }
+  }
+  if (csv)
+  {
+    csv->flush();
+  }
+  RCLCPP_INFO(LOGGER, "%s", line.str().c_str());
+}
+
 }  // namespace
 
 int main(int argc, char** argv)
@@ -470,6 +511,10 @@ int main(int argc, char** argv)
   // Empty dir/file → <repo>/src/lara5_mtc/log/solution_<src>_to_<tgt>_<timestamp>.json + solution_latest.json
   node->declare_parameter<std::string>("solution_preview_dir", "");
   node->declare_parameter<std::string>("solution_preview_file", "");
+  node->declare_parameter<bool>("log_link_poses", true);
+  node->declare_parameter<double>("log_link_poses_hz", 10.0);
+  node->declare_parameter<std::string>("log_link_poses_file", "/tmp/lara5_link_poses.csv");
+  node->declare_parameter("log_link_frames", kDefaultLogLinks);
 
   const std::string occupancy_path = [&]() {
     if (const std::string env = envOrEmpty("CHESS_OCCUPANCY_FILE"); !env.empty())
@@ -530,6 +575,10 @@ int main(int argc, char** argv)
     return node->get_parameter("keep_alive_s").as_double();
   }();
   const bool dump_solution_preview = node->get_parameter("dump_solution_preview").as_bool();
+  const bool log_link_poses = node->get_parameter("log_link_poses").as_bool();
+  const double log_link_poses_hz = std::max(0.1, node->get_parameter("log_link_poses_hz").as_double());
+  const std::string log_link_poses_file = node->get_parameter("log_link_poses_file").as_string();
+  const auto log_link_frames = node->get_parameter("log_link_frames").as_string_array();
   const std::string seed_pose = [&]() {
     if (const std::string env = envOrEmpty("CHESS_SEED_POSE"); !env.empty())
     {
@@ -680,7 +729,41 @@ int main(int argc, char** argv)
 
       if (auto_execute && task.numSolutions() > 0)
       {
+        std::atomic<bool> stop_link_log{false};
+        std::thread link_log_thread;
+        if (log_link_poses)
+        {
+          RCLCPP_INFO(LOGGER, "Logging link poses at %.1f Hz to %s", log_link_poses_hz,
+                      log_link_poses_file.empty() ? "(stdout only)" : log_link_poses_file.c_str());
+          link_log_thread = std::thread([&]() {
+            std::ofstream csv;
+            if (!log_link_poses_file.empty())
+            {
+              csv.open(log_link_poses_file, std::ios::out | std::ios::trunc);
+              if (csv)
+              {
+                csv << "t_sec,link,x,y,z,qx,qy,qz,qw\n";
+              }
+              else
+              {
+                RCLCPP_WARN(LOGGER, "Could not write %s", log_link_poses_file.c_str());
+              }
+            }
+            const auto period = std::chrono::duration<double>(1.0 / log_link_poses_hz);
+            while (!stop_link_log.load() && rclcpp::ok())
+            {
+              logLinkPosesOnce(tf_buffer, world_frame, log_link_frames.empty() ? kDefaultLogLinks : log_link_frames,
+                               node->now().seconds(), csv.is_open() ? &csv : nullptr);
+              std::this_thread::sleep_for(period);
+            }
+          });
+        }
         const auto result = task.execute(*task.solutions().front());
+        stop_link_log.store(true);
+        if (link_log_thread.joinable())
+        {
+          link_log_thread.join();
+        }
         if (result.val != moveit_msgs::msg::MoveItErrorCodes::SUCCESS)
         {
           RCLCPP_ERROR(LOGGER, "Execution failed (error code %d)", result.val);
@@ -689,6 +772,10 @@ int main(int argc, char** argv)
           return 1;
         }
         RCLCPP_INFO(LOGGER, "Execution succeeded");
+        if (log_link_poses && !log_link_poses_file.empty())
+        {
+          RCLCPP_INFO(LOGGER, "Link pose log: %s", log_link_poses_file.c_str());
+        }
       }
       else if (keep_alive_s < 0.0)
       {

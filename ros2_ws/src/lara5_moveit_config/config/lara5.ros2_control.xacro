@@ -1,11 +1,18 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <xacro:macro name="lara5_ros2_control" params="name initial_positions_file hardware_plugin:=mock_components/GenericSystem">
+    <xacro:macro name="lara5_ros2_control" params="name initial_positions_file hardware_plugin:=mock_components/GenericSystem use_topic_hw:=false joint_commands_topic:=/isaac_joint_commands joint_states_topic:=/isaac_joint_states">
         <xacro:property name="initial_positions" value="${load_yaml(initial_positions_file)['initial_positions']}"/>
+        <xacro:property name="topic_hw" value="${str(use_topic_hw).lower() in ['1', 'true']}"/>
 
         <ros2_control name="${name}" type="system">
             <hardware>
                 <plugin>${hardware_plugin}</plugin>
+                <xacro:if value="${topic_hw}">
+                    <param name="joint_commands_topic">${joint_commands_topic}</param>
+                    <param name="joint_states_topic">${joint_states_topic}</param>
+                    <!-- -1: always publish so Isaac sees every JTC sample -->
+                    <param name="trigger_joint_command_threshold">-1</param>
+                </xacro:if>
             </hardware>
             <joint name="lara5_joint1">
                 <command_interface name="position"/>

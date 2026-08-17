@@ -26,11 +26,31 @@ def _cyclone_env():
     ]
 
 
+def _isaac_dds():
+    return {
+        'RMW_IMPLEMENTATION': os.environ.get('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'),
+        'ROS_LOCALHOST_ONLY': '0',
+        'ROS_DOMAIN_ID': os.environ.get('ROS_DOMAIN_ID', '0'),
+    }
+
+
+def _cyclone_dds():
+    env = {
+        'RMW_IMPLEMENTATION': os.environ.get('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'),
+        'ROS_LOCALHOST_ONLY': os.environ.get('ROS_LOCALHOST_ONLY', '1'),
+        'ROS_DOMAIN_ID': os.environ.get('ROS_DOMAIN_ID', '0'),
+    }
+    if os.environ.get('CYCLONEDDS_URI'):
+        env['CYCLONEDDS_URI'] = os.environ['CYCLONEDDS_URI']
+    return env
+
+
 def _launch_setup(context, *args, **kwargs):
     pkg_share = get_package_share_directory('xyz_motion')
     params_file_arg = LaunchConfiguration('params_file').perform(context)
     use_cylinders = _is_true(LaunchConfiguration('use_cylinder_collision').perform(context))
     planning_scene_only = _is_true(LaunchConfiguration('planning_scene_only').perform(context))
+    isaac = _is_true(LaunchConfiguration('isaac').perform(context))
 
     if params_file_arg.strip():
         params_path = params_file_arg
@@ -41,23 +61,21 @@ def _launch_setup(context, *args, **kwargs):
     else:
         params_path = os.path.join(pkg_share, 'config', 'chess_scene.yaml')
 
+    if isaac:
+        dds = _isaac_dds()
+        env_actions = [SetEnvironmentVariable(k, v) for k, v in dds.items()]
+    else:
+        dds = _cyclone_dds()
+        env_actions = _cyclone_env()
+
     publish_initial_pieces = LaunchConfiguration('publish_initial_pieces')
-    return [
+    return env_actions + [
         Node(
             package='xyz_motion',
             executable='chess_scene',
             name='chess_scene',
             output='screen',
-            additional_env={
-                'RMW_IMPLEMENTATION': os.environ.get('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'),
-                'ROS_LOCALHOST_ONLY': os.environ.get('ROS_LOCALHOST_ONLY', '1'),
-                'ROS_DOMAIN_ID': os.environ.get('ROS_DOMAIN_ID', '0'),
-                **(
-                    {'CYCLONEDDS_URI': os.environ['CYCLONEDDS_URI']}
-                    if os.environ.get('CYCLONEDDS_URI')
-                    else {}
-                ),
-            },
+            additional_env=dds,
             parameters=[
                 params_path,
                 {'publish_initial_pieces': publish_initial_pieces},
@@ -69,7 +87,11 @@ def _launch_setup(context, *args, **kwargs):
 def generate_launch_description() -> LaunchDescription:
     return LaunchDescription(
         [
-            *_cyclone_env(),
+            DeclareLaunchArgument(
+                'isaac',
+                default_value='false',
+                description='Match isaacsim.ros2.bridge (FastRTPS). Skip Cyclone localhost.',
+            ),
             DeclareLaunchArgument(
                 'params_file',
                 default_value='',

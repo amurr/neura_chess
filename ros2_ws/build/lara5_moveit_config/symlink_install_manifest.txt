@@ -15,6 +15,7 @@
 /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/package.xml
 /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/demo.launch.py
 /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/demo_with_gripper.launch.py
+/workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/isaac_dds_env.launch.py
 /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/localhost_dds_env.launch.py
 /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/move_group.launch.py
 /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/moveit_ik_headless.launch.py
@@ -22,6 +23,7 @@
 /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/mtc_chess_pick_place.launch.py
 /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/mtc_demo.launch.py
 /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/mtc_demo_headless.launch.py
+/workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/mtc_demo_isaac.launch.py
 /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/mtc_run.launch.py
 /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/rsp.launch.py
 /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/setup_assistant.launch.py

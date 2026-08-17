@@ -30,3 +30,8 @@
     dump_solution_preview: true
     solution_preview_dir: ""
     solution_preview_file: ""
+
+    # During auto_execute: TF xyz of each link (world frame) + CSV
+    log_link_poses: true
+    log_link_poses_hz: 10.0
+    log_link_poses_file: "/tmp/lara5_link_poses.csv"

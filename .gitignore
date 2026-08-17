@@ -1,5 +1,14 @@
 __pycache__/
 *.py[cod]
 *.pyo
+.pytest_cache/
 .kit_portable/
 assets/neura_lara5/urdf/lara5_relmeshes.urdf
+
+# Colcon (only ros2_ws is the workspace; never build at repo root)
+/build/
+/install/
+/log/
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/

@@ -78,6 +78,11 @@ ALL_DOF_JOINT_NAMES = ARM_JOINT_NAMES + GRIPPER_JOINT_NAMES
 
 JOINT_COMMANDS_TOPIC = "isaac_joint_commands"
 JOINT_STATES_TOPIC = "isaac_joint_states"
+# Fast IPC for scripts/scene/chess_scene_restore.sh (no extra ROS node in Kit).
+RESTORE_REQUEST = Path("/tmp/neura_chess_restore.request")
+RESTORE_DONE = Path("/tmp/neura_chess_restore.done")
+RESTORE_READY = Path("/tmp/neura_chess_restore.ready")
+RESTORE_ROS_SERVICE = "/neura_chess/restore_scene"
 
 
 def log(msg: str) -> None:
@@ -250,6 +255,7 @@ def add_simple_chess(stage, parent_path: str = CHESS_PRIM_PATH) -> None:
     for kind, usd_path in CHESS_PIECE_USDS.items():
         if not usd_path.is_file():
             raise FileNotFoundError(f"Missing chess piece USD ({kind}): {usd_path}")
+    log("Referencing OpenChessSet USDs (first MDL compile can take several minutes)...")
 
     stage.DefinePrim(f"{parent_path}/Looks", "Scope")
     preview_mats: dict[tuple[str, bool], UsdShade.Material] = {}
@@ -386,7 +392,7 @@ def isaac_square_algebraic(row: int, col: int, *, file_mirror: bool = False) -> 
 
 def log_chess_board_frames(stage, parent_path: str = CHESS_PRIM_PATH) -> None:
     """Log board normal and a1/e2/e4 world poses for TF alignment with ROS grasp_tf."""
-    from pxr import UsdGeom
+    from pxr import Usd, UsdGeom
 
     root = stage.GetPrimAtPath(parent_path)
     if not root.IsValid():
@@ -527,7 +533,449 @@ def apply_chess_physics(stage, parent_path: str = CHESS_PRIM_PATH) -> None:
             UsdPhysics.CollisionAPI.Apply(child)
         n_pieces += 1
 
-    log(f"Chess PhysX: {n_squares} static squares, {n_pieces} dynamic pieces")
+    n_reset = _promote_piece_xforms_to_world(stage, parent_path)
+    log(
+        f"Chess PhysX: {n_squares} static squares, {n_pieces} dynamic pieces "
+        f"(resetXformStack={n_reset})"
+    )
+
+
+def _promote_piece_xforms_to_world(stage, parent_path: str = CHESS_PRIM_PATH) -> int:
+    """Bake ChessSet parent into piece translates and ignore the parent xform.
+
+    PhysX writes the actor *world* pose back into xformOp:translate. Pieces live
+    under ChessSet (0.41 m), so that writeback double-applies the board origin
+    unless resetXformStack is set and the translate is already world-frame.
+    """
+    from pxr import Gf, Usd, UsdGeom, UsdPhysics
+
+    root = stage.GetPrimAtPath(parent_path)
+    if not root.IsValid():
+        return 0
+    n = 0
+    sample = None
+    for child in root.GetChildren():
+        if not child.HasAPI(UsdPhysics.RigidBodyAPI):
+            continue
+        xf = UsdGeom.Xformable(child)
+        world_tf = xf.ComputeLocalToWorldTransform(Usd.TimeCode.Default())
+        world_t = world_tf.ExtractTranslation()
+        if not xf.GetResetXformStack():
+            for op in xf.GetOrderedXformOps():
+                if op.GetOpType() == UsdGeom.XformOp.TypeTranslate:
+                    op.Set(Gf.Vec3d(float(world_t[0]), float(world_t[1]), float(world_t[2])))
+                    break
+            xf.SetResetXformStack(True)
+        n += 1
+        if sample is None:
+            sample = (child.GetName(), tuple(float(v) for v in world_t))
+    if sample is not None:
+        log(f"Piece xforms are world-frame (resetXformStack): {sample[0]} world={sample[1]}")
+    return n
+
+
+class SceneRestore:
+    """Snapshot ChessSet (board + pieces) and joint starts; restore without rebuilding USD.
+
+    Piece rigid bodies use resetXformStack with world-frame translates (PhysX writeback
+    is world-space). Restore rewrites those authored ops, reloads PhysX from USD, and
+    holds bodies kinematic for a few play frames. Do not RigidPrim.set_world_poses:
+    that path double-applies ChessSet when tensor fallback writes USD.
+    """
+
+    _SETTLE_FRAMES = 3
+
+    def __init__(self) -> None:
+        self.xform_ops: list[tuple[str, list[tuple[str, Any]], bool]] = []
+        self.rb_paths: list[str] = []
+        self.joint_targets: list[tuple[str, str, float]] = []  # path, drive_type, position
+        self.n_squares = 0
+        self.n_pieces = 0
+        self.ready = False
+        self._pending_frames = 0
+        self._physx_status = "skipped"
+        self._usd_reload_status = "skipped"
+        self._ros_node: Any = None
+        self._ros_queued = False
+        self.busy = False
+
+    @staticmethod
+    def _iter_chess_prims(stage):
+        from pxr import UsdGeom
+
+        root = stage.GetPrimAtPath(CHESS_PRIM_PATH)
+        if not root.IsValid():
+            return
+        yield root
+        for child in root.GetChildren():
+            name = child.GetName()
+            if name == "Looks":
+                continue
+            if not child.IsA(UsdGeom.Xformable):
+                continue
+            yield child
+
+    @staticmethod
+    def _snapshot_xform_ops(prim) -> list[tuple[str, Any]]:
+        from pxr import UsdGeom
+
+        xf = UsdGeom.Xformable(prim)
+        ops: list[tuple[str, Any]] = []
+        for op in xf.GetOrderedXformOps():
+            try:
+                ops.append((op.GetOpName(), op.Get()))
+            except Exception:
+                continue
+        return ops
+
+    def capture(self, stage, robot_path: str) -> None:
+        from pxr import Usd, UsdGeom, UsdPhysics
+
+        self.xform_ops = []
+        self.rb_paths = []
+        self.n_squares = 0
+        self.n_pieces = 0
+        for prim in self._iter_chess_prims(stage):
+            path = str(prim.GetPath())
+            xf = UsdGeom.Xformable(prim)
+            reset = bool(xf.GetResetXformStack())
+            self.xform_ops.append((path, self._snapshot_xform_ops(prim), reset))
+            name = prim.GetName()
+            if name.startswith("sq_"):
+                self.n_squares += 1
+            if prim.HasAPI(UsdPhysics.RigidBodyAPI):
+                self.rb_paths.append(path)
+                if _piece_kind_from_prim_name(name) is not None:
+                    self.n_pieces += 1
+
+        self.joint_targets = []
+        seen_joints: set[str] = set()
+        for root_path in (robot_path, LARA_PRIM_PATH):
+            robot = stage.GetPrimAtPath(root_path)
+            if not robot.IsValid():
+                continue
+            for prim in Usd.PrimRange(robot):
+                if prim.IsA(UsdPhysics.PrismaticJoint):
+                    drive_type = "linear"
+                elif prim.IsA(UsdPhysics.RevoluteJoint):
+                    drive_type = "angular"
+                else:
+                    continue
+                path = str(prim.GetPath())
+                if path in seen_joints:
+                    continue
+                seen_joints.add(path)
+                pos = 0.0
+                name = prim.GetName()
+                if name == "lara5_gripper_finger_joint" or name.endswith("gripper_finger_joint"):
+                    pos = -0.174533
+                self.joint_targets.append((path, drive_type, pos))
+
+        self.ready = True
+        ready = (
+            f"squares={self.n_squares} pieces={self.n_pieces} "
+            f"rigid={len(self.rb_paths)} joints={len(self.joint_targets)}\n"
+        )
+        try:
+            RESTORE_READY.write_text(ready, encoding="utf-8")
+        except OSError as e:
+            log(f"WARNING: could not write restore ready: {e}")
+        log(
+            f"Scene restore snapshot: ChessSet + {self.n_squares} squares + "
+            f"{self.n_pieces} pieces ({len(self.rb_paths)} rigid), "
+            f"{len(self.joint_targets)} joints, "
+            f"resetXformStack={sum(1 for _p, _o, r in self.xform_ops if r)}"
+        )
+
+    _XFORM_OP_TYPES = None
+
+    @classmethod
+    def _xform_op_type_map(cls):
+        if cls._XFORM_OP_TYPES is None:
+            from pxr import UsdGeom
+
+            cls._XFORM_OP_TYPES = {
+                "translate": UsdGeom.XformOp.TypeTranslate,
+                "scale": UsdGeom.XformOp.TypeScale,
+                "rotateX": UsdGeom.XformOp.TypeRotateX,
+                "rotateY": UsdGeom.XformOp.TypeRotateY,
+                "rotateZ": UsdGeom.XformOp.TypeRotateZ,
+                "rotateXYZ": UsdGeom.XformOp.TypeRotateXYZ,
+                "orient": UsdGeom.XformOp.TypeOrient,
+                "transform": UsdGeom.XformOp.TypeTransform,
+            }
+        return cls._XFORM_OP_TYPES
+
+    def _apply_usd_xforms(self, stage) -> int:
+        """Rewrite authored local xform ops. Never write world-frame xyz into translate."""
+        from pxr import UsdGeom
+
+        n = 0
+        type_map = self._xform_op_type_map()
+        for path, ops, reset in self.xform_ops:
+            prim = stage.GetPrimAtPath(path)
+            if not prim.IsValid():
+                continue
+            xf = UsdGeom.Xformable(prim)
+            by_name = {op.GetOpName(): op for op in xf.GetOrderedXformOps()}
+            missing = [name for name, val in ops if val is not None and name not in by_name]
+            if missing:
+                xf.ClearXformOpOrder()
+                by_name = {}
+                for name, val in ops:
+                    if val is None:
+                        continue
+                    rest = name[8:] if name.startswith("xformOp:") else name
+                    parts = rest.split(":")
+                    op_type = type_map.get(parts[0])
+                    if op_type is None:
+                        continue
+                    suffix = parts[1] if len(parts) > 1 else ""
+                    try:
+                        op = xf.AddXformOp(op_type, UsdGeom.XformOp.PrecisionDouble, suffix)
+                    except Exception:
+                        continue
+                    op.Set(val)
+                    by_name[name] = op
+            else:
+                for name, val in ops:
+                    op = by_name.get(name)
+                    if op is not None and val is not None:
+                        op.Set(val)
+            try:
+                xf.SetResetXformStack(bool(reset))
+            except Exception:
+                pass
+            n += 1
+        _promote_piece_xforms_to_world(stage, CHESS_PRIM_PATH)
+        return n
+
+    def _iter_rb_prims(self, stage):
+        from pxr import UsdPhysics
+
+        for path in self.rb_paths:
+            prim = stage.GetPrimAtPath(path)
+            if prim.IsValid() and prim.HasAPI(UsdPhysics.RigidBodyAPI):
+                yield prim
+
+    def _zero_rb_velocities(self, stage) -> None:
+        from pxr import Gf, UsdPhysics
+
+        for prim in self._iter_rb_prims(stage):
+            rb = UsdPhysics.RigidBodyAPI(prim)
+            try:
+                rb.CreateVelocityAttr().Set(Gf.Vec3f(0.0, 0.0, 0.0))
+                rb.CreateAngularVelocityAttr().Set(Gf.Vec3f(0.0, 0.0, 0.0))
+            except Exception:
+                pass
+
+    def _set_rb_enabled(self, stage, enabled: bool) -> None:
+        from pxr import UsdPhysics
+
+        for prim in self._iter_rb_prims(stage):
+            try:
+                UsdPhysics.RigidBodyAPI(prim).CreateRigidBodyEnabledAttr().Set(bool(enabled))
+            except Exception:
+                pass
+
+    def _set_rb_kinematic(self, stage, kinematic: bool) -> None:
+        from pxr import UsdPhysics
+
+        for prim in self._iter_rb_prims(stage):
+            try:
+                UsdPhysics.RigidBodyAPI(prim).CreateKinematicEnabledAttr().Set(bool(kinematic))
+            except Exception:
+                pass
+
+    def _restore_joints(self, stage) -> None:
+        from pxr import UsdPhysics
+
+        for path, drive_type, pos in self.joint_targets:
+            prim = stage.GetPrimAtPath(path)
+            if not prim.IsValid():
+                continue
+            try:
+                drive = UsdPhysics.DriveAPI.Get(prim, drive_type)
+                if drive:
+                    drive.CreateTargetPositionAttr().Set(float(pos))
+            except Exception:
+                pass
+            try:
+                from pxr import PhysxSchema
+
+                state = PhysxSchema.JointStateAPI.Apply(prim, drive_type)
+                state.CreatePositionAttr().Set(float(pos))
+                state.CreateVelocityAttr().Set(0.0)
+            except Exception:
+                pass
+
+    def attach_ros(self) -> None:
+        """Optional Trigger service; PhysX work still runs on the Kit main loop."""
+        try:
+            import rclpy
+            from std_srvs.srv import Trigger
+        except Exception as e:
+            log(f"Scene restore ROS service skipped: {e}")
+            return
+        try:
+            if not rclpy.ok():
+                rclpy.init()
+            self._ros_node = rclpy.create_node("neura_chess_restore")
+
+            def _on_restore(_req, resp):
+                self._ros_queued = True
+                resp.success = True
+                resp.message = "queued"
+                return resp
+
+            self._ros_node.create_service(Trigger, RESTORE_ROS_SERVICE, _on_restore)
+            log(f"Scene restore ROS: {RESTORE_ROS_SERVICE}")
+        except Exception as e:
+            log(f"WARNING: scene restore ROS service failed: {e}")
+            self._ros_node = None
+
+    def _spin_ros(self) -> None:
+        node = self._ros_node
+        if node is None:
+            return
+        try:
+            import rclpy
+
+            rclpy.spin_once(node, timeout_sec=0.0)
+        except Exception:
+            pass
+
+    def _reload_physx_from_usd(self) -> str:
+        try:
+            from omni.physx import get_physx_interface
+
+            physx = get_physx_interface()
+            physx.release_physics_objects()
+            physx.force_load_physics_from_usd()
+            return "ok"
+        except Exception as e:
+            log(f"WARNING: PhysX reload from USD failed: {e}")
+            return f"fail:{e}"
+
+    def _log_sample_world_poses(self, stage) -> None:
+        from pxr import Usd, UsdGeom
+
+        for name in ("W_rook_0", "Wp_pawn_0", "Bp_pawn_0", "B_king_4"):
+            prim = stage.GetPrimAtPath(f"{CHESS_PRIM_PATH}/{name}")
+            if not prim.IsValid():
+                continue
+            t = UsdGeom.Xformable(prim).ComputeLocalToWorldTransform(Usd.TimeCode.Default()).ExtractTranslation()
+            xf = UsdGeom.Xformable(prim)
+            reset = xf.GetResetXformStack()
+            local_t = None
+            for op in xf.GetOrderedXformOps():
+                if op.GetOpType() == UsdGeom.XformOp.TypeTranslate:
+                    local_t = op.Get()
+                    break
+            log(
+                f"  restore sample {name} world=({float(t[0]):.3f}, {float(t[1]):.3f}, {float(t[2]):.3f}) "
+                f"translate={local_t} resetXformStack={reset}"
+            )
+
+    def _begin_restore(self, stage, timeline: Any) -> None:
+        if timeline is not None and timeline.is_playing():
+            timeline.stop()
+        self._set_rb_enabled(stage, False)
+        n = self._apply_usd_xforms(stage)
+        self._zero_rb_velocities(stage)
+        self._set_rb_kinematic(stage, True)
+        self._restore_joints(stage)
+        self._set_rb_enabled(stage, True)
+        self._usd_reload_status = self._reload_physx_from_usd()
+        self._apply_usd_xforms(stage)
+        if timeline is not None:
+            timeline.play()
+        log(
+            f"Scene restore USD applied ({n} chess prims: ChessSet + "
+            f"{self.n_squares} squares + {self.n_pieces} pieces); "
+            f"physx_usd={self._usd_reload_status}; kinematic settle"
+        )
+
+    def _finish_restore(self, stage) -> None:
+        self._apply_usd_xforms(stage)
+        self._zero_rb_velocities(stage)
+        self._set_rb_kinematic(stage, False)
+        self._zero_rb_velocities(stage)
+        self._physx_status = "ok" if self._usd_reload_status == "ok" else self._usd_reload_status
+        try:
+            self._log_sample_world_poses(stage)
+        except Exception as e:
+            log(f"WARNING: restore sample poses skipped: {e}")
+        log(
+            f"Scene restore PhysX from USD={self._physx_status} "
+            f"(squares={self.n_squares}, pieces={self.n_pieces}, joints={len(self.joint_targets)})"
+        )
+
+    def _clear_done(self) -> None:
+        try:
+            RESTORE_DONE.unlink(missing_ok=True)
+        except TypeError:
+            if RESTORE_DONE.exists():
+                RESTORE_DONE.unlink()
+        except OSError:
+            pass
+
+    def _write_done(self) -> None:
+        body = (
+            f"ok squares={self.n_squares} pieces={self.n_pieces} "
+            f"rigid={len(self.rb_paths)} joints={len(self.joint_targets)} "
+            f"physx={self._physx_status} usd_reload={self._usd_reload_status}\n"
+        )
+        try:
+            RESTORE_DONE.write_text(body, encoding="utf-8")
+        except OSError as e:
+            log(f"WARNING: could not write restore done: {e}")
+
+    def poll(self, stage, timeline: Any) -> None:
+        try:
+            self._spin_ros()
+            triggered = bool(self._ros_queued)
+            self._ros_queued = False
+            if RESTORE_REQUEST.is_file():
+                try:
+                    RESTORE_REQUEST.unlink()
+                    triggered = True
+                except OSError:
+                    pass
+            if triggered:
+                if self.busy:
+                    return
+                self._clear_done()
+                if not self.ready:
+                    log("WARNING: scene restore requested before snapshot")
+                    self._physx_status = "not_ready"
+                    self._write_done()
+                    self.busy = False
+                    self._pending_frames = 0
+                    return
+                self.busy = True
+                self._begin_restore(stage, timeline)
+                self._pending_frames = self._SETTLE_FRAMES
+                return
+
+            if self._pending_frames <= 0:
+                return
+            self._apply_usd_xforms(stage)
+            self._zero_rb_velocities(stage)
+            self._pending_frames -= 1
+            if self._pending_frames > 0:
+                return
+            self._finish_restore(stage)
+            self.busy = False
+            self._write_done()
+        except Exception as e:
+            import traceback
+
+            log(f"ERROR: scene restore crashed: {e}\n{traceback.format_exc()}")
+            self.busy = False
+            self._pending_frames = 0
+            self._physx_status = f"crash:{e}"
+            self._write_done()
 
 
 def build_stage(stage) -> None:
@@ -682,6 +1130,7 @@ def setup_ros_bridge(simulation_app: Any, robot_path: str) -> str:
                     ("PublishJointState.inputs:topicName", JOINT_STATES_TOPIC),
                     ("SubscribeJointState.inputs:topicName", JOINT_COMMANDS_TOPIC),
                     ("PublishJointState.inputs:targetPrim", [usdrt.Sdf.Path(robot_path)]),
+                    ("Context.inputs:useDomainIDEnvVar", True),
                 ],
             },
         )
@@ -696,12 +1145,36 @@ def setup_ros_bridge(simulation_app: Any, robot_path: str) -> str:
     return graph_path
 
 
+def _frame_scene_camera(app, eye, target) -> None:
+    """Point the active viewport at the Lara + board layout. Never raises."""
+    try:
+        from isaacsim.core.utils import viewports
+        from omni.kit.viewport.utility import get_active_viewport
+
+        viewport = None
+        for _ in range(20):
+            viewport = get_active_viewport()
+            if viewport is not None:
+                break
+            app.update()
+        if viewport is None:
+            log("WARNING: no active viewport yet; camera not framed")
+            return
+        viewports.set_camera_view(eye=eye, target=target, viewport_api=viewport)
+        for _ in range(3):
+            app.update()
+        viewports.set_camera_view(eye=eye, target=target, viewport_api=viewport)
+        log(f"Camera framed eye={tuple(float(x) for x in eye)} target={tuple(float(x) for x in target)}")
+    except Exception as e:
+        log(f"WARNING: camera frame failed: {e}")
+
+
 def run(app, *, headless: bool, enable_ros: bool) -> None:
     import carb
     import numpy as np
     import omni.timeline
     import omni.usd
-    from isaacsim.core.utils import extensions, viewports
+    from isaacsim.core.utils import extensions
 
     log("Enabling PhysX")
     for ext in ("omni.physx", "omni.physx.bundle"):
@@ -714,31 +1187,63 @@ def run(app, *, headless: bool, enable_ros: bool) -> None:
     import_lara(app)
     articulation_path = ensure_physx_articulation(app, LARA_PRIM_PATH)
 
+    cam_eye = np.array([1.15, -1.15, 0.85])
+    cam_target = np.array([BOARD_CENTER_X * 0.5, 0.0, 0.12])
+    _frame_scene_camera(app, cam_eye, cam_target)
+
     stage = omni.usd.get_context().get_stage()
     log("Building chessboard + OpenChessSet pieces in front of Lara...")
     add_simple_chess(stage, CHESS_PRIM_PATH)
     app.update()
     apply_chess_physics(stage, CHESS_PRIM_PATH)
     app.update()
-    log_chess_board_frames(stage, CHESS_PRIM_PATH)
+    try:
+        log_chess_board_frames(stage, CHESS_PRIM_PATH)
+    except Exception as e:
+        log(f"WARNING: chess frame log skipped: {e}")
 
-    cam_eye = np.array([1.15, -1.15, 0.85])
-    cam_target = np.array([BOARD_CENTER_X * 0.5, 0.0, 0.12])
-    viewports.set_camera_view(eye=cam_eye, target=cam_target)
-    for _ in range(5):
-        app.update()
-    viewports.set_camera_view(eye=cam_eye, target=cam_target)
-    app.update()
+    _frame_scene_camera(app, cam_eye, cam_target)
+
+    restorer = SceneRestore()
+    restorer.capture(stage, articulation_path)
 
     if enable_ros:
         setup_ros_bridge(app, articulation_path)
         app.update()
+        restorer.attach_ros()
 
     timeline = omni.timeline.get_timeline_interface()
     carb.settings.get_settings().set("/app/player/playSimulations", True)
     timeline.play()
     for _ in range(10):
         app.update()
+
+    try:
+        from neura_chess_piece_positions import PiecePositionsRigidPrim
+    except ImportError:
+        sys.path.insert(0, str(ROOT))
+        from neura_chess_piece_positions import PiecePositionsRigidPrim
+
+    piece_poses = PiecePositionsRigidPrim()
+    piece_poses.bind(stage)
+    if enable_ros:
+        piece_poses.attach_ros()
+
+    try:
+        if RESTORE_REQUEST.exists():
+            RESTORE_REQUEST.unlink()
+        if RESTORE_DONE.exists():
+            RESTORE_DONE.unlink()
+        from neura_chess_piece_positions import PIECES_REQUEST, PIECES_DONE
+
+        if PIECES_REQUEST.exists():
+            PIECES_REQUEST.unlink()
+        if PIECES_DONE.exists():
+            PIECES_DONE.unlink()
+    except OSError:
+        pass
+    log(f"Scene restore: ./scripts/scene/chess_scene_restore.sh  (ready file {RESTORE_READY})")
+    log("Piece poses: ./scripts/scene/pieces_positions_RigidPrim.sh")
 
     if enable_ros:
         log("Ready for topic_based_ros2_control")
@@ -747,7 +1252,9 @@ def run(app, *, headless: bool, enable_ros: bool) -> None:
         log("Ready (PhysX playing, ROS bridge skipped)")
 
     while app.is_running():
-        if not timeline.is_playing():
+        restorer.poll(stage, timeline)
+        piece_poses.poll(stage)
+        if not restorer.busy and not timeline.is_playing():
             timeline.play()
         app.update()
         if headless:
@@ -760,8 +1267,8 @@ def _check_ros_env() -> None:
     lib = os.environ.get("LD_LIBRARY_PATH", "")
     if "isaacsim.ros2.core" not in lib and not os.environ.get("ROS_DISTRO"):
         log(
-            "WARNING: Isaac ROS env may be unset. Source scripts/setup_isaac_ros_env.sh "
-            "before launch (launch_world.sh does this)."
+            "WARNING: Isaac ROS env may be unset. Source scripts/setup/setup_isaac_ros_env.sh "
+            "before launch (scripts/launch/launch_world.sh does this)."
         )
 
 
@@ -775,13 +1282,25 @@ def main() -> int:
 
     from isaacsim import SimulationApp
 
-    app = SimulationApp(
-        {"renderer": "RaytracedLighting", "headless": args.headless, "width": 1280, "height": 720}
-    )
+    # GUI: keep the viewport painting while OpenChessSet MDL compiles (several minutes).
+    # Headless: wait for loads so physics sees complete meshes.
+    launch_config = {
+        "renderer": "RaytracedLighting",
+        "headless": args.headless,
+        "width": 1280,
+        "height": 720,
+        "sync_loads": bool(args.headless),
+        "multi_gpu": False,
+    }
+    if not args.headless:
+        launch_config["hide_ui"] = False
+    app = SimulationApp(launch_config)
     try:
         run(app, headless=args.headless, enable_ros=enable_ros)
     except Exception as e:
-        log(f"ERROR: {e}")
+        import traceback
+
+        log(f"ERROR: {e}\n{traceback.format_exc()}")
         raise
     finally:
         app.close()

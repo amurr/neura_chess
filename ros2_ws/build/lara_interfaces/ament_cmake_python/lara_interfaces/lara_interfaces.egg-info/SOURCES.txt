@@ -4,3 +4,11 @@ lara_interfaces.egg-info/PKG-INFO
 lara_interfaces.egg-info/SOURCES.txt
 lara_interfaces.egg-info/dependency_links.txt
 lara_interfaces.egg-info/top_level.txt
+lara_interfaces/msg/__init__.py
+lara_interfaces/msg/_xyz_rpy_goal.py
+lara_interfaces/srv/__init__.py
+lara_interfaces/srv/_compute_ik.py
+lara_interfaces/srv/_get_app_mode.py
+lara_interfaces/srv/_get_tcp_pose.py
+lara_interfaces/srv/_move_joints.py
+lara_interfaces/srv/_move_linear.py

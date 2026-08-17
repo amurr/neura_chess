@@ -321,8 +321,8 @@ include("/workspace/neura_chess/ros2_ws/build/lara5_mtc/ament_cmake_symlink_inst
 # install(DIRECTORY "include/" "DESTINATION" "include")
 ament_cmake_symlink_install_directory("/workspace/neura_chess/ros2_ws/src/lara5_mtc" DIRECTORY "include/" "DESTINATION" "include")
 
-# install(DIRECTORY "launch" "config" "arm_styles" "DESTINATION" "share/lara5_mtc")
-ament_cmake_symlink_install_directory("/workspace/neura_chess/ros2_ws/src/lara5_mtc" DIRECTORY "launch" "config" "arm_styles" "DESTINATION" "share/lara5_mtc")
+# install(DIRECTORY "launch" "config" "DESTINATION" "share/lara5_mtc")
+ament_cmake_symlink_install_directory("/workspace/neura_chess/ros2_ws/src/lara5_mtc" DIRECTORY "launch" "config" "DESTINATION" "share/lara5_mtc")
 
 # install(FILES "/workspace/neura_chess/ros2_ws/build/lara5_mtc/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/lara5_mtc" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 ament_cmake_symlink_install_files("/workspace/neura_chess/ros2_ws/src/lara5_mtc" FILES "/workspace/neura_chess/ros2_ws/build/lara5_mtc/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/lara5_mtc" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")

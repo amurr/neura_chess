@@ -1,4 +1,6 @@
-# This config file is used by ros2_control
+# Shared by mock (plan/CI) and Isaac (topic_based_ros2_control).
+# MoveIt talks to these action servers; the hardware plugin in the URDF
+# decides whether commands stay local or go to /isaac_joint_commands.
 controller_manager:
   ros__parameters:
     update_rate: 100  # Hz
