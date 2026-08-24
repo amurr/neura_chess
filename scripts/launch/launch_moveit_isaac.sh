@@ -24,6 +24,12 @@ export RMW_IMPLEMENTATION="${RMW_IMPLEMENTATION:-rmw_fastrtps_cpp}"
 export ROS_LOCALHOST_ONLY="${ROS_LOCALHOST_ONLY:-0}"
 unset CYCLONEDDS_URI || true
 
+if ! python3 -c "import moveit_configs_utils" >/dev/null 2>&1; then
+  echo "ERROR: moveit_configs_utils missing. Run ./scripts/ros2h_installation.sh" >&2
+  echo "  then: source /opt/ros/humble/setup.bash && source ros2_ws/install/setup.bash" >&2
+  exit 1
+fi
+
 echo "MoveIt Isaac: domain=$ROS_DOMAIN_ID rmw=$RMW_IMPLEMENTATION"
 echo "Waiting for /isaac_joint_states (Isaac world must be playing)..."
 ok=0

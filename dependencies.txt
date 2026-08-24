@@ -18,7 +18,9 @@ ros_pkg geometry_msgs
 ros_pkg std_msgs
 ros_pkg moveit_core
 ros_pkg moveit_ros_planning_interface
+ros_pkg moveit_ros_move_group
 ros_pkg moveit_planners_ompl
+ros_pkg moveit_configs_utils
 ros_pkg moveit_task_constructor_core
 ros_pkg moveit_msgs
 ros_pkg robot_state_publisher
@@ -39,4 +41,5 @@ python tf2_ros
 python geometry_msgs
 python std_msgs
 python moveit_msgs
+python moveit_configs_utils
 deb nlohmann-json3-dev

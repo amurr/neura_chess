@@ -2,8 +2,8 @@
 """Neura Lara5 PhysX world + isaacsim.ros2.bridge.
 
 Imports the Lara5 URDF (from ros2_ws/lara5_description, copied under assets/)
-and drives it with OmniGraph:
-  /isaac_joint_commands → ArticulationController → /isaac_joint_states
+and drives it with OmniGraph + a Kit JointState subscriber:
+  /isaac_joint_commands → position targets → /isaac_joint_states
 """
 
 from __future__ import annotations
@@ -136,85 +136,204 @@ def _strip_articulation_root_schemas(prim) -> None:
             pass
 
 
+def _force_physx(stage) -> None:
+    """Isaac Sim 6 can default to Newton, which has no PhysX Articulation GUI panel."""
+    try:
+        from isaacsim.core.simulation_manager import SimulationManager
+
+        SimulationManager.switch_physics_engine("physx", verbose=True)
+        log(f"Physics engine={SimulationManager.get_active_physics_engine()}")
+    except Exception as e:
+        log(f"WARNING: could not switch physics engine to PhysX: {e}")
+    try:
+        from pxr import PhysxSchema
+
+        scene = stage.GetPrimAtPath(PHYSICS_SCENE)
+        if scene.IsValid():
+            PhysxSchema.PhysxSceneAPI.Apply(scene)
+    except Exception as e:
+        log(f"WARNING: PhysxSceneAPI: {e}")
+
+
+def apply_joint_drives(stage, robot_root: str) -> None:
+    """Position drives strong enough for ROS joint commands (URDF import stores ~7)."""
+    from pxr import Usd, UsdPhysics
+
+    robot = stage.GetPrimAtPath(robot_root)
+    if not robot.IsValid():
+        return
+    n = 0
+    for prim in Usd.PrimRange(robot):
+        if prim.IsA(UsdPhysics.RevoluteJoint):
+            axis = "angular"
+        elif prim.IsA(UsdPhysics.PrismaticJoint):
+            axis = "linear"
+        else:
+            continue
+        drive = UsdPhysics.DriveAPI.Apply(prim, axis)
+        drive.CreateStiffnessAttr(float(JOINT_STIFFNESS))
+        drive.CreateDampingAttr(float(JOINT_DAMPING))
+        drive.CreateTypeAttr("force")
+        n += 1
+    log(f"Joint drives stiffness={JOINT_STIFFNESS} damping={JOINT_DAMPING} on {n} joints")
+
+
 def ensure_physx_articulation(simulation_app: Any, robot_root: str) -> str:
-    """Single fixed-base ArticulationRootAPI for PhysX + OmniGraph."""
+    """Put ArticulationRootAPI on the instance prim the Stage tree selects.
+
+    The URDF importer authors PhysicsArticulationRootAPI on Geometry/lara5_root_link.
+    Selecting /World/NeuraChess/lara5 then shows no Articulation panel, and
+    IsaacArticulationController may not drive the referenced payload.
+    """
     import omni.usd
     from pxr import PhysxSchema, Usd, UsdPhysics
 
     stage = omni.usd.get_context().get_stage()
+    _force_physx(stage)
     root = stage.GetPrimAtPath(robot_root)
     if not root.IsValid():
         raise RuntimeError(f"Robot root missing: {robot_root}")
 
-    try:
-        from isaacsim.asset.importer.utils.impl import asset_utils
-
-        relocated = asset_utils.fix_articulation_root_for_fixed_base(stage)
-        if relocated:
-            log(f"fix_articulation_root_for_fixed_base relocated {relocated} root(s)")
-    except Exception as e:
-        log(f"fix_articulation_root_for_fixed_base note: {e}")
-
-    root_joint = stage.GetPrimAtPath(f"{robot_root}/Physics/root_joint")
-    if not root_joint.IsValid():
-        for cand in (
-            f"{robot_root}/Physics/root_to_base",
-            f"{robot_root}/fix_base_joint",
-        ):
-            p = stage.GetPrimAtPath(cand)
-            if p.IsValid():
-                root_joint = p
-                break
-
-    keep = None
-    if root_joint.IsValid():
-        keep = root_joint
-    else:
-        for p in Usd.PrimRange(root):
-            if p.HasAPI(UsdPhysics.ArticulationRootAPI) and not p.HasAPI(UsdPhysics.RigidBodyAPI):
-                keep = p
-                break
-    if keep is None:
-        keep = root
-
     stripped: list[str] = []
     for p in list(Usd.PrimRange(root)):
-        if not p.HasAPI(UsdPhysics.ArticulationRootAPI):
-            continue
-        if p == keep:
+        if p == root or not p.HasAPI(UsdPhysics.ArticulationRootAPI):
             continue
         stripped.append(str(p.GetPath()))
         _strip_articulation_root_schemas(p)
 
-    if not keep.HasAPI(UsdPhysics.ArticulationRootAPI):
-        UsdPhysics.ArticulationRootAPI.Apply(keep)
-        log(f"Applied ArticulationRootAPI on {keep.GetPath()}")
+    UsdPhysics.ArticulationRootAPI.Apply(root)
     try:
-        if not keep.HasAPI(PhysxSchema.PhysxArticulationAPI):
-            PhysxSchema.PhysxArticulationAPI.Apply(keep)
-        try:
-            keep.ApplyAPI("NewtonArticulationRootAPI")
-        except Exception:
-            pass
+        PhysxSchema.PhysxArticulationAPI.Apply(root)
     except Exception as e:
         log(f"PhysxArticulationAPI note: {e}")
 
     if stripped:
-        log(f"Removed duplicate ArticulationRootAPI from: {stripped}")
+        log(f"Moved ArticulationRootAPI from {stripped} → {robot_root}")
 
     roots = [
         str(p.GetPath())
         for p in Usd.PrimRange(root)
         if p.HasAPI(UsdPhysics.ArticulationRootAPI)
     ]
-    art_path = str(keep.GetPath())
-    if len(roots) != 1:
-        log(f"WARNING: expected 1 ArticulationRootAPI under {robot_root}, found {len(roots)}: {roots}")
+    if roots != [robot_root]:
+        log(f"WARNING: ArticulationRootAPI prims under {robot_root}: {roots}")
     else:
-        log(f"Fixed-base ArticulationRootAPI at {roots[0]}; OmniGraph robotPath={art_path}")
+        log(f"ArticulationRootAPI on {robot_root} (select this prim for the Articulation panel)")
+    apply_joint_drives(stage, robot_root)
     for _ in range(3):
         simulation_app.update()
-    return art_path
+    return robot_root
+
+
+def _log_live_articulation(robot_path: str) -> None:
+    try:
+        from isaacsim.core.experimental.prims import Articulation
+        from isaacsim.core.simulation_manager import SimulationManager
+
+        art = Articulation(robot_path)
+        log(
+            f"Live articulation engine={SimulationManager.get_active_physics_engine()} "
+            f"path={robot_path} dofs={art.num_dofs} names={art.dof_names}"
+        )
+    except Exception as e:
+        log(f"WARNING: live articulation probe failed: {e}")
+
+
+class JointCommandApplier:
+    """Apply /isaac_joint_commands positions onto the live articulation.
+
+    Isaac ROS2SubscribeJointState.checkValid() requires name, position, velocity,
+    and effort arrays to be the same length. topic_based_ros2_control publishes
+    positions only (empty velocity/effort), so OmniGraph drops every command.
+    Connecting those empty arrays as zeros would also pin velocity targets at 0.
+    """
+
+    def __init__(self, robot_path: str) -> None:
+        self._path = robot_path
+        self._art = None
+        self._node = None
+        self._latest = None
+        self._applied = 0
+        self._fails = 0
+
+    def attach_ros(self) -> None:
+        try:
+            import rclpy
+            from sensor_msgs.msg import JointState
+        except Exception as e:
+            log(f"JointCommandApplier ROS skipped: {e}")
+            return
+        try:
+            if not rclpy.ok():
+                rclpy.init()
+            self._node = rclpy.create_node("neura_chess_joint_commands")
+            self._node.create_subscription(JointState, f"/{JOINT_COMMANDS_TOPIC}", self._on_cmd, 10)
+            log(f"JointCommandApplier sub=/{JOINT_COMMANDS_TOPIC} robot={self._path}")
+        except Exception as e:
+            log(f"WARNING: JointCommandApplier ROS failed: {e}")
+            self._node = None
+
+    def _on_cmd(self, msg) -> None:
+        self._latest = msg
+
+    def _ensure_art(self) -> bool:
+        if self._art is not None:
+            try:
+                if self._art.valid:
+                    return True
+            except Exception:
+                self._art = None
+        try:
+            from isaacsim.core.experimental.prims import Articulation
+
+            self._art = Articulation(self._path)
+            return bool(self._art.valid)
+        except Exception as e:
+            self._art = None
+            self._fails += 1
+            if self._fails <= 3 or self._fails % 200 == 0:
+                log(f"WARNING: JointCommandApplier Articulation({self._path}): {e}")
+            return False
+
+    def _apply(self, msg) -> None:
+        import numpy as np
+
+        n = min(len(msg.name), len(msg.position))
+        if n == 0 or not self._ensure_art():
+            return
+        names = list(msg.name[:n])
+        pos = np.asarray(msg.position[:n], dtype=np.float64)
+        indices = self._art.get_dof_indices(names).numpy().flatten()
+        self._art.set_dof_position_targets(pos, dof_indices=indices)
+        self._applied += 1
+        if self._applied == 1 or self._applied % 500 == 0:
+            log(
+                f"JointCommandApplier applied={self._applied} n={n} "
+                f"{names[0]}={float(pos[0]):.4f}"
+            )
+
+    def poll(self) -> None:
+        node = self._node
+        if node is None:
+            return
+        try:
+            import rclpy
+
+            for _ in range(32):
+                rclpy.spin_once(node, timeout_sec=0.0)
+        except Exception:
+            return
+        msg = self._latest
+        self._latest = None
+        if msg is None:
+            return
+        try:
+            self._apply(msg)
+        except Exception as e:
+            self._art = None
+            self._fails += 1
+            if self._fails <= 3 or self._fails % 200 == 0:
+                log(f"WARNING: JointCommandApplier: {e}")
 
 
 def add_simple_chess(stage, parent_path: str = CHESS_PRIM_PATH) -> None:
@@ -1073,7 +1192,11 @@ def import_lara(simulation_app: Any) -> str:
 
 
 def setup_ros_bridge(simulation_app: Any, robot_path: str) -> str:
-    """OnPlaybackTick → SubscribeJointState → ArticulationController + PublishJointState."""
+    """OnPlaybackTick → SubscribeJointState.execOut → ArticulationController + PublishJointState.
+
+    Only joint names + positions are wired. topic_based_ros2_control leaves
+    velocity/effort empty; connecting those outputs as zeros freezes the arm.
+    """
     import omni.graph.core as og
     import usdrt.Sdf
     from isaacsim.core.utils import extensions
@@ -1105,7 +1228,10 @@ def setup_ros_bridge(simulation_app: Any, robot_path: str) -> str:
                     (tick_out, "PublishJointState.inputs:execIn"),
                     (tick_out, "SubscribeJointState.inputs:execIn"),
                     (tick_out, "PublishClock.inputs:execIn"),
-                    (tick_out, "ArticulationController.inputs:execIn"),
+                    (
+                        "SubscribeJointState.outputs:execOut",
+                        "ArticulationController.inputs:execIn",
+                    ),
                     ("Context.outputs:context", "PublishJointState.inputs:context"),
                     ("Context.outputs:context", "SubscribeJointState.inputs:context"),
                     ("Context.outputs:context", "PublishClock.inputs:context"),
@@ -1116,17 +1242,10 @@ def setup_ros_bridge(simulation_app: Any, robot_path: str) -> str:
                         "SubscribeJointState.outputs:positionCommand",
                         "ArticulationController.inputs:positionCommand",
                     ),
-                    (
-                        "SubscribeJointState.outputs:velocityCommand",
-                        "ArticulationController.inputs:velocityCommand",
-                    ),
-                    (
-                        "SubscribeJointState.outputs:effortCommand",
-                        "ArticulationController.inputs:effortCommand",
-                    ),
                 ],
                 og.Controller.Keys.SET_VALUES: [
                     ("ArticulationController.inputs:robotPath", robot_path),
+                    ("ArticulationController.inputs:targetPrim", [usdrt.Sdf.Path(robot_path)]),
                     ("PublishJointState.inputs:topicName", JOINT_STATES_TOPIC),
                     ("SubscribeJointState.inputs:topicName", JOINT_COMMANDS_TOPIC),
                     ("PublishJointState.inputs:targetPrim", [usdrt.Sdf.Path(robot_path)]),
@@ -1181,7 +1300,9 @@ def run(app, *, headless: bool, enable_ros: bool) -> None:
         extensions.enable_extension(ext)
     app.update()
 
-    build_stage(omni.usd.get_context().get_stage())
+    stage = omni.usd.get_context().get_stage()
+    build_stage(stage)
+    _force_physx(stage)
     app.update()
 
     import_lara(app)
@@ -1217,6 +1338,7 @@ def run(app, *, headless: bool, enable_ros: bool) -> None:
     timeline.play()
     for _ in range(10):
         app.update()
+    _log_live_articulation(articulation_path)
 
     try:
         from neura_chess_piece_positions import PiecePositionsRigidPrim
@@ -1226,8 +1348,10 @@ def run(app, *, headless: bool, enable_ros: bool) -> None:
 
     piece_poses = PiecePositionsRigidPrim()
     piece_poses.bind(stage)
+    joint_cmds = JointCommandApplier(articulation_path)
     if enable_ros:
         piece_poses.attach_ros()
+        joint_cmds.attach_ros()
 
     try:
         if RESTORE_REQUEST.exists():
@@ -1247,13 +1371,17 @@ def run(app, *, headless: bool, enable_ros: bool) -> None:
 
     if enable_ros:
         log("Ready for topic_based_ros2_control")
-        log(f"  /{JOINT_COMMANDS_TOPIC} → ArticulationController → /{JOINT_STATES_TOPIC}")
+        log(
+            f"  /{JOINT_COMMANDS_TOPIC} → JointCommandApplier + ArticulationController "
+            f"→ /{JOINT_STATES_TOPIC}"
+        )
     else:
         log("Ready (PhysX playing, ROS bridge skipped)")
 
     while app.is_running():
         restorer.poll(stage, timeline)
         piece_poses.poll(stage)
+        joint_cmds.poll()
         if not restorer.busy and not timeline.is_playing():
             timeline.play()
         app.update()

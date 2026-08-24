@@ -43,8 +43,54 @@ install_desktop() {
   apt-get update -qq
   apt-get install -y -qq --no-install-recommends \
     tigervnc-standalone-server tigervnc-common \
-    xfce4 xfce4-terminal dbus-x11 \
+    xfce4 xfce4-terminal dbus-x11 xfconf \
     x11-xserver-utils
+}
+
+# xfwm4 default: Alt+Left = move window, Alt+Right = window menu.
+# Isaac Sim / Omniverse uses Alt+mouse for orbit/pan — give Alt to the app.
+release_alt_click_to_apps() {
+  local xml_dir="${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml"
+  local xml="${xml_dir}/xfwm4.xml"
+  mkdir -p "$xml_dir"
+  python3 - "$xml" <<'PY'
+from pathlib import Path
+import sys
+import xml.etree.ElementTree as ET
+
+path = Path(sys.argv[1])
+if path.is_file():
+    tree = ET.parse(path)
+    root = tree.getroot()
+else:
+    root = ET.Element("channel", name="xfwm4", version="1.0")
+    tree = ET.ElementTree(root)
+
+general = None
+for child in list(root):
+    if child.get("name") == "general":
+        general = child
+        break
+if general is None:
+    general = ET.SubElement(root, "property", name="general", type="empty")
+
+easy = None
+for child in list(general):
+    if child.get("name") == "easy_click":
+        easy = child
+        break
+if easy is None:
+    easy = ET.SubElement(general, "property", name="easy_click", type="string")
+easy.set("type", "string")
+easy.set("value", "Super")
+tree.write(path, encoding="UTF-8", xml_declaration=True)
+PY
+
+  # Live session: Super+click still moves/resizes windows; Alt+click goes to Isaac.
+  if display_up && command -v xfconf-query >/dev/null 2>&1; then
+    DISPLAY=":${DISPLAY_NUM}" xfconf-query -c xfwm4 -p /general/easy_click \
+      -n -t string -s Super >/dev/null 2>&1 || true
+  fi
 }
 
 write_xstartup() {
@@ -57,6 +103,17 @@ unset DBUS_SESSION_BUS_ADDRESS
 export XKL_XMODMAP_DISABLE=1
 export XDG_SESSION_TYPE=x11
 export XDG_CURRENT_DESKTOP=XFCE
+# Alt+click is for Isaac Sim (orbit/pan). Window move/menu is Super+click.
+(
+  i=0
+  while [ "$i" -lt 40 ]; do
+    if command -v xfconf-query >/dev/null 2>&1; then
+      xfconf-query -c xfwm4 -p /general/easy_click -n -t string -s Super >/dev/null 2>&1 && break
+    fi
+    i=$((i + 1))
+    sleep 0.25
+  done
+) &
 if command -v dbus-launch >/dev/null 2>&1; then
   exec dbus-launch --exit-with-session startxfce4
 fi
@@ -79,10 +136,13 @@ write_passwd() {
 start_vnc() {
   if display_up; then
     echo "VNC already listening on 127.0.0.1:${VNC_PORT} (display :${DISPLAY_NUM})"
+    release_alt_click_to_apps
+    echo "xfwm4 easy_click=Super (Alt+mouse goes to Isaac Sim, not XFCE)"
     return 0
   fi
 
   install_desktop
+  release_alt_click_to_apps
   write_xstartup
   write_passwd
 
@@ -111,7 +171,9 @@ start_vnc() {
   local i
   for i in $(seq 1 40); do
     if display_up; then
+      release_alt_click_to_apps
       echo "XFCE VNC ready on 127.0.0.1:${VNC_PORT}  (DISPLAY=:${DISPLAY_NUM})"
+      echo "xfwm4 easy_click=Super (Alt+mouse goes to Isaac Sim, not XFCE)"
       echo "Tunnel from the laptop — do not publish this port:"
       echo "  ssh -N -L ${VNC_PORT}:127.0.0.1:${VNC_PORT} USER@HOST"
       echo "  then open vnc://127.0.0.1:${VNC_PORT}"

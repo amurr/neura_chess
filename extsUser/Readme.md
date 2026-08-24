@@ -1,1 +1,0 @@
-extsUser is this world’s private Isaac/Kit extension folder

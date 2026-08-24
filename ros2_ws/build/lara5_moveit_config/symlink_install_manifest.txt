@@ -13,6 +13,8 @@
 /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/cmake/lara5_moveit_configConfig.cmake
 /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/cmake/lara5_moveit_configConfig-version.cmake
 /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/package.xml
+/workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/__pycache__/mtc_demo_isaac.launch.cpython-310.pyc
+/workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/__pycache__/mtc_run.launch.cpython-310.pyc
 /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/demo.launch.py
 /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/demo_with_gripper.launch.py
 /workspace/neura_chess/ros2_ws/install/lara5_moveit_config/share/lara5_moveit_config/launch/isaac_dds_env.launch.py

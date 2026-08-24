@@ -33,3 +33,8 @@ arm_controller:
 gripper_controller:
   ros__parameters:
     joint: lara5_gripper_finger_joint
+    # Isaac jaw can oscillate at the URDF limit; don't block the whole MTC execute.
+    allow_stalling: true
+    stall_timeout: 1.0
+    stall_velocity_threshold: 100.0
+    goal_tolerance: 0.2
