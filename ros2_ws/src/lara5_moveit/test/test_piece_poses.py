@@ -9,7 +9,7 @@ from pathlib import Path
 
 import pytest
 
-from lara5_moveit.moveit_chess import main
+from lara5_moveit.moveit_chess import main, motion_steps
 from lara5_moveit.piece_poses import (
     eef_targets,
     fetch_isaac_snapshot,
@@ -201,3 +201,29 @@ def test_missing_square_cli(tmp_path: Path, capsys, monkeypatch):
     rc = main(['--poses-json', str(path), '--print-only'])
     assert rc == 1
     assert '--square' in capsys.readouterr().out
+
+
+def test_motion_steps_pick_and_place():
+    piece = piece_at_square(SNAPSHOT, 'e2')
+    targets = eef_targets(piece, place_square='e4', snapshot=SNAPSHOT)
+    steps = motion_steps(targets)
+    kinds = [step['kind'] for step in steps]
+    names = [step['name'] for step in steps]
+    assert kinds[0] == 'gripper'
+    assert 'named' in kinds
+    assert 'pose' in kinds
+    assert 'cartesian' in kinds
+    assert 'pick hover' in names
+    assert 'place hover' in names
+    assert names[-1] == 'move to stand'
+    assert steps[0]['goal'] == 'open'
+    assert any(step.get('goal') == 'close' for step in steps)
+
+
+def test_motion_steps_pick_only():
+    piece = piece_at_square(SNAPSHOT, 'e2')
+    targets = eef_targets(piece)
+    names = [step['name'] for step in motion_steps(targets)]
+    assert 'pick hover' in names
+    assert 'place hover' not in names
+    assert names[-1] == 'move to stand'
