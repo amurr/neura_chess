@@ -26,6 +26,7 @@ DictionaryDataInjection:
 
 
 # moveit_master_1 contains simpliest version of action service translating python master node commands into MoveGroupInterface actions sent to move_group server node
+changed moveit_master_1 to moveit_master: in github the old version
 
 
 # ArticulationOrchestrator Node client sends actions to moveit_master_1 server node
