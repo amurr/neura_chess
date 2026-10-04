@@ -1,0 +1,160 @@
+[0.120s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'lara5_mtc']
+[0.120s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['lara5_mtc'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x79b4f87dc040>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x79b4f89691e0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x79b4f89691e0>>, mixin_verb=('build',))
+[0.275s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.276s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/Gazebo.meta'
+[0.277s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastdds.meta'
+[0.277s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastrtps.meta'
+[0.277s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.277s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.277s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.277s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.277s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.277s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/ros2_ws/neura_chess/ros2_ws/src'
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.290s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_description) by extensions ['ignore', 'ignore_ament_install']
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_description) by extension 'ignore'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_description) by extension 'ignore_ament_install'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_description) by extensions ['colcon_pkg']
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_description) by extension 'colcon_pkg'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_description) by extensions ['colcon_meta']
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_description) by extension 'colcon_meta'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_description) by extensions ['ros']
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_description) by extension 'ros'
+[0.295s] DEBUG:colcon.colcon_core.package_identification:Package 'lara5_description' with type 'ros.ament_cmake' and name 'lara5_description'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit) by extensions ['ignore', 'ignore_ament_install']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit) by extension 'ignore'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit) by extension 'ignore_ament_install'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit) by extensions ['colcon_pkg']
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit) by extension 'colcon_pkg'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit) by extensions ['colcon_meta']
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit) by extension 'colcon_meta'
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit) by extensions ['ros']
+[0.296s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit) by extension 'ros'
+[0.297s] DEBUG:colcon.colcon_core.package_identification:Package 'lara5_moveit' with type 'ros.ament_python' and name 'lara5_moveit'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit_config) by extensions ['ignore', 'ignore_ament_install']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit_config) by extension 'ignore'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit_config) by extension 'ignore_ament_install'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit_config) by extensions ['colcon_pkg']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit_config) by extension 'colcon_pkg'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit_config) by extensions ['colcon_meta']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit_config) by extension 'colcon_meta'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit_config) by extensions ['ros']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit_config) by extension 'ros'
+[0.298s] DEBUG:colcon.colcon_core.package_identification:Package 'lara5_moveit_config' with type 'ros.ament_cmake' and name 'lara5_moveit_config'
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_mtc) by extensions ['ignore', 'ignore_ament_install']
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_mtc) by extension 'ignore'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_mtc) by extension 'ignore_ament_install'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_mtc) by extensions ['colcon_pkg']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_mtc) by extension 'colcon_pkg'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_mtc) by extensions ['colcon_meta']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_mtc) by extension 'colcon_meta'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_mtc) by extensions ['ros']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_mtc) by extension 'ros'
+[0.300s] DEBUG:colcon.colcon_core.package_identification:Package 'lara5_mtc' with type 'ros.ament_cmake' and name 'lara5_mtc'
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.300s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.300s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.300s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.300s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.300s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.326s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'lara5_description' in 'lara5_description'
+[0.326s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'lara5_moveit' in 'lara5_moveit'
+[0.326s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'lara5_moveit_config' in 'lara5_moveit_config'
+[0.327s] Level 5:colcon.colcon_core.verb:set package 'lara5_mtc' build argument 'cmake_args' from command line to 'None'
+[0.327s] Level 5:colcon.colcon_core.verb:set package 'lara5_mtc' build argument 'cmake_target' from command line to 'None'
+[0.327s] Level 5:colcon.colcon_core.verb:set package 'lara5_mtc' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.327s] Level 5:colcon.colcon_core.verb:set package 'lara5_mtc' build argument 'cmake_clean_cache' from command line to 'False'
+[0.327s] Level 5:colcon.colcon_core.verb:set package 'lara5_mtc' build argument 'cmake_clean_first' from command line to 'False'
+[0.327s] Level 5:colcon.colcon_core.verb:set package 'lara5_mtc' build argument 'cmake_force_configure' from command line to 'False'
+[0.327s] Level 5:colcon.colcon_core.verb:set package 'lara5_mtc' build argument 'ament_cmake_args' from command line to 'None'
+[0.327s] Level 5:colcon.colcon_core.verb:set package 'lara5_mtc' build argument 'catkin_cmake_args' from command line to 'None'
+[0.327s] Level 5:colcon.colcon_core.verb:set package 'lara5_mtc' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.327s] DEBUG:colcon.colcon_core.verb:Building package 'lara5_mtc' with the following arguments: {'ament_cmake_args': None, 'build_base': '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc', 'merge_install': False, 'path': '/ros2_ws/neura_chess/ros2_ws/src/lara5_mtc', 'symlink_install': False, 'test_result_base': None}
+[0.327s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.330s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.331s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/ros2_ws/neura_chess/ros2_ws/src/lara5_mtc' with build type 'ament_cmake'
+[0.331s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/ros2_ws/neura_chess/ros2_ws/src/lara5_mtc'
+[0.333s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.333s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.333s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.346s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc -- -j8 -l8
+[1.709s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc -- -j8 -l8
+[1.722s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc
+[1.734s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(lara5_mtc)
+[1.737s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc
+[1.738s] Level 1:colcon.colcon_core.environment:checking '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc' for CMake module files
+[1.739s] Level 1:colcon.colcon_core.environment:checking '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc' for CMake config files
+[1.739s] Level 1:colcon.colcon_core.shell:create_environment_hook('lara5_mtc', 'cmake_prefix_path')
+[1.740s] INFO:colcon.colcon_core.shell:Creating environment hook '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/hook/cmake_prefix_path.ps1'
+[1.741s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/hook/cmake_prefix_path.dsv'
+[1.742s] INFO:colcon.colcon_core.shell:Creating environment hook '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/hook/cmake_prefix_path.sh'
+[1.743s] Level 1:colcon.colcon_core.environment:checking '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/lib'
+[1.744s] Level 1:colcon.colcon_core.environment:checking '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/bin'
+[1.744s] Level 1:colcon.colcon_core.environment:checking '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/lib/pkgconfig/lara5_mtc.pc'
+[1.746s] Level 1:colcon.colcon_core.environment:checking '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/lib/python3.10/site-packages'
+[1.747s] Level 1:colcon.colcon_core.environment:checking '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/bin'
+[1.747s] INFO:colcon.colcon_core.shell:Creating package script '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/package.ps1'
+[1.749s] INFO:colcon.colcon_core.shell:Creating package descriptor '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/package.dsv'
+[1.750s] INFO:colcon.colcon_core.shell:Creating package script '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/package.sh'
+[1.751s] INFO:colcon.colcon_core.shell:Creating package script '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/package.bash'
+[1.767s] INFO:colcon.colcon_core.shell:Creating package script '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/package.zsh'
+[1.768s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/colcon-core/packages/lara5_mtc)
+[1.769s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(lara5_mtc)
+[1.770s] Level 1:colcon.colcon_core.environment:checking '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc' for CMake module files
+[1.770s] Level 1:colcon.colcon_core.environment:checking '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc' for CMake config files
+[1.771s] Level 1:colcon.colcon_core.shell:create_environment_hook('lara5_mtc', 'cmake_prefix_path')
+[1.771s] INFO:colcon.colcon_core.shell:Creating environment hook '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/hook/cmake_prefix_path.ps1'
+[1.772s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/hook/cmake_prefix_path.dsv'
+[1.772s] INFO:colcon.colcon_core.shell:Creating environment hook '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/hook/cmake_prefix_path.sh'
+[1.772s] Level 1:colcon.colcon_core.environment:checking '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/lib'
+[1.773s] Level 1:colcon.colcon_core.environment:checking '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/bin'
+[1.773s] Level 1:colcon.colcon_core.environment:checking '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/lib/pkgconfig/lara5_mtc.pc'
+[1.773s] Level 1:colcon.colcon_core.environment:checking '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/lib/python3.10/site-packages'
+[1.773s] Level 1:colcon.colcon_core.environment:checking '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/bin'
+[1.773s] INFO:colcon.colcon_core.shell:Creating package script '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/package.ps1'
+[1.774s] INFO:colcon.colcon_core.shell:Creating package descriptor '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/package.dsv'
+[1.775s] INFO:colcon.colcon_core.shell:Creating package script '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/package.sh'
+[1.775s] INFO:colcon.colcon_core.shell:Creating package script '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/package.bash'
+[1.775s] INFO:colcon.colcon_core.shell:Creating package script '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/package.zsh'
+[1.776s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/colcon-core/packages/lara5_mtc)
+[1.776s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.776s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.776s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.776s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.784s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[1.784s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.784s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.784s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.787s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.Spawn.ExecFailed: /usr/bin/dbus-launch terminated abnormally without any error message
+[1.788s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.788s] INFO:colcon.colcon_core.shell:Creating prefix script '/ros2_ws/neura_chess/ros2_ws/src/install/local_setup.ps1'
+[1.790s] INFO:colcon.colcon_core.shell:Creating prefix util module '/ros2_ws/neura_chess/ros2_ws/src/install/_local_setup_util_ps1.py'
+[1.793s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/ros2_ws/neura_chess/ros2_ws/src/install/setup.ps1'
+[1.795s] INFO:colcon.colcon_core.shell:Creating prefix script '/ros2_ws/neura_chess/ros2_ws/src/install/local_setup.sh'
+[1.795s] INFO:colcon.colcon_core.shell:Creating prefix util module '/ros2_ws/neura_chess/ros2_ws/src/install/_local_setup_util_sh.py'
+[1.796s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/ros2_ws/neura_chess/ros2_ws/src/install/setup.sh'
+[1.798s] INFO:colcon.colcon_core.shell:Creating prefix script '/ros2_ws/neura_chess/ros2_ws/src/install/local_setup.bash'
+[1.799s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/ros2_ws/neura_chess/ros2_ws/src/install/setup.bash'
+[1.800s] INFO:colcon.colcon_core.shell:Creating prefix script '/ros2_ws/neura_chess/ros2_ws/src/install/local_setup.zsh'
+[1.800s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/ros2_ws/neura_chess/ros2_ws/src/install/setup.zsh'

@@ -1,0 +1,54 @@
+[0.015s] Invoking command in '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc -- -j8 -l8
+[0.045s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.181s] -- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+[0.210s] -- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.214s] -- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.220s] -- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.230s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.242s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.284s] -- Found rmw_implementation_cmake: 6.1.3 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.286s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.430s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.497s] -- Found moveit_task_constructor_core: 0.1.3 (/opt/ros/humble/share/moveit_task_constructor_core/cmake)
+[0.545s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread 
+[0.580s] -- Found parameter_traits: 0.7.5 (/opt/ros/humble/share/parameter_traits/cmake)
+[0.587s] -- Found rclcpp_lifecycle: 16.0.19 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)
+[0.668s] -- library: /usr/lib/x86_64-linux-gnu/libcurl.so
+[0.736s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.008s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread chrono 
+[1.049s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: date_time filesystem program_options system thread 
+[1.063s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: thread system filesystem regex date_time program_options 
+[1.094s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread 
+[1.175s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.256s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.256s] -- Configured cppcheck include dirs: 
+[1.257s] -- Configured cppcheck exclude dirs and/or files: 
+[1.257s] -- Added test 'lint_cmake' to check CMake code style
+[1.258s] -- Added test 'uncrustify' to check C / C++ code style
+[1.258s] -- Configured uncrustify additional arguments: 
+[1.258s] -- Added test 'xmllint' to check XML markup files
+[1.259s] -- Configuring done
+[1.291s] -- Generating done
+[1.299s] -- Build files have been written to: /ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc
+[1.334s] [35m[1mConsolidate compiler generated dependencies of target mtc_pose_sequence[0m
+[1.363s] [100%] Built target mtc_pose_sequence
+[1.378s] Invoked command in '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc -- -j8 -l8
+[1.391s] Invoking command in '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc
+[1.399s] -- Install configuration: ""
+[1.399s] -- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/lib/lara5_mtc/mtc_pose_sequence
+[1.399s] -- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/ament_index/resource_index/package_run_dependencies/lara5_mtc
+[1.400s] -- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/ament_index/resource_index/parent_prefix_path/lara5_mtc
+[1.400s] -- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/environment/ament_prefix_path.sh
+[1.400s] -- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/environment/ament_prefix_path.dsv
+[1.400s] -- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/environment/path.sh
+[1.400s] -- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/environment/path.dsv
+[1.400s] -- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/local_setup.bash
+[1.400s] -- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/local_setup.sh
+[1.401s] -- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/local_setup.zsh
+[1.401s] -- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/local_setup.dsv
+[1.401s] -- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/package.dsv
+[1.401s] -- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/ament_index/resource_index/packages/lara5_mtc
+[1.401s] -- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/cmake/lara5_mtcConfig.cmake
+[1.402s] -- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/cmake/lara5_mtcConfig-version.cmake
+[1.402s] -- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/package.xml
+[1.406s] Invoked command in '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc

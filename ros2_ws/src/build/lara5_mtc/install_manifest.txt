@@ -1,0 +1,17 @@
+/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/lib/lara5_mtc/mtc_pose_sequence
+/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/launch/mtc_pose_sequence.launch.py
+/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/ament_index/resource_index/package_run_dependencies/lara5_mtc
+/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/ament_index/resource_index/parent_prefix_path/lara5_mtc
+/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/environment/ament_prefix_path.sh
+/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/environment/ament_prefix_path.dsv
+/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/environment/path.sh
+/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/environment/path.dsv
+/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/local_setup.bash
+/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/local_setup.sh
+/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/local_setup.zsh
+/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/local_setup.dsv
+/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/package.dsv
+/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/ament_index/resource_index/packages/lara5_mtc
+/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/cmake/lara5_mtcConfig.cmake
+/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/cmake/lara5_mtcConfig-version.cmake
+/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/package.xml

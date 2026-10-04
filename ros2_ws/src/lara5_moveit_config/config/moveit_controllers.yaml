@@ -1,0 +1,36 @@
+# Loaded by MoveItConfigsBuilder. No ros2_control here: these action namespaces are
+# served by lara5_moveit/fake_controllers (started by rviz_moveit.launch.py), or by
+# the robot/Isaac Sim driver when one is running.
+trajectory_execution:
+  allowed_execution_duration_scaling: 2.0
+  allowed_goal_duration_margin: 5.0
+  allowed_start_tolerance: 0.1
+
+moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager
+
+moveit_simple_controller_manager:
+  controller_names:
+    - arm_controller
+    - gripper_controller
+
+#ns means namespace
+#/arm_controller/follow_joint_trajectory_safe : controller/namespace
+#keeps identifiers unique
+  arm_controller:
+    action_ns: follow_joint_trajectory_safe
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - lara5_joint1
+      - lara5_joint2
+      - lara5_joint3
+      - lara5_joint4
+      - lara5_joint5
+      - lara5_joint6
+  gripper_controller:
+    action_ns: gripper_cmd
+    type: GripperCommand
+    default: true
+    joints:
+      - lara5_gripper_finger_joint
+    max_effort: 20.0

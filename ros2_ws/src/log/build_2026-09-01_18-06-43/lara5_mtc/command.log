@@ -1,0 +1,2 @@
+Invoking command in '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc -- -j8 -l8
+Invoked command in '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc -- -j8 -l8

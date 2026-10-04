@@ -1,0 +1,68 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /ros2_ws/neura_chess/ros2_ws/src/build/lara5_description
+-- Install configuration: ""
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/Link4_body.stl
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/Link1_body.stl
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/Link0_body.stl
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/Link3_rings.stl
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/README.md
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/Link1_rings.stl
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/Link5_rings.stl
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/so101
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/so101/README.md
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/so101/wrist_roll_follower_so101_v1.stl
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/so101/moving_jaw_so101_v1.stl
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/Link3_body.stl
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/Link0_connector.stl
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/Link2_body.stl
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/Link6_body.stl
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/Link5_body.stl
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/collision
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/collision/Link4_body.stl
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/collision/Link1_body.stl
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/collision/Link0_body.stl
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/collision/Link3_body.stl
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/collision/Link2_body.stl
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/collision/Link6_body.stl
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/collision/Link5_body.stl
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/urdf
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/urdf/lara5.urdf.xacro
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/urdf/lara5.urdf
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/urdf/lara5_dynamic_parameters_nominal.xacro
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/urdf/lara5_limits.xacro
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/urdf/lara5_kinematic_parameters_nominal.xacro
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/urdf/README.txt
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/urdf/lara5_macro.xacro
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/urdf/so101_gripper.xacro
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/ament_index/resource_index/package_run_dependencies/lara5_description
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/ament_index/resource_index/parent_prefix_path/lara5_description
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/environment/ament_prefix_path.sh
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/environment/ament_prefix_path.dsv
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/environment/path.sh
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/environment/path.dsv
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/local_setup.bash
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/local_setup.sh
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/local_setup.zsh
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/local_setup.dsv
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/package.dsv
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/ament_index/resource_index/packages/lara5_description
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/cmake/lara5_descriptionConfig.cmake
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/cmake/lara5_descriptionConfig-version.cmake
+-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/package.xml

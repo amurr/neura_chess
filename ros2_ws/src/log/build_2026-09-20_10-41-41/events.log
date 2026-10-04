@@ -1,0 +1,12 @@
+[0.000000] (-) TimerEvent: {}
+[0.000198] (-) JobUnselected: {'identifier': 'lara5_description'}
+[0.000409] (-) JobUnselected: {'identifier': 'lara5_mtc'}
+[0.000426] (-) JobUnselected: {'identifier': 'moveit_master'}
+[0.000440] (-) JobUnselected: {'identifier': 'orchestration'}
+[0.000453] (-) JobUnselected: {'identifier': 'planning_scene_update'}
+[0.000472] (lara5_moveit) JobQueued: {'identifier': 'lara5_moveit', 'dependencies': OrderedDict([('lara5_description', '/home/artem/robotics/neura_chess/ros2_ws/src/install/lara5_description')])}
+[0.000492] (lara5_moveit_config) JobQueued: {'identifier': 'lara5_moveit_config', 'dependencies': OrderedDict([('lara5_description', '/home/artem/robotics/neura_chess/ros2_ws/src/install/lara5_description'), ('lara5_moveit', '/home/artem/robotics/neura_chess/ros2_ws/src/install/lara5_moveit')])}
+[0.000511] (lara5_moveit) JobStarted: {'identifier': 'lara5_moveit'}
+[0.014194] (lara5_moveit) JobEnded: {'identifier': 'lara5_moveit', 'rc': 1}
+[0.024665] (lara5_moveit_config) JobSkipped: {'identifier': 'lara5_moveit_config'}
+[0.024748] (-) EventReactorShutdown: {}

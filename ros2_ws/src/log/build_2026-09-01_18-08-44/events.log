@@ -1,0 +1,278 @@
+[0.000000] (-) TimerEvent: {}
+[0.000447] (lara5_description) JobQueued: {'identifier': 'lara5_description', 'dependencies': OrderedDict()}
+[0.000662] (lara5_mtc) JobQueued: {'identifier': 'lara5_mtc', 'dependencies': OrderedDict()}
+[0.000702] (lara5_moveit) JobQueued: {'identifier': 'lara5_moveit', 'dependencies': OrderedDict([('lara5_description', '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_description')])}
+[0.000722] (lara5_moveit_config) JobQueued: {'identifier': 'lara5_moveit_config', 'dependencies': OrderedDict([('lara5_description', '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_description'), ('lara5_moveit', '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit')])}
+[0.000745] (lara5_description) JobStarted: {'identifier': 'lara5_description'}
+[0.008429] (lara5_mtc) JobStarted: {'identifier': 'lara5_mtc'}
+[0.015851] (lara5_description) JobProgress: {'identifier': 'lara5_description', 'progress': 'cmake'}
+[0.016705] (lara5_description) JobProgress: {'identifier': 'lara5_description', 'progress': 'build'}
+[0.017633] (lara5_description) Command: {'cmd': ['/usr/bin/cmake', '--build', '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_description', '--', '-j8', '-l8'], 'cwd': '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_description', 'env': OrderedDict([('HOSTNAME', 'artem-BDZ-WXX9'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws/neura_chess/ros2_ws'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('FASTRTPS_DEFAULT_PROFILES_FILE', '/root/.ros/fastdds.xml'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_description'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.021530] (lara5_mtc) JobProgress: {'identifier': 'lara5_mtc', 'progress': 'cmake'}
+[0.022553] (lara5_mtc) JobProgress: {'identifier': 'lara5_mtc', 'progress': 'build'}
+[0.023214] (lara5_mtc) Command: {'cmd': ['/usr/bin/cmake', '--build', '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc', '--', '-j8', '-l8'], 'cwd': '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc', 'env': OrderedDict([('HOSTNAME', 'artem-BDZ-WXX9'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws/neura_chess/ros2_ws'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('FASTRTPS_DEFAULT_PROFILES_FILE', '/root/.ros/fastdds.xml'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.052269] (lara5_mtc) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.060789] (lara5_description) CommandEnded: {'returncode': 0}
+[0.061414] (lara5_description) JobProgress: {'identifier': 'lara5_description', 'progress': 'install'}
+[0.070545] (lara5_description) Command: {'cmd': ['/usr/bin/cmake', '--install', '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_description'], 'cwd': '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_description', 'env': OrderedDict([('HOSTNAME', 'artem-BDZ-WXX9'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws/neura_chess/ros2_ws'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('FASTRTPS_DEFAULT_PROFILES_FILE', '/root/.ros/fastdds.xml'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_description'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.079309] (lara5_description) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.079636] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5\n'}
+[0.079789] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes\n'}
+[0.079920] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/Link4_body.stl\n'}
+[0.080039] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/Link1_body.stl\n'}
+[0.080167] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/Link0_body.stl\n'}
+[0.080293] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/Link3_rings.stl\n'}
+[0.080409] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/README.md\n'}
+[0.080535] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/Link1_rings.stl\n'}
+[0.080676] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/Link5_rings.stl\n'}
+[0.080784] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/so101\n'}
+[0.080894] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/so101/README.md\n'}
+[0.081005] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/so101/wrist_roll_follower_so101_v1.stl\n'}
+[0.081140] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/so101/moving_jaw_so101_v1.stl\n'}
+[0.081248] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/Link3_body.stl\n'}
+[0.081367] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/Link0_connector.stl\n'}
+[0.081499] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/Link2_body.stl\n'}
+[0.081613] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/Link6_body.stl\n'}
+[0.081698] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/meshes/Link5_body.stl\n'}
+[0.081770] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/collision\n'}
+[0.081867] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/collision/Link4_body.stl\n'}
+[0.081952] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/collision/Link1_body.stl\n'}
+[0.082040] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/collision/Link0_body.stl\n'}
+[0.082126] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/collision/Link3_body.stl\n'}
+[0.082234] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/collision/Link2_body.stl\n'}
+[0.082353] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/collision/Link6_body.stl\n'}
+[0.082460] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/collision/Link5_body.stl\n'}
+[0.082552] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/urdf\n'}
+[0.082649] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/urdf/lara5.urdf.xacro\n'}
+[0.082735] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/urdf/lara5.urdf\n'}
+[0.082815] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/urdf/lara5_dynamic_parameters_nominal.xacro\n'}
+[0.082893] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/urdf/lara5_limits.xacro\n'}
+[0.082967] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/urdf/lara5_kinematic_parameters_nominal.xacro\n'}
+[0.083039] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/urdf/README.txt\n'}
+[0.083130] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/urdf/lara5_macro.xacro\n'}
+[0.083205] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/lara5/urdf/so101_gripper.xacro\n'}
+[0.083284] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/ament_index/resource_index/package_run_dependencies/lara5_description\n'}
+[0.083360] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/ament_index/resource_index/parent_prefix_path/lara5_description\n'}
+[0.083432] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/environment/ament_prefix_path.sh\n'}
+[0.083500] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/environment/ament_prefix_path.dsv\n'}
+[0.083572] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/environment/path.sh\n'}
+[0.083672] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/environment/path.dsv\n'}
+[0.083754] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/local_setup.bash\n'}
+[0.083835] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/local_setup.sh\n'}
+[0.083918] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/local_setup.zsh\n'}
+[0.083992] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/local_setup.dsv\n'}
+[0.084069] (lara5_description) StdoutLine: {'line': b'-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/package.dsv\n'}
+[0.084139] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/ament_index/resource_index/packages/lara5_description\n'}
+[0.084239] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/cmake/lara5_descriptionConfig.cmake\n'}
+[0.084395] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/cmake/lara5_descriptionConfig-version.cmake\n'}
+[0.084642] (lara5_description) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/package.xml\n'}
+[0.085215] (lara5_description) CommandEnded: {'returncode': 0}
+[0.102965] (-) TimerEvent: {}
+[0.124816] (lara5_description) JobEnded: {'identifier': 'lara5_description', 'rc': 0}
+[0.125797] (lara5_moveit) JobStarted: {'identifier': 'lara5_moveit'}
+[0.203081] (-) TimerEvent: {}
+[0.211617] (lara5_mtc) StdoutLine: {'line': b'-- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.247757] (lara5_mtc) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.250412] (lara5_mtc) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.257045] (lara5_mtc) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.272313] (lara5_mtc) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.286171] (lara5_mtc) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.303208] (-) TimerEvent: {}
+[0.333747] (lara5_mtc) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.3 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.335403] (lara5_mtc) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.403323] (-) TimerEvent: {}
+[0.489998] (lara5_mtc) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.503455] (-) TimerEvent: {}
+[0.556613] (lara5_mtc) StdoutLine: {'line': b'-- Found moveit_task_constructor_core: 0.1.3 (/opt/ros/humble/share/moveit_task_constructor_core/cmake)\n'}
+[0.595648] (lara5_mtc) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread \n'}
+[0.603558] (-) TimerEvent: {}
+[0.627342] (lara5_mtc) StdoutLine: {'line': b'-- Found parameter_traits: 0.7.5 (/opt/ros/humble/share/parameter_traits/cmake)\n'}
+[0.637207] (lara5_mtc) StdoutLine: {'line': b'-- Found rclcpp_lifecycle: 16.0.19 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)\n'}
+[0.703674] (-) TimerEvent: {}
+[0.706720] (lara5_mtc) StdoutLine: {'line': b'-- library: /usr/lib/x86_64-linux-gnu/libcurl.so\n'}
+[0.786214] (lara5_mtc) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[0.803770] (-) TimerEvent: {}
+[0.901041] (lara5_moveit) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../build/lara5_moveit', 'build', '--build-base', '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_moveit/build', 'install', '--record', '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_moveit/install.log', '--install-scripts', '$base/lib/lara5_moveit', '--single-version-externally-managed', 'install_data'], 'cwd': '/ros2_ws/neura_chess/ros2_ws/src/lara5_moveit', 'env': {'HOSTNAME': 'artem-BDZ-WXX9', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/ros2_ws/neura_chess/ros2_ws', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'FASTRTPS_DEFAULT_PROFILES_FILE': '/root/.ros/fastdds.xml', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'ROS_DOMAIN_ID': '0', 'AMENT_PREFIX_PATH': '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_description:/opt/ros/humble', 'DEBIAN_FRONTEND': 'noninteractive', 'PWD': '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_moveit', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_moveit/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_description'}, 'shell': False}
+[0.906107] (-) TimerEvent: {}
+[1.006400] (-) TimerEvent: {}
+[1.067957] (lara5_mtc) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread chrono \n'}
+[1.108778] (-) TimerEvent: {}
+[1.109699] (lara5_mtc) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: date_time filesystem program_options system thread \n'}
+[1.129945] (lara5_mtc) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: thread system filesystem regex date_time program_options \n'}
+[1.155084] (lara5_mtc) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread \n'}
+[1.185907] (lara5_moveit) StdoutLine: {'line': b'running egg_info\n'}
+[1.186648] (lara5_moveit) StdoutLine: {'line': b'writing ../build/lara5_moveit/lara5_moveit.egg-info/PKG-INFO\n'}
+[1.186883] (lara5_moveit) StdoutLine: {'line': b'writing dependency_links to ../build/lara5_moveit/lara5_moveit.egg-info/dependency_links.txt\n'}
+[1.187076] (lara5_moveit) StdoutLine: {'line': b'writing entry points to ../build/lara5_moveit/lara5_moveit.egg-info/entry_points.txt\n'}
+[1.187195] (lara5_moveit) StdoutLine: {'line': b'writing requirements to ../build/lara5_moveit/lara5_moveit.egg-info/requires.txt\n'}
+[1.187287] (lara5_moveit) StdoutLine: {'line': b'writing top-level names to ../build/lara5_moveit/lara5_moveit.egg-info/top_level.txt\n'}
+[1.189312] (lara5_moveit) StdoutLine: {'line': b"reading manifest file '../build/lara5_moveit/lara5_moveit.egg-info/SOURCES.txt'\n"}
+[1.190415] (lara5_moveit) StdoutLine: {'line': b"writing manifest file '../build/lara5_moveit/lara5_moveit.egg-info/SOURCES.txt'\n"}
+[1.190542] (lara5_moveit) StdoutLine: {'line': b'running build\n'}
+[1.190621] (lara5_moveit) StdoutLine: {'line': b'running build_py\n'}
+[1.191185] (lara5_moveit) StdoutLine: {'line': b'running install\n'}
+[1.191465] (lara5_moveit) StdoutLine: {'line': b'running install_lib\n'}
+[1.192915] (lara5_moveit) StdoutLine: {'line': b'running install_data\n'}
+[1.193263] (lara5_moveit) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.195523] (lara5_moveit) StdoutLine: {'line': b"removing '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit/lib/python3.10/site-packages/lara5_moveit-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[1.195802] (lara5_moveit) StdoutLine: {'line': b'Copying ../build/lara5_moveit/lara5_moveit.egg-info to /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit/lib/python3.10/site-packages/lara5_moveit-0.0.0-py3.10.egg-info\n'}
+[1.196548] (lara5_moveit) StdoutLine: {'line': b'running install_scripts\n'}
+[1.208863] (-) TimerEvent: {}
+[1.219708] (lara5_moveit) StdoutLine: {'line': b'Installing chess_scene_collisions script to /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit/lib/lara5_moveit\n'}
+[1.220229] (lara5_moveit) StdoutLine: {'line': b'Installing moveit_master script to /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit/lib/lara5_moveit\n'}
+[1.220409] (lara5_moveit) StdoutLine: {'line': b'Installing teach_board script to /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit/lib/lara5_moveit\n'}
+[1.220774] (lara5_moveit) StdoutLine: {'line': b"writing list of installed files to '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_moveit/install.log'\n"}
+[1.232497] (lara5_mtc) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[1.255824] (lara5_moveit) CommandEnded: {'returncode': 0}
+[1.265434] (lara5_moveit) JobEnded: {'identifier': 'lara5_moveit', 'rc': 0}
+[1.266576] (lara5_moveit_config) JobStarted: {'identifier': 'lara5_moveit_config'}
+[1.283509] (lara5_moveit_config) JobProgress: {'identifier': 'lara5_moveit_config', 'progress': 'cmake'}
+[1.284882] (lara5_moveit_config) JobProgress: {'identifier': 'lara5_moveit_config', 'progress': 'build'}
+[1.285508] (lara5_moveit_config) Command: {'cmd': ['/usr/bin/cmake', '--build', '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_moveit_config', '--', '-j8', '-l8'], 'cwd': '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_moveit_config', 'env': OrderedDict([('HOSTNAME', 'artem-BDZ-WXX9'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws/neura_chess/ros2_ws'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('FASTRTPS_DEFAULT_PROFILES_FILE', '/root/.ros/fastdds.xml'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit:/ros2_ws/neura_chess/ros2_ws/src/install/lara5_description:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_moveit_config'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_description:/opt/ros/humble')]), 'shell': False}
+[1.309073] (-) TimerEvent: {}
+[1.343920] (lara5_moveit_config) CommandEnded: {'returncode': 0}
+[1.344632] (lara5_moveit_config) JobProgress: {'identifier': 'lara5_moveit_config', 'progress': 'install'}
+[1.344998] (lara5_moveit_config) Command: {'cmd': ['/usr/bin/cmake', '--install', '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_moveit_config'], 'cwd': '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_moveit_config', 'env': OrderedDict([('HOSTNAME', 'artem-BDZ-WXX9'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws/neura_chess/ros2_ws'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('FASTRTPS_DEFAULT_PROFILES_FILE', '/root/.ros/fastdds.xml'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit:/ros2_ws/neura_chess/ros2_ws/src/install/lara5_description:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_moveit_config'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_description:/opt/ros/humble')]), 'shell': False}
+[1.347010] (lara5_mtc) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[1.348757] (lara5_mtc) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[1.348926] (lara5_mtc) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[1.349021] (lara5_mtc) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.351705] (lara5_mtc) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[1.351904] (lara5_mtc) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[1.352015] (lara5_mtc) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.352187] (lara5_mtc) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.354563] (lara5_moveit_config) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[1.354841] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/launch\n'}
+[1.355039] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/launch/__pycache__\n'}
+[1.355190] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/launch/__pycache__/static_virtual_joint_tfs.launch.cpython-310.pyc\n'}
+[1.355302] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/launch/__pycache__/orient.launch.cpython-310.pyc\n'}
+[1.355407] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/launch/rviz_moveit.launch.py\n'}
+[1.355552] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/launch/static_virtual_joint_tfs.launch.py\n'}
+[1.355722] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/config\n'}
+[1.355849] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/config/lara5.urdf.xacro\n'}
+[1.355960] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/config/moveit_controllers.yaml\n'}
+[1.356068] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/config/kinematics.yaml\n'}
+[1.356220] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/config/orient.rviz\n'}
+[1.356368] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/config/pilz_cartesian_limits.yaml\n'}
+[1.356497] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/config/joint_limits.yaml\n'}
+[1.356797] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/config/lara5.srdf\n'}
+[1.356976] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/ament_index/resource_index/package_run_dependencies/lara5_moveit_config\n'}
+[1.357082] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/ament_index/resource_index/parent_prefix_path/lara5_moveit_config\n'}
+[1.357182] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/environment/ament_prefix_path.sh\n'}
+[1.357280] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/environment/ament_prefix_path.dsv\n'}
+[1.357377] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/environment/path.sh\n'}
+[1.357467] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/environment/path.dsv\n'}
+[1.357551] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/local_setup.bash\n'}
+[1.357657] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/local_setup.sh\n'}
+[1.357751] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/local_setup.zsh\n'}
+[1.357852] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/local_setup.dsv\n'}
+[1.357962] (lara5_moveit_config) StdoutLine: {'line': b'-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/package.dsv\n'}
+[1.358053] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/ament_index/resource_index/packages/lara5_moveit_config\n'}
+[1.358144] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/cmake/lara5_moveit_configConfig.cmake\n'}
+[1.358230] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/cmake/lara5_moveit_configConfig-version.cmake\n'}
+[1.358316] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/package.xml\n'}
+[1.360094] (lara5_moveit_config) CommandEnded: {'returncode': 0}
+[1.382722] (lara5_moveit_config) JobEnded: {'identifier': 'lara5_moveit_config', 'rc': 0}
+[1.388823] (lara5_mtc) StdoutLine: {'line': b'-- Generating done\n'}
+[1.398112] (lara5_mtc) StdoutLine: {'line': b'-- Build files have been written to: /ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc\n'}
+[1.409208] (-) TimerEvent: {}
+[1.443770] (lara5_mtc) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/mtc_pose_sequence.dir/src/mtc_pose_sequence.cpp.o\x1b[0m\n'}
+[1.509897] (-) TimerEvent: {}
+[1.610321] (-) TimerEvent: {}
+[1.710676] (-) TimerEvent: {}
+[1.813717] (-) TimerEvent: {}
+[1.914208] (-) TimerEvent: {}
+[2.015680] (-) TimerEvent: {}
+[2.116170] (-) TimerEvent: {}
+[2.216623] (-) TimerEvent: {}
+[2.316939] (-) TimerEvent: {}
+[2.418761] (-) TimerEvent: {}
+[2.519160] (-) TimerEvent: {}
+[2.619620] (-) TimerEvent: {}
+[2.720915] (-) TimerEvent: {}
+[2.821678] (-) TimerEvent: {}
+[2.922124] (-) TimerEvent: {}
+[3.022527] (-) TimerEvent: {}
+[3.123675] (-) TimerEvent: {}
+[3.224050] (-) TimerEvent: {}
+[3.324444] (-) TimerEvent: {}
+[3.424763] (-) TimerEvent: {}
+[3.525083] (-) TimerEvent: {}
+[3.625402] (-) TimerEvent: {}
+[3.725836] (-) TimerEvent: {}
+[3.826206] (-) TimerEvent: {}
+[3.928689] (-) TimerEvent: {}
+[4.029099] (-) TimerEvent: {}
+[4.129448] (-) TimerEvent: {}
+[4.229765] (-) TimerEvent: {}
+[4.330121] (-) TimerEvent: {}
+[4.430414] (-) TimerEvent: {}
+[4.531676] (-) TimerEvent: {}
+[4.632074] (-) TimerEvent: {}
+[4.732459] (-) TimerEvent: {}
+[4.833677] (-) TimerEvent: {}
+[4.934202] (-) TimerEvent: {}
+[5.034516] (-) TimerEvent: {}
+[5.135678] (-) TimerEvent: {}
+[5.236204] (-) TimerEvent: {}
+[5.336508] (-) TimerEvent: {}
+[5.436907] (-) TimerEvent: {}
+[5.537233] (-) TimerEvent: {}
+[5.637758] (-) TimerEvent: {}
+[5.738340] (-) TimerEvent: {}
+[5.839108] (-) TimerEvent: {}
+[5.939976] (-) TimerEvent: {}
+[6.041268] (-) TimerEvent: {}
+[6.142686] (-) TimerEvent: {}
+[6.243218] (-) TimerEvent: {}
+[6.343553] (-) TimerEvent: {}
+[6.443891] (-) TimerEvent: {}
+[6.544226] (-) TimerEvent: {}
+[6.644618] (-) TimerEvent: {}
+[6.747673] (-) TimerEvent: {}
+[6.848116] (-) TimerEvent: {}
+[6.948527] (-) TimerEvent: {}
+[7.050692] (-) TimerEvent: {}
+[7.151122] (-) TimerEvent: {}
+[7.256682] (-) TimerEvent: {}
+[7.357145] (-) TimerEvent: {}
+[7.457481] (-) TimerEvent: {}
+[7.557824] (-) TimerEvent: {}
+[7.658214] (-) TimerEvent: {}
+[7.758529] (-) TimerEvent: {}
+[7.858870] (-) TimerEvent: {}
+[7.959244] (-) TimerEvent: {}
+[8.059567] (-) TimerEvent: {}
+[8.159964] (-) TimerEvent: {}
+[8.260420] (-) TimerEvent: {}
+[8.344519] (lara5_mtc) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable mtc_pose_sequence\x1b[0m\n'}
+[8.361676] (-) TimerEvent: {}
+[8.462208] (-) TimerEvent: {}
+[8.562542] (-) TimerEvent: {}
+[8.664082] (-) TimerEvent: {}
+[8.754898] (lara5_mtc) StdoutLine: {'line': b'[100%] Built target mtc_pose_sequence\n'}
+[8.764178] (-) TimerEvent: {}
+[8.766172] (lara5_mtc) CommandEnded: {'returncode': 0}
+[8.767231] (lara5_mtc) JobProgress: {'identifier': 'lara5_mtc', 'progress': 'install'}
+[8.767611] (lara5_mtc) Command: {'cmd': ['/usr/bin/cmake', '--install', '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc'], 'cwd': '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc', 'env': OrderedDict([('HOSTNAME', 'artem-BDZ-WXX9'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws/neura_chess/ros2_ws'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('FASTRTPS_DEFAULT_PROFILES_FILE', '/root/.ros/fastdds.xml'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[8.774582] (lara5_mtc) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[8.774838] (lara5_mtc) StdoutLine: {'line': b'-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/lib/lara5_mtc/mtc_pose_sequence\n'}
+[8.775410] (lara5_mtc) StdoutLine: {'line': b'-- Set runtime path of "/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/lib/lara5_mtc/mtc_pose_sequence" to ""\n'}
+[8.775584] (lara5_mtc) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/ament_index/resource_index/package_run_dependencies/lara5_mtc\n'}
+[8.775743] (lara5_mtc) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/ament_index/resource_index/parent_prefix_path/lara5_mtc\n'}
+[8.775845] (lara5_mtc) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/environment/ament_prefix_path.sh\n'}
+[8.775939] (lara5_mtc) StdoutLine: {'line': b'-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/environment/ament_prefix_path.dsv\n'}
+[8.776058] (lara5_mtc) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/environment/path.sh\n'}
+[8.776202] (lara5_mtc) StdoutLine: {'line': b'-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/environment/path.dsv\n'}
+[8.776354] (lara5_mtc) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/local_setup.bash\n'}
+[8.776478] (lara5_mtc) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/local_setup.sh\n'}
+[8.776608] (lara5_mtc) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/local_setup.zsh\n'}
+[8.776729] (lara5_mtc) StdoutLine: {'line': b'-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/local_setup.dsv\n'}
+[8.776846] (lara5_mtc) StdoutLine: {'line': b'-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/package.dsv\n'}
+[8.776990] (lara5_mtc) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/ament_index/resource_index/packages/lara5_mtc\n'}
+[8.777110] (lara5_mtc) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/cmake/lara5_mtcConfig.cmake\n'}
+[8.780797] (lara5_mtc) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/cmake/lara5_mtcConfig-version.cmake\n'}
+[8.780924] (lara5_mtc) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc/share/lara5_mtc/package.xml\n'}
+[8.781911] (lara5_mtc) CommandEnded: {'returncode': 0}
+[8.797644] (lara5_mtc) JobEnded: {'identifier': 'lara5_mtc', 'rc': 0}
+[8.798507] (-) EventReactorShutdown: {}

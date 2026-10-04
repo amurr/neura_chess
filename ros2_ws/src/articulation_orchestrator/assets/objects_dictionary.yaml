@@ -1,0 +1,27 @@
+#no recompile is needed for data redacted here to take effect
+
+# config/object_library.yaml
+defaults:
+  approach_distance: 0.08
+  retreat_distance:  0.08
+  grasp_subframe:    grasp
+
+objects:
+  pawn:
+    grasp_joint:   0.021      # see note below — joint value, not width
+    open_joint:    0.045
+    mass:          0.010
+    max_force:     15.0
+    approach_axis: [0.0, 0.0, -1.0]   # in object frame
+    yaw_symmetric: true
+  king:
+    grasp_joint:   0.028
+    open_joint:    0.050
+    mass:          0.025
+    approach_axis: [0.0, 0.0, -1.0]
+    yaw_symmetric: true
+
+# optional per-instance overrides, keyed by CollisionObject.id
+overrides:
+  king_e1:
+    grasp_joint: 0.030

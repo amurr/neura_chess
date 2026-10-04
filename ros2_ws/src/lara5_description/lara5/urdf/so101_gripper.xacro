@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+  <!--
+    SO-101 follower gripper (gripper_link + jaw_link) from so101_follower.urdf.xacro.
+    Meshes: package://lara5_description/lara5/meshes/so101/*.stl
+    Run scripts/fetch_so101_gripper_meshes.sh once to download STLs.
+  -->
+  <xacro:macro name="so101_gripper" params="prefix
+    so101_mesh_uri:=package://lara5_description/lara5/meshes/so101
+    so101_mesh_scale:='0.001 0.001 0.001'
+    so101_adapter_xyz:='0 0 0' so101_adapter_rpy:='1.5708 0 3.14159'">
+    <!-- SO-ARM100 Individual STLs are in mm; use 0.001. Onshape meshes (so101_follower_description) use 1 1 1 -->
+    <xacro:property name="so101_mesh" value="${so101_mesh_uri}"/>
+
+    <material name="so101_3d_printed">
+      <color rgba="1.0 0.82 0.12 1.0"/>
+    </material>
+    <material name="so101_sts3215">
+      <color rgba="0.1 0.1 0.1 1.0"/>
+    </material>
+
+    <!-- Tip link for MoveIt / IK -->
+    <link name="${prefix}gripper"/>
+    <link name="${prefix}gripper_adapter"/>
+
+    <link name="${prefix}gripper_body">
+      <inertial>
+        <origin xyz="0.000213627 0.000245138 -0.025187" rpy="0 0 0"/>
+        <mass value="0.087"/>
+        <inertia ixx="2.75087e-05" ixy="-3.35241e-07" ixz="-5.7352e-06"
+                 iyy="4.33657e-05" iyz="-5.17847e-08" izz="3.45059e-05"/>
+      </inertial>
+      <visual name="gripper_servo">
+        <origin xyz="0.0077 0.0001 -0.0234" rpy="-1.5708 0 0"/>
+        <geometry>
+          <cylinder radius="0.012" length="0.028"/>
+        </geometry>
+        <material name="so101_sts3215"/>
+      </visual>
+      <collision name="gripper_servo_collision">
+        <origin xyz="0.0077 0.0001 -0.0234" rpy="-1.5708 0 0"/>
+        <geometry>
+          <cylinder radius="0.012" length="0.028"/>
+        </geometry>
+      </collision>
+      <visual name="wrist_roll_follower">
+        <origin xyz="0 -0.000218214 0.000949706" rpy="-3.14159 0 0"/>
+        <geometry>
+          <mesh filename="${so101_mesh}/wrist_roll_follower_so101_v1.stl" scale="${so101_mesh_scale}"/>
+        </geometry>
+        <material name="so101_3d_printed"/>
+      </visual>
+      <collision name="wrist_roll_follower_collision">
+        <origin xyz="0 -0.000218214 0.000949706" rpy="-3.14159 0 0"/>
+        <geometry>
+          <mesh filename="${so101_mesh}/wrist_roll_follower_so101_v1.stl" scale="${so101_mesh_scale}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="${prefix}gripper_body_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}gripper"/>
+      <child link="${prefix}gripper_body"/>
+    </joint>
+
+    <link name="${prefix}gripper_jaw">
+      <inertial>
+        <origin xyz="-0.00157495 -0.0300244 0.0192755" rpy="0 0 0"/>
+        <mass value="0.012"/>
+        <inertia ixx="6.61427e-06" ixy="-3.19807e-07" ixz="-5.90717e-09"
+                 iyy="1.89032e-06" iyz="-1.09945e-07" izz="5.28738e-06"/>
+      </inertial>
+      <visual name="moving_jaw">
+        <origin xyz="0 0 0.0189" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="${so101_mesh}/moving_jaw_so101_v1.stl" scale="${so101_mesh_scale}"/>
+        </geometry>
+        <material name="so101_3d_printed"/>
+      </visual>
+      <collision name="moving_jaw_collision">
+        <origin xyz="0 0 0.0189" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="${so101_mesh}/moving_jaw_so101_v1.stl" scale="${so101_mesh_scale}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Actuated jaw joint (SO-101 "gripper" joint); keep lara5 name for ros2_control -->
+    <joint name="${prefix}gripper_finger_joint" type="revolute">
+      <origin xyz="0.0202 0.0188 -0.0234" rpy="1.5708 0 0"/>
+      <parent link="${prefix}gripper_body"/>
+      <child link="${prefix}gripper_jaw"/>
+      <!-- Jaw opens/closes in gripper_body Z; meshes oriented to face each other when open -->
+      <axis xyz="0 0 1"/>
+      <limit effort="10" velocity="10" lower="-0.174533" upper="1.74533"/>
+    </joint>
+
+    <joint name="${prefix}link6_to_gripper_adapter" type="fixed">
+      <origin rpy="${R7} ${P7} ${Y7}" xyz="${x7} ${y7} ${z7}"/>
+      <parent link="${prefix}link6"/>
+      <child link="${prefix}gripper_adapter"/>
+    </joint>
+    <joint name="${prefix}gripper_adapter_to_gripper" type="fixed">
+      <origin xyz="${so101_adapter_xyz}" rpy="${so101_adapter_rpy}"/>
+      <parent link="${prefix}gripper_adapter"/>
+      <child link="${prefix}gripper"/>
+    </joint>
+  </xacro:macro>
+</robot>

@@ -1,0 +1,52 @@
+[0.000000] (-) TimerEvent: {}
+[0.000126] (-) JobUnselected: {'identifier': 'lara5_description'}
+[0.000162] (-) JobUnselected: {'identifier': 'lara5_moveit'}
+[0.000348] (-) JobUnselected: {'identifier': 'lara5_mtc'}
+[0.000372] (lara5_moveit_config) JobQueued: {'identifier': 'lara5_moveit_config', 'dependencies': OrderedDict([('lara5_description', '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_description'), ('lara5_moveit', '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit')])}
+[0.000518] (lara5_moveit_config) JobStarted: {'identifier': 'lara5_moveit_config'}
+[0.012249] (lara5_moveit_config) JobProgress: {'identifier': 'lara5_moveit_config', 'progress': 'cmake'}
+[0.012844] (lara5_moveit_config) JobProgress: {'identifier': 'lara5_moveit_config', 'progress': 'build'}
+[0.013323] (lara5_moveit_config) Command: {'cmd': ['/usr/bin/cmake', '--build', '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_moveit_config', '--', '-j8', '-l8'], 'cwd': '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_moveit_config', 'env': OrderedDict([('HOSTNAME', 'artem-BDZ-WXX9'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('FASTRTPS_DEFAULT_PROFILES_FILE', '/root/.ros/fastdds.xml'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit:/ros2_ws/neura_chess/ros2_ws/src/install/lara5_description:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_moveit_config'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_description:/opt/ros/humble')]), 'shell': False}
+[0.080930] (lara5_moveit_config) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099852] (-) TimerEvent: {}
+[0.203047] (-) TimerEvent: {}
+[0.286857] (lara5_moveit_config) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.289937] (lara5_moveit_config) StdoutLine: {'line': b'-- Generating done\n'}
+[0.291215] (lara5_moveit_config) StdoutLine: {'line': b'-- Build files have been written to: /ros2_ws/neura_chess/ros2_ws/src/build/lara5_moveit_config\n'}
+[0.303124] (-) TimerEvent: {}
+[0.307553] (lara5_moveit_config) CommandEnded: {'returncode': 0}
+[0.308213] (lara5_moveit_config) JobProgress: {'identifier': 'lara5_moveit_config', 'progress': 'install'}
+[0.314423] (lara5_moveit_config) Command: {'cmd': ['/usr/bin/cmake', '--install', '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_moveit_config'], 'cwd': '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_moveit_config', 'env': OrderedDict([('HOSTNAME', 'artem-BDZ-WXX9'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/ros2_ws'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('FASTRTPS_DEFAULT_PROFILES_FILE', '/root/.ros/fastdds.xml'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit:/ros2_ws/neura_chess/ros2_ws/src/install/lara5_description:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_moveit_config'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/ros2_ws/neura_chess/ros2_ws/src/install/lara5_description:/opt/ros/humble')]), 'shell': False}
+[0.320349] (lara5_moveit_config) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.320544] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/launch\n'}
+[0.320594] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/launch/__pycache__\n'}
+[0.320634] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/launch/__pycache__/static_virtual_joint_tfs.launch.cpython-310.pyc\n'}
+[0.320671] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/launch/__pycache__/orient.launch.cpython-310.pyc\n'}
+[0.320708] (lara5_moveit_config) StdoutLine: {'line': b'-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/launch/rviz_moveit.launch.py\n'}
+[0.320801] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/launch/static_virtual_joint_tfs.launch.py\n'}
+[0.320844] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/config\n'}
+[0.321035] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/config/lara5.urdf.xacro\n'}
+[0.321075] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/config/moveit_controllers.yaml\n'}
+[0.321114] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/config/kinematics.yaml\n'}
+[0.321152] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/config/orient.rviz\n'}
+[0.321190] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/config/pilz_cartesian_limits.yaml\n'}
+[0.321228] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/config/joint_limits.yaml\n'}
+[0.321266] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/config/lara5.srdf\n'}
+[0.321365] (lara5_moveit_config) StdoutLine: {'line': b'-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/ament_index/resource_index/package_run_dependencies/lara5_moveit_config\n'}
+[0.321433] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/ament_index/resource_index/parent_prefix_path/lara5_moveit_config\n'}
+[0.321477] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/environment/ament_prefix_path.sh\n'}
+[0.321514] (lara5_moveit_config) StdoutLine: {'line': b'-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/environment/ament_prefix_path.dsv\n'}
+[0.321607] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/environment/path.sh\n'}
+[0.321683] (lara5_moveit_config) StdoutLine: {'line': b'-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/environment/path.dsv\n'}
+[0.321839] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/local_setup.bash\n'}
+[0.321918] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/local_setup.sh\n'}
+[0.321992] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/local_setup.zsh\n'}
+[0.322063] (lara5_moveit_config) StdoutLine: {'line': b'-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/local_setup.dsv\n'}
+[0.322178] (lara5_moveit_config) StdoutLine: {'line': b'-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/package.dsv\n'}
+[0.322368] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/ament_index/resource_index/packages/lara5_moveit_config\n'}
+[0.322459] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/cmake/lara5_moveit_configConfig.cmake\n'}
+[0.322525] (lara5_moveit_config) StdoutLine: {'line': b'-- Up-to-date: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/cmake/lara5_moveit_configConfig-version.cmake\n'}
+[0.322561] (lara5_moveit_config) StdoutLine: {'line': b'-- Installing: /ros2_ws/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/package.xml\n'}
+[0.323934] (lara5_moveit_config) CommandEnded: {'returncode': 0}
+[0.348659] (lara5_moveit_config) JobEnded: {'identifier': 'lara5_moveit_config', 'rc': 0}
+[0.349074] (-) EventReactorShutdown: {}
