@@ -1,31 +1,4 @@
-# 1. /_tmux
-
-# articulation_orchestrator
-to do:
-- takes all objects from the PlanningScene
-- retrieves the specified one
-- retrieves its 3d pose, type (=name in dictionary)
-- retireves specifications to pick and place it correctly from db
-- injects this data as arguments into moveit_master.cpp
-
-
-# 2. planning_scene_update
-- adds CollisionObjects to PlanningScene of move_group through /planning_scene topic
-
-# 3. moveit_sequence
-- sends Targets to move_group through MoveGroupInterface
-
-
-
-
-# 4. lara5_moveit , lara5_moveit_config
-- srdf
-- posting static objects of the scene (table, board) in the PlanningScene
-
-
-
-
-# docker
+# docker container starting
 
 xhost +local:docker
 docker run --rm -it \
@@ -39,185 +12,61 @@ docker run --rm -it \
 
 
 docker ps -a
-
 docker exec -it name_of_exect_container_running bash
 
 
+# lara5 neura_chess pipeline
+- is run with tmux started inside the docker container
 
+## startup (inside the container: /ros2_ws/neura_chess/_tmux/tmux_start_ws.sh [board:=big] [use_fake_hardware:=false])
+1. description: robot_state_publisher publishes /robot_description + TF; use_fake_hardware:=true (default) puts mock_components/GenericSystem into the URDF as the ros2_control hardware
+2. control: ros2_control_node + joint_state_broadcaster, arm_controller (FollowJointTrajectory), gripper_controller (GripperCommand); mock: echoes the commands back as /joint_states; real: drives the motors (no real LARA5 hardware plugin exists yet)
+3. moveit: move_group loads URDF + SRDF (stand, mid_move, {square}_hover, open/close) and serves /move_action, /execute_trajectory, /compute_cartesian_path, /get_planning_scene, /apply_planning_scene
+4. rviz: RViz with the MotionPlanning panel
+5. app: chess_scene_collisions adds the board (64 board_sq_*) + 32 pieces (piece_<square>) to the PlanningScene; moveit_master starts /moveit_master/execute_sequence
+6. by hand in the cli pane: ros2 run articulation_orchestrator chess_board_server -> waits for moveit_master + move_group, syncs the 32 pieces from initial_fen, starts /chess_board
 
-## ros2
-
-source /opt/ros/humble/setup.bash
-source /ros2_ws/neura_chess/install/setup.bash
-ros2 launch lara5_moveit_config rviz_moveit.launch.py
-
-source /opt/ros/humble/setup.bash
-source /ros2_ws/neura_chess/install/setup.bash
-export PYTHONPATH=/ros2_ws/neura_chess/ros2_ws/src/orchestration:$PYTHONPATH
-python3 -c "
-from orchestration.master import params_from_json, run_mtc_pose_sequence
-move = {'from': 'e2', 'to': 'e4', 'piece': 'pawn'}
-for p in params_from_json(move):
-    raise SystemExit(run_mtc_pose_sequence(**p))
-"
-
-
-
-master launch:
-source /opt/ros/humble/setup.bash
-source /ros2_ws/neura_chess/install/setup.bash
-ros2 run orchestration master
-
-run master.py without rebuild:
-source /opt/ros/humble/setup.bash
-source /ros2_ws/neura_chess/install/setup.bash
-python3 -c "from orchestration.master import run_mtc_pose_sequence; raise SystemExit(run_mtc_pose_sequence(hover_pose='h1_hover_big'))"
-
-
-direct launch file calling:
-source /opt/ros/humble/setup.bash
-source /ros2_ws/neura_chess/install/setup.bash
-ros2 launch lara5_mtc mtc_pose_sequence.launch.py
-
-ros2 launch lara5_mtc mtc_pose_sequence.launch.py \
-  lower_distance:=0.055 \
-  lift_distance:=0.055 \
-  gripper_open_position:=0.2 \
-  gripper_close_position:=-0.175
+## PIPELINE: receiving chess_interfaces/action/ChessBoard on /chess_board (from the CV / Stockfish node or the CLI)
+1. chess_board_server: one goal at a time; target board = goal fen (or the board + to_pick -> to_place)
+2. change_status active (move already happened on the real board): PlanningSceneUpdater makes the PlanningScene pieces equal to the target board through /apply_planning_scene; done
+3. change_status passive (robot moves): checks piece_type against its board, splits the move into transfers (captured pieces -> discard first, then moves; castling = 2 transfers)
+4. per transfer, ArticulationOrchestrator builds the MotionSteps (objects_dictionary.yaml: lower_distance, lift_distance, gripper positions per piece type) and sends them to /moveit_master/execute_sequence:
+   stand -> mid_move -> src_hover -> open -> allow collision piece/gripper -> down -> close -> attach -> up -> dst_hover -> down -> open -> detach -> up -> stand
+5. moveit_master runs the steps through MoveGroupInterface: move_group plans, the trajectories go to arm_controller / gripper_controller (mock or real), the attached piece moves with the gripper in the PlanningScene
+6. after each transfer chess_board_server updates its board and the PlanningScene (piece_<src> removed, piece_<dst> added at the square centre)
+7. result: success, message, fen of the board now held; on failure moveit_master undoes its scene changes and chess_board_server asks for an active goal with the real board's FEN
 
 
 
 
-# launch files
-generate_launch_description() is the entry point of the launch file. ROS 2 calls it when you run ros2 launch .... It must return a LaunchDescription — the list of things to start (nodes, included launches, env vars) and the launch arguments those things may use
+# ros2_ws components and roles
 
-# IK, chess board size
-answer based on mathematical IK calculations: what is maximum size of chess board where the neura arm will be able to place EEF perpendicularly to all 64 squares?
-
-[] increase the chess board size: more space between chess pieces
-
-
-
-# mtc parameterizing
-via launch file parameters
-- x hover Pose
-- n cm down/up by z-axis
-- w gripper closing width
+## ArticulationOrchestrator
+- builds a hard-coded sequence of MotionSteps (arm pose / arm named state / gripper named state / wait)
+- outputs it + velocity_scaling to moveit_master as goal moveit_master/action/ExecuteSequence (MotionStep[] steps) on action /moveit_master/execute_sequence
+- takes the result (success, failed_step, message) from /moveit_master/execute_sequence and logs it
+to do:
+- takes all objects from the PlanningScene (moveit_msgs/srv/GetPlanningScene, service /get_planning_scene)
+- retrieves the specified one
+- retrieves its 3d pose, type (=name in dictionary)
+- retireves specifications to pick and place it correctly from db
+- injects this data as MotionSteps into moveit_master (moveit_master/action/ExecuteSequence, action /moveit_master/execute_sequence)
 
 
+## planning_scene_update, planning_scene_updater (articulation_orchestrator)
+- planning_scene_update: once on startup adds CollisionObjects (chess_board.obj + pawn.stl on the board top) to PlanningScene of move_group through /planning_scene topic (moveit_msgs/msg/PlanningScene, is_diff, transient_local)
+- planning_scene_updater: adds / moves / removes CollisionObjects (box, cylinder, mesh) in PlanningScene of move_group through /apply_planning_scene service (moveit_msgs/srv/ApplyPlanningScene), returns only after move_group applied the diff; main() is a demo (add board + pawn, move pawn, remove pawn)
+
+## moveit_master
+- takes MotionStep[] + velocity_scaling as goal moveit_master/action/ExecuteSequence on action server /moveit_master/execute_sequence (one goal at a time, others rejected), outputs feedback current_step and result success / failed_step / message
+- sends Targets (pose / SRDF named state) of groups arm, gripper to move_group through MoveGroupInterface: plan via action /move_action (moveit_msgs/action/MoveGroup), execute via action /execute_trajectory (moveit_msgs/action/ExecuteTrajectory)
 
 
-# neura_chess
+## chess_scene_collisions, fake_controllers, teach_board, moveit_master (lara5_moveit), lara5_moveit_config
+- srdf (lara5_moveit_config): groups arm, gripper; named states stand, a1_hover…h8_hover, a1_grasp…h8_grasp, gripper open / close
+- chess_scene_collisions (executables chess_scene_collisions = small board, chess_scene_big = big board): posting static objects of the scene (board + 32 pieces, no table) in the PlanningScene through /planning_scene topic (moveit_msgs/msg/PlanningScene); outputs RViz markers on /chess_board_markers, /chess_piece_markers (visualization_msgs/msg/MarkerArray); takes /chess_occupancy (std_msgs/msg/String, JSON) to move / remove pieces; service ~/reset_scene (std_srvs/srv/Trigger)
+- fake_controllers: takes trajectories from move_group on action servers /arm_controller/follow_joint_trajectory_safe (control_msgs/action/FollowJointTrajectory), /gripper_controller/gripper_cmd (control_msgs/action/GripperCommand); outputs replayed joints on /joint_states (sensor_msgs/msg/JointState)
+- teach_board: takes /joint_states (sensor_msgs/msg/JointState), saves the taught hover, fills hover joints for all 64 squares, writes them to YAML
+- moveit_master (lara5_moveit): empty placeholder, only prints a message
 
-Lara5 in MoveIt + RViz, with a chess board in the planning scene.
 
-There is no Isaac Sim, no ros2_control, and no hardware. `fake_controllers` serves the two actions MoveIt expects and replays trajectories onto `/joint_states`, so Plan **and** Execute work on the model. Pass `fake_controllers:=false` for `joint_state_publisher_gui` sliders instead (nothing executes then).
-
-```bash
-source /opt/ros/humble/setup.bash
-cd /ros2_ws/neura_chess          # or: cd /ros2_ws then source that overlay
-colcon build
-source install/setup.bash
-ros2 launch lara5_moveit_config rviz_moveit.launch.py
-```
-
-That launch starts:
-
-| Node | Role |
-|------|------|
-| `robot_state_publisher` | TF from URDF + `/joint_states` |
-| `fake_controllers` | `arm_controller` / `gripper_controller` actions + `/joint_states` (default) |
-| `joint_state_publisher_gui` | RViz joint sliders, `fake_controllers:=false` only |
-| `static_virtual_joint_tfs` | `world` → `lara5_root_link` |
-| `move_group` | MoveIt planning |
-| `chess_scene_collisions` | Board + pieces as collision objects and markers |
-| `rviz2` | RobotModel + MotionPlanning (`orient.rviz`) |
-
-Named states `a1_hover`…`h8_hover` and `a1_grasp`…`h8_grasp` are in the SRDF. In RViz: MotionPlanning → Select Goal State.
-
-Your node: `ros2 run lara5_moveit moveit_master` (empty — write it).
-
-Sources live in `ros2_ws/src/`. Three packages:
-
-```
-orient.launch.py
- ├─ lara5_moveit_config     MoveIt config + this launch
- │    └─ lara5_description  URDF, meshes
- └─ lara5_moveit            chess_scene_collisions + board IK + moveit_master
-```
-
----
-
-## `lara5_description` — robot model
-
-MoveIt does **not** load this package as `robot_description` by itself. `lara5_moveit_config/config/lara5.urdf.xacro` includes `lara5/urdf/lara5.urdf.xacro` from here.
-
-| File | Role |
-|------|------|
-| `package.xml`, `CMakeLists.txt` | Installs the `lara5/` tree into the share directory |
-| `lara5/urdf/lara5.urdf.xacro` | Entry xacro: macro + `world` → `lara5_root_link` |
-| `lara5/urdf/lara5_macro.xacro` | Links, joints, visuals, collision, gripper |
-| `lara5/urdf/lara5_kinematic_parameters_nominal.xacro` | Origins / DH |
-| `lara5/urdf/lara5_dynamic_parameters_nominal.xacro` | Mass / inertia |
-| `lara5/urdf/lara5_limits.xacro` | Joint position / velocity / effort limits |
-| `lara5/urdf/so101_gripper.xacro` | Jaw on link6 (`lara5_gripper_finger_joint`) |
-| `lara5/urdf/lara5.urdf` | Flattened snapshot of the xacro. `board_ik.py` parses this (no ROS). After xacro edits: `xacro lara5.urdf.xacro > lara5.urdf` |
-| `lara5/urdf/README.txt` | Same chain, short |
-| `lara5/meshes/*.stl` | Visual meshes (RViz) |
-| `lara5/meshes/so101/*.stl` | Gripper body + jaw |
-| `lara5/meshes/README.md`, `lara5/meshes/so101/README.md` | What the STL folders contain |
-| `lara5/collision/Link*_body.stl` | Collision meshes used by the URDF |
-
----
-
-## `lara5_moveit_config` — MoveIt + launch
-
-`MoveItConfigsBuilder('lara5')` reads `config/` by convention.
-
-| File | Role |
-|------|------|
-| `launch/orient.launch.py` | The only bringup you need |
-| `launch/static_virtual_joint_tfs.launch.py` | Publishes the SRDF virtual joint as a static TF (included by orient) |
-| `config/orient.rviz` | RViz layout: RobotModel, MotionPlanning, chess MarkerArrays |
-| `config/lara5.urdf.xacro` | `robot_description`: includes `lara5_description` only |
-| `config/lara5.srdf` | Groups (`arm`, `gripper`), collision matrix, named states (`stand`, `*_hover`, `*_grasp`, gripper `open`/`close`) |
-| `config/kinematics.yaml` | KDL plugin for group `arm` |
-| `config/joint_limits.yaml` | MoveIt velocity scaling (overrides / augments URDF) |
-| `config/pilz_cartesian_limits.yaml` | Cartesian-path vel/acc (RViz “Use Cartesian Path”) |
-| `config/moveit_controllers.yaml` | Controller names/action namespaces MoveIt executes through; served by `fake_controllers` |
-| `package.xml`, `CMakeLists.txt` | Package metadata; installs `launch/` and `config/` |
-
----
-
-## `lara5_moveit` — chess scene, IK fill, your node
-
-| File | Role |
-|------|------|
-| `lara5_moveit/chess_scene_collisions.py` | **The chess node.** Board + pieces → `/planning_scene` and RViz markers. `ros2 run lara5_moveit chess_scene_collisions` |
-| `chess_scene.yaml` | Board pose, square size, piece sizes (installed into `share/lara5_moveit/config/`) |
-| `meshes/chess_pieces/collision_hulls/*.stl` | Convex-hull collision meshes per piece type |
-| `lara5_moveit/fake_controllers.py` | **Fake controllers.** `follow_joint_trajectory_safe` + `gripper_cmd` action servers replaying onto `/joint_states`. `ros2 run lara5_moveit fake_controllers` |
-| `lara5_moveit/moveit_master.py` | **Empty.** `ros2 run lara5_moveit moveit_master` |
-| `lara5_moveit/board_ik.py` | FK/IK (Jacobian DLS, not MoveIt `/compute_ik`) + `square_xy()` |
-| `lara5_moveit/teach_board.py` | `ros2 run lara5_moveit teach_board` — read `/joint_states`, `fill` other squares |
-| `scripts/generate_hover_goals.py` | Taught h1 hover → 64 hovers → YAML + SRDF |
-| `scripts/generate_grasp_goals.py` | Taught h1 hover→grasp tendency → 64 grasps → YAML + SRDF |
-| `config/board_hover_joints.yaml` | Last generated hover joints |
-| `config/board_grasp_joints.yaml` | Last generated grasp joints |
-| `lara5_moveit/__init__.py` | Package marker |
-| `package.xml`, `setup.py`, `setup.cfg`, `resource/lara5_moveit` | ament_python package |
-
-Board XY used for hover IK matches `chess_scene.yaml`: `square_size=0.04`, `board_a1=[0.27,-0.16,0.02]`, `ranks_x_files_y`, `board_file_mirror=true`.
-
-Lowering in RViz: start `e4_hover`, goal `e4_grasp`, **Use Cartesian Path** (do not only move j2/j5).
-
----
-
-## Repo root
-
-| File | Role |
-|------|------|
-| `README.md` | This map |
-| `.gitignore` | `__pycache__` and colcon `build/` `install/` `log/` |
-
-Build artifacts (`build/`, `install/`, `log/`) are generated; they are not source.

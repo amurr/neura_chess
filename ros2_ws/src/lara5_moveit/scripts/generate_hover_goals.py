@@ -31,14 +31,9 @@ def _group_state(name: str, q: list[float]) -> str:
 def main() -> None:
     model = ArmModel(str(URDF))
     packed = fill_hover_joints(H1_Q, model)
+    # h1 is re-solved too: the taught joints (integer-degree sliders, ~6 mm per degree of
+    # joint1) only give the seed, hover height and orientation.
     squares = packed['squares']
-    # Keep the taught h1 joints exactly (do not replace with re-IK).
-    t_h1 = model.fk(H1_Q)
-    squares['h1']['q'] = [float(v) for v in H1_Q]
-    squares['h1']['ok'] = True
-    squares['h1']['pos_err_m'] = 0.0
-    squares['h1']['ori_err_rad'] = 0.0
-    squares['h1']['xyz'] = [float(v) for v in t_h1[:3, 3]]
 
     n_ok = sum(1 for rec in squares.values() if rec['ok'])
     weak = [s for s, rec in squares.items() if not rec['ok']]
@@ -58,6 +53,7 @@ def main() -> None:
         'seed_square': 'h1',
         'seed_q': [float(v) for v in H1_Q],
         'hover_z': packed['hover_z'],
+        'tcp': packed['tcp'],
         'tool_z_world': packed['tool_z_world'],
         'ik_ok': {sq: bool(rec['ok']) for sq, rec in squares.items()},
         'hover': hover,
@@ -67,10 +63,11 @@ def main() -> None:
     print('wrote', YAML_OUT)
 
     text = SRDF.read_text(encoding='utf-8')
-    start = text.index('    <!-- Taught in RViz: hover above h1 (goal sliders). -->')
-    end = text.index('    <group_state name="close" group="gripper">')
+    # replace only the *_hover block (the *_grasp block after it is kept)
+    start = text.index('    <!-- Hover goals: ')
+    end = text.index('    <!-- Grasp goals: ', start)
     block = [
-        '    <!-- Hover goals: h1 taught in RViz; other squares IK at same z and R. -->',
+        '    <!-- Hover goals: grasp TCP above each square centre, IK at taught h1 z and R. -->',
     ]
     for sq, q in hover.items():
         block.append(_group_state(f'{sq}_hover', q))

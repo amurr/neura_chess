@@ -9,6 +9,8 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_action REQUIRED)
 find_package(moveit_ros_planning_interface REQUIRED)
+find_package(moveit_core REQUIRED)
+find_package(moveit_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
@@ -20,19 +22,25 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 )
 
 # --- executable ---
-add_executable(moveit_master src/moveit_master.cpp)
-ament_target_dependencies(moveit_master
+# rosidl_generate_interfaces(${PROJECT_NAME}) above already creates a custom
+# target called "moveit_master", so the executable needs a distinct target
+# name. OUTPUT_NAME keeps the installed binary (and `ros2 run`) as before.
+add_executable(moveit_master_node src/moveit_master.cpp)
+set_target_properties(moveit_master_node PROPERTIES OUTPUT_NAME moveit_master)
+ament_target_dependencies(moveit_master_node
   rclcpp
   rclcpp_action
   moveit_ros_planning_interface
+  moveit_core
+  moveit_msgs
   geometry_msgs
 )
 
 # use the interfaces generated in this same package
 rosidl_get_typesupport_target(cpp_typesupport_target ${PROJECT_NAME} "rosidl_typesupport_cpp")
-target_link_libraries(moveit_master "${cpp_typesupport_target}")
+target_link_libraries(moveit_master_node "${cpp_typesupport_target}")
 
-install(TARGETS moveit_master DESTINATION lib/${PROJECT_NAME})
+install(TARGETS moveit_master_node DESTINATION lib/${PROJECT_NAME})
 
 ament_export_dependencies(rosidl_default_runtime)
 ament_package()

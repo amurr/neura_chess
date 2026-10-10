@@ -3,10 +3,16 @@ __pycache__/
 *.pyo
 .pytest_cache/
 
-# Colcon (build from neura_chess/ or from ros2_ws/)
+# Colcon artifacts, wherever colcon was invoked from. The last three catch a
+# `colcon build` run with cwd=src; those trees were once committed by mistake
+# and, because CMakeCache.txt stores absolute paths, a restored copy breaks the
+# build on any machine whose checkout lives at a different path.
 /build/
 /install/
 /log/
 ros2_ws/build/
 ros2_ws/install/
 ros2_ws/log/
+ros2_ws/src/build/
+ros2_ws/src/install/
+ros2_ws/src/log/

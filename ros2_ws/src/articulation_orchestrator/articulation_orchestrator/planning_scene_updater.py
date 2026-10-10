@@ -15,8 +15,8 @@ from ament_index_python.packages import get_package_share_directory
 
 from geometry_msgs.msg import Pose, Point
 from shape_msgs.msg import SolidPrimitive, Mesh, MeshTriangle
-from moveit_msgs.msg import CollisionObject, PlanningScene
-from moveit_msgs.srv import ApplyPlanningScene
+from moveit_msgs.msg import CollisionObject, PlanningScene, PlanningSceneComponents
+from moveit_msgs.srv import ApplyPlanningScene, GetPlanningScene
 
 
 def _wait_future(future, timeout=None):
@@ -50,12 +50,24 @@ class PlanningSceneUpdater(Node):
         self.frame_id = self.get_parameter("frame_id").value
 
         self._client = self.create_client(ApplyPlanningScene, "/apply_planning_scene")
+        self._get_client = self.create_client(GetPlanningScene, "/get_planning_scene")
         self._mesh_cache: dict[str, Mesh] = {}
 
     # ---------- connection ----------
     def wait_for_move_group(self, timeout_sec: float | None = None) -> bool:
         self.get_logger().info("waiting for /apply_planning_scene ...")
         return self._client.wait_for_service(timeout_sec=timeout_sec)
+
+    # ---------- read ----------
+    def object_ids(self, timeout_sec: float = 5.0) -> set[str] | None:
+        """Ids of all world collision objects currently in move_group's scene (None = timeout)."""
+        req = GetPlanningScene.Request()
+        req.components.components = PlanningSceneComponents.WORLD_OBJECT_NAMES
+        res = _wait_future(self._get_client.call_async(req), timeout_sec)
+        if res is None:
+            self.get_logger().error("get_planning_scene timed out")
+            return None
+        return {co.id for co in res.scene.world.collision_objects}
 
     # ---------- object builders ----------
     def make_box(self, obj_id: str, pose: Pose, size: tuple[float, float, float]) -> CollisionObject:

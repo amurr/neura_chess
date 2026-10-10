@@ -40,518 +40,518 @@
         <joint name="lara5_joint5" value="1.05"/>
         <joint name="lara5_joint6" value="0"/>
     </group_state>
-    <!-- Hover goals: h1 taught in RViz; other squares IK at same z and R. -->
+    <!-- Hover goals: grasp TCP above each square centre, IK at taught h1 z and R. -->
     <group_state name="a1_hover" group="arm">
-        <joint name="lara5_joint1" value="0.462608"/>
-        <joint name="lara5_joint2" value="-0.096857"/>
-        <joint name="lara5_joint3" value="2.229112"/>
-        <joint name="lara5_joint4" value="-0.033165"/>
-        <joint name="lara5_joint5" value="0.988327"/>
-        <joint name="lara5_joint6" value="1.004162"/>
+        <joint name="lara5_joint1" value="0.479345"/>
+        <joint name="lara5_joint2" value="-0.107459"/>
+        <joint name="lara5_joint3" value="2.238561"/>
+        <joint name="lara5_joint4" value="-0.033554"/>
+        <joint name="lara5_joint5" value="0.989950"/>
+        <joint name="lara5_joint6" value="1.021072"/>
     </group_state>
     <group_state name="a2_hover" group="arm">
-        <joint name="lara5_joint1" value="0.412208"/>
-        <joint name="lara5_joint2" value="0.001752"/>
-        <joint name="lara5_joint3" value="2.135598"/>
-        <joint name="lara5_joint4" value="-0.031961"/>
-        <joint name="lara5_joint5" value="0.981841"/>
-        <joint name="lara5_joint6" value="0.953255"/>
+        <joint name="lara5_joint1" value="0.426653"/>
+        <joint name="lara5_joint2" value="-0.008806"/>
+        <joint name="lara5_joint3" value="2.146116"/>
+        <joint name="lara5_joint4" value="-0.032341"/>
+        <joint name="lara5_joint5" value="0.982273"/>
+        <joint name="lara5_joint6" value="0.967900"/>
     </group_state>
     <group_state name="a3_hover" group="arm">
-        <joint name="lara5_joint1" value="0.371344"/>
-        <joint name="lara5_joint2" value="0.096267"/>
-        <joint name="lara5_joint3" value="2.036121"/>
-        <joint name="lara5_joint4" value="-0.030747"/>
-        <joint name="lara5_joint5" value="0.985717"/>
-        <joint name="lara5_joint6" value="0.911616"/>
+        <joint name="lara5_joint1" value="0.383984"/>
+        <joint name="lara5_joint2" value="0.085741"/>
+        <joint name="lara5_joint3" value="2.047670"/>
+        <joint name="lara5_joint4" value="-0.031118"/>
+        <joint name="lara5_joint5" value="0.985026"/>
+        <joint name="lara5_joint6" value="0.924479"/>
     </group_state>
     <group_state name="a4_hover" group="arm">
-        <joint name="lara5_joint1" value="0.337563"/>
-        <joint name="lara5_joint2" value="0.187902"/>
-        <joint name="lara5_joint3" value="1.930673"/>
-        <joint name="lara5_joint4" value="-0.029522"/>
-        <joint name="lara5_joint5" value="0.998656"/>
-        <joint name="lara5_joint6" value="0.876839"/>
+        <joint name="lara5_joint1" value="0.348749"/>
+        <joint name="lara5_joint2" value="0.177371"/>
+        <joint name="lara5_joint3" value="1.943233"/>
+        <joint name="lara5_joint4" value="-0.029880"/>
+        <joint name="lara5_joint5" value="0.996912"/>
+        <joint name="lara5_joint6" value="0.888263"/>
     </group_state>
     <group_state name="a5_hover" group="arm">
-        <joint name="lara5_joint1" value="0.309232"/>
-        <joint name="lara5_joint2" value="0.277810"/>
-        <joint name="lara5_joint3" value="1.818925"/>
-        <joint name="lara5_joint4" value="-0.028307"/>
-        <joint name="lara5_joint5" value="1.019782"/>
-        <joint name="lara5_joint6" value="0.847344"/>
+        <joint name="lara5_joint1" value="0.319231"/>
+        <joint name="lara5_joint2" value="0.267199"/>
+        <joint name="lara5_joint3" value="1.832527"/>
+        <joint name="lara5_joint4" value="-0.028650"/>
+        <joint name="lara5_joint5" value="1.017039"/>
+        <joint name="lara5_joint6" value="0.857590"/>
     </group_state>
     <group_state name="a6_hover" group="arm">
-        <joint name="lara5_joint1" value="0.285166"/>
-        <joint name="lara5_joint2" value="0.367189"/>
-        <joint name="lara5_joint3" value="1.700167"/>
-        <joint name="lara5_joint4" value="-0.027119"/>
-        <joint name="lara5_joint5" value="1.048566"/>
-        <joint name="lara5_joint6" value="0.821987"/>
+        <joint name="lara5_joint1" value="0.294184"/>
+        <joint name="lara5_joint2" value="0.356391"/>
+        <joint name="lara5_joint3" value="1.714902"/>
+        <joint name="lara5_joint4" value="-0.027445"/>
+        <joint name="lara5_joint5" value="1.044847"/>
+        <joint name="lara5_joint6" value="0.831256"/>
     </group_state>
     <group_state name="a7_hover" group="arm">
-        <joint name="lara5_joint1" value="0.264493"/>
-        <joint name="lara5_joint2" value="0.457337"/>
-        <joint name="lara5_joint3" value="1.573224"/>
-        <joint name="lara5_joint4" value="-0.025973"/>
-        <joint name="lara5_joint5" value="1.084857"/>
-        <joint name="lara5_joint6" value="0.799919"/>
+        <joint name="lara5_joint1" value="0.272690"/>
+        <joint name="lara5_joint2" value="0.446214"/>
+        <joint name="lara5_joint3" value="1.589255"/>
+        <joint name="lara5_joint4" value="-0.026282"/>
+        <joint name="lara5_joint5" value="1.080143"/>
+        <joint name="lara5_joint6" value="0.808369"/>
     </group_state>
     <group_state name="a8_hover" group="arm">
-        <joint name="lara5_joint1" value="0.246557"/>
-        <joint name="lara5_joint2" value="0.549777"/>
-        <joint name="lara5_joint3" value="1.436251"/>
-        <joint name="lara5_joint4" value="-0.024882"/>
-        <joint name="lara5_joint5" value="1.128957"/>
-        <joint name="lara5_joint6" value="0.780494"/>
+        <joint name="lara5_joint1" value="0.254058"/>
+        <joint name="lara5_joint2" value="0.538139"/>
+        <joint name="lara5_joint3" value="1.453851"/>
+        <joint name="lara5_joint4" value="-0.025172"/>
+        <joint name="lara5_joint5" value="1.123169"/>
+        <joint name="lara5_joint6" value="0.788250"/>
     </group_state>
     <group_state name="b1_hover" group="arm">
-        <joint name="lara5_joint1" value="0.344160"/>
-        <joint name="lara5_joint2" value="-0.143040"/>
-        <joint name="lara5_joint3" value="2.268373"/>
-        <joint name="lara5_joint4" value="-0.029894"/>
-        <joint name="lara5_joint5" value="0.992126"/>
-        <joint name="lara5_joint6" value="0.883822"/>
+        <joint name="lara5_joint1" value="0.360178"/>
+        <joint name="lara5_joint2" value="-0.155312"/>
+        <joint name="lara5_joint3" value="2.279020"/>
+        <joint name="lara5_joint4" value="-0.030311"/>
+        <joint name="lara5_joint5" value="0.994153"/>
+        <joint name="lara5_joint6" value="0.900015"/>
     </group_state>
     <group_state name="b2_hover" group="arm">
-        <joint name="lara5_joint1" value="0.304537"/>
-        <joint name="lara5_joint2" value="-0.035616"/>
-        <joint name="lara5_joint3" value="2.172306"/>
-        <joint name="lara5_joint4" value="-0.028894"/>
-        <joint name="lara5_joint5" value="0.979732"/>
-        <joint name="lara5_joint6" value="0.843928"/>
+        <joint name="lara5_joint1" value="0.318228"/>
+        <joint name="lara5_joint2" value="-0.047871"/>
+        <joint name="lara5_joint3" value="2.184013"/>
+        <joint name="lara5_joint4" value="-0.029291"/>
+        <joint name="lara5_joint5" value="0.980616"/>
+        <joint name="lara5_joint6" value="0.857818"/>
     </group_state>
     <group_state name="b3_hover" group="arm">
-        <joint name="lara5_joint1" value="0.272941"/>
-        <joint name="lara5_joint2" value="0.064421"/>
-        <joint name="lara5_joint3" value="2.070711"/>
-        <joint name="lara5_joint4" value="-0.027905"/>
-        <joint name="lara5_joint5" value="0.980530"/>
-        <joint name="lara5_joint6" value="0.811765"/>
+        <joint name="lara5_joint1" value="0.284847"/>
+        <joint name="lara5_joint2" value="0.052532"/>
+        <joint name="lara5_joint3" value="2.083346"/>
+        <joint name="lara5_joint4" value="-0.028285"/>
+        <joint name="lara5_joint5" value="0.980068"/>
+        <joint name="lara5_joint6" value="0.823892"/>
     </group_state>
     <group_state name="b4_hover" group="arm">
-        <joint name="lara5_joint1" value="0.247158"/>
-        <joint name="lara5_joint2" value="0.160077"/>
-        <joint name="lara5_joint3" value="1.963618"/>
-        <joint name="lara5_joint4" value="-0.026895"/>
-        <joint name="lara5_joint5" value="0.991364"/>
-        <joint name="lara5_joint6" value="0.785181"/>
+        <joint name="lara5_joint1" value="0.257658"/>
+        <joint name="lara5_joint2" value="0.148428"/>
+        <joint name="lara5_joint3" value="1.977172"/>
+        <joint name="lara5_joint4" value="-0.027257"/>
+        <joint name="lara5_joint5" value="0.989702"/>
+        <joint name="lara5_joint6" value="0.795915"/>
     </group_state>
     <group_state name="b5_hover" group="arm">
-        <joint name="lara5_joint1" value="0.225748"/>
-        <joint name="lara5_joint2" value="0.252920"/>
-        <joint name="lara5_joint3" value="1.850661"/>
-        <joint name="lara5_joint4" value="-0.025881"/>
-        <joint name="lara5_joint5" value="1.010985"/>
-        <joint name="lara5_joint6" value="0.762790"/>
+        <joint name="lara5_joint1" value="0.235116"/>
+        <joint name="lara5_joint2" value="0.241373"/>
+        <joint name="lara5_joint3" value="1.865177"/>
+        <joint name="lara5_joint4" value="-0.026225"/>
+        <joint name="lara5_joint5" value="1.008227"/>
+        <joint name="lara5_joint6" value="0.772402"/>
     </group_state>
     <group_state name="b6_hover" group="arm">
-        <joint name="lara5_joint1" value="0.207700"/>
-        <joint name="lara5_joint2" value="0.344414"/>
-        <joint name="lara5_joint3" value="1.731126"/>
-        <joint name="lara5_joint4" value="-0.024878"/>
-        <joint name="lara5_joint5" value="1.038618"/>
-        <joint name="lara5_joint6" value="0.743626"/>
+        <joint name="lara5_joint1" value="0.216144"/>
+        <joint name="lara5_joint2" value="0.332822"/>
+        <joint name="lara5_joint3" value="1.746702"/>
+        <joint name="lara5_joint4" value="-0.025203"/>
+        <joint name="lara5_joint5" value="1.034820"/>
+        <joint name="lara5_joint6" value="0.752315"/>
     </group_state>
     <group_state name="b7_hover" group="arm">
-        <joint name="lara5_joint1" value="0.192291"/>
-        <joint name="lara5_joint2" value="0.436020"/>
-        <joint name="lara5_joint3" value="1.603859"/>
-        <joint name="lara5_joint4" value="-0.023901"/>
-        <joint name="lara5_joint5" value="1.073932"/>
-        <joint name="lara5_joint6" value="0.726989"/>
+        <joint name="lara5_joint1" value="0.199965"/>
+        <joint name="lara5_joint2" value="0.424214"/>
+        <joint name="lara5_joint3" value="1.620664"/>
+        <joint name="lara5_joint4" value="-0.024207"/>
+        <joint name="lara5_joint5" value="1.069100"/>
+        <joint name="lara5_joint6" value="0.734911"/>
     </group_state>
     <group_state name="b8_hover" group="arm">
-        <joint name="lara5_joint1" value="0.178987"/>
-        <joint name="lara5_joint2" value="0.529340"/>
-        <joint name="lara5_joint3" value="1.467092"/>
-        <joint name="lara5_joint4" value="-0.022962"/>
-        <joint name="lara5_joint5" value="1.117081"/>
-        <joint name="lara5_joint6" value="0.712359"/>
+        <joint name="lara5_joint1" value="0.186014"/>
+        <joint name="lara5_joint2" value="0.517113"/>
+        <joint name="lara5_joint3" value="1.485394"/>
+        <joint name="lara5_joint4" value="-0.023249"/>
+        <joint name="lara5_joint5" value="1.111155"/>
+        <joint name="lara5_joint6" value="0.719634"/>
     </group_state>
     <group_state name="c1_hover" group="arm">
-        <joint name="lara5_joint1" value="0.214895"/>
-        <joint name="lara5_joint2" value="-0.175300"/>
-        <joint name="lara5_joint3" value="2.295471"/>
-        <joint name="lara5_joint4" value="-0.025827"/>
-        <joint name="lara5_joint5" value="0.994211"/>
-        <joint name="lara5_joint6" value="0.752283"/>
+        <joint name="lara5_joint1" value="0.229456"/>
+        <joint name="lara5_joint2" value="-0.189785"/>
+        <joint name="lara5_joint3" value="2.307431"/>
+        <joint name="lara5_joint4" value="-0.026251"/>
+        <joint name="lara5_joint5" value="0.997050"/>
+        <joint name="lara5_joint6" value="0.767011"/>
     </group_state>
     <group_state name="c2_hover" group="arm">
-        <joint name="lara5_joint1" value="0.189099"/>
-        <joint name="lara5_joint2" value="-0.062219"/>
-        <joint name="lara5_joint3" value="2.197530"/>
-        <joint name="lara5_joint4" value="-0.025211"/>
-        <joint name="lara5_joint5" value="0.978469"/>
-        <joint name="lara5_joint6" value="0.726477"/>
+        <joint name="lara5_joint1" value="0.201517"/>
+        <joint name="lara5_joint2" value="-0.076112"/>
+        <joint name="lara5_joint3" value="2.210396"/>
+        <joint name="lara5_joint4" value="-0.025604"/>
+        <joint name="lara5_joint5" value="0.979762"/>
+        <joint name="lara5_joint6" value="0.739084"/>
     </group_state>
     <group_state name="c3_hover" group="arm">
-        <joint name="lara5_joint1" value="0.168828"/>
-        <joint name="lara5_joint2" value="0.042060"/>
-        <joint name="lara5_joint3" value="2.094356"/>
-        <joint name="lara5_joint4" value="-0.024552"/>
-        <joint name="lara5_joint5" value="0.976938"/>
-        <joint name="lara5_joint6" value="0.705874"/>
+        <joint name="lara5_joint1" value="0.179630"/>
+        <joint name="lara5_joint2" value="0.028873"/>
+        <joint name="lara5_joint3" value="2.108046"/>
+        <joint name="lara5_joint4" value="-0.024924"/>
+        <joint name="lara5_joint5" value="0.976661"/>
+        <joint name="lara5_joint6" value="0.716888"/>
     </group_state>
     <group_state name="c4_hover" group="arm">
-        <joint name="lara5_joint1" value="0.152448"/>
-        <joint name="lara5_joint2" value="0.140744"/>
-        <joint name="lara5_joint3" value="1.986039"/>
-        <joint name="lara5_joint4" value="-0.023842"/>
-        <joint name="lara5_joint5" value="0.986232"/>
-        <joint name="lara5_joint6" value="0.688917"/>
+        <joint name="lara5_joint1" value="0.161991"/>
+        <joint name="lara5_joint2" value="0.128038"/>
+        <joint name="lara5_joint3" value="2.000561"/>
+        <joint name="lara5_joint4" value="-0.024194"/>
+        <joint name="lara5_joint5" value="0.984612"/>
+        <joint name="lara5_joint6" value="0.698685"/>
     </group_state>
     <group_state name="c5_hover" group="arm">
-        <joint name="lara5_joint1" value="0.138945"/>
-        <joint name="lara5_joint2" value="0.235769"/>
-        <joint name="lara5_joint3" value="1.872179"/>
-        <joint name="lara5_joint4" value="-0.023097"/>
-        <joint name="lara5_joint5" value="1.004790"/>
-        <joint name="lara5_joint6" value="0.674647"/>
+        <joint name="lara5_joint1" value="0.147481"/>
+        <joint name="lara5_joint2" value="0.223339"/>
+        <joint name="lara5_joint3" value="1.887590"/>
+        <joint name="lara5_joint4" value="-0.023430"/>
+        <joint name="lara5_joint5" value="1.001980"/>
+        <joint name="lara5_joint6" value="0.683415"/>
     </group_state>
     <group_state name="c6_hover" group="arm">
-        <joint name="lara5_joint1" value="0.127627"/>
-        <joint name="lara5_joint2" value="0.328827"/>
-        <joint name="lara5_joint3" value="1.752044"/>
-        <joint name="lara5_joint4" value="-0.022335"/>
-        <joint name="lara5_joint5" value="1.031636"/>
-        <joint name="lara5_joint6" value="0.662412"/>
+        <joint name="lara5_joint1" value="0.135341"/>
+        <joint name="lara5_joint2" value="0.316481"/>
+        <joint name="lara5_joint3" value="1.768453"/>
+        <joint name="lara5_joint4" value="-0.022649"/>
+        <joint name="lara5_joint5" value="1.027725"/>
+        <joint name="lara5_joint6" value="0.670362"/>
     </group_state>
     <group_state name="c7_hover" group="arm">
-        <joint name="lara5_joint1" value="0.118005"/>
-        <joint name="lara5_joint2" value="0.421516"/>
-        <joint name="lara5_joint3" value="1.624490"/>
-        <joint name="lara5_joint4" value="-0.021573"/>
-        <joint name="lara5_joint5" value="1.066303"/>
-        <joint name="lara5_joint6" value="0.651753"/>
+        <joint name="lara5_joint1" value="0.125037"/>
+        <joint name="lara5_joint2" value="0.409054"/>
+        <joint name="lara5_joint3" value="1.642073"/>
+        <joint name="lara5_joint4" value="-0.021869"/>
+        <joint name="lara5_joint5" value="1.061318"/>
+        <joint name="lara5_joint6" value="0.659022"/>
     </group_state>
     <group_state name="c8_hover" group="arm">
-        <joint name="lara5_joint1" value="0.109726"/>
-        <joint name="lara5_joint2" value="0.515509"/>
-        <joint name="lara5_joint3" value="1.487788"/>
-        <joint name="lara5_joint4" value="-0.020825"/>
-        <joint name="lara5_joint5" value="1.108838"/>
-        <joint name="lara5_joint6" value="0.642331"/>
+        <joint name="lara5_joint1" value="0.116184"/>
+        <joint name="lara5_joint2" value="0.502704"/>
+        <joint name="lara5_joint3" value="1.506820"/>
+        <joint name="lara5_joint4" value="-0.021102"/>
+        <joint name="lara5_joint5" value="1.102736"/>
+        <joint name="lara5_joint6" value="0.649026"/>
     </group_state>
     <group_state name="d1_hover" group="arm">
-        <joint name="lara5_joint1" value="0.077958"/>
-        <joint name="lara5_joint2" value="-0.192570"/>
-        <joint name="lara5_joint3" value="2.309670"/>
-        <joint name="lara5_joint4" value="-0.021093"/>
-        <joint name="lara5_joint5" value="0.994526"/>
-        <joint name="lara5_joint6" value="0.612783"/>
+        <joint name="lara5_joint1" value="0.090302"/>
+        <joint name="lara5_joint2" value="-0.209019"/>
+        <joint name="lara5_joint3" value="2.322856"/>
+        <joint name="lara5_joint4" value="-0.021491"/>
+        <joint name="lara5_joint5" value="0.998006"/>
+        <joint name="lara5_joint6" value="0.625279"/>
     </group_state>
     <group_state name="d2_hover" group="arm">
-        <joint name="lara5_joint1" value="0.068363"/>
-        <joint name="lara5_joint2" value="-0.076403"/>
-        <joint name="lara5_joint3" value="2.210671"/>
-        <joint name="lara5_joint4" value="-0.020996"/>
-        <joint name="lara5_joint5" value="0.977150"/>
-        <joint name="lara5_joint6" value="0.603442"/>
+        <joint name="lara5_joint1" value="0.079005"/>
+        <joint name="lara5_joint2" value="-0.091726"/>
+        <joint name="lara5_joint3" value="2.224620"/>
+        <joint name="lara5_joint4" value="-0.021360"/>
+        <joint name="lara5_joint5" value="0.978714"/>
+        <joint name="lara5_joint6" value="0.614257"/>
     </group_state>
     <group_state name="d3_hover" group="arm">
-        <joint name="lara5_joint1" value="0.060905"/>
-        <joint name="lara5_joint2" value="0.030247"/>
-        <joint name="lara5_joint3" value="2.106632"/>
-        <joint name="lara5_joint4" value="-0.020763"/>
-        <joint name="lara5_joint5" value="0.974408"/>
-        <joint name="lara5_joint6" value="0.595904"/>
+        <joint name="lara5_joint1" value="0.070258"/>
+        <joint name="lara5_joint2" value="0.015924"/>
+        <joint name="lara5_joint3" value="2.121312"/>
+        <joint name="lara5_joint4" value="-0.021108"/>
+        <joint name="lara5_joint5" value="0.974216"/>
+        <joint name="lara5_joint6" value="0.605451"/>
     </group_state>
     <group_state name="d4_hover" group="arm">
-        <joint name="lara5_joint1" value="0.054912"/>
-        <joint name="lara5_joint2" value="0.130602"/>
-        <joint name="lara5_joint3" value="1.997646"/>
-        <joint name="lara5_joint4" value="-0.020426"/>
-        <joint name="lara5_joint5" value="0.982933"/>
-        <joint name="lara5_joint6" value="0.589579"/>
+        <joint name="lara5_joint1" value="0.063250"/>
+        <joint name="lara5_joint2" value="0.116961"/>
+        <joint name="lara5_joint3" value="2.013085"/>
+        <joint name="lara5_joint4" value="-0.020753"/>
+        <joint name="lara5_joint5" value="0.981281"/>
+        <joint name="lara5_joint6" value="0.598124"/>
     </group_state>
     <group_state name="d5_hover" group="arm">
-        <joint name="lara5_joint1" value="0.049990"/>
-        <joint name="lara5_joint2" value="0.226820"/>
-        <joint name="lara5_joint3" value="1.883291"/>
-        <joint name="lara5_joint4" value="-0.020009"/>
-        <joint name="lara5_joint5" value="1.000980"/>
-        <joint name="lara5_joint6" value="0.584126"/>
+        <joint name="lara5_joint1" value="0.057511"/>
+        <joint name="lara5_joint2" value="0.213599"/>
+        <joint name="lara5_joint3" value="1.899560"/>
+        <joint name="lara5_joint4" value="-0.020319"/>
+        <joint name="lara5_joint5" value="0.998062"/>
+        <joint name="lara5_joint6" value="0.591861"/>
     </group_state>
     <group_state name="d6_hover" group="arm">
-        <joint name="lara5_joint1" value="0.045878"/>
-        <joint name="lara5_joint2" value="0.320729"/>
-        <joint name="lara5_joint3" value="1.762824"/>
-        <joint name="lara5_joint4" value="-0.019535"/>
-        <joint name="lara5_joint5" value="1.027461"/>
-        <joint name="lara5_joint6" value="0.579320"/>
+        <joint name="lara5_joint1" value="0.052725"/>
+        <joint name="lara5_joint2" value="0.307696"/>
+        <joint name="lara5_joint3" value="1.780044"/>
+        <joint name="lara5_joint4" value="-0.019828"/>
+        <joint name="lara5_joint5" value="1.023392"/>
+        <joint name="lara5_joint6" value="0.586385"/>
     </group_state>
     <group_state name="d7_hover" group="arm">
-        <joint name="lara5_joint1" value="0.042390"/>
-        <joint name="lara5_joint2" value="0.414008"/>
-        <joint name="lara5_joint3" value="1.635099"/>
-        <joint name="lara5_joint4" value="-0.019026"/>
-        <joint name="lara5_joint5" value="1.061837"/>
-        <joint name="lara5_joint6" value="0.575005"/>
+        <joint name="lara5_joint1" value="0.048674"/>
+        <joint name="lara5_joint2" value="0.400936"/>
+        <joint name="lara5_joint3" value="1.653457"/>
+        <joint name="lara5_joint4" value="-0.019303"/>
+        <joint name="lara5_joint5" value="1.056659"/>
+        <joint name="lara5_joint6" value="0.581508"/>
     </group_state>
     <group_state name="d8_hover" group="arm">
-        <joint name="lara5_joint1" value="0.039394"/>
-        <joint name="lara5_joint2" value="0.508374"/>
-        <joint name="lara5_joint3" value="1.498409"/>
-        <joint name="lara5_joint4" value="-0.018501"/>
-        <joint name="lara5_joint5" value="1.104098"/>
-        <joint name="lara5_joint6" value="0.571064"/>
+        <joint name="lara5_joint1" value="0.045200"/>
+        <joint name="lara5_joint2" value="0.495016"/>
+        <joint name="lara5_joint3" value="1.518187"/>
+        <joint name="lara5_joint4" value="-0.018761"/>
+        <joint name="lara5_joint5" value="1.097778"/>
+        <joint name="lara5_joint6" value="0.577090"/>
     </group_state>
     <group_state name="e1_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.061964"/>
-        <joint name="lara5_joint2" value="-0.193284"/>
-        <joint name="lara5_joint3" value="2.310481"/>
-        <joint name="lara5_joint4" value="-0.015898"/>
-        <joint name="lara5_joint5" value="0.992204"/>
-        <joint name="lara5_joint6" value="0.470110"/>
+        <joint name="lara5_joint1" value="-0.052435"/>
+        <joint name="lara5_joint2" value="-0.211221"/>
+        <joint name="lara5_joint3" value="2.324747"/>
+        <joint name="lara5_joint4" value="-0.016235"/>
+        <joint name="lara5_joint5" value="0.996000"/>
+        <joint name="lara5_joint6" value="0.479771"/>
     </group_state>
     <group_state name="e2_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.054387"/>
-        <joint name="lara5_joint2" value="-0.077179"/>
-        <joint name="lara5_joint3" value="2.211384"/>
-        <joint name="lara5_joint4" value="-0.016397"/>
-        <joint name="lara5_joint5" value="0.975271"/>
-        <joint name="lara5_joint6" value="0.478193"/>
+        <joint name="lara5_joint1" value="-0.045910"/>
+        <joint name="lara5_joint2" value="-0.093585"/>
+        <joint name="lara5_joint3" value="2.226297"/>
+        <joint name="lara5_joint4" value="-0.016707"/>
+        <joint name="lara5_joint5" value="0.976882"/>
+        <joint name="lara5_joint6" value="0.486818"/>
     </group_state>
     <group_state name="e3_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.048449"/>
-        <joint name="lara5_joint2" value="0.029603"/>
-        <joint name="lara5_joint3" value="2.107297"/>
-        <joint name="lara5_joint4" value="-0.016656"/>
-        <joint name="lara5_joint5" value="0.972659"/>
-        <joint name="lara5_joint6" value="0.484310"/>
+        <joint name="lara5_joint1" value="-0.040815"/>
+        <joint name="lara5_joint2" value="0.014387"/>
+        <joint name="lara5_joint3" value="2.122875"/>
+        <joint name="lara5_joint4" value="-0.016954"/>
+        <joint name="lara5_joint5" value="0.972405"/>
+        <joint name="lara5_joint6" value="0.492112"/>
     </group_state>
     <group_state name="e4_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.043677"/>
-        <joint name="lara5_joint2" value="0.130050"/>
-        <joint name="lara5_joint3" value="1.998274"/>
-        <joint name="lara5_joint4" value="-0.016742"/>
-        <joint name="lara5_joint5" value="0.981300"/>
-        <joint name="lara5_joint6" value="0.489008"/>
+        <joint name="lara5_joint1" value="-0.036736"/>
+        <joint name="lara5_joint2" value="0.115651"/>
+        <joint name="lara5_joint3" value="2.014558"/>
+        <joint name="lara5_joint4" value="-0.017029"/>
+        <joint name="lara5_joint5" value="0.979515"/>
+        <joint name="lara5_joint6" value="0.496131"/>
     </group_state>
     <group_state name="e5_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.039761"/>
-        <joint name="lara5_joint2" value="0.226334"/>
-        <joint name="lara5_joint3" value="1.883892"/>
-        <joint name="lara5_joint4" value="-0.016693"/>
-        <joint name="lara5_joint5" value="0.999451"/>
-        <joint name="lara5_joint6" value="0.492642"/>
+        <joint name="lara5_joint1" value="-0.033398"/>
+        <joint name="lara5_joint2" value="0.212450"/>
+        <joint name="lara5_joint3" value="1.900966"/>
+        <joint name="lara5_joint4" value="-0.016968"/>
+        <joint name="lara5_joint5" value="0.996353"/>
+        <joint name="lara5_joint6" value="0.499195"/>
     </group_state>
     <group_state name="e6_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.036488"/>
-        <joint name="lara5_joint2" value="0.320290"/>
-        <joint name="lara5_joint3" value="1.763406"/>
-        <joint name="lara5_joint4" value="-0.016540"/>
-        <joint name="lara5_joint5" value="1.026022"/>
-        <joint name="lara5_joint6" value="0.495458"/>
+        <joint name="lara5_joint1" value="-0.030616"/>
+        <joint name="lara5_joint2" value="0.306661"/>
+        <joint name="lara5_joint3" value="1.781404"/>
+        <joint name="lara5_joint4" value="-0.016802"/>
+        <joint name="lara5_joint5" value="1.021739"/>
+        <joint name="lara5_joint6" value="0.501525"/>
     </group_state>
     <group_state name="e7_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.033713"/>
-        <joint name="lara5_joint2" value="0.413602"/>
-        <joint name="lara5_joint3" value="1.635672"/>
-        <joint name="lara5_joint4" value="-0.016312"/>
-        <joint name="lara5_joint5" value="1.060476"/>
-        <joint name="lara5_joint6" value="0.497628"/>
+        <joint name="lara5_joint1" value="-0.028261"/>
+        <joint name="lara5_joint2" value="0.399982"/>
+        <joint name="lara5_joint3" value="1.654792"/>
+        <joint name="lara5_joint4" value="-0.016562"/>
+        <joint name="lara5_joint5" value="1.055057"/>
+        <joint name="lara5_joint6" value="0.503278"/>
     </group_state>
     <group_state name="e8_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.031329"/>
-        <joint name="lara5_joint2" value="0.507988"/>
-        <joint name="lara5_joint3" value="1.498982"/>
-        <joint name="lara5_joint4" value="-0.016034"/>
-        <joint name="lara5_joint5" value="1.102804"/>
-        <joint name="lara5_joint6" value="0.499275"/>
+        <joint name="lara5_joint1" value="-0.026242"/>
+        <joint name="lara5_joint2" value="0.494113"/>
+        <joint name="lara5_joint3" value="1.519519"/>
+        <joint name="lara5_joint4" value="-0.016269"/>
+        <joint name="lara5_joint5" value="1.096218"/>
+        <joint name="lara5_joint6" value="0.504562"/>
     </group_state>
     <group_state name="f1_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.197589"/>
-        <joint name="lara5_joint2" value="-0.182496"/>
-        <joint name="lara5_joint3" value="2.298712"/>
-        <joint name="lara5_joint4" value="-0.009112"/>
-        <joint name="lara5_joint5" value="0.991873"/>
-        <joint name="lara5_joint6" value="0.330763"/>
+        <joint name="lara5_joint1" value="-0.193105"/>
+        <joint name="lara5_joint2" value="-0.196194"/>
+        <joint name="lara5_joint3" value="2.312968"/>
+        <joint name="lara5_joint4" value="-0.010752"/>
+        <joint name="lara5_joint5" value="0.991122"/>
+        <joint name="lara5_joint6" value="0.336232"/>
     </group_state>
     <group_state name="f2_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.175535"/>
-        <joint name="lara5_joint2" value="-0.064489"/>
-        <joint name="lara5_joint3" value="2.199655"/>
-        <joint name="lara5_joint4" value="-0.011607"/>
-        <joint name="lara5_joint5" value="0.972873"/>
-        <joint name="lara5_joint6" value="0.354442"/>
+        <joint name="lara5_joint1" value="-0.169419"/>
+        <joint name="lara5_joint2" value="-0.081551"/>
+        <joint name="lara5_joint3" value="2.215381"/>
+        <joint name="lara5_joint4" value="-0.011845"/>
+        <joint name="lara5_joint5" value="0.974272"/>
+        <joint name="lara5_joint6" value="0.360675"/>
     </group_state>
     <group_state name="f3_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.156662"/>
-        <joint name="lara5_joint2" value="0.040163"/>
-        <joint name="lara5_joint3" value="2.096338"/>
-        <joint name="lara5_joint4" value="-0.012379"/>
-        <joint name="lara5_joint5" value="0.971731"/>
-        <joint name="lara5_joint6" value="0.373751"/>
+        <joint name="lara5_joint1" value="-0.150895"/>
+        <joint name="lara5_joint2" value="0.024351"/>
+        <joint name="lara5_joint3" value="2.112699"/>
+        <joint name="lara5_joint4" value="-0.012616"/>
+        <joint name="lara5_joint5" value="0.971243"/>
+        <joint name="lara5_joint6" value="0.379654"/>
     </group_state>
     <group_state name="f4_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.141428"/>
-        <joint name="lara5_joint2" value="0.139111"/>
-        <joint name="lara5_joint3" value="1.987914"/>
-        <joint name="lara5_joint4" value="-0.012907"/>
-        <joint name="lara5_joint5" value="0.981368"/>
-        <joint name="lara5_joint6" value="0.389171"/>
+        <joint name="lara5_joint1" value="-0.135996"/>
+        <joint name="lara5_joint2" value="0.124163"/>
+        <joint name="lara5_joint3" value="2.004957"/>
+        <joint name="lara5_joint4" value="-0.013141"/>
+        <joint name="lara5_joint5" value="0.979334"/>
+        <joint name="lara5_joint6" value="0.394752"/>
     </group_state>
     <group_state name="f5_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.128877"/>
-        <joint name="lara5_joint2" value="0.234326"/>
-        <joint name="lara5_joint3" value="1.873976"/>
-        <joint name="lara5_joint4" value="-0.013241"/>
-        <joint name="lara5_joint5" value="1.000229"/>
-        <joint name="lara5_joint6" value="0.401691"/>
+        <joint name="lara5_joint1" value="-0.123760"/>
+        <joint name="lara5_joint2" value="0.219928"/>
+        <joint name="lara5_joint3" value="1.891794"/>
+        <joint name="lara5_joint4" value="-0.013471"/>
+        <joint name="lara5_joint5" value="0.996869"/>
+        <joint name="lara5_joint6" value="0.406969"/>
     </group_state>
     <group_state name="f6_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.118362"/>
-        <joint name="lara5_joint2" value="0.327519"/>
-        <joint name="lara5_joint3" value="1.753788"/>
-        <joint name="lara5_joint4" value="-0.013424"/>
-        <joint name="lara5_joint5" value="1.027340"/>
-        <joint name="lara5_joint6" value="0.411991"/>
+        <joint name="lara5_joint1" value="-0.113534"/>
+        <joint name="lara5_joint2" value="0.313400"/>
+        <joint name="lara5_joint3" value="1.772526"/>
+        <joint name="lara5_joint4" value="-0.013648"/>
+        <joint name="lara5_joint5" value="1.022780"/>
+        <joint name="lara5_joint6" value="0.416986"/>
     </group_state>
     <group_state name="f7_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.109427"/>
-        <joint name="lara5_joint2" value="0.420302"/>
-        <joint name="lara5_joint3" value="1.626207"/>
-        <joint name="lara5_joint4" value="-0.013491"/>
-        <joint name="lara5_joint5" value="1.062237"/>
-        <joint name="lara5_joint6" value="0.420549"/>
+        <joint name="lara5_joint1" value="-0.104863"/>
+        <joint name="lara5_joint2" value="0.406205"/>
+        <joint name="lara5_joint3" value="1.646075"/>
+        <joint name="lara5_joint4" value="-0.013706"/>
+        <joint name="lara5_joint5" value="1.056523"/>
+        <joint name="lara5_joint6" value="0.425284"/>
     </group_state>
     <group_state name="f8_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.101741"/>
-        <joint name="lara5_joint2" value="0.514355"/>
-        <joint name="lara5_joint3" value="1.489508"/>
-        <joint name="lara5_joint4" value="-0.013471"/>
-        <joint name="lara5_joint5" value="1.104967"/>
-        <joint name="lara5_joint6" value="0.427712"/>
+        <joint name="lara5_joint1" value="-0.097418"/>
+        <joint name="lara5_joint2" value="0.500004"/>
+        <joint name="lara5_joint3" value="1.510818"/>
+        <joint name="lara5_joint4" value="-0.013677"/>
+        <joint name="lara5_joint5" value="1.098064"/>
+        <joint name="lara5_joint6" value="0.432211"/>
     </group_state>
     <group_state name="g1_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.329922"/>
-        <joint name="lara5_joint2" value="-0.146422"/>
-        <joint name="lara5_joint3" value="2.272127"/>
-        <joint name="lara5_joint4" value="-0.005180"/>
-        <joint name="lara5_joint5" value="0.981264"/>
-        <joint name="lara5_joint6" value="0.196475"/>
+        <joint name="lara5_joint1" value="-0.326497"/>
+        <joint name="lara5_joint2" value="-0.165264"/>
+        <joint name="lara5_joint3" value="2.287880"/>
+        <joint name="lara5_joint4" value="-0.005314"/>
+        <joint name="lara5_joint5" value="0.984367"/>
+        <joint name="lara5_joint6" value="0.199961"/>
     </group_state>
     <group_state name="g2_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.291717"/>
-        <joint name="lara5_joint2" value="-0.039231"/>
-        <joint name="lara5_joint3" value="2.175777"/>
-        <joint name="lara5_joint4" value="-0.006838"/>
-        <joint name="lara5_joint5" value="0.970591"/>
-        <joint name="lara5_joint6" value="0.235655"/>
+        <joint name="lara5_joint1" value="-0.287957"/>
+        <joint name="lara5_joint2" value="-0.056508"/>
+        <joint name="lara5_joint3" value="2.192172"/>
+        <joint name="lara5_joint4" value="-0.006991"/>
+        <joint name="lara5_joint5" value="0.971495"/>
+        <joint name="lara5_joint6" value="0.239494"/>
     </group_state>
     <group_state name="g3_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.261316"/>
-        <joint name="lara5_joint2" value="0.061367"/>
-        <joint name="lara5_joint3" value="2.073972"/>
-        <joint name="lara5_joint4" value="-0.008092"/>
-        <joint name="lara5_joint5" value="0.971988"/>
-        <joint name="lara5_joint6" value="0.266736"/>
+        <joint name="lara5_joint1" value="-0.257429"/>
+        <joint name="lara5_joint2" value="0.045264"/>
+        <joint name="lara5_joint3" value="2.090997"/>
+        <joint name="lara5_joint4" value="-0.008258"/>
+        <joint name="lara5_joint5" value="0.971093"/>
+        <joint name="lara5_joint6" value="0.270721"/>
     </group_state>
     <group_state name="g4_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.236542"/>
-        <joint name="lara5_joint2" value="0.157426"/>
-        <joint name="lara5_joint3" value="1.966715"/>
-        <joint name="lara5_joint4" value="-0.009044"/>
-        <joint name="lara5_joint5" value="0.983365"/>
-        <joint name="lara5_joint6" value="0.291946"/>
+        <joint name="lara5_joint1" value="-0.232642"/>
+        <joint name="lara5_joint2" value="0.142143"/>
+        <joint name="lara5_joint3" value="1.984427"/>
+        <joint name="lara5_joint4" value="-0.009219"/>
+        <joint name="lara5_joint5" value="0.980967"/>
+        <joint name="lara5_joint6" value="0.295959"/>
     </group_state>
     <group_state name="g5_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.215989"/>
-        <joint name="lara5_joint2" value="0.250561"/>
-        <joint name="lara5_joint3" value="1.853638"/>
-        <joint name="lara5_joint4" value="-0.009753"/>
-        <joint name="lara5_joint5" value="1.003470"/>
-        <joint name="lara5_joint6" value="0.312716"/>
+        <joint name="lara5_joint1" value="-0.212142"/>
+        <joint name="lara5_joint2" value="0.235801"/>
+        <joint name="lara5_joint3" value="1.872137"/>
+        <joint name="lara5_joint4" value="-0.009932"/>
+        <joint name="lara5_joint5" value="0.999764"/>
+        <joint name="lara5_joint6" value="0.316688"/>
     </group_state>
     <group_state name="g6_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.198677"/>
-        <joint name="lara5_joint2" value="0.342265"/>
-        <joint name="lara5_joint3" value="1.734023"/>
-        <joint name="lara5_joint4" value="-0.010267"/>
-        <joint name="lara5_joint5" value="1.031528"/>
-        <joint name="lara5_joint6" value="0.330048"/>
+        <joint name="lara5_joint1" value="-0.194918"/>
+        <joint name="lara5_joint2" value="0.327762"/>
+        <joint name="lara5_joint3" value="1.753463"/>
+        <joint name="lara5_joint4" value="-0.010446"/>
+        <joint name="lara5_joint5" value="1.026625"/>
+        <joint name="lara5_joint6" value="0.333941"/>
     </group_state>
     <group_state name="g7_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.183905"/>
-        <joint name="lara5_joint2" value="0.434016"/>
-        <joint name="lara5_joint3" value="1.606719"/>
-        <joint name="lara5_joint4" value="-0.010626"/>
-        <joint name="lara5_joint5" value="1.067211"/>
-        <joint name="lara5_joint6" value="0.344668"/>
+        <joint name="lara5_joint1" value="-0.180252"/>
+        <joint name="lara5_joint2" value="0.419512"/>
+        <joint name="lara5_joint3" value="1.627325"/>
+        <joint name="lara5_joint4" value="-0.010803"/>
+        <joint name="lara5_joint5" value="1.061145"/>
+        <joint name="lara5_joint6" value="0.348462"/>
     </group_state>
     <group_state name="g8_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.171157"/>
-        <joint name="lara5_joint2" value="0.527426"/>
-        <joint name="lara5_joint3" value="1.469965"/>
-        <joint name="lara5_joint4" value="-0.010865"/>
-        <joint name="lara5_joint5" value="1.110671"/>
-        <joint name="lara5_joint6" value="0.357105"/>
+        <joint name="lara5_joint1" value="-0.167619"/>
+        <joint name="lara5_joint2" value="0.512637"/>
+        <joint name="lara5_joint3" value="1.492068"/>
+        <joint name="lara5_joint4" value="-0.011037"/>
+        <joint name="lara5_joint5" value="1.103394"/>
+        <joint name="lara5_joint6" value="0.360790"/>
     </group_state>
     <group_state name="h1_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.453786"/>
-        <joint name="lara5_joint2" value="-0.122173"/>
-        <joint name="lara5_joint3" value="2.251475"/>
-        <joint name="lara5_joint4" value="0.000000"/>
-        <joint name="lara5_joint5" value="0.977384"/>
-        <joint name="lara5_joint6" value="0.069813"/>
+        <joint name="lara5_joint1" value="-0.448907"/>
+        <joint name="lara5_joint2" value="-0.121114"/>
+        <joint name="lara5_joint3" value="2.250395"/>
+        <joint name="lara5_joint4" value="-0.000193"/>
+        <joint name="lara5_joint5" value="0.977416"/>
+        <joint name="lara5_joint6" value="0.074785"/>
     </group_state>
     <group_state name="h2_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.400367"/>
-        <joint name="lara5_joint2" value="-0.002995"/>
-        <joint name="lara5_joint3" value="2.140345"/>
-        <joint name="lara5_joint4" value="-0.002276"/>
-        <joint name="lara5_joint5" value="0.969370"/>
-        <joint name="lara5_joint6" value="0.124496"/>
+        <joint name="lara5_joint1" value="-0.398763"/>
+        <joint name="lara5_joint2" value="-0.020120"/>
+        <joint name="lara5_joint3" value="2.157260"/>
+        <joint name="lara5_joint4" value="-0.002344"/>
+        <joint name="lara5_joint5" value="0.969583"/>
+        <joint name="lara5_joint6" value="0.126137"/>
     </group_state>
     <group_state name="h3_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.360448"/>
-        <joint name="lara5_joint2" value="0.092194"/>
-        <joint name="lara5_joint3" value="2.040605"/>
-        <joint name="lara5_joint4" value="-0.003944"/>
-        <joint name="lara5_joint5" value="0.974025"/>
-        <joint name="lara5_joint6" value="0.165319"/>
+        <joint name="lara5_joint1" value="-0.358330"/>
+        <joint name="lara5_joint2" value="0.076067"/>
+        <joint name="lara5_joint3" value="2.058184"/>
+        <joint name="lara5_joint4" value="-0.004037"/>
+        <joint name="lara5_joint5" value="0.972580"/>
+        <joint name="lara5_joint6" value="0.167492"/>
     </group_state>
     <group_state name="h4_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.327501"/>
-        <joint name="lara5_joint2" value="0.184325"/>
-        <joint name="lara5_joint3" value="1.934954"/>
-        <joint name="lara5_joint4" value="-0.005274"/>
-        <joint name="lara5_joint5" value="0.987673"/>
-        <joint name="lara5_joint6" value="0.198932"/>
+        <joint name="lara5_joint1" value="-0.325072"/>
+        <joint name="lara5_joint2" value="0.168902"/>
+        <joint name="lara5_joint3" value="1.953254"/>
+        <joint name="lara5_joint4" value="-0.005386"/>
+        <joint name="lara5_joint5" value="0.984807"/>
+        <joint name="lara5_joint6" value="0.201434"/>
     </group_state>
     <group_state name="h5_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.299902"/>
-        <joint name="lara5_joint2" value="0.274597"/>
-        <joint name="lara5_joint3" value="1.823056"/>
-        <joint name="lara5_joint4" value="-0.006325"/>
-        <joint name="lara5_joint5" value="1.009434"/>
-        <joint name="lara5_joint6" value="0.226976"/>
+        <joint name="lara5_joint1" value="-0.297292"/>
+        <joint name="lara5_joint2" value="0.259615"/>
+        <joint name="lara5_joint3" value="1.842183"/>
+        <joint name="lara5_joint4" value="-0.006449"/>
+        <joint name="lara5_joint5" value="1.005304"/>
+        <joint name="lara5_joint6" value="0.229674"/>
     </group_state>
     <group_state name="h6_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.276482"/>
-        <joint name="lara5_joint2" value="0.364238"/>
-        <joint name="lara5_joint3" value="1.704204"/>
-        <joint name="lara5_joint4" value="-0.007147"/>
-        <joint name="lara5_joint5" value="1.038779"/>
-        <joint name="lara5_joint6" value="0.250640"/>
+        <joint name="lara5_joint1" value="-0.273774"/>
+        <joint name="lara5_joint2" value="0.349450"/>
+        <joint name="lara5_joint3" value="1.724320"/>
+        <joint name="lara5_joint4" value="-0.007278"/>
+        <joint name="lara5_joint5" value="1.033470"/>
+        <joint name="lara5_joint6" value="0.253446"/>
     </group_state>
     <group_state name="h7_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.256379"/>
-        <joint name="lara5_joint2" value="0.454567"/>
-        <joint name="lara5_joint3" value="1.577226"/>
-        <joint name="lara5_joint4" value="-0.007783"/>
-        <joint name="lara5_joint5" value="1.075557"/>
-        <joint name="lara5_joint6" value="0.270804"/>
+        <joint name="lara5_joint1" value="-0.253629"/>
+        <joint name="lara5_joint2" value="0.439718"/>
+        <joint name="lara5_joint3" value="1.598571"/>
+        <joint name="lara5_joint4" value="-0.007918"/>
+        <joint name="lara5_joint5" value="1.069081"/>
+        <joint name="lara5_joint6" value="0.273662"/>
     </group_state>
     <group_state name="h8_hover" group="arm">
-        <joint name="lara5_joint1" value="-0.238949"/>
-        <joint name="lara5_joint2" value="0.547114"/>
-        <joint name="lara5_joint3" value="1.440287"/>
-        <joint name="lara5_joint4" value="-0.008268"/>
-        <joint name="lara5_joint5" value="1.120068"/>
-        <joint name="lara5_joint6" value="0.288127"/>
+        <joint name="lara5_joint1" value="-0.236193"/>
+        <joint name="lara5_joint2" value="0.531916"/>
+        <joint name="lara5_joint3" value="1.463220"/>
+        <joint name="lara5_joint4" value="-0.008404"/>
+        <joint name="lara5_joint5" value="1.112354"/>
+        <joint name="lara5_joint6" value="0.290999"/>
     </group_state>
 
     <!-- Grasp goals: h1 taught; others = hover TCP + h1 dp/dR, seed q_hover+dq. -->
@@ -1074,1032 +1074,1032 @@
     <group_state name="open" group="gripper">
         <joint name="lara5_gripper_finger_joint" value="1.74533"/>
     </group_state>
-    <!-- Hover goals (board=big): h1 taught in RViz; other squares IK at same z and R. -->
+    <!-- Hover goals (board=big): grasp TCP above each square centre, IK at taught h1 z and R. -->
     <group_state name="a1_hover_big" group="arm">
-        <joint name="lara5_joint1" value="1.121759"/>
-        <joint name="lara5_joint2" value="0.168858"/>
-        <joint name="lara5_joint3" value="1.945454"/>
-        <joint name="lara5_joint4" value="-0.020171"/>
-        <joint name="lara5_joint5" value="1.029850"/>
-        <joint name="lara5_joint6" value="1.795412"/>
+        <joint name="lara5_joint1" value="1.132749"/>
+        <joint name="lara5_joint2" value="0.170995"/>
+        <joint name="lara5_joint3" value="1.942963"/>
+        <joint name="lara5_joint4" value="-0.020147"/>
+        <joint name="lara5_joint5" value="1.030374"/>
+        <joint name="lara5_joint6" value="1.806381"/>
     </group_state>
     <group_state name="a2_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.979980"/>
-        <joint name="lara5_joint2" value="0.254409"/>
-        <joint name="lara5_joint3" value="1.841054"/>
-        <joint name="lara5_joint4" value="-0.020138"/>
-        <joint name="lara5_joint5" value="1.046224"/>
-        <joint name="lara5_joint6" value="1.653268"/>
+        <joint name="lara5_joint1" value="0.990290"/>
+        <joint name="lara5_joint2" value="0.254990"/>
+        <joint name="lara5_joint3" value="1.840319"/>
+        <joint name="lara5_joint4" value="-0.020133"/>
+        <joint name="lara5_joint5" value="1.046557"/>
+        <joint name="lara5_joint6" value="1.663572"/>
     </group_state>
     <group_state name="a3_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.860817"/>
-        <joint name="lara5_joint2" value="0.356907"/>
-        <joint name="lara5_joint3" value="1.706619"/>
-        <joint name="lara5_joint4" value="-0.019671"/>
-        <joint name="lara5_joint5" value="1.076071"/>
-        <joint name="lara5_joint6" value="1.533340"/>
+        <joint name="lara5_joint1" value="0.870228"/>
+        <joint name="lara5_joint2" value="0.356156"/>
+        <joint name="lara5_joint3" value="1.707639"/>
+        <joint name="lara5_joint4" value="-0.019694"/>
+        <joint name="lara5_joint5" value="1.075966"/>
+        <joint name="lara5_joint6" value="1.542764"/>
     </group_state>
     <group_state name="a4_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.761857"/>
-        <joint name="lara5_joint2" value="0.473599"/>
-        <joint name="lara5_joint3" value="1.542218"/>
-        <joint name="lara5_joint4" value="-0.018903"/>
-        <joint name="lara5_joint5" value="1.122055"/>
-        <joint name="lara5_joint6" value="1.433228"/>
+        <joint name="lara5_joint1" value="0.770325"/>
+        <joint name="lara5_joint2" value="0.471725"/>
+        <joint name="lara5_joint3" value="1.544946"/>
+        <joint name="lara5_joint4" value="-0.018944"/>
+        <joint name="lara5_joint5" value="1.121345"/>
+        <joint name="lara5_joint6" value="1.441727"/>
     </group_state>
     <group_state name="a5_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.679868"/>
-        <joint name="lara5_joint2" value="0.605160"/>
-        <joint name="lara5_joint3" value="1.344020"/>
-        <joint name="lara5_joint4" value="-0.017979"/>
-        <joint name="lara5_joint5" value="1.187273"/>
-        <joint name="lara5_joint6" value="1.349758"/>
+        <joint name="lara5_joint1" value="0.687448"/>
+        <joint name="lara5_joint2" value="0.602228"/>
+        <joint name="lara5_joint3" value="1.348571"/>
+        <joint name="lara5_joint4" value="-0.018032"/>
+        <joint name="lara5_joint5" value="1.185782"/>
+        <joint name="lara5_joint6" value="1.357384"/>
     </group_state>
     <group_state name="a6_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.611700"/>
-        <joint name="lara5_joint2" value="0.756602"/>
-        <joint name="lara5_joint3" value="1.101409"/>
-        <joint name="lara5_joint4" value="-0.016953"/>
-        <joint name="lara5_joint5" value="1.277239"/>
-        <joint name="lara5_joint6" value="1.279761"/>
+        <joint name="lara5_joint1" value="0.618460"/>
+        <joint name="lara5_joint2" value="0.754050"/>
+        <joint name="lara5_joint3" value="1.105433"/>
+        <joint name="lara5_joint4" value="-0.017078"/>
+        <joint name="lara5_joint5" value="1.276008"/>
+        <joint name="lara5_joint6" value="1.286597"/>
     </group_state>
     <group_state name="a7_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.554566"/>
-        <joint name="lara5_joint2" value="0.949531"/>
-        <joint name="lara5_joint3" value="0.773802"/>
-        <joint name="lara5_joint4" value="-0.016121"/>
-        <joint name="lara5_joint5" value="1.411041"/>
-        <joint name="lara5_joint6" value="1.220300"/>
+        <joint name="lara5_joint1" value="0.560664"/>
+        <joint name="lara5_joint2" value="0.943203"/>
+        <joint name="lara5_joint3" value="0.784815"/>
+        <joint name="lara5_joint4" value="-0.016177"/>
+        <joint name="lara5_joint5" value="1.406460"/>
+        <joint name="lara5_joint6" value="1.226480"/>
     </group_state>
     <group_state name="a8_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.506345"/>
-        <joint name="lara5_joint2" value="1.373238"/>
-        <joint name="lara5_joint3" value="0.000000"/>
-        <joint name="lara5_joint4" value="-0.015836"/>
-        <joint name="lara5_joint5" value="1.759937"/>
-        <joint name="lara5_joint6" value="1.166524"/>
+        <joint name="lara5_joint1" value="0.511847"/>
+        <joint name="lara5_joint2" value="1.344837"/>
+        <joint name="lara5_joint3" value="0.053208"/>
+        <joint name="lara5_joint4" value="-0.015810"/>
+        <joint name="lara5_joint5" value="1.735578"/>
+        <joint name="lara5_joint6" value="1.172415"/>
     </group_state>
     <group_state name="b1_hover_big" group="arm">
-        <joint name="lara5_joint1" value="1.034742"/>
-        <joint name="lara5_joint2" value="0.009235"/>
-        <joint name="lara5_joint3" value="2.120201"/>
-        <joint name="lara5_joint4" value="-0.020528"/>
-        <joint name="lara5_joint5" value="1.013248"/>
-        <joint name="lara5_joint6" value="1.708836"/>
+        <joint name="lara5_joint1" value="1.047829"/>
+        <joint name="lara5_joint2" value="0.010733"/>
+        <joint name="lara5_joint3" value="2.118824"/>
+        <joint name="lara5_joint4" value="-0.020513"/>
+        <joint name="lara5_joint5" value="1.013328"/>
+        <joint name="lara5_joint6" value="1.721916"/>
     </group_state>
     <group_state name="b2_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.879878"/>
-        <joint name="lara5_joint2" value="0.115103"/>
-        <joint name="lara5_joint3" value="2.007307"/>
-        <joint name="lara5_joint4" value="-0.020371"/>
-        <joint name="lara5_joint5" value="1.017543"/>
-        <joint name="lara5_joint6" value="1.553758"/>
+        <joint name="lara5_joint1" value="0.891682"/>
+        <joint name="lara5_joint2" value="0.114547"/>
+        <joint name="lara5_joint3" value="2.007930"/>
+        <joint name="lara5_joint4" value="-0.020392"/>
+        <joint name="lara5_joint5" value="1.017680"/>
+        <joint name="lara5_joint6" value="1.565574"/>
     </group_state>
     <group_state name="b3_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.756490"/>
-        <joint name="lara5_joint2" value="0.234313"/>
-        <joint name="lara5_joint3" value="1.866240"/>
-        <joint name="lara5_joint4" value="-0.019740"/>
-        <joint name="lara5_joint5" value="1.037260"/>
-        <joint name="lara5_joint6" value="1.429689"/>
+        <joint name="lara5_joint1" value="0.766866"/>
+        <joint name="lara5_joint2" value="0.232390"/>
+        <joint name="lara5_joint3" value="1.868629"/>
+        <joint name="lara5_joint4" value="-0.019788"/>
+        <joint name="lara5_joint5" value="1.036971"/>
+        <joint name="lara5_joint6" value="1.440096"/>
     </group_state>
     <group_state name="b4_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.658612"/>
-        <joint name="lara5_joint2" value="0.363049"/>
-        <joint name="lara5_joint3" value="1.698258"/>
-        <joint name="lara5_joint4" value="-0.018817"/>
-        <joint name="lara5_joint5" value="1.074838"/>
-        <joint name="lara5_joint6" value="1.330719"/>
+        <joint name="lara5_joint1" value="0.667663"/>
+        <joint name="lara5_joint2" value="0.360088"/>
+        <joint name="lara5_joint3" value="1.702294"/>
+        <joint name="lara5_joint4" value="-0.018881"/>
+        <joint name="lara5_joint5" value="1.073915"/>
+        <joint name="lara5_joint6" value="1.339817"/>
     </group_state>
     <group_state name="b5_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.580461"/>
-        <joint name="lara5_joint2" value="0.501370"/>
-        <joint name="lara5_joint3" value="1.501456"/>
-        <joint name="lara5_joint4" value="-0.017762"/>
-        <joint name="lara5_joint5" value="1.132014"/>
-        <joint name="lara5_joint6" value="1.251156"/>
+        <joint name="lara5_joint1" value="0.588370"/>
+        <joint name="lara5_joint2" value="0.497492"/>
+        <joint name="lara5_joint3" value="1.507183"/>
+        <joint name="lara5_joint4" value="-0.017835"/>
+        <joint name="lara5_joint5" value="1.130293"/>
+        <joint name="lara5_joint6" value="1.259124"/>
     </group_state>
     <group_state name="b6_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.517344"/>
-        <joint name="lara5_joint2" value="0.653114"/>
-        <joint name="lara5_joint3" value="1.268731"/>
-        <joint name="lara5_joint4" value="-0.016645"/>
-        <joint name="lara5_joint5" value="1.211938"/>
-        <joint name="lara5_joint6" value="1.186336"/>
+        <joint name="lara5_joint1" value="0.524295"/>
+        <joint name="lara5_joint2" value="0.648282"/>
+        <joint name="lara5_joint3" value="1.276394"/>
+        <joint name="lara5_joint4" value="-0.016730"/>
+        <joint name="lara5_joint5" value="1.209221"/>
+        <joint name="lara5_joint6" value="1.193360"/>
     </group_state>
     <group_state name="b7_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.465703"/>
-        <joint name="lara5_joint2" value="0.826301"/>
-        <joint name="lara5_joint3" value="0.984488"/>
-        <joint name="lara5_joint4" value="-0.015459"/>
-        <joint name="lara5_joint5" value="1.322050"/>
-        <joint name="lara5_joint6" value="1.132644"/>
+        <joint name="lara5_joint1" value="0.471801"/>
+        <joint name="lara5_joint2" value="0.825141"/>
+        <joint name="lara5_joint3" value="0.987059"/>
+        <joint name="lara5_joint4" value="-0.015759"/>
+        <joint name="lara5_joint5" value="1.320938"/>
+        <joint name="lara5_joint6" value="1.138859"/>
     </group_state>
     <group_state name="b8_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.422765"/>
-        <joint name="lara5_joint2" value="1.072284"/>
-        <joint name="lara5_joint3" value="0.556919"/>
-        <joint name="lara5_joint4" value="-0.014869"/>
-        <joint name="lara5_joint5" value="1.502935"/>
-        <joint name="lara5_joint6" value="1.086936"/>
+        <joint name="lara5_joint1" value="0.428269"/>
+        <joint name="lara5_joint2" value="1.065959"/>
+        <joint name="lara5_joint3" value="0.567740"/>
+        <joint name="lara5_joint4" value="-0.014926"/>
+        <joint name="lara5_joint5" value="1.498743"/>
+        <joint name="lara5_joint6" value="1.092500"/>
     </group_state>
     <group_state name="c1_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.911976"/>
-        <joint name="lara5_joint2" value="-0.155825"/>
-        <joint name="lara5_joint3" value="2.272327"/>
-        <joint name="lara5_joint4" value="-0.020379"/>
-        <joint name="lara5_joint5" value="1.024036"/>
-        <joint name="lara5_joint6" value="1.585783"/>
+        <joint name="lara5_joint1" value="0.927768"/>
+        <joint name="lara5_joint2" value="-0.155932"/>
+        <joint name="lara5_joint3" value="2.272351"/>
+        <joint name="lara5_joint4" value="-0.020395"/>
+        <joint name="lara5_joint5" value="1.024394"/>
+        <joint name="lara5_joint6" value="1.601581"/>
     </group_state>
     <group_state name="c2_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.747923"/>
-        <joint name="lara5_joint2" value="-0.019267"/>
-        <joint name="lara5_joint3" value="2.148536"/>
-        <joint name="lara5_joint4" value="-0.020016"/>
-        <joint name="lara5_joint5" value="1.008416"/>
-        <joint name="lara5_joint6" value="1.421736"/>
+        <joint name="lara5_joint1" value="0.761317"/>
+        <joint name="lara5_joint2" value="-0.021513"/>
+        <joint name="lara5_joint3" value="2.150733"/>
+        <joint name="lara5_joint4" value="-0.020074"/>
+        <joint name="lara5_joint5" value="1.008695"/>
+        <joint name="lara5_joint6" value="1.435158"/>
     </group_state>
     <group_state name="c3_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.626700"/>
-        <joint name="lara5_joint2" value="0.123230"/>
-        <joint name="lara5_joint3" value="1.998163"/>
-        <joint name="lara5_joint4" value="-0.019249"/>
-        <joint name="lara5_joint5" value="1.014247"/>
-        <joint name="lara5_joint6" value="1.300003"/>
+        <joint name="lara5_joint1" value="0.637909"/>
+        <joint name="lara5_joint2" value="0.119761"/>
+        <joint name="lara5_joint3" value="2.002078"/>
+        <joint name="lara5_joint4" value="-0.019330"/>
+        <joint name="lara5_joint5" value="1.013987"/>
+        <joint name="lara5_joint6" value="1.311259"/>
     </group_state>
     <group_state name="c4_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.535825"/>
-        <joint name="lara5_joint2" value="0.267949"/>
-        <joint name="lara5_joint3" value="1.823870"/>
-        <joint name="lara5_joint4" value="-0.018236"/>
-        <joint name="lara5_joint5" value="1.042338"/>
-        <joint name="lara5_joint6" value="1.208155"/>
+        <joint name="lara5_joint1" value="0.545264"/>
+        <joint name="lara5_joint2" value="0.263668"/>
+        <joint name="lara5_joint3" value="1.829324"/>
+        <joint name="lara5_joint4" value="-0.018327"/>
+        <joint name="lara5_joint5" value="1.041316"/>
+        <joint name="lara5_joint6" value="1.217656"/>
     </group_state>
     <group_state name="c5_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.466215"/>
-        <joint name="lara5_joint2" value="0.416054"/>
-        <joint name="lara5_joint3" value="1.624728"/>
-        <joint name="lara5_joint4" value="-0.017126"/>
-        <joint name="lara5_joint5" value="1.092273"/>
-        <joint name="lara5_joint6" value="1.137239"/>
+        <joint name="lara5_joint1" value="0.474263"/>
+        <joint name="lara5_joint2" value="0.411081"/>
+        <joint name="lara5_joint3" value="1.631730"/>
+        <joint name="lara5_joint4" value="-0.017220"/>
+        <joint name="lara5_joint5" value="1.090369"/>
+        <joint name="lara5_joint6" value="1.145359"/>
     </group_state>
     <group_state name="c6_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.411686"/>
-        <joint name="lara5_joint2" value="0.571816"/>
-        <joint name="lara5_joint3" value="1.395402"/>
-        <joint name="lara5_joint4" value="-0.015975"/>
-        <joint name="lara5_joint5" value="1.164976"/>
-        <joint name="lara5_joint6" value="1.081131"/>
+        <joint name="lara5_joint1" value="0.418639"/>
+        <joint name="lara5_joint2" value="0.566100"/>
+        <joint name="lara5_joint3" value="1.404150"/>
+        <joint name="lara5_joint4" value="-0.016075"/>
+        <joint name="lara5_joint5" value="1.162050"/>
+        <joint name="lara5_joint6" value="1.088167"/>
     </group_state>
     <group_state name="c7_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.368066"/>
-        <joint name="lara5_joint2" value="0.742447"/>
-        <joint name="lara5_joint3" value="1.123988"/>
-        <joint name="lara5_joint4" value="-0.014808"/>
-        <joint name="lara5_joint5" value="1.265015"/>
-        <joint name="lara5_joint6" value="1.035658"/>
+        <joint name="lara5_joint1" value="0.374104"/>
+        <joint name="lara5_joint2" value="0.739138"/>
+        <joint name="lara5_joint3" value="1.129930"/>
+        <joint name="lara5_joint4" value="-0.015082"/>
+        <joint name="lara5_joint5" value="1.262636"/>
+        <joint name="lara5_joint6" value="1.041833"/>
     </group_state>
     <group_state name="c8_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.332409"/>
-        <joint name="lara5_joint2" value="0.961104"/>
-        <joint name="lara5_joint3" value="0.753691"/>
-        <joint name="lara5_joint4" value="-0.014115"/>
-        <joint name="lara5_joint5" value="1.416200"/>
-        <joint name="lara5_joint6" value="0.997736"/>
+        <joint name="lara5_joint1" value="0.337804"/>
+        <joint name="lara5_joint2" value="0.951282"/>
+        <joint name="lara5_joint3" value="0.770816"/>
+        <joint name="lara5_joint4" value="-0.014188"/>
+        <joint name="lara5_joint5" value="1.408987"/>
+        <joint name="lara5_joint6" value="1.003244"/>
     </group_state>
     <group_state name="d1_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.732811"/>
-        <joint name="lara5_joint2" value="-0.322575"/>
-        <joint name="lara5_joint3" value="2.397650"/>
-        <joint name="lara5_joint4" value="-0.019385"/>
-        <joint name="lara5_joint5" value="1.062370"/>
-        <joint name="lara5_joint6" value="1.405437"/>
+        <joint name="lara5_joint1" value="0.751671"/>
+        <joint name="lara5_joint2" value="-0.325537"/>
+        <joint name="lara5_joint3" value="2.399669"/>
+        <joint name="lara5_joint4" value="-0.019460"/>
+        <joint name="lara5_joint5" value="1.063633"/>
+        <joint name="lara5_joint6" value="1.424315"/>
     </group_state>
     <group_state name="d2_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.573509"/>
-        <joint name="lara5_joint2" value="-0.142714"/>
-        <joint name="lara5_joint3" value="2.261424"/>
-        <joint name="lara5_joint4" value="-0.018769"/>
-        <joint name="lara5_joint5" value="1.016076"/>
-        <joint name="lara5_joint6" value="1.246492"/>
+        <joint name="lara5_joint1" value="0.588162"/>
+        <joint name="lara5_joint2" value="-0.147500"/>
+        <joint name="lara5_joint3" value="2.265471"/>
+        <joint name="lara5_joint4" value="-0.018874"/>
+        <joint name="lara5_joint5" value="1.017052"/>
+        <joint name="lara5_joint6" value="1.261185"/>
     </group_state>
     <group_state name="d3_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.467112"/>
-        <joint name="lara5_joint2" value="0.028534"/>
-        <joint name="lara5_joint3" value="2.100547"/>
-        <joint name="lara5_joint4" value="-0.017983"/>
-        <joint name="lara5_joint5" value="1.004017"/>
-        <joint name="lara5_joint6" value="1.139879"/>
+        <joint name="lara5_joint1" value="0.478709"/>
+        <joint name="lara5_joint2" value="0.023071"/>
+        <joint name="lara5_joint3" value="2.106159"/>
+        <joint name="lara5_joint4" value="-0.018097"/>
+        <joint name="lara5_joint5" value="1.004048"/>
+        <joint name="lara5_joint6" value="1.151538"/>
     </group_state>
     <group_state name="d4_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.392230"/>
-        <joint name="lara5_joint2" value="0.191183"/>
-        <joint name="lara5_joint3" value="1.918977"/>
-        <joint name="lara5_joint4" value="-0.017016"/>
-        <joint name="lara5_joint5" value="1.021808"/>
-        <joint name="lara5_joint6" value="1.064234"/>
+        <joint name="lara5_joint1" value="0.401673"/>
+        <joint name="lara5_joint2" value="0.185355"/>
+        <joint name="lara5_joint3" value="1.925955"/>
+        <joint name="lara5_joint4" value="-0.017132"/>
+        <joint name="lara5_joint5" value="1.020796"/>
+        <joint name="lara5_joint6" value="1.073752"/>
     </group_state>
     <group_state name="d5_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.337217"/>
-        <joint name="lara5_joint2" value="0.350012"/>
-        <joint name="lara5_joint3" value="1.715978"/>
-        <joint name="lara5_joint4" value="-0.015977"/>
-        <joint name="lara5_joint5" value="1.065173"/>
-        <joint name="lara5_joint6" value="1.008087"/>
+        <joint name="lara5_joint1" value="0.345105"/>
+        <joint name="lara5_joint2" value="0.343820"/>
+        <joint name="lara5_joint3" value="1.724336"/>
+        <joint name="lara5_joint4" value="-0.016088"/>
+        <joint name="lara5_joint5" value="1.063120"/>
+        <joint name="lara5_joint6" value="1.016058"/>
     </group_state>
     <group_state name="d6_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.295343"/>
-        <joint name="lara5_joint2" value="0.511104"/>
-        <joint name="lara5_joint3" value="1.486961"/>
-        <joint name="lara5_joint4" value="-0.014896"/>
-        <joint name="lara5_joint5" value="1.132483"/>
-        <joint name="lara5_joint6" value="0.964800"/>
+        <joint name="lara5_joint1" value="0.302075"/>
+        <joint name="lara5_joint2" value="0.504416"/>
+        <joint name="lara5_joint3" value="1.496897"/>
+        <joint name="lara5_joint4" value="-0.015006"/>
+        <joint name="lara5_joint5" value="1.129330"/>
+        <joint name="lara5_joint6" value="0.971622"/>
     </group_state>
     <group_state name="d7_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.262509"/>
-        <joint name="lara5_joint2" value="0.682261"/>
-        <joint name="lara5_joint3" value="1.221591"/>
-        <joint name="lara5_joint4" value="-0.013845"/>
-        <joint name="lara5_joint5" value="1.226168"/>
-        <joint name="lara5_joint6" value="0.930321"/>
+        <joint name="lara5_joint1" value="0.268321"/>
+        <joint name="lara5_joint2" value="0.677610"/>
+        <joint name="lara5_joint3" value="1.229567"/>
+        <joint name="lara5_joint4" value="-0.014089"/>
+        <joint name="lara5_joint5" value="1.223069"/>
+        <joint name="lara5_joint6" value="0.936272"/>
     </group_state>
     <group_state name="d8_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.236059"/>
-        <joint name="lara5_joint2" value="0.889757"/>
-        <joint name="lara5_joint3" value="0.877254"/>
-        <joint name="lara5_joint4" value="-0.013156"/>
-        <joint name="lara5_joint5" value="1.362739"/>
-        <joint name="lara5_joint6" value="0.901926"/>
+        <joint name="lara5_joint1" value="0.241220"/>
+        <joint name="lara5_joint2" value="0.879768"/>
+        <joint name="lara5_joint3" value="0.894356"/>
+        <joint name="lara5_joint4" value="-0.013238"/>
+        <joint name="lara5_joint5" value="1.355701"/>
+        <joint name="lara5_joint6" value="0.907195"/>
     </group_state>
     <group_state name="e1_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.470289"/>
-        <joint name="lara5_joint2" value="-0.475275"/>
-        <joint name="lara5_joint3" value="2.489373"/>
-        <joint name="lara5_joint4" value="-0.016961"/>
-        <joint name="lara5_joint5" value="1.119090"/>
-        <joint name="lara5_joint6" value="1.140875"/>
+        <joint name="lara5_joint1" value="0.491075"/>
+        <joint name="lara5_joint2" value="-0.482187"/>
+        <joint name="lara5_joint3" value="2.493484"/>
+        <joint name="lara5_joint4" value="-0.017122"/>
+        <joint name="lara5_joint5" value="1.122197"/>
+        <joint name="lara5_joint6" value="1.161681"/>
     </group_state>
     <group_state name="e2_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.349835"/>
-        <joint name="lara5_joint2" value="-0.241010"/>
-        <joint name="lara5_joint3" value="2.340061"/>
-        <joint name="lara5_joint4" value="-0.017682"/>
-        <joint name="lara5_joint5" value="1.032267"/>
-        <joint name="lara5_joint6" value="1.021981"/>
+        <joint name="lara5_joint1" value="0.364462"/>
+        <joint name="lara5_joint2" value="-0.249182"/>
+        <joint name="lara5_joint3" value="2.346168"/>
+        <joint name="lara5_joint4" value="-0.017804"/>
+        <joint name="lara5_joint5" value="1.034545"/>
+        <joint name="lara5_joint6" value="1.036634"/>
     </group_state>
     <group_state name="e3_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.277415"/>
-        <joint name="lara5_joint2" value="-0.040881"/>
-        <joint name="lara5_joint3" value="2.169588"/>
-        <joint name="lara5_joint4" value="-0.015921"/>
-        <joint name="lara5_joint5" value="1.001639"/>
-        <joint name="lara5_joint6" value="0.949106"/>
+        <joint name="lara5_joint1" value="0.288519"/>
+        <joint name="lara5_joint2" value="-0.048668"/>
+        <joint name="lara5_joint3" value="2.177004"/>
+        <joint name="lara5_joint4" value="-0.016071"/>
+        <joint name="lara5_joint5" value="1.002160"/>
+        <joint name="lara5_joint6" value="0.960282"/>
     </group_state>
     <group_state name="e4_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.229494"/>
-        <joint name="lara5_joint2" value="0.137666"/>
-        <joint name="lara5_joint3" value="1.981800"/>
-        <joint name="lara5_joint4" value="-0.015075"/>
-        <joint name="lara5_joint5" value="1.010256"/>
-        <joint name="lara5_joint6" value="0.900634"/>
+        <joint name="lara5_joint1" value="0.238357"/>
+        <joint name="lara5_joint2" value="0.130177"/>
+        <joint name="lara5_joint3" value="1.990351"/>
+        <joint name="lara5_joint4" value="-0.015206"/>
+        <joint name="lara5_joint5" value="1.009308"/>
+        <joint name="lara5_joint6" value="0.909579"/>
     </group_state>
     <group_state name="e5_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.195495"/>
-        <joint name="lara5_joint2" value="0.305561"/>
-        <joint name="lara5_joint3" value="1.775215"/>
-        <joint name="lara5_joint4" value="-0.014273"/>
-        <joint name="lara5_joint5" value="1.048506"/>
-        <joint name="lara5_joint6" value="0.865750"/>
+        <joint name="lara5_joint1" value="0.202835"/>
+        <joint name="lara5_joint2" value="0.298110"/>
+        <joint name="lara5_joint3" value="1.784966"/>
+        <joint name="lara5_joint4" value="-0.014394"/>
+        <joint name="lara5_joint5" value="1.046299"/>
+        <joint name="lara5_joint6" value="0.873178"/>
     </group_state>
     <group_state name="e6_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.170184"/>
-        <joint name="lara5_joint2" value="0.471324"/>
-        <joint name="lara5_joint3" value="1.545433"/>
-        <joint name="lara5_joint4" value="-0.013406"/>
-        <joint name="lara5_joint5" value="1.112180"/>
-        <joint name="lara5_joint6" value="0.839259"/>
+        <joint name="lara5_joint1" value="0.176430"/>
+        <joint name="lara5_joint2" value="0.463632"/>
+        <joint name="lara5_joint3" value="1.556620"/>
+        <joint name="lara5_joint4" value="-0.013519"/>
+        <joint name="lara5_joint5" value="1.108764"/>
+        <joint name="lara5_joint6" value="0.845595"/>
     </group_state>
     <group_state name="e7_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.150629"/>
-        <joint name="lara5_joint2" value="0.643870"/>
-        <joint name="lara5_joint3" value="1.282665"/>
-        <joint name="lara5_joint4" value="-0.012571"/>
-        <joint name="lara5_joint5" value="1.202094"/>
-        <joint name="lara5_joint6" value="0.818300"/>
+        <joint name="lara5_joint1" value="0.156031"/>
+        <joint name="lara5_joint2" value="0.638176"/>
+        <joint name="lara5_joint3" value="1.292203"/>
+        <joint name="lara5_joint4" value="-0.012764"/>
+        <joint name="lara5_joint5" value="1.198453"/>
+        <joint name="lara5_joint6" value="0.823824"/>
     </group_state>
     <group_state name="e8_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.135041"/>
-        <joint name="lara5_joint2" value="0.846760"/>
-        <joint name="lara5_joint3" value="0.950577"/>
-        <joint name="lara5_joint4" value="-0.011960"/>
-        <joint name="lara5_joint5" value="1.331190"/>
-        <joint name="lara5_joint6" value="0.801030"/>
+        <joint name="lara5_joint1" value="0.139833"/>
+        <joint name="lara5_joint2" value="0.836243"/>
+        <joint name="lara5_joint3" value="0.968365"/>
+        <joint name="lara5_joint4" value="-0.012046"/>
+        <joint name="lara5_joint5" value="1.323982"/>
+        <joint name="lara5_joint6" value="0.805926"/>
     </group_state>
     <group_state name="f1_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.116185"/>
-        <joint name="lara5_joint2" value="-0.559309"/>
-        <joint name="lara5_joint3" value="2.532631"/>
-        <joint name="lara5_joint4" value="-0.012424"/>
-        <joint name="lara5_joint5" value="1.155057"/>
-        <joint name="lara5_joint6" value="0.784349"/>
+        <joint name="lara5_joint1" value="0.134048"/>
+        <joint name="lara5_joint2" value="-0.573711"/>
+        <joint name="lara5_joint3" value="2.539471"/>
+        <joint name="lara5_joint4" value="-0.012639"/>
+        <joint name="lara5_joint5" value="1.162825"/>
+        <joint name="lara5_joint6" value="0.802211"/>
     </group_state>
     <group_state name="f2_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.083656"/>
-        <joint name="lara5_joint2" value="-0.292917"/>
-        <joint name="lara5_joint3" value="2.377347"/>
-        <joint name="lara5_joint4" value="-0.013495"/>
-        <joint name="lara5_joint5" value="1.043425"/>
-        <joint name="lara5_joint6" value="0.753558"/>
+        <joint name="lara5_joint1" value="0.096049"/>
+        <joint name="lara5_joint2" value="-0.302543"/>
+        <joint name="lara5_joint3" value="2.384091"/>
+        <joint name="lara5_joint4" value="-0.012829"/>
+        <joint name="lara5_joint5" value="1.046611"/>
+        <joint name="lara5_joint6" value="0.765622"/>
     </group_state>
     <group_state name="f3_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.065295"/>
-        <joint name="lara5_joint2" value="-0.074766"/>
-        <joint name="lara5_joint3" value="2.201328"/>
-        <joint name="lara5_joint4" value="-0.012812"/>
-        <joint name="lara5_joint5" value="1.001173"/>
-        <joint name="lara5_joint6" value="0.735344"/>
+        <joint name="lara5_joint1" value="0.074715"/>
+        <joint name="lara5_joint2" value="-0.084767"/>
+        <joint name="lara5_joint3" value="2.210482"/>
+        <joint name="lara5_joint4" value="-0.012978"/>
+        <joint name="lara5_joint5" value="1.002123"/>
+        <joint name="lara5_joint6" value="0.744841"/>
     </group_state>
     <group_state name="f4_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.053575"/>
-        <joint name="lara5_joint2" value="0.112602"/>
-        <joint name="lara5_joint3" value="2.010219"/>
-        <joint name="lara5_joint4" value="-0.012453"/>
-        <joint name="lara5_joint5" value="1.004826"/>
-        <joint name="lara5_joint6" value="0.723399"/>
+        <joint name="lara5_joint1" value="0.061187"/>
+        <joint name="lara5_joint2" value="0.103568"/>
+        <joint name="lara5_joint3" value="2.020294"/>
+        <joint name="lara5_joint4" value="-0.012584"/>
+        <joint name="lara5_joint5" value="1.003866"/>
+        <joint name="lara5_joint6" value="0.731089"/>
     </group_state>
     <group_state name="f5_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.045430"/>
-        <joint name="lara5_joint2" value="0.285212"/>
-        <joint name="lara5_joint3" value="1.801725"/>
-        <joint name="lara5_joint4" value="-0.012057"/>
-        <joint name="lara5_joint5" value="1.040619"/>
-        <joint name="lara5_joint6" value="0.714676"/>
+        <joint name="lara5_joint1" value="0.051814"/>
+        <joint name="lara5_joint2" value="0.276585"/>
+        <joint name="lara5_joint3" value="1.812845"/>
+        <joint name="lara5_joint4" value="-0.012177"/>
+        <joint name="lara5_joint5" value="1.038195"/>
+        <joint name="lara5_joint6" value="0.721145"/>
     </group_state>
     <group_state name="f6_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.039433"/>
-        <joint name="lara5_joint2" value="0.453406"/>
-        <joint name="lara5_joint3" value="1.571359"/>
-        <joint name="lara5_joint4" value="-0.011551"/>
-        <joint name="lara5_joint5" value="1.102698"/>
-        <joint name="lara5_joint6" value="0.707794"/>
+        <joint name="lara5_joint1" value="0.044928"/>
+        <joint name="lara5_joint2" value="0.444748"/>
+        <joint name="lara5_joint3" value="1.583821"/>
+        <joint name="lara5_joint4" value="-0.011659"/>
+        <joint name="lara5_joint5" value="1.098954"/>
+        <joint name="lara5_joint6" value="0.713376"/>
     </group_state>
     <group_state name="f7_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.034832"/>
-        <joint name="lara5_joint2" value="0.626839"/>
-        <joint name="lara5_joint3" value="1.309447"/>
-        <joint name="lara5_joint4" value="-0.011018"/>
-        <joint name="lara5_joint5" value="1.191061"/>
-        <joint name="lara5_joint6" value="0.702067"/>
+        <joint name="lara5_joint1" value="0.039648"/>
+        <joint name="lara5_joint2" value="0.620236"/>
+        <joint name="lara5_joint3" value="1.320365"/>
+        <joint name="lara5_joint4" value="-0.011136"/>
+        <joint name="lara5_joint5" value="1.186930"/>
+        <joint name="lara5_joint6" value="0.706971"/>
     </group_state>
     <group_state name="f8_hover_big" group="arm">
-        <joint name="lara5_joint1" value="0.031183"/>
-        <joint name="lara5_joint2" value="0.828202"/>
-        <joint name="lara5_joint3" value="0.981943"/>
-        <joint name="lara5_joint4" value="-0.010543"/>
-        <joint name="lara5_joint5" value="1.317251"/>
-        <joint name="lara5_joint6" value="0.696980"/>
+        <joint name="lara5_joint1" value="0.035478"/>
+        <joint name="lara5_joint2" value="0.816939"/>
+        <joint name="lara5_joint3" value="1.000888"/>
+        <joint name="lara5_joint4" value="-0.010627"/>
+        <joint name="lara5_joint5" value="1.309620"/>
+        <joint name="lara5_joint6" value="0.701375"/>
     </group_state>
     <group_state name="g1_hover_big" group="arm">
-        <joint name="lara5_joint1" value="-0.268267"/>
-        <joint name="lara5_joint2" value="-0.535534"/>
-        <joint name="lara5_joint3" value="2.521131"/>
-        <joint name="lara5_joint4" value="-0.006132"/>
-        <joint name="lara5_joint5" value="1.139465"/>
-        <joint name="lara5_joint6" value="0.397467"/>
+        <joint name="lara5_joint1" value="-0.259069"/>
+        <joint name="lara5_joint2" value="-0.553805"/>
+        <joint name="lara5_joint3" value="2.530095"/>
+        <joint name="lara5_joint4" value="-0.006274"/>
+        <joint name="lara5_joint5" value="1.148824"/>
+        <joint name="lara5_joint6" value="0.406672"/>
     </group_state>
     <group_state name="g2_hover_big" group="arm">
-        <joint name="lara5_joint1" value="-0.194930"/>
-        <joint name="lara5_joint2" value="-0.279084"/>
-        <joint name="lara5_joint3" value="2.367720"/>
-        <joint name="lara5_joint4" value="-0.006361"/>
-        <joint name="lara5_joint5" value="1.036735"/>
-        <joint name="lara5_joint6" value="0.471541"/>
+        <joint name="lara5_joint1" value="-0.187150"/>
+        <joint name="lara5_joint2" value="-0.291519"/>
+        <joint name="lara5_joint3" value="2.376421"/>
+        <joint name="lara5_joint4" value="-0.007986"/>
+        <joint name="lara5_joint5" value="1.040669"/>
+        <joint name="lara5_joint6" value="0.480056"/>
     </group_state>
     <group_state name="g3_hover_big" group="arm">
-        <joint name="lara5_joint1" value="-0.152819"/>
-        <joint name="lara5_joint2" value="-0.065955"/>
-        <joint name="lara5_joint3" value="2.193205"/>
-        <joint name="lara5_joint4" value="-0.008627"/>
-        <joint name="lara5_joint5" value="0.998490"/>
-        <joint name="lara5_joint6" value="0.515042"/>
+        <joint name="lara5_joint1" value="-0.146073"/>
+        <joint name="lara5_joint2" value="-0.077530"/>
+        <joint name="lara5_joint3" value="2.203893"/>
+        <joint name="lara5_joint4" value="-0.008741"/>
+        <joint name="lara5_joint5" value="0.999427"/>
+        <joint name="lara5_joint6" value="0.521840"/>
     </group_state>
     <group_state name="g4_hover_big" group="arm">
-        <joint name="lara5_joint1" value="-0.125664"/>
-        <joint name="lara5_joint2" value="0.119031"/>
-        <joint name="lara5_joint3" value="2.002991"/>
-        <joint name="lara5_joint4" value="-0.009344"/>
-        <joint name="lara5_joint5" value="1.003958"/>
-        <joint name="lara5_joint6" value="0.542529"/>
+        <joint name="lara5_joint1" value="-0.119842"/>
+        <joint name="lara5_joint2" value="0.108822"/>
+        <joint name="lara5_joint3" value="2.014439"/>
+        <joint name="lara5_joint4" value="-0.009458"/>
+        <joint name="lara5_joint5" value="1.002764"/>
+        <joint name="lara5_joint6" value="0.548422"/>
     </group_state>
     <group_state name="g5_hover_big" group="arm">
-        <joint name="lara5_joint1" value="-0.106687"/>
-        <joint name="lara5_joint2" value="0.290403"/>
-        <joint name="lara5_joint3" value="1.795000"/>
-        <joint name="lara5_joint4" value="-0.009469"/>
-        <joint name="lara5_joint5" value="1.040726"/>
-        <joint name="lara5_joint6" value="0.561270"/>
+        <joint name="lara5_joint1" value="-0.101584"/>
+        <joint name="lara5_joint2" value="0.280808"/>
+        <joint name="lara5_joint3" value="1.807409"/>
+        <joint name="lara5_joint4" value="-0.009576"/>
+        <joint name="lara5_joint5" value="1.037955"/>
+        <joint name="lara5_joint6" value="0.566449"/>
     </group_state>
     <group_state name="g6_hover_big" group="arm">
-        <joint name="lara5_joint1" value="-0.092674"/>
-        <joint name="lara5_joint2" value="0.457959"/>
-        <joint name="lara5_joint3" value="1.564796"/>
-        <joint name="lara5_joint4" value="-0.009416"/>
-        <joint name="lara5_joint5" value="1.103462"/>
-        <joint name="lara5_joint6" value="0.574734"/>
+        <joint name="lara5_joint1" value="-0.088139"/>
+        <joint name="lara5_joint2" value="0.448436"/>
+        <joint name="lara5_joint3" value="1.578531"/>
+        <joint name="lara5_joint4" value="-0.009510"/>
+        <joint name="lara5_joint5" value="1.099291"/>
+        <joint name="lara5_joint6" value="0.579346"/>
     </group_state>
     <group_state name="g7_hover_big" group="arm">
-        <joint name="lara5_joint1" value="-0.081904"/>
-        <joint name="lara5_joint2" value="0.631151"/>
-        <joint name="lara5_joint3" value="1.302685"/>
-        <joint name="lara5_joint4" value="-0.009248"/>
-        <joint name="lara5_joint5" value="1.192406"/>
-        <joint name="lara5_joint6" value="0.584678"/>
+        <joint name="lara5_joint1" value="-0.077815"/>
+        <joint name="lara5_joint2" value="0.623725"/>
+        <joint name="lara5_joint3" value="1.314905"/>
+        <joint name="lara5_joint4" value="-0.009277"/>
+        <joint name="lara5_joint5" value="1.187782"/>
+        <joint name="lara5_joint6" value="0.588812"/>
     </group_state>
     <group_state name="g8_hover_big" group="arm">
-        <joint name="lara5_joint1" value="-0.073350"/>
-        <joint name="lara5_joint2" value="0.832873"/>
-        <joint name="lara5_joint3" value="0.974065"/>
-        <joint name="lara5_joint4" value="-0.008954"/>
-        <joint name="lara5_joint5" value="1.319465"/>
-        <joint name="lara5_joint6" value="0.592036"/>
+        <joint name="lara5_joint1" value="-0.069652"/>
+        <joint name="lara5_joint2" value="0.820670"/>
+        <joint name="lara5_joint3" value="0.994617"/>
+        <joint name="lara5_joint4" value="-0.009032"/>
+        <joint name="lara5_joint5" value="1.311156"/>
+        <joint name="lara5_joint6" value="0.595825"/>
     </group_state>
     <group_state name="h1_hover_big" group="arm">
-        <joint name="lara5_joint1" value="-0.593412"/>
-        <joint name="lara5_joint2" value="-0.453786"/>
-        <joint name="lara5_joint3" value="2.478368"/>
-        <joint name="lara5_joint4" value="0.000000"/>
-        <joint name="lara5_joint5" value="1.099557"/>
-        <joint name="lara5_joint6" value="0.069813"/>
+        <joint name="lara5_joint1" value="-0.586845"/>
+        <joint name="lara5_joint2" value="-0.434061"/>
+        <joint name="lara5_joint3" value="2.467039"/>
+        <joint name="lara5_joint4" value="-0.000128"/>
+        <joint name="lara5_joint5" value="1.091163"/>
+        <joint name="lara5_joint6" value="0.076436"/>
     </group_state>
     <group_state name="h2_hover_big" group="arm">
-        <joint name="lara5_joint1" value="-0.446042"/>
-        <joint name="lara5_joint2" value="-0.205450"/>
-        <joint name="lara5_joint3" value="2.312779"/>
-        <joint name="lara5_joint4" value="-0.002693"/>
-        <joint name="lara5_joint5" value="1.016948"/>
-        <joint name="lara5_joint6" value="0.218649"/>
+        <joint name="lara5_joint1" value="-0.442817"/>
+        <joint name="lara5_joint2" value="-0.219855"/>
+        <joint name="lara5_joint3" value="2.323994"/>
+        <joint name="lara5_joint4" value="-0.002635"/>
+        <joint name="lara5_joint5" value="1.020143"/>
+        <joint name="lara5_joint6" value="0.221839"/>
     </group_state>
     <group_state name="h3_hover_big" group="arm">
-        <joint name="lara5_joint1" value="-0.357375"/>
-        <joint name="lara5_joint2" value="-0.016576"/>
-        <joint name="lara5_joint3" value="2.146007"/>
-        <joint name="lara5_joint4" value="-0.004931"/>
-        <joint name="lara5_joint5" value="0.995150"/>
-        <joint name="lara5_joint6" value="0.308542"/>
+        <joint name="lara5_joint1" value="-0.353566"/>
+        <joint name="lara5_joint2" value="-0.028737"/>
+        <joint name="lara5_joint3" value="2.157882"/>
+        <joint name="lara5_joint4" value="-0.005009"/>
+        <joint name="lara5_joint5" value="0.995451"/>
+        <joint name="lara5_joint6" value="0.312393"/>
     </group_state>
     <group_state name="h4_hover_big" group="arm">
-        <joint name="lara5_joint1" value="-0.297263"/>
-        <joint name="lara5_joint2" value="0.156134"/>
-        <joint name="lara5_joint3" value="1.960450"/>
-        <joint name="lara5_joint4" value="-0.006055"/>
-        <joint name="lara5_joint5" value="1.008272"/>
-        <joint name="lara5_joint6" value="0.369174"/>
+        <joint name="lara5_joint1" value="-0.293433"/>
+        <joint name="lara5_joint2" value="0.145252"/>
+        <joint name="lara5_joint3" value="1.973066"/>
+        <joint name="lara5_joint4" value="-0.006138"/>
+        <joint name="lara5_joint5" value="1.006557"/>
+        <joint name="lara5_joint6" value="0.373056"/>
     </group_state>
     <group_state name="h5_hover_big" group="arm">
-        <joint name="lara5_joint1" value="-0.254053"/>
-        <joint name="lara5_joint2" value="0.320748"/>
-        <joint name="lara5_joint3" value="1.755180"/>
-        <joint name="lara5_joint4" value="-0.006719"/>
-        <joint name="lara5_joint5" value="1.049160"/>
-        <joint name="lara5_joint6" value="0.412488"/>
+        <joint name="lara5_joint1" value="-0.250379"/>
+        <joint name="lara5_joint2" value="0.310455"/>
+        <joint name="lara5_joint3" value="1.768780"/>
+        <joint name="lara5_joint4" value="-0.006801"/>
+        <joint name="lara5_joint5" value="1.045875"/>
+        <joint name="lara5_joint6" value="0.416222"/>
     </group_state>
     <group_state name="h6_hover_big" group="arm">
-        <joint name="lara5_joint1" value="-0.221631"/>
-        <joint name="lara5_joint2" value="0.484817"/>
-        <joint name="lara5_joint3" value="1.525741"/>
-        <joint name="lara5_joint4" value="-0.007122"/>
-        <joint name="lara5_joint5" value="1.114701"/>
-        <joint name="lara5_joint6" value="0.444690"/>
+        <joint name="lara5_joint1" value="-0.218165"/>
+        <joint name="lara5_joint2" value="0.474556"/>
+        <joint name="lara5_joint3" value="1.540754"/>
+        <joint name="lara5_joint4" value="-0.007197"/>
+        <joint name="lara5_joint5" value="1.109974"/>
+        <joint name="lara5_joint6" value="0.448219"/>
     </group_state>
     <group_state name="h7_hover_big" group="arm">
-        <joint name="lara5_joint1" value="-0.196452"/>
-        <joint name="lara5_joint2" value="0.656800"/>
-        <joint name="lara5_joint3" value="1.262203"/>
-        <joint name="lara5_joint4" value="-0.007346"/>
-        <joint name="lara5_joint5" value="1.206350"/>
-        <joint name="lara5_joint6" value="0.469347"/>
+        <joint name="lara5_joint1" value="-0.193174"/>
+        <joint name="lara5_joint2" value="0.648645"/>
+        <joint name="lara5_joint3" value="1.275671"/>
+        <joint name="lara5_joint4" value="-0.007293"/>
+        <joint name="lara5_joint5" value="1.201200"/>
+        <joint name="lara5_joint6" value="0.472631"/>
     </group_state>
     <group_state name="h8_hover_big" group="arm">
-        <joint name="lara5_joint1" value="-0.176307"/>
-        <joint name="lara5_joint2" value="0.861054"/>
-        <joint name="lara5_joint3" value="0.926302"/>
-        <joint name="lara5_joint4" value="-0.007266"/>
-        <joint name="lara5_joint5" value="1.338223"/>
-        <joint name="lara5_joint6" value="0.488535"/>
+        <joint name="lara5_joint1" value="-0.173268"/>
+        <joint name="lara5_joint2" value="0.847646"/>
+        <joint name="lara5_joint3" value="0.949067"/>
+        <joint name="lara5_joint4" value="-0.007332"/>
+        <joint name="lara5_joint5" value="1.328896"/>
+        <joint name="lara5_joint6" value="0.491656"/>
     </group_state>
 
     <!-- Grasp goals (board=big): hover TCP + h1 dp/dR, seed q_hover+dq. -->
     <group_state name="a1_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="1.112159"/>
-        <joint name="lara5_joint2" value="0.259134"/>
-        <joint name="lara5_joint3" value="2.014815"/>
-        <joint name="lara5_joint4" value="-0.022631"/>
-        <joint name="lara5_joint5" value="0.870637"/>
-        <joint name="lara5_joint6" value="1.790052"/>
+        <joint name="lara5_joint1" value="1.123306"/>
+        <joint name="lara5_joint2" value="0.261005"/>
+        <joint name="lara5_joint3" value="2.012416"/>
+        <joint name="lara5_joint4" value="-0.022589"/>
+        <joint name="lara5_joint5" value="0.871337"/>
+        <joint name="lara5_joint6" value="1.801162"/>
     </group_state>
     <group_state name="a2_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.969578"/>
-        <joint name="lara5_joint2" value="0.338778"/>
-        <joint name="lara5_joint3" value="1.907863"/>
-        <joint name="lara5_joint4" value="-0.022445"/>
-        <joint name="lara5_joint5" value="0.895424"/>
-        <joint name="lara5_joint6" value="1.646877"/>
+        <joint name="lara5_joint1" value="0.980000"/>
+        <joint name="lara5_joint2" value="0.339213"/>
+        <joint name="lara5_joint3" value="1.907269"/>
+        <joint name="lara5_joint4" value="-0.022431"/>
+        <joint name="lara5_joint5" value="0.895765"/>
+        <joint name="lara5_joint6" value="1.657286"/>
     </group_state>
     <group_state name="a3_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.850262"/>
-        <joint name="lara5_joint2" value="0.434045"/>
-        <joint name="lara5_joint3" value="1.771798"/>
-        <joint name="lara5_joint4" value="-0.021702"/>
-        <joint name="lara5_joint5" value="0.934090"/>
-        <joint name="lara5_joint6" value="1.526424"/>
+        <joint name="lara5_joint1" value="0.859744"/>
+        <joint name="lara5_joint2" value="0.433257"/>
+        <joint name="lara5_joint3" value="1.772966"/>
+        <joint name="lara5_joint4" value="-0.021723"/>
+        <joint name="lara5_joint5" value="0.933878"/>
+        <joint name="lara5_joint6" value="1.535923"/>
     </group_state>
     <group_state name="a4_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.751544"/>
-        <joint name="lara5_joint2" value="0.542555"/>
-        <joint name="lara5_joint3" value="1.607429"/>
-        <joint name="lara5_joint4" value="-0.020599"/>
-        <joint name="lara5_joint5" value="0.988191"/>
-        <joint name="lara5_joint6" value="1.426127"/>
+        <joint name="lara5_joint1" value="0.760053"/>
+        <joint name="lara5_joint2" value="0.540731"/>
+        <joint name="lara5_joint3" value="1.610274"/>
+        <joint name="lara5_joint4" value="-0.020644"/>
+        <joint name="lara5_joint5" value="0.987319"/>
+        <joint name="lara5_joint6" value="1.434677"/>
     </group_state>
     <group_state name="a5_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.670002"/>
-        <joint name="lara5_joint2" value="0.664956"/>
-        <joint name="lara5_joint3" value="1.411917"/>
-        <joint name="lara5_joint4" value="-0.019332"/>
-        <joint name="lara5_joint5" value="1.059865"/>
-        <joint name="lara5_joint6" value="1.342692"/>
+        <joint name="lara5_joint1" value="0.677604"/>
+        <joint name="lara5_joint2" value="0.662153"/>
+        <joint name="lara5_joint3" value="1.416506"/>
+        <joint name="lara5_joint4" value="-0.019391"/>
+        <joint name="lara5_joint5" value="1.058209"/>
+        <joint name="lara5_joint6" value="1.350351"/>
     </group_state>
     <group_state name="a6_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.602546"/>
-        <joint name="lara5_joint2" value="0.808785"/>
-        <joint name="lara5_joint3" value="1.168626"/>
-        <joint name="lara5_joint4" value="-0.017971"/>
-        <joint name="lara5_joint5" value="1.158211"/>
-        <joint name="lara5_joint6" value="1.272914"/>
+        <joint name="lara5_joint1" value="0.609137"/>
+        <joint name="lara5_joint2" value="0.802975"/>
+        <joint name="lara5_joint3" value="1.180805"/>
+        <joint name="lara5_joint4" value="-0.018110"/>
+        <joint name="lara5_joint5" value="1.152006"/>
+        <joint name="lara5_joint6" value="1.279738"/>
     </group_state>
     <group_state name="a7_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.545967"/>
-        <joint name="lara5_joint2" value="0.986580"/>
-        <joint name="lara5_joint3" value="0.857473"/>
-        <joint name="lara5_joint4" value="-0.016833"/>
-        <joint name="lara5_joint5" value="1.290661"/>
-        <joint name="lara5_joint6" value="1.213796"/>
+        <joint name="lara5_joint1" value="0.552065"/>
+        <joint name="lara5_joint2" value="0.980762"/>
+        <joint name="lara5_joint3" value="0.867829"/>
+        <joint name="lara5_joint4" value="-0.016898"/>
+        <joint name="lara5_joint5" value="1.286231"/>
+        <joint name="lara5_joint6" value="1.219985"/>
     </group_state>
     <group_state name="a8_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.498263"/>
-        <joint name="lara5_joint2" value="1.282423"/>
-        <joint name="lara5_joint3" value="0.316773"/>
-        <joint name="lara5_joint4" value="-0.015840"/>
-        <joint name="lara5_joint5" value="1.534920"/>
-        <joint name="lara5_joint6" value="1.162002"/>
+        <joint name="lara5_joint1" value="0.503777"/>
+        <joint name="lara5_joint2" value="1.276564"/>
+        <joint name="lara5_joint3" value="0.327058"/>
+        <joint name="lara5_joint4" value="-0.015886"/>
+        <joint name="lara5_joint5" value="1.530854"/>
+        <joint name="lara5_joint6" value="1.167587"/>
     </group_state>
     <group_state name="b1_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="1.022227"/>
-        <joint name="lara5_joint2" value="0.113694"/>
-        <joint name="lara5_joint3" value="2.192101"/>
-        <joint name="lara5_joint4" value="-0.023513"/>
-        <joint name="lara5_joint5" value="0.837311"/>
-        <joint name="lara5_joint6" value="1.701222"/>
+        <joint name="lara5_joint1" value="1.035511"/>
+        <joint name="lara5_joint2" value="0.114970"/>
+        <joint name="lara5_joint3" value="2.190815"/>
+        <joint name="lara5_joint4" value="-0.023485"/>
+        <joint name="lara5_joint5" value="0.837527"/>
+        <joint name="lara5_joint6" value="1.714485"/>
     </group_state>
     <group_state name="b2_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.866885"/>
-        <joint name="lara5_joint2" value="0.212280"/>
-        <joint name="lara5_joint3" value="2.074441"/>
-        <joint name="lara5_joint4" value="-0.023166"/>
-        <joint name="lara5_joint5" value="0.853595"/>
-        <joint name="lara5_joint6" value="1.545337"/>
+        <joint name="lara5_joint1" value="0.878807"/>
+        <joint name="lara5_joint2" value="0.211643"/>
+        <joint name="lara5_joint3" value="2.075245"/>
+        <joint name="lara5_joint4" value="-0.023185"/>
+        <joint name="lara5_joint5" value="0.853638"/>
+        <joint name="lara5_joint6" value="1.557272"/>
     </group_state>
     <group_state name="b3_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.743836"/>
-        <joint name="lara5_joint2" value="0.322734"/>
-        <joint name="lara5_joint3" value="1.929739"/>
-        <joint name="lara5_joint4" value="-0.022183"/>
-        <joint name="lara5_joint5" value="0.885651"/>
-        <joint name="lara5_joint6" value="1.421103"/>
+        <joint name="lara5_joint1" value="0.754271"/>
+        <joint name="lara5_joint2" value="0.320854"/>
+        <joint name="lara5_joint3" value="1.932315"/>
+        <joint name="lara5_joint4" value="-0.022238"/>
+        <joint name="lara5_joint5" value="0.885136"/>
+        <joint name="lara5_joint6" value="1.431583"/>
     </group_state>
     <group_state name="b4_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.646674"/>
-        <joint name="lara5_joint2" value="0.441984"/>
-        <joint name="lara5_joint3" value="1.759909"/>
-        <joint name="lara5_joint4" value="-0.020842"/>
-        <joint name="lara5_joint5" value="0.934522"/>
-        <joint name="lara5_joint6" value="1.322292"/>
+        <joint name="lara5_joint1" value="0.655750"/>
+        <joint name="lara5_joint2" value="0.439153"/>
+        <joint name="lara5_joint3" value="1.764095"/>
+        <joint name="lara5_joint4" value="-0.020918"/>
+        <joint name="lara5_joint5" value="0.933321"/>
+        <joint name="lara5_joint6" value="1.331434"/>
     </group_state>
     <group_state name="b5_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.569361"/>
-        <joint name="lara5_joint2" value="0.570386"/>
-        <joint name="lara5_joint3" value="1.563668"/>
-        <joint name="lara5_joint4" value="-0.019374"/>
-        <joint name="lara5_joint5" value="1.001026"/>
-        <joint name="lara5_joint6" value="1.243042"/>
+        <joint name="lara5_joint1" value="0.577274"/>
+        <joint name="lara5_joint2" value="0.566706"/>
+        <joint name="lara5_joint3" value="1.569468"/>
+        <joint name="lara5_joint4" value="-0.019458"/>
+        <joint name="lara5_joint5" value="0.999037"/>
+        <joint name="lara5_joint6" value="1.251035"/>
     </group_state>
     <group_state name="b6_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.507074"/>
-        <joint name="lara5_joint2" value="0.711432"/>
-        <joint name="lara5_joint3" value="1.335086"/>
-        <joint name="lara5_joint4" value="-0.017877"/>
-        <joint name="lara5_joint5" value="1.087495"/>
-        <joint name="lara5_joint6" value="1.178600"/>
+        <joint name="lara5_joint1" value="0.514019"/>
+        <joint name="lara5_joint2" value="0.706871"/>
+        <joint name="lara5_joint3" value="1.342677"/>
+        <joint name="lara5_joint4" value="-0.017974"/>
+        <joint name="lara5_joint5" value="1.084579"/>
+        <joint name="lara5_joint6" value="1.185637"/>
     </group_state>
     <group_state name="b7_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.456354"/>
-        <joint name="lara5_joint2" value="0.875683"/>
-        <joint name="lara5_joint3" value="1.052280"/>
-        <joint name="lara5_joint4" value="-0.016350"/>
-        <joint name="lara5_joint5" value="1.205196"/>
-        <joint name="lara5_joint6" value="1.125340"/>
+        <joint name="lara5_joint1" value="0.462463"/>
+        <joint name="lara5_joint2" value="0.874593"/>
+        <joint name="lara5_joint3" value="1.054818"/>
+        <joint name="lara5_joint4" value="-0.016664"/>
+        <joint name="lara5_joint5" value="1.204048"/>
+        <joint name="lara5_joint6" value="1.131606"/>
     </group_state>
     <group_state name="b8_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.414129"/>
-        <joint name="lara5_joint2" value="1.097469"/>
-        <joint name="lara5_joint3" value="0.658158"/>
-        <joint name="lara5_joint4" value="-0.015431"/>
-        <joint name="lara5_joint5" value="1.376790"/>
-        <joint name="lara5_joint6" value="1.080272"/>
+        <joint name="lara5_joint1" value="0.419631"/>
+        <joint name="lara5_joint2" value="1.091821"/>
+        <joint name="lara5_joint3" value="0.667889"/>
+        <joint name="lara5_joint4" value="-0.015496"/>
+        <joint name="lara5_joint5" value="1.373015"/>
+        <joint name="lara5_joint6" value="1.085838"/>
     </group_state>
     <group_state name="c1_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.895181"/>
-        <joint name="lara5_joint2" value="-0.037246"/>
-        <joint name="lara5_joint3" value="2.349143"/>
-        <joint name="lara5_joint4" value="-0.023704"/>
-        <joint name="lara5_joint5" value="0.829036"/>
-        <joint name="lara5_joint6" value="1.574393"/>
+        <joint name="lara5_joint1" value="0.911199"/>
+        <joint name="lara5_joint2" value="-0.037566"/>
+        <joint name="lara5_joint3" value="2.349381"/>
+        <joint name="lara5_joint4" value="-0.023712"/>
+        <joint name="lara5_joint5" value="0.829400"/>
+        <joint name="lara5_joint6" value="1.590413"/>
     </group_state>
     <group_state name="c2_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.731573"/>
-        <joint name="lara5_joint2" value="0.090890"/>
-        <joint name="lara5_joint3" value="2.217461"/>
-        <joint name="lara5_joint4" value="-0.023159"/>
-        <joint name="lara5_joint5" value="0.829666"/>
-        <joint name="lara5_joint6" value="1.410372"/>
+        <joint name="lara5_joint1" value="0.745063"/>
+        <joint name="lara5_joint2" value="0.088655"/>
+        <joint name="lara5_joint3" value="2.219939"/>
+        <joint name="lara5_joint4" value="-0.023224"/>
+        <joint name="lara5_joint5" value="0.829658"/>
+        <joint name="lara5_joint6" value="1.423908"/>
     </group_state>
     <group_state name="c3_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.611608"/>
-        <joint name="lara5_joint2" value="0.222756"/>
-        <joint name="lara5_joint3" value="2.061116"/>
-        <joint name="lara5_joint4" value="-0.021999"/>
-        <joint name="lara5_joint5" value="0.852046"/>
-        <joint name="lara5_joint6" value="1.289283"/>
+        <joint name="lara5_joint1" value="0.622844"/>
+        <joint name="lara5_joint2" value="0.219443"/>
+        <joint name="lara5_joint3" value="2.065295"/>
+        <joint name="lara5_joint4" value="-0.022095"/>
+        <joint name="lara5_joint5" value="0.851369"/>
+        <joint name="lara5_joint6" value="1.300594"/>
     </group_state>
     <group_state name="c4_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.522159"/>
-        <joint name="lara5_joint2" value="0.356240"/>
-        <joint name="lara5_joint3" value="1.883195"/>
-        <joint name="lara5_joint4" value="-0.020508"/>
-        <joint name="lara5_joint5" value="0.894955"/>
-        <joint name="lara5_joint6" value="1.198199"/>
+        <joint name="lara5_joint1" value="0.531592"/>
+        <joint name="lara5_joint2" value="0.352197"/>
+        <joint name="lara5_joint3" value="1.888854"/>
+        <joint name="lara5_joint4" value="-0.020618"/>
+        <joint name="lara5_joint5" value="0.893492"/>
+        <joint name="lara5_joint6" value="1.207724"/>
     </group_state>
     <group_state name="c5_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.453890"/>
-        <joint name="lara5_joint2" value="0.493181"/>
-        <joint name="lara5_joint3" value="1.683011"/>
-        <joint name="lara5_joint4" value="-0.018930"/>
-        <joint name="lara5_joint5" value="0.957058"/>
-        <joint name="lara5_joint6" value="1.128013"/>
+        <joint name="lara5_joint1" value="0.461918"/>
+        <joint name="lara5_joint2" value="0.488496"/>
+        <joint name="lara5_joint3" value="1.690128"/>
+        <joint name="lara5_joint4" value="-0.019041"/>
+        <joint name="lara5_joint5" value="0.954754"/>
+        <joint name="lara5_joint6" value="1.136140"/>
     </group_state>
     <group_state name="c6_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.400540"/>
-        <joint name="lara5_joint2" value="0.637737"/>
-        <joint name="lara5_joint3" value="1.455836"/>
-        <joint name="lara5_joint4" value="-0.017359"/>
-        <joint name="lara5_joint5" value="1.038796"/>
-        <joint name="lara5_joint6" value="1.072561"/>
+        <joint name="lara5_joint1" value="0.407468"/>
+        <joint name="lara5_joint2" value="0.632355"/>
+        <joint name="lara5_joint3" value="1.464562"/>
+        <joint name="lara5_joint4" value="-0.017475"/>
+        <joint name="lara5_joint5" value="1.035561"/>
+        <joint name="lara5_joint6" value="1.079598"/>
     </group_state>
     <group_state name="c7_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.357918"/>
-        <joint name="lara5_joint2" value="0.796067"/>
-        <joint name="lara5_joint3" value="1.191736"/>
-        <joint name="lara5_joint4" value="-0.015829"/>
-        <joint name="lara5_joint5" value="1.143830"/>
-        <joint name="lara5_joint6" value="1.027669"/>
+        <joint name="lara5_joint1" value="0.363949"/>
+        <joint name="lara5_joint2" value="0.792991"/>
+        <joint name="lara5_joint3" value="1.197523"/>
+        <joint name="lara5_joint4" value="-0.016122"/>
+        <joint name="lara5_joint5" value="1.141374"/>
+        <joint name="lara5_joint6" value="1.033879"/>
     </group_state>
     <group_state name="c8_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.323295"/>
-        <joint name="lara5_joint2" value="1.001861"/>
-        <joint name="lara5_joint3" value="0.830287"/>
-        <joint name="lara5_joint4" value="-0.014823"/>
-        <joint name="lara5_joint5" value="1.299104"/>
-        <joint name="lara5_joint6" value="0.990431"/>
+        <joint name="lara5_joint1" value="0.328666"/>
+        <joint name="lara5_joint2" value="0.992855"/>
+        <joint name="lara5_joint3" value="0.846347"/>
+        <joint name="lara5_joint4" value="-0.014909"/>
+        <joint name="lara5_joint5" value="1.292145"/>
+        <joint name="lara5_joint6" value="0.995925"/>
     </group_state>
     <group_state name="d1_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.709966"/>
-        <joint name="lara5_joint2" value="-0.191673"/>
-        <joint name="lara5_joint3" value="2.480997"/>
-        <joint name="lara5_joint4" value="-0.022679"/>
-        <joint name="lara5_joint5" value="0.848438"/>
-        <joint name="lara5_joint6" value="1.388106"/>
+        <joint name="lara5_joint1" value="0.729005"/>
+        <joint name="lara5_joint2" value="-0.194824"/>
+        <joint name="lara5_joint3" value="2.483450"/>
+        <joint name="lara5_joint4" value="-0.022755"/>
+        <joint name="lara5_joint5" value="0.849463"/>
+        <joint name="lara5_joint6" value="1.407180"/>
     </group_state>
     <group_state name="d2_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.553188"/>
-        <joint name="lara5_joint2" value="-0.020116"/>
-        <joint name="lara5_joint3" value="2.332691"/>
-        <joint name="lara5_joint4" value="-0.021989"/>
-        <joint name="lara5_joint5" value="0.822488"/>
-        <joint name="lara5_joint6" value="1.231243"/>
+        <joint name="lara5_joint1" value="0.567856"/>
+        <joint name="lara5_joint2" value="-0.024774"/>
+        <joint name="lara5_joint3" value="2.337198"/>
+        <joint name="lara5_joint4" value="-0.022109"/>
+        <joint name="lara5_joint5" value="0.822882"/>
+        <joint name="lara5_joint6" value="1.245987"/>
     </group_state>
     <group_state name="d3_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.449508"/>
-        <joint name="lara5_joint2" value="0.138522"/>
-        <joint name="lara5_joint3" value="2.163249"/>
-        <joint name="lara5_joint4" value="-0.020843"/>
-        <joint name="lara5_joint5" value="0.831557"/>
-        <joint name="lara5_joint6" value="1.126700"/>
+        <joint name="lara5_joint1" value="0.461066"/>
+        <joint name="lara5_joint2" value="0.133368"/>
+        <joint name="lara5_joint3" value="2.169240"/>
+        <joint name="lara5_joint4" value="-0.020981"/>
+        <joint name="lara5_joint5" value="0.830904"/>
+        <joint name="lara5_joint6" value="1.138361"/>
     </group_state>
     <group_state name="d4_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.376956"/>
-        <joint name="lara5_joint2" value="0.287932"/>
-        <joint name="lara5_joint3" value="1.976418"/>
-        <joint name="lara5_joint4" value="-0.019393"/>
-        <joint name="lara5_joint5" value="0.867802"/>
-        <joint name="lara5_joint6" value="1.052684"/>
+        <joint name="lara5_joint1" value="0.386346"/>
+        <joint name="lara5_joint2" value="0.282482"/>
+        <joint name="lara5_joint3" value="1.983670"/>
+        <joint name="lara5_joint4" value="-0.019534"/>
+        <joint name="lara5_joint5" value="0.866144"/>
+        <joint name="lara5_joint6" value="1.062188"/>
     </group_state>
     <group_state name="d5_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.323836"/>
-        <joint name="lara5_joint2" value="0.434130"/>
-        <joint name="lara5_joint3" value="1.771159"/>
-        <joint name="lara5_joint4" value="-0.017870"/>
-        <joint name="lara5_joint5" value="0.926023"/>
-        <joint name="lara5_joint6" value="0.997787"/>
+        <joint name="lara5_joint1" value="0.331671"/>
+        <joint name="lara5_joint2" value="0.428336"/>
+        <joint name="lara5_joint3" value="1.779674"/>
+        <joint name="lara5_joint4" value="-0.018004"/>
+        <joint name="lara5_joint5" value="0.923418"/>
+        <joint name="lara5_joint6" value="1.005740"/>
     </group_state>
     <group_state name="d6_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.283483"/>
-        <joint name="lara5_joint2" value="0.583196"/>
-        <joint name="lara5_joint3" value="1.543024"/>
-        <joint name="lara5_joint4" value="-0.016357"/>
-        <joint name="lara5_joint5" value="1.004453"/>
-        <joint name="lara5_joint6" value="0.955473"/>
+        <joint name="lara5_joint1" value="0.290167"/>
+        <joint name="lara5_joint2" value="0.576922"/>
+        <joint name="lara5_joint3" value="1.552973"/>
+        <joint name="lara5_joint4" value="-0.016486"/>
+        <joint name="lara5_joint5" value="1.000876"/>
+        <joint name="lara5_joint6" value="0.962276"/>
     </group_state>
     <group_state name="d7_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.251870"/>
-        <joint name="lara5_joint2" value="0.742067"/>
-        <joint name="lara5_joint3" value="1.282913"/>
-        <joint name="lara5_joint4" value="-0.014940"/>
-        <joint name="lara5_joint5" value="1.105164"/>
-        <joint name="lara5_joint6" value="0.921778"/>
+        <joint name="lara5_joint1" value="0.257657"/>
+        <joint name="lara5_joint2" value="0.737741"/>
+        <joint name="lara5_joint3" value="1.290717"/>
+        <joint name="lara5_joint4" value="-0.015206"/>
+        <joint name="lara5_joint5" value="1.101911"/>
+        <joint name="lara5_joint6" value="0.927746"/>
     </group_state>
     <group_state name="d8_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.226584"/>
-        <joint name="lara5_joint2" value="0.938803"/>
-        <joint name="lara5_joint3" value="0.942288"/>
-        <joint name="lara5_joint4" value="-0.013946"/>
-        <joint name="lara5_joint5" value="1.248887"/>
-        <joint name="lara5_joint6" value="0.894151"/>
+        <joint name="lara5_joint1" value="0.231708"/>
+        <joint name="lara5_joint2" value="0.929485"/>
+        <joint name="lara5_joint3" value="0.958708"/>
+        <joint name="lara5_joint4" value="-0.014041"/>
+        <joint name="lara5_joint5" value="1.241863"/>
+        <joint name="lara5_joint6" value="0.899398"/>
     </group_state>
     <group_state name="e1_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.440228"/>
-        <joint name="lara5_joint2" value="-0.335453"/>
-        <joint name="lara5_joint3" value="2.578930"/>
-        <joint name="lara5_joint4" value="-0.019747"/>
-        <joint name="lara5_joint5" value="0.889899"/>
-        <joint name="lara5_joint6" value="1.115793"/>
+        <joint name="lara5_joint1" value="0.460962"/>
+        <joint name="lara5_joint2" value="-0.342649"/>
+        <joint name="lara5_joint3" value="2.583782"/>
+        <joint name="lara5_joint4" value="-0.019918"/>
+        <joint name="lara5_joint5" value="0.892554"/>
+        <joint name="lara5_joint6" value="1.136588"/>
     </group_state>
     <group_state name="e2_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.325813"/>
-        <joint name="lara5_joint2" value="-0.107490"/>
-        <joint name="lara5_joint3" value="2.412735"/>
-        <joint name="lara5_joint4" value="-0.020845"/>
-        <joint name="lara5_joint5" value="0.826251"/>
-        <joint name="lara5_joint6" value="1.002993"/>
+        <joint name="lara5_joint1" value="0.340287"/>
+        <joint name="lara5_joint2" value="-0.115395"/>
+        <joint name="lara5_joint3" value="2.419541"/>
+        <joint name="lara5_joint4" value="-0.020983"/>
+        <joint name="lara5_joint5" value="0.827568"/>
+        <joint name="lara5_joint6" value="1.017537"/>
     </group_state>
     <group_state name="e3_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.257825"/>
-        <joint name="lara5_joint2" value="0.078078"/>
-        <joint name="lara5_joint3" value="2.231404"/>
-        <joint name="lara5_joint4" value="-0.018653"/>
-        <joint name="lara5_joint5" value="0.821034"/>
-        <joint name="lara5_joint6" value="0.933670"/>
+        <joint name="lara5_joint1" value="0.268791"/>
+        <joint name="lara5_joint2" value="0.070794"/>
+        <joint name="lara5_joint3" value="2.239327"/>
+        <joint name="lara5_joint4" value="-0.018835"/>
+        <joint name="lara5_joint5" value="0.820549"/>
+        <joint name="lara5_joint6" value="0.944763"/>
     </group_state>
     <group_state name="e4_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.213084"/>
-        <joint name="lara5_joint2" value="0.241398"/>
-        <joint name="lara5_joint3" value="2.037165"/>
-        <joint name="lara5_joint4" value="-0.017374"/>
-        <joint name="lara5_joint5" value="0.851290"/>
-        <joint name="lara5_joint6" value="0.887714"/>
+        <joint name="lara5_joint1" value="0.221835"/>
+        <joint name="lara5_joint2" value="0.234451"/>
+        <joint name="lara5_joint3" value="2.046056"/>
+        <joint name="lara5_joint4" value="-0.017535"/>
+        <joint name="lara5_joint5" value="0.849465"/>
+        <joint name="lara5_joint6" value="0.896594"/>
     </group_state>
     <group_state name="e5_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.181431"/>
-        <joint name="lara5_joint2" value="0.395248"/>
-        <joint name="lara5_joint3" value="1.827551"/>
-        <joint name="lara5_joint4" value="-0.016129"/>
-        <joint name="lara5_joint5" value="0.906579"/>
-        <joint name="lara5_joint6" value="0.854579"/>
+        <joint name="lara5_joint1" value="0.188681"/>
+        <joint name="lara5_joint2" value="0.388317"/>
+        <joint name="lara5_joint3" value="1.837495"/>
+        <joint name="lara5_joint4" value="-0.016277"/>
+        <joint name="lara5_joint5" value="0.903663"/>
+        <joint name="lara5_joint6" value="0.861957"/>
     </group_state>
     <group_state name="e6_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.157896"/>
-        <joint name="lara5_joint2" value="0.548155"/>
-        <joint name="lara5_joint3" value="1.597927"/>
-        <joint name="lara5_joint4" value="-0.014859"/>
-        <joint name="lara5_joint5" value="0.982928"/>
-        <joint name="lara5_joint6" value="0.829349"/>
+        <joint name="lara5_joint1" value="0.164069"/>
+        <joint name="lara5_joint2" value="0.540965"/>
+        <joint name="lara5_joint3" value="1.609148"/>
+        <joint name="lara5_joint4" value="-0.014993"/>
+        <joint name="lara5_joint5" value="0.978978"/>
+        <joint name="lara5_joint6" value="0.835646"/>
     </group_state>
     <group_state name="e7_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.139714"/>
-        <joint name="lara5_joint2" value="0.708169"/>
-        <joint name="lara5_joint3" value="1.339306"/>
-        <joint name="lara5_joint4" value="-0.013680"/>
-        <joint name="lara5_joint5" value="1.081220"/>
-        <joint name="lara5_joint6" value="0.809352"/>
+        <joint name="lara5_joint1" value="0.145074"/>
+        <joint name="lara5_joint2" value="0.702881"/>
+        <joint name="lara5_joint3" value="1.348663"/>
+        <joint name="lara5_joint4" value="-0.013894"/>
+        <joint name="lara5_joint5" value="1.077355"/>
+        <joint name="lara5_joint6" value="0.814871"/>
     </group_state>
     <group_state name="e8_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.125374"/>
-        <joint name="lara5_joint2" value="0.901038"/>
-        <joint name="lara5_joint3" value="1.008687"/>
-        <joint name="lara5_joint4" value="-0.012781"/>
-        <joint name="lara5_joint5" value="1.218995"/>
-        <joint name="lara5_joint6" value="0.792931"/>
+        <joint name="lara5_joint1" value="0.130117"/>
+        <joint name="lara5_joint2" value="0.891164"/>
+        <joint name="lara5_joint3" value="1.025949"/>
+        <joint name="lara5_joint4" value="-0.012880"/>
+        <joint name="lara5_joint5" value="1.211672"/>
+        <joint name="lara5_joint6" value="0.797797"/>
     </group_state>
     <group_state name="f1_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.079975"/>
-        <joint name="lara5_joint2" value="-0.406961"/>
+        <joint name="lara5_joint1" value="0.097115"/>
+        <joint name="lara5_joint2" value="-0.422234"/>
         <joint name="lara5_joint3" value="2.609300"/>
-        <joint name="lara5_joint4" value="-0.014410"/>
-        <joint name="lara5_joint5" value="0.912723"/>
-        <joint name="lara5_joint6" value="0.751940"/>
+        <joint name="lara5_joint4" value="-0.014616"/>
+        <joint name="lara5_joint5" value="0.920061"/>
+        <joint name="lara5_joint6" value="0.769122"/>
     </group_state>
     <group_state name="f2_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.058052"/>
-        <joint name="lara5_joint2" value="-0.151036"/>
-        <joint name="lara5_joint3" value="2.448693"/>
-        <joint name="lara5_joint4" value="-0.016006"/>
-        <joint name="lara5_joint5" value="0.830306"/>
-        <joint name="lara5_joint6" value="0.731938"/>
+        <joint name="lara5_joint1" value="0.070153"/>
+        <joint name="lara5_joint2" value="-0.160303"/>
+        <joint name="lara5_joint3" value="2.456225"/>
+        <joint name="lara5_joint4" value="-0.015229"/>
+        <joint name="lara5_joint5" value="0.832362"/>
+        <joint name="lara5_joint6" value="0.743535"/>
     </group_state>
     <group_state name="f3_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.045049"/>
-        <joint name="lara5_joint2" value="0.050554"/>
-        <joint name="lara5_joint3" value="2.260804"/>
-        <joint name="lara5_joint4" value="-0.015152"/>
-        <joint name="lara5_joint5" value="0.816480"/>
-        <joint name="lara5_joint6" value="0.718578"/>
+        <joint name="lara5_joint1" value="0.054233"/>
+        <joint name="lara5_joint2" value="0.041281"/>
+        <joint name="lara5_joint3" value="2.270566"/>
+        <joint name="lara5_joint4" value="-0.015351"/>
+        <joint name="lara5_joint5" value="0.816098"/>
+        <joint name="lara5_joint6" value="0.727900"/>
     </group_state>
     <group_state name="f4_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.036877"/>
-        <joint name="lara5_joint2" value="0.221107"/>
-        <joint name="lara5_joint3" value="2.062869"/>
-        <joint name="lara5_joint4" value="-0.014494"/>
-        <joint name="lara5_joint5" value="0.843742"/>
-        <joint name="lara5_joint6" value="0.709700"/>
+        <joint name="lara5_joint1" value="0.044323"/>
+        <joint name="lara5_joint2" value="0.212786"/>
+        <joint name="lara5_joint3" value="2.073328"/>
+        <joint name="lara5_joint4" value="-0.014656"/>
+        <joint name="lara5_joint5" value="0.841690"/>
+        <joint name="lara5_joint6" value="0.717274"/>
     </group_state>
     <group_state name="f5_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.031241"/>
-        <joint name="lara5_joint2" value="0.378642"/>
-        <joint name="lara5_joint3" value="1.851148"/>
-        <joint name="lara5_joint4" value="-0.013753"/>
-        <joint name="lara5_joint5" value="0.897806"/>
-        <joint name="lara5_joint6" value="0.703024"/>
+        <joint name="lara5_joint1" value="0.037504"/>
+        <joint name="lara5_joint2" value="0.370658"/>
+        <joint name="lara5_joint3" value="1.862477"/>
+        <joint name="lara5_joint4" value="-0.013900"/>
+        <joint name="lara5_joint5" value="0.894532"/>
+        <joint name="lara5_joint6" value="0.709412"/>
     </group_state>
     <group_state name="f6_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.027098"/>
-        <joint name="lara5_joint2" value="0.533391"/>
-        <joint name="lara5_joint3" value="1.620707"/>
-        <joint name="lara5_joint4" value="-0.012913"/>
-        <joint name="lara5_joint5" value="0.973382"/>
-        <joint name="lara5_joint6" value="0.697578"/>
+        <joint name="lara5_joint1" value="0.032501"/>
+        <joint name="lara5_joint2" value="0.525324"/>
+        <joint name="lara5_joint3" value="1.633207"/>
+        <joint name="lara5_joint4" value="-0.013042"/>
+        <joint name="lara5_joint5" value="0.969013"/>
+        <joint name="lara5_joint6" value="0.703100"/>
     </group_state>
     <group_state name="f7_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.023911"/>
-        <joint name="lara5_joint2" value="0.694071"/>
-        <joint name="lara5_joint3" value="1.362484"/>
-        <joint name="lara5_joint4" value="-0.012085"/>
-        <joint name="lara5_joint5" value="1.070804"/>
-        <joint name="lara5_joint6" value="0.692916"/>
+        <joint name="lara5_joint1" value="0.028673"/>
+        <joint name="lara5_joint2" value="0.687945"/>
+        <joint name="lara5_joint3" value="1.373204"/>
+        <joint name="lara5_joint4" value="-0.012219"/>
+        <joint name="lara5_joint5" value="1.066395"/>
+        <joint name="lara5_joint6" value="0.697793"/>
     </group_state>
     <group_state name="f8_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="0.021522"/>
-        <joint name="lara5_joint2" value="0.885759"/>
-        <joint name="lara5_joint3" value="1.035395"/>
-        <joint name="lara5_joint4" value="-0.011352"/>
-        <joint name="lara5_joint5" value="1.206393"/>
-        <joint name="lara5_joint6" value="0.688724"/>
+        <joint name="lara5_joint1" value="0.025760"/>
+        <joint name="lara5_joint2" value="0.875158"/>
+        <joint name="lara5_joint3" value="1.053864"/>
+        <joint name="lara5_joint4" value="-0.011450"/>
+        <joint name="lara5_joint5" value="1.198578"/>
+        <joint name="lara5_joint6" value="0.693079"/>
     </group_state>
     <group_state name="g1_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="-0.298435"/>
-        <joint name="lara5_joint2" value="-0.377390"/>
-        <joint name="lara5_joint3" value="2.604013"/>
-        <joint name="lara5_joint4" value="-0.007274"/>
-        <joint name="lara5_joint5" value="0.898484"/>
-        <joint name="lara5_joint6" value="0.369257"/>
+        <joint name="lara5_joint1" value="-0.291489"/>
+        <joint name="lara5_joint2" value="-0.391176"/>
+        <joint name="lara5_joint3" value="2.609300"/>
+        <joint name="lara5_joint4" value="-0.007375"/>
+        <joint name="lara5_joint5" value="0.902221"/>
+        <joint name="lara5_joint6" value="0.376258"/>
     </group_state>
     <group_state name="g2_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="-0.218548"/>
-        <joint name="lara5_joint2" value="-0.132742"/>
-        <joint name="lara5_joint3" value="2.433734"/>
-        <joint name="lara5_joint4" value="-0.007738"/>
-        <joint name="lara5_joint5" value="0.824465"/>
-        <joint name="lara5_joint6" value="0.449934"/>
+        <joint name="lara5_joint1" value="-0.211165"/>
+        <joint name="lara5_joint2" value="-0.144495"/>
+        <joint name="lara5_joint3" value="2.443337"/>
+        <joint name="lara5_joint4" value="-0.009632"/>
+        <joint name="lara5_joint5" value="0.826791"/>
+        <joint name="lara5_joint6" value="0.458514"/>
     </group_state>
     <group_state name="g3_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="-0.171923"/>
-        <joint name="lara5_joint2" value="0.062019"/>
-        <joint name="lara5_joint3" value="2.248534"/>
-        <joint name="lara5_joint4" value="-0.010351"/>
-        <joint name="lara5_joint5" value="0.815227"/>
-        <joint name="lara5_joint6" value="0.498375"/>
+        <joint name="lara5_joint1" value="-0.165455"/>
+        <joint name="lara5_joint2" value="0.051395"/>
+        <joint name="lara5_joint3" value="2.259854"/>
+        <joint name="lara5_joint4" value="-0.010488"/>
+        <joint name="lara5_joint5" value="0.814586"/>
+        <joint name="lara5_joint6" value="0.504939"/>
     </group_state>
     <group_state name="g4_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="-0.141628"/>
-        <joint name="lara5_joint2" value="0.229462"/>
-        <joint name="lara5_joint3" value="2.052170"/>
-        <joint name="lara5_joint4" value="-0.011000"/>
-        <joint name="lara5_joint5" value="0.844354"/>
-        <joint name="lara5_joint6" value="0.528890"/>
+        <joint name="lara5_joint1" value="-0.135995"/>
+        <joint name="lara5_joint2" value="0.220112"/>
+        <joint name="lara5_joint3" value="2.064003"/>
+        <joint name="lara5_joint4" value="-0.011140"/>
+        <joint name="lara5_joint5" value="0.841920"/>
+        <joint name="lara5_joint6" value="0.534635"/>
     </group_state>
     <group_state name="g5_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="-0.120366"/>
-        <joint name="lara5_joint2" value="0.385420"/>
-        <joint name="lara5_joint3" value="1.841350"/>
-        <joint name="lara5_joint4" value="-0.010912"/>
-        <joint name="lara5_joint5" value="0.899337"/>
-        <joint name="lara5_joint6" value="0.549643"/>
+        <joint name="lara5_joint1" value="-0.115400"/>
+        <joint name="lara5_joint2" value="0.376570"/>
+        <joint name="lara5_joint3" value="1.853959"/>
+        <joint name="lara5_joint4" value="-0.011043"/>
+        <joint name="lara5_joint5" value="0.895625"/>
+        <joint name="lara5_joint6" value="0.554722"/>
     </group_state>
     <group_state name="g6_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="-0.104635"/>
-        <joint name="lara5_joint2" value="0.539372"/>
-        <joint name="lara5_joint3" value="1.611288"/>
-        <joint name="lara5_joint4" value="-0.010622"/>
-        <joint name="lara5_joint5" value="0.975516"/>
-        <joint name="lara5_joint6" value="0.564544"/>
+        <joint name="lara5_joint1" value="-0.100203"/>
+        <joint name="lara5_joint2" value="0.530516"/>
+        <joint name="lara5_joint3" value="1.625042"/>
+        <joint name="lara5_joint4" value="-0.010737"/>
+        <joint name="lara5_joint5" value="0.970662"/>
+        <joint name="lara5_joint6" value="0.569083"/>
     </group_state>
     <group_state name="g7_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="-0.092541"/>
-        <joint name="lara5_joint2" value="0.699765"/>
-        <joint name="lara5_joint3" value="1.352930"/>
-        <joint name="lara5_joint4" value="-0.010227"/>
-        <joint name="lara5_joint5" value="1.073503"/>
-        <joint name="lara5_joint6" value="0.575557"/>
+        <joint name="lara5_joint1" value="-0.088514"/>
+        <joint name="lara5_joint2" value="0.692878"/>
+        <joint name="lara5_joint3" value="1.364920"/>
+        <joint name="lara5_joint4" value="-0.010268"/>
+        <joint name="lara5_joint5" value="1.068572"/>
+        <joint name="lara5_joint6" value="0.579643"/>
     </group_state>
     <group_state name="g8_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="-0.082795"/>
-        <joint name="lara5_joint2" value="0.892101"/>
-        <joint name="lara5_joint3" value="1.024317"/>
-        <joint name="lara5_joint4" value="-0.009720"/>
-        <joint name="lara5_joint5" value="1.210091"/>
-        <joint name="lara5_joint6" value="0.583797"/>
+        <joint name="lara5_joint1" value="-0.079160"/>
+        <joint name="lara5_joint2" value="0.880611"/>
+        <joint name="lara5_joint3" value="1.044365"/>
+        <joint name="lara5_joint4" value="-0.009810"/>
+        <joint name="lara5_joint5" value="1.201576"/>
+        <joint name="lara5_joint6" value="0.587541"/>
     </group_state>
     <group_state name="h1_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="-0.615671"/>
-        <joint name="lara5_joint2" value="-0.290724"/>
-        <joint name="lara5_joint3" value="2.550956"/>
-        <joint name="lara5_joint4" value="-0.000302"/>
-        <joint name="lara5_joint5" value="0.863896"/>
-        <joint name="lara5_joint6" value="0.047755"/>
+        <joint name="lara5_joint1" value="-0.608758"/>
+        <joint name="lara5_joint2" value="-0.271954"/>
+        <joint name="lara5_joint3" value="2.538265"/>
+        <joint name="lara5_joint4" value="-0.000459"/>
+        <joint name="lara5_joint5" value="0.857818"/>
+        <joint name="lara5_joint6" value="0.054768"/>
     </group_state>
     <group_state name="h2_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="-0.465154"/>
-        <joint name="lara5_joint2" value="-0.060621"/>
-        <joint name="lara5_joint3" value="2.370707"/>
-        <joint name="lara5_joint4" value="-0.003525"/>
-        <joint name="lara5_joint5" value="0.814177"/>
-        <joint name="lara5_joint6" value="0.200539"/>
+        <joint name="lara5_joint1" value="-0.462271"/>
+        <joint name="lara5_joint2" value="-0.073863"/>
+        <joint name="lara5_joint3" value="2.382798"/>
+        <joint name="lara5_joint4" value="-0.003453"/>
+        <joint name="lara5_joint5" value="0.815340"/>
+        <joint name="lara5_joint6" value="0.203371"/>
     </group_state>
     <group_state name="h3_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="-0.373917"/>
-        <joint name="lara5_joint2" value="0.109721"/>
-        <joint name="lara5_joint3" value="2.195923"/>
-        <joint name="lara5_joint4" value="-0.006106"/>
-        <joint name="lara5_joint5" value="0.818893"/>
-        <joint name="lara5_joint6" value="0.293497"/>
+        <joint name="lara5_joint1" value="-0.370354"/>
+        <joint name="lara5_joint2" value="0.098666"/>
+        <joint name="lara5_joint3" value="2.208362"/>
+        <joint name="lara5_joint4" value="-0.006198"/>
+        <joint name="lara5_joint5" value="0.817531"/>
+        <joint name="lara5_joint6" value="0.297128"/>
     </group_state>
     <group_state name="h4_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="-0.311631"/>
-        <joint name="lara5_joint2" value="0.265409"/>
-        <joint name="lara5_joint3" value="2.005658"/>
-        <joint name="lara5_joint4" value="-0.007282"/>
-        <joint name="lara5_joint5" value="0.853721"/>
-        <joint name="lara5_joint6" value="0.356389"/>
+        <joint name="lara5_joint1" value="-0.307981"/>
+        <joint name="lara5_joint2" value="0.255478"/>
+        <joint name="lara5_joint3" value="2.018613"/>
+        <joint name="lara5_joint4" value="-0.007383"/>
+        <joint name="lara5_joint5" value="0.850721"/>
+        <joint name="lara5_joint6" value="0.360122"/>
     </group_state>
     <group_state name="h5_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="-0.266669"/>
-        <joint name="lara5_joint2" value="0.415100"/>
-        <joint name="lara5_joint3" value="1.798424"/>
-        <joint name="lara5_joint4" value="-0.007868"/>
-        <joint name="lara5_joint5" value="0.911476"/>
-        <joint name="lara5_joint6" value="0.401384"/>
+        <joint name="lara5_joint1" value="-0.263129"/>
+        <joint name="lara5_joint2" value="0.405618"/>
+        <joint name="lara5_joint3" value="1.812184"/>
+        <joint name="lara5_joint4" value="-0.007969"/>
+        <joint name="lara5_joint5" value="0.907223"/>
+        <joint name="lara5_joint6" value="0.405012"/>
     </group_state>
     <group_state name="h6_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="-0.232846"/>
-        <joint name="lara5_joint2" value="0.565897"/>
-        <joint name="lara5_joint3" value="1.569715"/>
-        <joint name="lara5_joint4" value="-0.008140"/>
-        <joint name="lara5_joint5" value="0.989545"/>
-        <joint name="lara5_joint6" value="0.434854"/>
+        <joint name="lara5_joint1" value="-0.229483"/>
+        <joint name="lara5_joint2" value="0.556357"/>
+        <joint name="lara5_joint3" value="1.584705"/>
+        <joint name="lara5_joint4" value="-0.008230"/>
+        <joint name="lara5_joint5" value="0.984123"/>
+        <joint name="lara5_joint6" value="0.438304"/>
     </group_state>
     <group_state name="h7_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="-0.206544"/>
-        <joint name="lara5_joint2" value="0.725252"/>
-        <joint name="lara5_joint3" value="1.310457"/>
-        <joint name="lara5_joint4" value="-0.008210"/>
-        <joint name="lara5_joint5" value="1.089544"/>
-        <joint name="lara5_joint6" value="0.460484"/>
+        <joint name="lara5_joint1" value="-0.203329"/>
+        <joint name="lara5_joint2" value="0.717683"/>
+        <joint name="lara5_joint3" value="1.323643"/>
+        <joint name="lara5_joint4" value="-0.008163"/>
+        <joint name="lara5_joint5" value="1.084092"/>
+        <joint name="lara5_joint6" value="0.463706"/>
     </group_state>
     <group_state name="h8_grasp_big" group="arm">
-        <joint name="lara5_joint1" value="-0.185343"/>
-        <joint name="lara5_joint2" value="0.920413"/>
-        <joint name="lara5_joint3" value="0.974682"/>
-        <joint name="lara5_joint4" value="-0.007968"/>
-        <joint name="lara5_joint5" value="1.230543"/>
-        <joint name="lara5_joint6" value="0.480486"/>
+        <joint name="lara5_joint1" value="-0.182368"/>
+        <joint name="lara5_joint2" value="0.907800"/>
+        <joint name="lara5_joint3" value="0.996823"/>
+        <joint name="lara5_joint4" value="-0.008045"/>
+        <joint name="lara5_joint5" value="1.221048"/>
+        <joint name="lara5_joint6" value="0.483558"/>
     </group_state>
 
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->

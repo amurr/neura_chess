@@ -50,13 +50,8 @@ def _hover_squares(model: ArmModel) -> tuple[dict, dict]:
         a1=tuple(A1),
         square_size=S,
     )
+    # h1 is re-solved too: the taught joints only give the seed, hover height and orientation
     squares = packed['squares']
-    t_h1 = model.fk(H1_Q)
-    squares['h1']['q'] = [float(v) for v in H1_Q]
-    squares['h1']['ok'] = True
-    squares['h1']['pos_err_m'] = 0.0
-    squares['h1']['ori_err_rad'] = 0.0
-    squares['h1']['xyz'] = [float(v) for v in t_h1[:3, 3]]
     return packed, squares
 
 
@@ -76,6 +71,7 @@ def _write_hover_yaml(packed: dict, squares: dict) -> dict[str, list[float]]:
                 'a1': [float(v) for v in A1],
                 'square_size': float(S),
                 'hover_z': packed['hover_z'],
+                'tcp': packed['tcp'],
                 'tool_z_world': packed['tool_z_world'],
                 'ik_ok': {sq: bool(rec['ok']) for sq, rec in squares.items()},
                 'hover': hover,
@@ -155,7 +151,7 @@ def _update_srdf(hover: dict[str, list[float]], grasps: dict[str, list[float]]) 
     if BIG_HOVER_MARKER in text:
         text = text[: text.index(BIG_HOVER_MARKER)] + text[text.index(END_EE_MARKER) :]
     block = [
-        '    <!-- Hover goals (board=big): h1 taught in RViz; other squares IK at same z and R. -->',
+        '    <!-- Hover goals (board=big): grasp TCP above each square centre, IK at taught h1 z and R. -->',
     ]
     for square, q in hover.items():
         block.append(_group_state(f'{square}_hover_big', q))

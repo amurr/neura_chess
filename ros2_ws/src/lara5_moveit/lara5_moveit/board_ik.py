@@ -5,6 +5,7 @@ from __future__ import annotations
 import math
 import xml.etree.ElementTree as ET
 from pathlib import Path
+from typing import Sequence
 
 import numpy as np
 
@@ -18,6 +19,13 @@ ARM_JOINTS = (
 )
 FILES = 'abcdefgh'
 RANKS = '12345678'
+
+# Grasp point (TCP) in the lara5_gripper frame (m). SO-101 has one fixed jaw: its tip is at
+# x=-0.0109, the moving jaw tip at x=+0.0309 when open (0.25 rad), both ~0.102 below the
+# link. Centre the piece just inside the fixed jaw (typical radius 0.0125 + 0.0015 clearance)
+# so closing does not slide it -> the same point is right for pick and place.
+# Calibrate x: pick + place a piece on the same square, add the measured slide along the jaws.
+GRASP_TCP = (0.003, 0.0, -0.100)
 
 
 def all_squares() -> list[str]:
@@ -240,11 +248,14 @@ def fill_hover_joints(
     layout: str = 'ranks_x_files_y',
     file_mirror: bool = True,
     z_override: float | None = None,
+    tcp: Sequence[float] = GRASP_TCP,
 ) -> dict[str, dict[str, object]]:
-    """IK every square at the seed pose's height and orientation."""
+    """IK every square at the seed pose's height and orientation, with the grasp point
+    `tcp` (lara5_gripper frame) straight above the square centre."""
     t0 = model.fk(seed_q)
     rot = t0[:3, :3]
-    hover_z = float(t0[2, 3] if z_override is None else z_override)
+    tcp_world = rot @ np.asarray(tcp, dtype=float)
+    hover_z = float((t0[:3, 3] + tcp_world)[2] if z_override is None else z_override)
     tool_z = rot @ np.array([0.0, 0.0, 1.0])
     out: dict[str, dict[str, object]] = {}
     seed = np.array(seed_q, dtype=float)
@@ -253,7 +264,8 @@ def fill_hover_joints(
             square, a1=a1, square_size=square_size, layout=layout, file_mirror=file_mirror
         )
         target = np.array([xy[0], xy[1], hover_z])
-        ok, q, pe, oe = model.ik(target, rot, seed)
+        link_target = target - tcp_world
+        ok, q, pe, oe = model.ik(link_target, rot, seed, pos_tol=0.0005, ori_tol=0.01)
         out[square] = {
             'ok': ok,
             'q': [float(v) for v in q],
@@ -262,7 +274,7 @@ def fill_hover_joints(
             'xyz': [float(xy[0]), float(xy[1]), hover_z],
         }
         if not ok:
-            ok, q, pe, oe = model.ik(target, rot, seed_q)
+            ok, q, pe, oe = model.ik(link_target, rot, seed_q, pos_tol=0.0005, ori_tol=0.01)
             out[square] = {
                 'ok': ok,
                 'q': [float(v) for v in q],
@@ -274,6 +286,7 @@ def fill_hover_joints(
             seed = np.array(out[square]['q'], dtype=float)
     return {
         'hover_z': hover_z,
+        'tcp': [float(v) for v in tcp],
         'tool_z_world': [float(v) for v in tool_z],
         'squares': out,
     }

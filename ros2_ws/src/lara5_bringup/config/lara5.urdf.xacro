@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="lara5">
+    <!-- Bringup robot model: lara5_description + a <ros2_control> block.
+         Used by robot_state_publisher, ros2_control_node and MoveIt alike
+         (description.launch.py, control.launch.py, moveit.launch.py). -->
+    <xacro:arg name="use_fake_hardware" default="true" />
+
+    <xacro:include filename="$(find lara5_description)/lara5/urdf/lara5.urdf.xacro" />
+
+    <!-- initial_value 0.0 = SRDF 'stand' pose -->
+    <xacro:macro name="mock_joint" params="name">
+        <joint name="${name}">
+            <command_interface name="position" />
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+            <state_interface name="velocity" />
+        </joint>
+    </xacro:macro>
+
+    <!-- use_fake_hardware:=true: mock_components/GenericSystem copies every position
+         command straight into the state, so arm_controller and gripper_controller
+         (config/ros2_controllers.yaml) "move" the robot without hardware. -->
+    <xacro:if value="$(arg use_fake_hardware)">
+        <ros2_control name="lara5_mock" type="system">
+            <hardware>
+                <plugin>mock_components/GenericSystem</plugin>
+            </hardware>
+            <xacro:mock_joint name="lara5_joint1" />
+            <xacro:mock_joint name="lara5_joint2" />
+            <xacro:mock_joint name="lara5_joint3" />
+            <xacro:mock_joint name="lara5_joint4" />
+            <xacro:mock_joint name="lara5_joint5" />
+            <xacro:mock_joint name="lara5_joint6" />
+            <!-- GripperActionController needs position + velocity state interfaces -->
+            <xacro:mock_joint name="lara5_gripper_finger_joint" />
+        </ros2_control>
+    </xacro:if>
+
+    <!-- use_fake_hardware:=false: no ros2_control hardware plugin for the real
+         LARA5 exists in this workspace yet. Start the stack with launch_control:=false
+         and let the external driver (robot / Isaac Sim) publish /joint_states and serve
+         /arm_controller/follow_joint_trajectory and /gripper_controller/gripper_cmd.
+         TODO: put the real <ros2_control> block here once a driver plugin exists. -->
+</robot>

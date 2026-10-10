@@ -1,27 +1,24 @@
-#no recompile is needed for data redacted here to take effect
+# Pick-and-place parameters per object type (= piece type in chess_board.action).
+# Re-read on every move: with `colcon build --symlink-install` edits take effect without
+# a rebuild or restart.
+#
+# lower_distance          m,   straight down (-Z world) from the square's SRDF hover pose to the grasp
+# lift_distance           m,   straight up after the grasp (default: = lower_distance -> back to hover)
+# gripper_open_position   rad, lara5_gripper_finger_joint (limits -0.1745 .. 1.7453)
+# gripper_close_position  rad, lara5_gripper_finger_joint
 
-# config/object_library.yaml
 defaults:
-  approach_distance: 0.08
-  retreat_distance:  0.08
-  grasp_subframe:    grasp
+  lower_distance:         0.061
+  gripper_open_position:  0.25
+  gripper_close_position: 0.0     # TODO calibrate on the real gripper (per type below if needed)
 
+# lower_distance: FK of the SRDF states gives hover z = 0.2255 m and taught grasp z = 0.164 m
+# (0.061 m, taught on h1 = rook, hull height 0.049 m). Other types keep the same grasp depth
+# below their top: lower = 0.061 - (hull_height - 0.049). Verify on hardware.
 objects:
-  pawn:
-    grasp_joint:   0.021      # see note below — joint value, not width
-    open_joint:    0.045
-    mass:          0.010
-    max_force:     15.0
-    approach_axis: [0.0, 0.0, -1.0]   # in object frame
-    yaw_symmetric: true
-  king:
-    grasp_joint:   0.028
-    open_joint:    0.050
-    mass:          0.025
-    approach_axis: [0.0, 0.0, -1.0]
-    yaw_symmetric: true
-
-# optional per-instance overrides, keyed by CollisionObject.id
-overrides:
-  king_e1:
-    grasp_joint: 0.030
+  pawn:   {lower_distance: 0.067}   # hull height 0.043
+  rook:   {lower_distance: 0.061}   # hull height 0.049
+  knight: {lower_distance: 0.051}   # hull height 0.059
+  bishop: {lower_distance: 0.051}   # hull height 0.059
+  queen:  {lower_distance: 0.042}   # hull height 0.068
+  king:   {lower_distance: 0.032}   # hull height 0.078

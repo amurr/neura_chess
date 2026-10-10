@@ -43,7 +43,6 @@ setup(
             'moveit_master = lara5_moveit.moveit_master:main',
             'chess_scene_collisions = lara5_moveit.chess_scene_collisions:main',
             'chess_scene_big = lara5_moveit.chess_scene_big:main',
-            'fake_controllers = lara5_moveit.fake_controllers:main',
         ],
     },
 )
