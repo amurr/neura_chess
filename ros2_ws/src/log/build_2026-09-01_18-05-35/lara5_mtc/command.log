@@ -1,6 +1,0 @@
-Invoking command in '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /ros2_ws/neura_chess/ros2_ws/src/lara5_mtc -DCMAKE_INSTALL_PREFIX=/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc
-Invoked command in '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /ros2_ws/neura_chess/ros2_ws/src/lara5_mtc -DCMAKE_INSTALL_PREFIX=/ros2_ws/neura_chess/ros2_ws/src/install/lara5_mtc
-Invoking command in '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc -- -j8 -l8
-Invoked command in '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc -- -j8 -l8
-Invoking command in '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc
-Invoked command in '/ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /ros2_ws/neura_chess/ros2_ws/src/build/lara5_mtc
