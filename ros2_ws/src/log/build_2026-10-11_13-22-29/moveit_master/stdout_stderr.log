@@ -1,0 +1,309 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found rclcpp: 16.0.21 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.4 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found rclcpp_action: 16.0.21 (/opt/ros/humble/share/rclcpp_action/cmake)
+-- Found moveit_ros_planning_interface: 2.5.10 (/opt/ros/humble/share/moveit_ros_planning_interface/cmake)
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: date_time filesystem program_options system thread 
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread 
+-- Found tcb_span: 1.3.2 (/opt/ros/humble/share/tcb_span/cmake)
+-- Found rclcpp_lifecycle: 16.0.21 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)
+-- Found parameter_traits: 0.7.6 (/opt/ros/humble/share/parameter_traits/cmake)
+-- library: /usr/lib/x86_64-linux-gnu/libcurl.so
+-- Found Eigen3: TRUE (found version "3.4.0") 
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread chrono 
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: thread system filesystem regex date_time program_options 
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread 
+-- Found rosidl_default_generators: 1.2.1 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+-- Found ament_cmake_ros: 0.10.1 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+-- Found PythonExtra: .so  
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workspace/neura_chess/ros2_ws/src/build/moveit_master
+[  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[  7%] [34m[1mGenerating Rust code for ROS interfaces[0m
+[  7%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[  7%] Built target ament_cmake_python_copy_moveit_master
+running egg_info
+creating moveit_master.egg-info
+writing moveit_master.egg-info/PKG-INFO
+writing dependency_links to moveit_master.egg-info/dependency_links.txt
+writing top-level names to moveit_master.egg-info/top_level.txt
+[  7%] Built target moveit_master__rs
+writing manifest file 'moveit_master.egg-info/SOURCES.txt'
+reading manifest file 'moveit_master.egg-info/SOURCES.txt'
+writing manifest file 'moveit_master.egg-info/SOURCES.txt'
+[  7%] Built target moveit_master__cpp
+[  9%] Built target ament_cmake_python_build_moveit_master_egg
+[  9%] [32mBuilding C object CMakeFiles/moveit_master__rosidl_generator_c.dir/rosidl_generator_c/moveit_master/msg/detail/motion_step__functions.c.o[0m
+[ 11%] [32mBuilding C object CMakeFiles/moveit_master__rosidl_generator_c.dir/rosidl_generator_c/moveit_master/action/detail/execute_sequence__functions.c.o[0m
+[ 19%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[ 19%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[ 19%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[ 21%] [32m[1mLinking C shared library libmoveit_master__rosidl_generator_c.so[0m
+[ 21%] Built target moveit_master__rosidl_generator_c
+[ 28%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[ 28%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[ 28%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/moveit_master__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/moveit_master/msg/motion_step__type_support.cpp.o[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/moveit_master__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/moveit_master/action/execute_sequence__type_support.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/moveit_master__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/moveit_master/action/detail/dds_fastrtps/execute_sequence__type_support.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/moveit_master__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/moveit_master/msg/detail/motion_step__type_support.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/moveit_master__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/moveit_master/msg/detail/dds_fastrtps/motion_step__type_support.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/moveit_master__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/moveit_master/action/detail/execute_sequence__type_support.cpp.o[0m
+[ 47%] [32mBuilding CXX object CMakeFiles/moveit_master__rosidl_typesupport_c.dir/rosidl_typesupport_c/moveit_master/msg/motion_step__type_support.cpp.o[0m
+[ 47%] [32mBuilding CXX object CMakeFiles/moveit_master__rosidl_typesupport_c.dir/rosidl_typesupport_c/moveit_master/action/execute_sequence__type_support.cpp.o[0m
+[ 52%] [32mBuilding CXX object CMakeFiles/moveit_master__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/moveit_master/msg/detail/motion_step__type_support_c.cpp.o[0m
+[ 54%] [32mBuilding CXX object CMakeFiles/moveit_master__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/moveit_master/action/detail/execute_sequence__type_support_c.cpp.o[0m
+[ 57%] [32mBuilding C object CMakeFiles/moveit_master__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/moveit_master/action/detail/execute_sequence__type_support.c.o[0m
+[ 57%] [32mBuilding C object CMakeFiles/moveit_master__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/moveit_master/msg/detail/motion_step__type_support.c.o[0m
+[ 59%] [32m[1mLinking CXX shared library libmoveit_master__rosidl_typesupport_c.so[0m
+[ 61%] [32m[1mLinking C shared library libmoveit_master__rosidl_typesupport_introspection_c.so[0m
+[ 64%] [32m[1mLinking CXX shared library libmoveit_master__rosidl_typesupport_cpp.so[0m
+[ 64%] Built target moveit_master__rosidl_typesupport_c
+[ 64%] Built target moveit_master__rosidl_typesupport_introspection_c
+[ 64%] Built target moveit_master__rosidl_typesupport_cpp
+[ 66%] [32mBuilding CXX object CMakeFiles/moveit_master_node.dir/src/moveit_master.cpp.o[0m
+[ 69%] [32m[1mLinking CXX shared library libmoveit_master__rosidl_typesupport_introspection_cpp.so[0m
+[ 71%] [32m[1mLinking CXX shared library libmoveit_master__rosidl_typesupport_fastrtps_cpp.so[0m
+[ 73%] [32m[1mLinking CXX shared library libmoveit_master__rosidl_typesupport_fastrtps_c.so[0m
+[ 73%] Built target moveit_master__rosidl_typesupport_introspection_cpp
+[ 73%] Built target moveit_master__rosidl_typesupport_fastrtps_cpp
+[ 73%] Built target moveit_master__rosidl_typesupport_fastrtps_c
+[ 73%] Built target moveit_master
+[ 76%] [34m[1mGenerating Python code for ROS interfaces[0m
+[ 76%] Built target moveit_master__py
+[ 80%] [32mBuilding C object CMakeFiles/moveit_master__rosidl_generator_py.dir/rosidl_generator_py/moveit_master/msg/_motion_step_s.c.o[0m
+[ 80%] [32mBuilding C object CMakeFiles/moveit_master__rosidl_generator_py.dir/rosidl_generator_py/moveit_master/action/_execute_sequence_s.c.o[0m
+[ 83%] [32m[1mLinking C shared library rosidl_generator_py/moveit_master/libmoveit_master__rosidl_generator_py.so[0m
+[ 83%] Built target moveit_master__rosidl_generator_py
+[ 90%] [32mBuilding C object CMakeFiles/moveit_master__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/moveit_master/_moveit_master_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[ 90%] [32mBuilding C object CMakeFiles/moveit_master__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/moveit_master/_moveit_master_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[ 90%] [32mBuilding C object CMakeFiles/moveit_master__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/moveit_master/_moveit_master_s.ep.rosidl_typesupport_c.c.o[0m
+[ 92%] [32m[1mLinking C shared library rosidl_generator_py/moveit_master/moveit_master_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[ 95%] [32m[1mLinking C shared library rosidl_generator_py/moveit_master/moveit_master_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[ 97%] [32m[1mLinking C shared library rosidl_generator_py/moveit_master/moveit_master_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[ 97%] Built target moveit_master__rosidl_typesupport_c__pyext
+[ 97%] Built target moveit_master__rosidl_typesupport_introspection_c__pyext
+[ 97%] Built target moveit_master__rosidl_typesupport_fastrtps_c__pyext
+[100%] [32m[1mLinking CXX executable moveit_master[0m
+[100%] Built target moveit_master_node
+-- Install configuration: ""
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/ament_index/resource_index/rosidl_interfaces/moveit_master
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/detail
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/detail/execute_sequence__type_support.h
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/detail/execute_sequence__struct.h
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/detail/execute_sequence__functions.h
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/detail/execute_sequence__functions.c
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/execute_sequence.h
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/detail
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/detail/motion_step__type_support.h
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/detail/motion_step__struct.h
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/detail/motion_step__functions.h
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/detail/motion_step__functions.c
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/motion_step.h
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/rosidl_generator_c__visibility_control.h
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/environment/library_path.sh
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/environment/library_path.dsv
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/lib/libmoveit_master__rosidl_generator_c.so
+-- Set runtime path of "/workspace/neura_chess/ros2_ws/src/install/moveit_master/lib/libmoveit_master__rosidl_generator_c.so" to ""
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/detail
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/detail/execute_sequence__rosidl_typesupport_fastrtps_c.h
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/detail
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/detail/motion_step__rosidl_typesupport_fastrtps_c.h
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/lib/libmoveit_master__rosidl_typesupport_fastrtps_c.so
+-- Set runtime path of "/workspace/neura_chess/ros2_ws/src/install/moveit_master/lib/libmoveit_master__rosidl_typesupport_fastrtps_c.so" to ""
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/detail
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/detail/execute_sequence__type_support.hpp
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/detail/execute_sequence__traits.hpp
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/detail/execute_sequence__struct.hpp
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/detail/execute_sequence__builder.hpp
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/execute_sequence.hpp
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/detail
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/detail/motion_step__type_support.hpp
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/detail/motion_step__traits.hpp
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/detail/motion_step__struct.hpp
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/detail/motion_step__builder.hpp
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/motion_step.hpp
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/rosidl_generator_cpp__visibility_control.hpp
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/detail
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/detail/dds_fastrtps
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/detail/execute_sequence__rosidl_typesupport_fastrtps_cpp.hpp
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/detail
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/detail/dds_fastrtps
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/detail/motion_step__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/lib/libmoveit_master__rosidl_typesupport_fastrtps_cpp.so
+-- Set runtime path of "/workspace/neura_chess/ros2_ws/src/install/moveit_master/lib/libmoveit_master__rosidl_typesupport_fastrtps_cpp.so" to ""
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/detail
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/detail/execute_sequence__type_support.c
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/detail/execute_sequence__rosidl_typesupport_introspection_c.h
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/detail
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/detail/motion_step__type_support.c
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/detail/motion_step__rosidl_typesupport_introspection_c.h
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/rosidl_typesupport_introspection_c__visibility_control.h
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/lib/libmoveit_master__rosidl_typesupport_introspection_c.so
+-- Set runtime path of "/workspace/neura_chess/ros2_ws/src/install/moveit_master/lib/libmoveit_master__rosidl_typesupport_introspection_c.so" to ""
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/lib/libmoveit_master__rosidl_typesupport_c.so
+-- Set runtime path of "/workspace/neura_chess/ros2_ws/src/install/moveit_master/lib/libmoveit_master__rosidl_typesupport_c.so" to ""
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/detail
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/detail/execute_sequence__type_support.cpp
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/action/detail/execute_sequence__rosidl_typesupport_introspection_cpp.hpp
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg
+-- Up-to-date: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/detail
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/detail/motion_step__type_support.cpp
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/include/moveit_master/moveit_master/msg/detail/motion_step__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/lib/libmoveit_master__rosidl_typesupport_introspection_cpp.so
+-- Set runtime path of "/workspace/neura_chess/ros2_ws/src/install/moveit_master/lib/libmoveit_master__rosidl_typesupport_introspection_cpp.so" to ""
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/lib/libmoveit_master__rosidl_typesupport_cpp.so
+-- Set runtime path of "/workspace/neura_chess/ros2_ws/src/install/moveit_master/lib/libmoveit_master__rosidl_typesupport_cpp.so" to ""
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/environment/pythonpath.sh
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/environment/pythonpath.dsv
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master-0.1.0-py3.10.egg-info
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master-0.1.0-py3.10.egg-info/SOURCES.txt
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master-0.1.0-py3.10.egg-info/top_level.txt
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master-0.1.0-py3.10.egg-info/dependency_links.txt
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master-0.1.0-py3.10.egg-info/PKG-INFO
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/moveit_master_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/moveit_master_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/moveit_master_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/libmoveit_master__rosidl_generator_py.so
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/_moveit_master_s.ep.rosidl_typesupport_c.c
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/_moveit_master_s.ep.rosidl_typesupport_introspection_c.c
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/_moveit_master_s.ep.rosidl_typesupport_fastrtps_c.c
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/action
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/action/__init__.py
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/action/_execute_sequence_s.c
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/action/_execute_sequence.py
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/msg
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/msg/__init__.py
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/msg/_motion_step_s.c
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/msg/_motion_step.py
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/__init__.py
+Listing '/workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master'...
+Compiling '/workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/__init__.py'...
+Listing '/workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/action'...
+Compiling '/workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/action/__init__.py'...
+Compiling '/workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/action/_execute_sequence.py'...
+Listing '/workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/msg'...
+Compiling '/workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/msg/__init__.py'...
+Compiling '/workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/msg/_motion_step.py'...
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/moveit_master_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+-- Set runtime path of "/workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/moveit_master_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/moveit_master_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+-- Set runtime path of "/workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/moveit_master_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/moveit_master_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+-- Set runtime path of "/workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages/moveit_master/moveit_master_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/lib/libmoveit_master__rosidl_generator_py.so
+-- Set runtime path of "/workspace/neura_chess/ros2_ws/src/install/moveit_master/lib/libmoveit_master__rosidl_generator_py.so" to ""
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/rust
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/rust/build.rs
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/rust/Cargo.toml
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/rust/src
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/rust/src/lib.rs
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/rust/src/msg
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/rust/src/msg/rmw.rs
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/rust/src/msg.rs
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/rust/src/action
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/rust/src/action/rmw.rs
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/rust/src/action.rs
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/msg/MotionStep.idl
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/action/ExecuteSequence.idl
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/msg/MotionStep.msg
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/action/ExecuteSequence.action
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/lib/moveit_master/moveit_master
+-- Set runtime path of "/workspace/neura_chess/ros2_ws/src/install/moveit_master/lib/moveit_master/moveit_master" to ""
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/ament_index/resource_index/package_run_dependencies/moveit_master
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/ament_index/resource_index/parent_prefix_path/moveit_master
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/environment/ament_prefix_path.sh
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/environment/ament_prefix_path.dsv
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/environment/path.sh
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/environment/path.dsv
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/local_setup.bash
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/local_setup.sh
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/local_setup.zsh
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/local_setup.dsv
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/package.dsv
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/ament_index/resource_index/packages/moveit_master
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/export_moveit_master__rosidl_generator_cExport.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/export_moveit_master__rosidl_generator_cExport-noconfig.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/export_moveit_master__rosidl_typesupport_fastrtps_cExport.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/export_moveit_master__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/export_moveit_master__rosidl_generator_cppExport.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/export_moveit_master__rosidl_typesupport_fastrtps_cppExport.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/export_moveit_master__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/moveit_master__rosidl_typesupport_introspection_cExport.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/moveit_master__rosidl_typesupport_introspection_cExport-noconfig.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/moveit_master__rosidl_typesupport_cExport.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/moveit_master__rosidl_typesupport_cExport-noconfig.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/moveit_master__rosidl_typesupport_introspection_cppExport.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/moveit_master__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/moveit_master__rosidl_typesupport_cppExport.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/moveit_master__rosidl_typesupport_cppExport-noconfig.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/export_moveit_master__rosidl_generator_pyExport.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/export_moveit_master__rosidl_generator_pyExport-noconfig.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/rosidl_cmake-extras.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/ament_cmake_export_libraries-extras.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/ament_cmake_export_targets-extras.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/rosidl_cmake_aggregate_target-extras.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/moveit_masterConfig.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/cmake/moveit_masterConfig-version.cmake
+-- Installing: /workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/package.xml

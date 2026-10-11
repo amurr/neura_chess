@@ -1,1 +1,0 @@
-/workspace/neura_chess/ros2_ws/src/lara5_mtc/include/lara5_mtc/chess_occupancy.hpp

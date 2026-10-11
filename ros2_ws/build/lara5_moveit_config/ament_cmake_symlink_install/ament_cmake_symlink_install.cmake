@@ -315,6 +315,12 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
+# install(DIRECTORY "launch" "DESTINATION" "share/lara5_moveit_config")
+ament_cmake_symlink_install_directory("/workspace/neura_chess/ros2_ws/src/lara5_moveit_config" DIRECTORY "launch" "DESTINATION" "share/lara5_moveit_config")
+
+# install(DIRECTORY "config" "DESTINATION" "share/lara5_moveit_config")
+ament_cmake_symlink_install_directory("/workspace/neura_chess/ros2_ws/src/lara5_moveit_config" DIRECTORY "config" "DESTINATION" "share/lara5_moveit_config")
+
 # install(FILES "/workspace/neura_chess/ros2_ws/build/lara5_moveit_config/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/lara5_moveit_config" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 ament_cmake_symlink_install_files("/workspace/neura_chess/ros2_ws/src/lara5_moveit_config" FILES "/workspace/neura_chess/ros2_ws/build/lara5_moveit_config/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/lara5_moveit_config" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
@@ -356,15 +362,3 @@ ament_cmake_symlink_install_files("/workspace/neura_chess/ros2_ws/src/lara5_move
 
 # install(FILES "/workspace/neura_chess/ros2_ws/src/lara5_moveit_config/package.xml" "DESTINATION" "share/lara5_moveit_config")
 ament_cmake_symlink_install_files("/workspace/neura_chess/ros2_ws/src/lara5_moveit_config" FILES "/workspace/neura_chess/ros2_ws/src/lara5_moveit_config/package.xml" "DESTINATION" "share/lara5_moveit_config")
-
-# install(DIRECTORY "launch" "DESTINATION" "share/lara5_moveit_config" "PATTERN_EXCLUDE" "setup_assistant.launch")
-ament_cmake_symlink_install_directory("/workspace/neura_chess/ros2_ws/src/lara5_moveit_config" DIRECTORY "launch" "DESTINATION" "share/lara5_moveit_config" "PATTERN_EXCLUDE" "setup_assistant.launch")
-
-# install(DIRECTORY "config" "DESTINATION" "share/lara5_moveit_config")
-ament_cmake_symlink_install_directory("/workspace/neura_chess/ros2_ws/src/lara5_moveit_config" DIRECTORY "config" "DESTINATION" "share/lara5_moveit_config")
-
-# install(FILES ".setup_assistant" "DESTINATION" "share/lara5_moveit_config")
-ament_cmake_symlink_install_files("/workspace/neura_chess/ros2_ws/src/lara5_moveit_config" FILES ".setup_assistant" "DESTINATION" "share/lara5_moveit_config")
-
-# install(PROGRAMS "scripts/lara5_cartesian.py" "scripts/lara5_simple_move.py" "scripts/lara5_chess_pick_place.py" "scripts/lara5_chess_mtc_pick_place.py" "DESTINATION" "lib/lara5_moveit_config")
-ament_cmake_symlink_install_programs("/workspace/neura_chess/ros2_ws/src/lara5_moveit_config" PROGRAMS "scripts/lara5_cartesian.py" "scripts/lara5_simple_move.py" "scripts/lara5_chess_pick_place.py" "scripts/lara5_chess_mtc_pick_place.py" "DESTINATION" "lib/lara5_moveit_config")

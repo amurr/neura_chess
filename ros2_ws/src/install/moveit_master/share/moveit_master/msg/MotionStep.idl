@@ -1,0 +1,63 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from moveit_master/msg/MotionStep.msg
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/Pose.idl"
+#include "geometry_msgs/msg/Vector3.idl"
+
+module moveit_master {
+  module msg {
+    module MotionStep_Constants {
+      @verbatim (language="comment", text=
+        "move arm EEF to `pose` (in the arm's pose reference frame, e.g. world)")
+      const uint8 ARM_POSE = 0;
+      @verbatim (language="comment", text=
+        "move arm to SRDF named state `named_target` (e.g. \"home\", \"e2_hover\")")
+      const uint8 ARM_NAMED = 1;
+      @verbatim (language="comment", text=
+        "move gripper to SRDF named state `named_target` (e.g. \"open\")")
+      const uint8 GRIPPER_NAMED = 2;
+      @verbatim (language="comment", text=
+        "pause for `duration` seconds")
+      const uint8 WAIT = 3;
+      @verbatim (language="comment", text=
+        "move gripper joint to `joint_value` (rad)")
+      const uint8 GRIPPER_JOINT = 4;
+      @verbatim (language="comment", text=
+        "straight-line EEF move by `offset` (planning frame, m), e.g. z=-0.06 = straight down")
+      const uint8 ARM_CARTESIAN = 5;
+      @verbatim (language="comment", text=
+        "attach world object `object_id` to the EEF link; gripper links may touch it")
+      const uint8 ATTACH = 6;
+      @verbatim (language="comment", text=
+        "detach `object_id`; it stays in the world where it was released")
+      const uint8 DETACH = 7;
+      @verbatim (language="comment", text=
+        "allow=true: `object_id` may touch gripper links + `touch_links`; false: undo")
+      const uint8 ALLOW_COLLISION = 8;
+    };
+    @verbatim (language="comment", text=
+      "One step of a motion sequence executed by moveit_master.")
+    struct MotionStep {
+      uint8 type;
+
+      geometry_msgs::msg::Pose pose;
+
+      string named_target;
+
+      double duration;
+
+      double joint_value;
+
+      geometry_msgs::msg::Vector3 offset;
+
+      string object_id;
+
+      @verbatim (language="comment", text=
+        "ALLOW_COLLISION: extra links / objects, e.g. the board square under the piece")
+      sequence<string> touch_links;
+
+      boolean allow;
+    };
+  };
+};

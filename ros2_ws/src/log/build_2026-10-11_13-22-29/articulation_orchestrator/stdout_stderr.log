@@ -1,0 +1,41 @@
+running egg_info
+creating ../build/articulation_orchestrator/articulation_orchestrator.egg-info
+writing ../build/articulation_orchestrator/articulation_orchestrator.egg-info/PKG-INFO
+writing dependency_links to ../build/articulation_orchestrator/articulation_orchestrator.egg-info/dependency_links.txt
+writing entry points to ../build/articulation_orchestrator/articulation_orchestrator.egg-info/entry_points.txt
+writing requirements to ../build/articulation_orchestrator/articulation_orchestrator.egg-info/requires.txt
+writing top-level names to ../build/articulation_orchestrator/articulation_orchestrator.egg-info/top_level.txt
+writing manifest file '../build/articulation_orchestrator/articulation_orchestrator.egg-info/SOURCES.txt'
+reading manifest file '../build/articulation_orchestrator/articulation_orchestrator.egg-info/SOURCES.txt'
+writing manifest file '../build/articulation_orchestrator/articulation_orchestrator.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /workspace/neura_chess/ros2_ws/src/build/articulation_orchestrator/build/lib/articulation_orchestrator
+copying articulation_orchestrator/planning_scene_updater.py -> /workspace/neura_chess/ros2_ws/src/build/articulation_orchestrator/build/lib/articulation_orchestrator
+copying articulation_orchestrator/chess_board_server.py -> /workspace/neura_chess/ros2_ws/src/build/articulation_orchestrator/build/lib/articulation_orchestrator
+copying articulation_orchestrator/articulation_orchestrator.py -> /workspace/neura_chess/ros2_ws/src/build/articulation_orchestrator/build/lib/articulation_orchestrator
+copying articulation_orchestrator/__init__.py -> /workspace/neura_chess/ros2_ws/src/build/articulation_orchestrator/build/lib/articulation_orchestrator
+running install
+running install_lib
+creating /workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/lib/python3.10/site-packages/articulation_orchestrator
+copying /workspace/neura_chess/ros2_ws/src/build/articulation_orchestrator/build/lib/articulation_orchestrator/__init__.py -> /workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/lib/python3.10/site-packages/articulation_orchestrator
+copying /workspace/neura_chess/ros2_ws/src/build/articulation_orchestrator/build/lib/articulation_orchestrator/articulation_orchestrator.py -> /workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/lib/python3.10/site-packages/articulation_orchestrator
+copying /workspace/neura_chess/ros2_ws/src/build/articulation_orchestrator/build/lib/articulation_orchestrator/chess_board_server.py -> /workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/lib/python3.10/site-packages/articulation_orchestrator
+copying /workspace/neura_chess/ros2_ws/src/build/articulation_orchestrator/build/lib/articulation_orchestrator/planning_scene_updater.py -> /workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/lib/python3.10/site-packages/articulation_orchestrator
+byte-compiling /workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/lib/python3.10/site-packages/articulation_orchestrator/__init__.py to __init__.cpython-310.pyc
+byte-compiling /workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/lib/python3.10/site-packages/articulation_orchestrator/articulation_orchestrator.py to articulation_orchestrator.cpython-310.pyc
+byte-compiling /workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/lib/python3.10/site-packages/articulation_orchestrator/chess_board_server.py to chess_board_server.cpython-310.pyc
+byte-compiling /workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/lib/python3.10/site-packages/articulation_orchestrator/planning_scene_updater.py to planning_scene_updater.cpython-310.pyc
+running install_data
+creating /workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/share/ament_index/resource_index/packages
+copying resource/articulation_orchestrator -> /workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/share/ament_index/resource_index/packages
+copying package.xml -> /workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/share/articulation_orchestrator
+creating /workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/share/articulation_orchestrator/assets
+copying assets/objects_dictionary.yaml -> /workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/share/articulation_orchestrator/assets
+running install_egg_info
+Copying ../build/articulation_orchestrator/articulation_orchestrator.egg-info to /workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/lib/python3.10/site-packages/articulation_orchestrator-0.0.0-py3.10.egg-info
+running install_scripts
+Installing articulation_orchestrator script to /workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/lib/articulation_orchestrator
+Installing chess_board_server script to /workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/lib/articulation_orchestrator
+Installing planning_scene_updater script to /workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/lib/articulation_orchestrator
+writing list of installed files to '/workspace/neura_chess/ros2_ws/src/build/articulation_orchestrator/install.log'

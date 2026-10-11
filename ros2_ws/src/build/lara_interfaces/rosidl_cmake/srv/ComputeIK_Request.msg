@@ -1,0 +1,6 @@
+geometry_msgs/Pose target_pose
+float64[] seed_joint_positions
+float64 timeout_sec
+float64 position_tolerance
+float64 orientation_tolerance
+int8 enforce_joint_limits_mode

@@ -1,1 +1,0 @@
-/workspace/neura_chess/ros2_ws/src/lara5_moveit_config/scripts/lara5_simple_move.py

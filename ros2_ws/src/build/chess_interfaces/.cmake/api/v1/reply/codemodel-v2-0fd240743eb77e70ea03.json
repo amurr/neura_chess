@@ -1,0 +1,258 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-c5202bcd8ed3db5958c1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						17,
+						18
+					]
+				},
+				{
+					"build" : "chess_interfaces__py",
+					"jsonFile" : "directory-chess_interfaces__py-16f8af016d69c3ccb080.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/workspace/neura_chess/ros2_ws/src/build/chess_interfaces/chess_interfaces__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "chess_interfaces__rs",
+					"jsonFile" : "directory-chess_interfaces__rs-dfcb77b731ce7a51e03a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/workspace/neura_chess/ros2_ws/src/build/chess_interfaces/chess_interfaces__rs",
+					"targetIndexes" : 
+					[
+						16
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "chess_interfaces",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_chess_interfaces_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_chess_interfaces_egg-a8d7f90ce53a29839de7.json",
+					"name" : "ament_cmake_python_build_chess_interfaces_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_chess_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_chess_interfaces-20dfce209c9e3ff00294.json",
+					"name" : "ament_cmake_python_copy_chess_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "chess_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-chess_interfaces-72fec70ab8bb576a670e.json",
+					"name" : "chess_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "chess_interfaces__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-chess_interfaces__cpp-c06ca0a78e6d82d00c5b.json",
+					"name" : "chess_interfaces__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "chess_interfaces__py::@540ff4e5e91707af5968",
+					"jsonFile" : "target-chess_interfaces__py-de7191ece7a1a7d67317.json",
+					"name" : "chess_interfaces__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "chess_interfaces__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-chess_interfaces__rosidl_generator_c-8d1d79a75bd6449e3b25.json",
+					"name" : "chess_interfaces__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "chess_interfaces__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-chess_interfaces__rosidl_generator_py-d8bb1ba984dc5a6e92a6.json",
+					"name" : "chess_interfaces__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "chess_interfaces__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-chess_interfaces__rosidl_typesupport_c-4f12060279e4b621ba24.json",
+					"name" : "chess_interfaces__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "chess_interfaces__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-chess_interfaces__rosidl_typesupport_c__pyext-984f29799c3c7b653fc0.json",
+					"name" : "chess_interfaces__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "chess_interfaces__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-chess_interfaces__rosidl_typesupport_cpp-0502cf3fdbbf20567165.json",
+					"name" : "chess_interfaces__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "chess_interfaces__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-chess_interfaces__rosidl_typesupport_fastrtps_c-0225209cafe4796ec549.json",
+					"name" : "chess_interfaces__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "chess_interfaces__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-chess_interfaces__rosidl_typesupport_fastrtps_c__pyext-9fd4957fde46fa85245b.json",
+					"name" : "chess_interfaces__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "chess_interfaces__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-chess_interfaces__rosidl_typesupport_fastrtps_cpp-55d7981230bd34715115.json",
+					"name" : "chess_interfaces__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "chess_interfaces__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-chess_interfaces__rosidl_typesupport_introspection_c-0d68d99f9821e99c1eb9.json",
+					"name" : "chess_interfaces__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "chess_interfaces__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-chess_interfaces__rosidl_typesupport_introspection_c__pyext-9cf1d8a2bb2c0af9c198.json",
+					"name" : "chess_interfaces__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "chess_interfaces__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-chess_interfaces__rosidl_typesupport_introspection_cpp-115b1e48da0a213c35c9.json",
+					"name" : "chess_interfaces__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "chess_interfaces__rs::@527590be0e79ee18bf3d",
+					"jsonFile" : "target-chess_interfaces__rs-62a6fcf3bea445b54f4c.json",
+					"name" : "chess_interfaces__rs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "chess_interfaces_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-chess_interfaces_uninstall-4c6abe8d16dff24d45ba.json",
+					"name" : "chess_interfaces_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-15d5eea1a9b388ef51c1.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/workspace/neura_chess/ros2_ws/src/build/chess_interfaces",
+		"source" : "/workspace/neura_chess/ros2_ws/src/chess_interfaces"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

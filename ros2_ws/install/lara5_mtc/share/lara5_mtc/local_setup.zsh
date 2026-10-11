@@ -1,1 +1,0 @@
-/workspace/neura_chess/ros2_ws/build/lara5_mtc/ament_cmake_environment_hooks/local_setup.zsh

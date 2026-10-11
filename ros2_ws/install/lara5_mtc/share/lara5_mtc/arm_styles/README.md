@@ -1,1 +1,0 @@
-/workspace/neura_chess/ros2_ws/src/lara5_mtc/arm_styles/README.md

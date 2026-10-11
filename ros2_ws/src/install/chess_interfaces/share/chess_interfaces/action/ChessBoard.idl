@@ -1,0 +1,62 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from chess_interfaces/action/ChessBoard.action
+// generated code does not contain a copyright notice
+
+
+module chess_interfaces {
+  module action {
+    module ChessBoard_Goal_Constants {
+      @verbatim (language="comment", text=
+        "change_status values" "\n"        "the move already happened on the real board -> only update the PlanningScene")
+      const string ACTIVE = "active";
+      @verbatim (language="comment", text=
+        "the robot must execute the move -> pick and place with MoveItMaster")
+      const string PASSIVE = "passive";
+    };
+    @verbatim (language="comment", text=
+      "chess_board action: served by articulation_orchestrator/chess_board_server on /chess_board." "\n"
+      "Sent by the chess CV node (opponent moved) and the Stockfish node (robot must move).")
+    struct ChessBoard_Goal {
+      @verbatim (language="comment", text=
+        "Goal" "\n"
+        "ACTIVE / PASSIVE")
+      string change_status;
+
+      @verbatim (language="comment", text=
+        "pawn / rook / knight / bishop / queen / king (the piece on to_pick)")
+      string piece_type;
+
+      @verbatim (language="comment", text=
+        "square, e.g. \"e2\"")
+      string to_pick;
+
+      @verbatim (language="comment", text=
+        "square, e.g. \"e4\"")
+      string to_place;
+
+      @verbatim (language="comment", text=
+        "board AFTER the move (FEN, piece-placement field is enough)." "\n"
+        "Optional, but required for castling, en passant and promotion;" "\n"
+        "an ACTIVE goal with only `fen` re-syncs the whole board.")
+      string fen;
+    };
+    @verbatim (language="comment", text=
+      "Result")
+    struct ChessBoard_Result {
+      boolean success;
+
+      string message;
+
+      @verbatim (language="comment", text=
+        "board as the server (and the PlanningScene) now holds it")
+      string fen;
+    };
+    @verbatim (language="comment", text=
+      "Feedback")
+    struct ChessBoard_Feedback {
+      @verbatim (language="comment", text=
+        "e.g. \"capture d5 -> discard\", \"move e2 -> e4\", \"planning scene sync\"")
+      string stage;
+    };
+  };
+};

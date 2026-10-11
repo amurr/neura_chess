@@ -1,0 +1,38 @@
+running egg_info
+creating ../build/lara5_bringup/lara5_bringup.egg-info
+writing ../build/lara5_bringup/lara5_bringup.egg-info/PKG-INFO
+writing dependency_links to ../build/lara5_bringup/lara5_bringup.egg-info/dependency_links.txt
+writing requirements to ../build/lara5_bringup/lara5_bringup.egg-info/requires.txt
+writing top-level names to ../build/lara5_bringup/lara5_bringup.egg-info/top_level.txt
+writing manifest file '../build/lara5_bringup/lara5_bringup.egg-info/SOURCES.txt'
+reading manifest file '../build/lara5_bringup/lara5_bringup.egg-info/SOURCES.txt'
+writing manifest file '../build/lara5_bringup/lara5_bringup.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /workspace/neura_chess/ros2_ws/src/build/lara5_bringup/build/lib/lara5_bringup
+copying lara5_bringup/__init__.py -> /workspace/neura_chess/ros2_ws/src/build/lara5_bringup/build/lib/lara5_bringup
+running install
+running install_lib
+creating /workspace/neura_chess/ros2_ws/src/install/lara5_bringup/lib/python3.10/site-packages/lara5_bringup
+copying /workspace/neura_chess/ros2_ws/src/build/lara5_bringup/build/lib/lara5_bringup/__init__.py -> /workspace/neura_chess/ros2_ws/src/install/lara5_bringup/lib/python3.10/site-packages/lara5_bringup
+byte-compiling /workspace/neura_chess/ros2_ws/src/install/lara5_bringup/lib/python3.10/site-packages/lara5_bringup/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/ament_index/resource_index/packages
+copying resource/lara5_bringup -> /workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/ament_index/resource_index/packages
+copying package.xml -> /workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup
+creating /workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/launch
+copying launch/rviz.launch.py -> /workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/launch
+copying launch/moveit.launch.py -> /workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/launch
+copying launch/description.launch.py -> /workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/launch
+copying launch/control.launch.py -> /workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/launch
+copying launch/bringup.launch.py -> /workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/launch
+copying launch/app.launch.py -> /workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/launch
+creating /workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/config
+copying config/ros2_controllers.yaml -> /workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/config
+copying config/moveit_controllers.yaml -> /workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/config
+copying config/lara5.urdf.xacro -> /workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/config
+copying config/lara5.rviz -> /workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/config
+running install_egg_info
+Copying ../build/lara5_bringup/lara5_bringup.egg-info to /workspace/neura_chess/ros2_ws/src/install/lara5_bringup/lib/python3.10/site-packages/lara5_bringup-0.1.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/workspace/neura_chess/ros2_ws/src/build/lara5_bringup/install.log'

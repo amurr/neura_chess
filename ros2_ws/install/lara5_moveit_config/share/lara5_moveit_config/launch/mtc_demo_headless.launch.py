@@ -1,1 +1,0 @@
-/workspace/neura_chess/ros2_ws/src/lara5_moveit_config/launch/mtc_demo_headless.launch.py

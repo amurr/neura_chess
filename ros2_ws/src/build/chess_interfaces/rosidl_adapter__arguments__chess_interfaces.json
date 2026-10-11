@@ -1,0 +1,6 @@
+{
+  "package_name": "chess_interfaces",
+  "non_idl_tuples": [
+    "/workspace/neura_chess/ros2_ws/src/chess_interfaces:action/ChessBoard.action"
+  ]
+}

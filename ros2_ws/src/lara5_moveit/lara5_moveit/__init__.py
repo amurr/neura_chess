@@ -1,1 +1,1 @@
-"""Lara5 MoveIt helpers for chess pick-and-place."""
+"""Lara5 MoveIt: chess scene, board IK, moveit_master."""

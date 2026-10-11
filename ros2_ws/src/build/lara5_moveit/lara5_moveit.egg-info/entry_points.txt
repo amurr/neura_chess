@@ -1,0 +1,5 @@
+[console_scripts]
+chess_scene_big = lara5_moveit.chess_scene_big:main
+chess_scene_collisions = lara5_moveit.chess_scene_collisions:main
+moveit_master = lara5_moveit.moveit_master:main
+teach_board = lara5_moveit.teach_board:main

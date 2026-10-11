@@ -1,0 +1,35 @@
+# MoveIt -> controller mapping for moveit.launch.py. Served by ros2_control
+# (config/ros2_controllers.yaml), or by an external driver when launch_control:=false.
+# lara5_moveit_config/config/moveit_controllers.yaml is the variant for
+# lara5_moveit/fake_controllers (action_ns follow_joint_trajectory_safe).
+trajectory_execution:
+  allowed_execution_duration_scaling: 2.0
+  allowed_goal_duration_margin: 5.0
+  allowed_start_tolerance: 0.1
+
+moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager
+
+moveit_simple_controller_manager:
+  controller_names:
+    - arm_controller
+    - gripper_controller
+
+  arm_controller:
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - lara5_joint1
+      - lara5_joint2
+      - lara5_joint3
+      - lara5_joint4
+      - lara5_joint5
+      - lara5_joint6
+
+  gripper_controller:
+    action_ns: gripper_cmd
+    type: GripperCommand
+    default: true
+    joints:
+      - lara5_gripper_finger_joint
+    max_effort: 20.0

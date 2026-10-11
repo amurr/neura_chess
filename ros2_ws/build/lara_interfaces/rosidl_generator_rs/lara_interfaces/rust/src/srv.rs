@@ -146,8 +146,8 @@ impl rosidl_runtime_rs::Message for MoveJoints_Request {
     match msg_cow {
       std::borrow::Cow::Owned(msg) => std::borrow::Cow::Owned(Self::RmwMsg {
         point_name: msg.point_name.as_str().into(),
-        target_joint: msg.target_joint.into(),
-        target_pose: msg.target_pose.into(),
+        target_joint: msg.target_joint.as_slice().into(),
+        target_pose: msg.target_pose.as_slice().into(),
         speed: msg.speed,
         acceleration: msg.acceleration,
         enable_safety: msg.enable_safety,
@@ -166,12 +166,8 @@ impl rosidl_runtime_rs::Message for MoveJoints_Request {
   fn from_rmw_message(msg: Self::RmwMsg) -> Self {
     Self {
       point_name: msg.point_name.to_string(),
-      target_joint: msg.target_joint
-          .into_iter()
-          .collect(),
-      target_pose: msg.target_pose
-          .into_iter()
-          .collect(),
+      target_joint: msg.target_joint.into(),
+      target_pose: msg.target_pose.into(),
       speed: msg.speed,
       acceleration: msg.acceleration,
       enable_safety: msg.enable_safety,
@@ -281,7 +277,7 @@ impl rosidl_runtime_rs::Message for MoveLinear_Request {
   fn into_rmw_message(msg_cow: std::borrow::Cow<'_, Self>) -> std::borrow::Cow<'_, Self::RmwMsg> {
     match msg_cow {
       std::borrow::Cow::Owned(msg) => std::borrow::Cow::Owned(Self::RmwMsg {
-        target_pose: msg.target_pose.into(),
+        target_pose: msg.target_pose.as_slice().into(),
         speed: msg.speed,
         acceleration: msg.acceleration,
         enable_safety: msg.enable_safety,
@@ -301,9 +297,7 @@ impl rosidl_runtime_rs::Message for MoveLinear_Request {
 
   fn from_rmw_message(msg: Self::RmwMsg) -> Self {
     Self {
-      target_pose: msg.target_pose
-          .into_iter()
-          .collect(),
+      target_pose: msg.target_pose.into(),
       speed: msg.speed,
       acceleration: msg.acceleration,
       enable_safety: msg.enable_safety,
@@ -516,7 +510,7 @@ impl rosidl_runtime_rs::Message for ComputeIK_Request {
     match msg_cow {
       std::borrow::Cow::Owned(msg) => std::borrow::Cow::Owned(Self::RmwMsg {
         target_pose: geometry_msgs::msg::Pose::into_rmw_message(std::borrow::Cow::Owned(msg.target_pose)).into_owned(),
-        seed_joint_positions: msg.seed_joint_positions.into(),
+        seed_joint_positions: msg.seed_joint_positions.as_slice().into(),
         timeout_sec: msg.timeout_sec,
         position_tolerance: msg.position_tolerance,
         orientation_tolerance: msg.orientation_tolerance,
@@ -536,9 +530,7 @@ impl rosidl_runtime_rs::Message for ComputeIK_Request {
   fn from_rmw_message(msg: Self::RmwMsg) -> Self {
     Self {
       target_pose: geometry_msgs::msg::Pose::from_rmw_message(msg.target_pose),
-      seed_joint_positions: msg.seed_joint_positions
-          .into_iter()
-          .collect(),
+      seed_joint_positions: msg.seed_joint_positions.into(),
       timeout_sec: msg.timeout_sec,
       position_tolerance: msg.position_tolerance,
       orientation_tolerance: msg.orientation_tolerance,
@@ -614,7 +606,7 @@ impl rosidl_runtime_rs::Message for ComputeIK_Response {
           .into_iter()
           .map(|elem| elem.as_str().into())
           .collect(),
-        joint_positions: msg.joint_positions.into(),
+        joint_positions: msg.joint_positions.as_slice().into(),
         position_error: msg.position_error,
         orientation_error: msg.orientation_error,
         iterations: msg.iterations,
@@ -642,9 +634,7 @@ impl rosidl_runtime_rs::Message for ComputeIK_Response {
           .into_iter()
           .map(|elem| elem.to_string())
           .collect(),
-      joint_positions: msg.joint_positions
-          .into_iter()
-          .collect(),
+      joint_positions: msg.joint_positions.into(),
       position_error: msg.position_error,
       orientation_error: msg.orientation_error,
       iterations: msg.iterations,

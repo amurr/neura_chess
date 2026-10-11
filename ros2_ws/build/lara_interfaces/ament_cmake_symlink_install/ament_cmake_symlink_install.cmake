@@ -363,9 +363,6 @@ include("/workspace/neura_chess/ros2_ws/build/lara_interfaces/ament_cmake_symlin
 # install("TARGETS" "lara_interfaces__rosidl_typesupport_c__pyext" "DESTINATION" "local/lib/python3.10/dist-packages/lara_interfaces")
 include("/workspace/neura_chess/ros2_ws/build/lara_interfaces/ament_cmake_symlink_install_targets_2_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/workspace/neura_chess/ros2_ws/build/lara_interfaces/ament_cmake_index/share/ament_index/resource_index/rust_packages/lara_interfaces" "DESTINATION" "share/ament_index/resource_index/rust_packages")
-ament_cmake_symlink_install_files("/workspace/neura_chess/ros2_ws/src/lara_interfaces" FILES "/workspace/neura_chess/ros2_ws/build/lara_interfaces/ament_cmake_index/share/ament_index/resource_index/rust_packages/lara_interfaces" "DESTINATION" "share/ament_index/resource_index/rust_packages")
-
 # install(DIRECTORY "/workspace/neura_chess/ros2_ws/build/lara_interfaces/rosidl_generator_rs/lara_interfaces/rust" "DESTINATION" "share/lara_interfaces")
 ament_cmake_symlink_install_directory("/workspace/neura_chess/ros2_ws/src/lara_interfaces" DIRECTORY "/workspace/neura_chess/ros2_ws/build/lara_interfaces/rosidl_generator_rs/lara_interfaces/rust" "DESTINATION" "share/lara_interfaces")
 

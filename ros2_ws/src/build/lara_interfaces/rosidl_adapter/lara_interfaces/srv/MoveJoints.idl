@@ -1,0 +1,37 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from lara_interfaces/srv/MoveJoints.srv
+// generated code does not contain a copyright notice
+
+
+module lara_interfaces {
+  module srv {
+    @verbatim (language="comment", text=
+      "request")
+    struct MoveJoints_Request {
+      @verbatim (language="comment", text=
+        "if set, move to teach pendant point by name (e.g. \"GP7\")")
+      string point_name;
+
+      @verbatim (language="comment", text=
+        "degrees, 6*k waypoints (ignored if point_name is set)")
+      sequence<double> target_joint;
+
+      @verbatim (language="comment", text=
+        "optional TCP [x,y,z,roll,pitch,yaw] m/rad — IK when target_joint empty")
+      sequence<double> target_pose;
+
+      double speed;
+
+      double acceleration;
+
+      boolean enable_safety;
+    };
+    @verbatim (language="comment", text=
+      "response")
+    struct MoveJoints_Response {
+      boolean success;
+
+      string message;
+    };
+  };
+};

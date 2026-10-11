@@ -1,0 +1,6 @@
+source;share/articulation_orchestrator/hook/pythonpath.ps1
+source;share/articulation_orchestrator/hook/pythonpath.dsv
+source;share/articulation_orchestrator/hook/pythonpath.sh
+source;share/articulation_orchestrator/hook/ament_prefix_path.ps1
+source;share/articulation_orchestrator/hook/ament_prefix_path.dsv
+source;share/articulation_orchestrator/hook/ament_prefix_path.sh

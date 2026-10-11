@@ -1,0 +1,23 @@
+# chess_board action: served by articulation_orchestrator/chess_board_server on /chess_board.
+# Sent by the chess CV node (opponent moved) and the Stockfish node (robot must move).
+
+# change_status values
+string ACTIVE=active     # the move already happened on the real board -> only update the PlanningScene
+string PASSIVE=passive   # the robot must execute the move -> pick and place with MoveItMaster
+
+# Goal
+string change_status     # ACTIVE / PASSIVE
+string piece_type        # pawn / rook / knight / bishop / queen / king (the piece on to_pick)
+string to_pick           # square, e.g. "e2"
+string to_place          # square, e.g. "e4"
+string fen               # board AFTER the move (FEN, piece-placement field is enough).
+                         # Optional, but required for castling, en passant and promotion;
+                         # an ACTIVE goal with only `fen` re-syncs the whole board.
+---
+# Result
+bool success
+string message
+string fen               # board as the server (and the PlanningScene) now holds it
+---
+# Feedback
+string stage             # e.g. "capture d5 -> discard", "move e2 -> e4", "planning scene sync"

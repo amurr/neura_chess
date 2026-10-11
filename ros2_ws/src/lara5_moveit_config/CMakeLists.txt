@@ -3,24 +3,7 @@ project(lara5_moveit_config)
 
 find_package(ament_cmake REQUIRED)
 
-ament_package()
-
-if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/launch")
-  install(
-    DIRECTORY launch
-    DESTINATION share/${PROJECT_NAME}
-    PATTERN "setup_assistant.launch" EXCLUDE)
-endif()
-
+install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
 install(DIRECTORY config DESTINATION share/${PROJECT_NAME})
-install(FILES .setup_assistant DESTINATION share/${PROJECT_NAME})
 
-if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/scripts")
-  install(
-    PROGRAMS
-      scripts/lara5_cartesian.py
-      scripts/lara5_simple_move.py
-      scripts/lara5_chess_pick_place.py
-      scripts/lara5_chess_mtc_pick_place.py
-    DESTINATION lib/${PROJECT_NAME})
-endif()
+ament_package()

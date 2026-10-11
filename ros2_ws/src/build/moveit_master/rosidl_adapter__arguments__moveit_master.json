@@ -1,0 +1,7 @@
+{
+  "package_name": "moveit_master",
+  "non_idl_tuples": [
+    "/workspace/neura_chess/ros2_ws/src/moveit_master:msg/MotionStep.msg",
+    "/workspace/neura_chess/ros2_ws/src/moveit_master:action/ExecuteSequence.action"
+  ]
+}

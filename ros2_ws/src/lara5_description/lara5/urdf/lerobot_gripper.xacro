@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<!-- Deprecated: use so101_gripper.xacro (SO-101 meshes from so101_follower.urdf.xacro). -->
-<robot xmlns:xacro="http://wiki.ros.org/xacro">
-  <xacro:include filename="so101_gripper.xacro"/>
-  <xacro:macro name="lerobot_gripper" params="prefix so101_mesh_uri:=package://lara5_description/lara5/meshes/so101">
-    <xacro:so101_gripper prefix="${prefix}" so101_mesh_uri="${so101_mesh_uri}"/>
-  </xacro:macro>
-</robot>

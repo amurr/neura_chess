@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: lara5_bringup
+Version: 0.1.0
+Summary: Staged bringup for Lara5: description, ros2_control, MoveIt, RViz, chess application nodes.
+Maintainer: Artem
+Maintainer-email: mursalovartem@gmail.com
+License: BSD
+Requires-Dist: setuptools
+Dynamic: license
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: requires-dist
+Dynamic: summary

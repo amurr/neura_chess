@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>lara5_bringup</name>
+  <version>0.1.0</version>
+  <description>Staged bringup for Lara5: description, ros2_control, MoveIt, RViz, chess application nodes.</description>
+  <maintainer email="mursalovartem@gmail.com">Artem</maintainer>
+  <license>BSD</license>
+
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>xacro</exec_depend>
+
+  <!-- stage 1: description -->
+  <exec_depend>lara5_description</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+
+  <!-- stage 2: ros2_control (mock_components/GenericSystem lives in hardware_interface) -->
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>hardware_interface</exec_depend>
+  <exec_depend>joint_state_broadcaster</exec_depend>
+  <exec_depend>joint_trajectory_controller</exec_depend>
+  <exec_depend>gripper_controllers</exec_depend>
+
+  <!-- stage 3: MoveIt -->
+  <exec_depend>lara5_moveit_config</exec_depend>
+  <exec_depend>moveit_configs_utils</exec_depend>
+  <exec_depend>moveit_ros_move_group</exec_depend>
+  <exec_depend>moveit_planners</exec_depend>
+  <exec_depend>moveit_kinematics</exec_depend>
+  <exec_depend>moveit_simple_controller_manager</exec_depend>
+  <exec_depend>moveit_task_constructor_capabilities</exec_depend>
+
+  <!-- stage 4: RViz -->
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>moveit_ros_visualization</exec_depend>
+
+  <!-- stage 5: application (+ wait_for_system gate imports) -->
+  <exec_depend>lara5_moveit</exec_depend>
+  <exec_depend>moveit_master</exec_depend>
+  <exec_depend>articulation_orchestrator</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>moveit_msgs</exec_depend>
+  <exec_depend>control_msgs</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

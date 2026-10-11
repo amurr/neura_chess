@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: xyz_motion
+Version: 0.0.1
+Summary: Chess XYZ occupancy with fixed RPY for Lara TCP motion
+Maintainer: andrew
+Maintainer-email: j.andregon15@gmail.com
+License: MIT
+Requires-Dist: setuptools
+Dynamic: license
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: requires-dist
+Dynamic: summary

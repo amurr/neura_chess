@@ -1,1 +1,0 @@
-/workspace/neura_chess/ros2_ws/src/lara5_mtc/launch/mtc_chess_cylinders_pick_place.launch.py

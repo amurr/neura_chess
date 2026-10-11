@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "chess_interfaces__rs",
+		"source" : "/workspace/neura_chess/ros2_ws/src/build/chess_interfaces/chess_interfaces__rs"
+	}
+}

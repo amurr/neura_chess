@@ -1,0 +1,11 @@
+{
+  "package_name": "lara_interfaces",
+  "non_idl_tuples": [
+    "/workspace/neura_chess/ros2_ws/src/lara_interfaces:msg/XyzRpyGoal.msg",
+    "/workspace/neura_chess/ros2_ws/src/lara_interfaces:srv/GetTCPPose.srv",
+    "/workspace/neura_chess/ros2_ws/src/lara_interfaces:srv/MoveJoints.srv",
+    "/workspace/neura_chess/ros2_ws/src/lara_interfaces:srv/MoveLinear.srv",
+    "/workspace/neura_chess/ros2_ws/src/lara_interfaces:srv/GetAppMode.srv",
+    "/workspace/neura_chess/ros2_ws/src/lara_interfaces:srv/ComputeIK.srv"
+  ]
+}

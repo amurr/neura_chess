@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -O3 -DNDEBUG -shared -Wl,-soname,liblara5_mtc_chess_occupancy.so -o liblara5_mtc_chess_occupancy.so CMakeFiles/lara5_mtc_chess_occupancy.dir/src/chess_occupancy.cpp.o  -Wl,-rpath,/opt/ros/humble/lib /opt/ros/humble/lib/libament_index_cpp.so 

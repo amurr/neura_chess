@@ -1,0 +1,267 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-91515df2fd47c9efead9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						17,
+						18,
+						19
+					]
+				},
+				{
+					"build" : "moveit_master__py",
+					"jsonFile" : "directory-moveit_master__py-8f09260be870774969ca.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/workspace/neura_chess/ros2_ws/src/build/moveit_master/moveit_master__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "moveit_master__rs",
+					"jsonFile" : "directory-moveit_master__rs-0131686d6f7164e06b49.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/workspace/neura_chess/ros2_ws/src/build/moveit_master/moveit_master__rs",
+					"targetIndexes" : 
+					[
+						16
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "moveit_master",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_moveit_master_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_moveit_master_egg-5e4c6478a2d355423689.json",
+					"name" : "ament_cmake_python_build_moveit_master_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_moveit_master::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_moveit_master-d130c49b4354d99b8534.json",
+					"name" : "ament_cmake_python_copy_moveit_master",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "moveit_master::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-moveit_master-21aa5ae09cf2479a803b.json",
+					"name" : "moveit_master",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "moveit_master__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-moveit_master__cpp-a9e69dfe8e5701764e22.json",
+					"name" : "moveit_master__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "moveit_master__py::@e24f2349c6840b220b00",
+					"jsonFile" : "target-moveit_master__py-b896836fffbbff28fe47.json",
+					"name" : "moveit_master__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "moveit_master__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-moveit_master__rosidl_generator_c-09eddfa933632a553149.json",
+					"name" : "moveit_master__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "moveit_master__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-moveit_master__rosidl_generator_py-47a55401589d5ee7bcfa.json",
+					"name" : "moveit_master__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "moveit_master__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-moveit_master__rosidl_typesupport_c-2b338fb50ceaeabacfa8.json",
+					"name" : "moveit_master__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "moveit_master__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-moveit_master__rosidl_typesupport_c__pyext-58f567762131818ac5c4.json",
+					"name" : "moveit_master__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "moveit_master__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-moveit_master__rosidl_typesupport_cpp-7a45980e262810609dbf.json",
+					"name" : "moveit_master__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "moveit_master__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-moveit_master__rosidl_typesupport_fastrtps_c-28cdc44ea11413a2a2c0.json",
+					"name" : "moveit_master__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "moveit_master__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-moveit_master__rosidl_typesupport_fastrtps_c__pyext-8ef33c40fa4184dce94d.json",
+					"name" : "moveit_master__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "moveit_master__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-moveit_master__rosidl_typesupport_fastrtps_cpp-db0996c24fe0026beb62.json",
+					"name" : "moveit_master__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "moveit_master__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-moveit_master__rosidl_typesupport_introspection_c-b2c3875eff0249b6be41.json",
+					"name" : "moveit_master__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "moveit_master__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-moveit_master__rosidl_typesupport_introspection_c__pyext-1739b778b6da90f9e583.json",
+					"name" : "moveit_master__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "moveit_master__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-moveit_master__rosidl_typesupport_introspection_cpp-64294154e320bfd92778.json",
+					"name" : "moveit_master__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "moveit_master__rs::@afb45dc61a42e9234c3e",
+					"jsonFile" : "target-moveit_master__rs-bd9e1326239547f61b92.json",
+					"name" : "moveit_master__rs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "moveit_master_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-moveit_master_node-788f45a938c73dbdc153.json",
+					"name" : "moveit_master_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "moveit_master_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-moveit_master_uninstall-8195f71914be3867c5e7.json",
+					"name" : "moveit_master_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-3bc147d4f50842bfff28.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/workspace/neura_chess/ros2_ws/src/build/moveit_master",
+		"source" : "/workspace/neura_chess/ros2_ws/src/moveit_master"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

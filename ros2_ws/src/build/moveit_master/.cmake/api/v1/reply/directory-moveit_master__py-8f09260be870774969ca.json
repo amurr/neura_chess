@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "moveit_master__py",
+		"source" : "/workspace/neura_chess/ros2_ws/src/build/moveit_master/moveit_master__py"
+	}
+}

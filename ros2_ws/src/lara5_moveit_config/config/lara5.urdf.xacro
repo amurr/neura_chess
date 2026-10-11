@@ -1,24 +1,5 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="lara5">
-    <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
-    <xacro:arg name="ros2_control_name" default="FakeSystem" />
-    <xacro:arg name="ros2_control_hardware_plugin" default="mock_components/GenericSystem" />
-    <xacro:arg name="use_topic_hw" default="false" />
-    <xacro:arg name="joint_commands_topic" default="/isaac_joint_commands" />
-    <xacro:arg name="joint_states_topic" default="/isaac_joint_states" />
-
-    <!-- Robot model (regenerate lara5.urdf with xacro for non-MoveIt tools) -->
+    <!-- MoveIt robot_description: kinematics/visuals only. No ros2_control. -->
     <xacro:include filename="$(find lara5_description)/lara5/urdf/lara5.urdf.xacro" />
-
-    <!-- Import control_xacro -->
-    <xacro:include filename="lara5.ros2_control.xacro" />
-
-    <xacro:lara5_ros2_control
-        name="$(arg ros2_control_name)"
-        initial_positions_file="$(arg initial_positions_file)"
-        hardware_plugin="$(arg ros2_control_hardware_plugin)"
-        use_topic_hw="$(arg use_topic_hw)"
-        joint_commands_topic="$(arg joint_commands_topic)"
-        joint_states_topic="$(arg joint_states_topic)"/>
-
 </robot>

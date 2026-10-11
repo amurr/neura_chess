@@ -1,0 +1,66 @@
+# ros2_control controllers for control.launch.py with hardware:=isaac
+# (topic_based_ros2_control, config/lara5.urdf.xacro). Same controllers as
+# ros2_controllers.yaml; the arm goal tolerances and gripper stall settings differ
+# because the Isaac joints lag the commands (see the comments below).
+# Action servers they expose must match config/moveit_controllers.yaml:
+#   /arm_controller/follow_joint_trajectory   (control_msgs/action/FollowJointTrajectory)
+#   /gripper_controller/gripper_cmd           (control_msgs/action/GripperCommand)
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    gripper_controller:
+      type: position_controllers/GripperActionController
+
+arm_controller:
+  ros__parameters:
+    joints:
+      - lara5_joint1
+      - lara5_joint2
+      - lara5_joint3
+      - lara5_joint4
+      - lara5_joint5
+      - lara5_joint6
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    allow_partial_joints_goal: false
+    state_publish_rate: 50.0
+    action_monitor_rate: 20.0
+    # Isaac lags the trajectory (Kit position drives, damping/stiffness ~0.2 s), so
+    # "trajectory time is over" is not "arrived". With goal tolerances set, the action
+    # succeeds only once every joint is within `goal` rad of the last point and below
+    # stopped_velocity_tolerance, and aborts if that takes longer than goal_time after
+    # the trajectory end. Without them the next MotionStep starts from a lagging pose.
+    # 0.02 rad: Kit's position drives keep a small gravity offset (wrist ~0.01 rad
+    # at stand); 0.02 rad on joint 5/6 is ~2 mm at the fingertips.
+    constraints:
+      stopped_velocity_tolerance: 0.05   # sim joint velocities jitter
+      goal_time: 6.0          # Kit settles slowly (exponential tail ~1-2 s per move)
+      lara5_joint1: {trajectory: 0.0, goal: 0.02}
+      lara5_joint2: {trajectory: 0.0, goal: 0.02}
+      lara5_joint3: {trajectory: 0.0, goal: 0.02}
+      lara5_joint4: {trajectory: 0.0, goal: 0.02}
+      lara5_joint5: {trajectory: 0.0, goal: 0.02}
+      lara5_joint6: {trajectory: 0.0, goal: 0.02}
+
+gripper_controller:
+  ros__parameters:
+    joint: lara5_gripper_finger_joint
+    # Open/close are only 0.25 rad apart: the tolerance must be far below that, or
+    # the step "succeeds" before the jaw moved.
+    goal_tolerance: 0.02
+    max_effort: 0.0
+    # Holding a chess piece = stalled jaw short of the close position. Report success
+    # once the jaw has not moved for stall_timeout instead of aborting.
+    allow_stalling: true
+    stall_velocity_threshold: 0.05
+    stall_timeout: 1.0

@@ -115,7 +115,6 @@
 /workspace/neura_chess/ros2_ws/install/lara_interfaces/local/lib/python3.10/dist-packages/lara_interfaces/lara_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
 /workspace/neura_chess/ros2_ws/install/lara_interfaces/local/lib/python3.10/dist-packages/lara_interfaces/lara_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
 /workspace/neura_chess/ros2_ws/install/lara_interfaces/local/lib/python3.10/dist-packages/lara_interfaces/lara_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
-/workspace/neura_chess/ros2_ws/install/lara_interfaces/share/ament_index/resource_index/rust_packages/lara_interfaces
 /workspace/neura_chess/ros2_ws/install/lara_interfaces/share/lara_interfaces/rust/Cargo.toml
 /workspace/neura_chess/ros2_ws/install/lara_interfaces/share/lara_interfaces/rust/build.rs
 /workspace/neura_chess/ros2_ws/install/lara_interfaces/share/lara_interfaces/rust/src/lib.rs

@@ -1,0 +1,42 @@
+chess_scene_collisions:
+  ros__parameters:
+    planning_scene_topic: /planning_scene
+    planning_frame: world
+    chess_occupancy_topic: /chess_occupancy
+    square_size: 0.04
+    board_thickness: 0.02
+    piece_diameter: 0.035
+    piece_height: 0.05
+    initial_piece_z: 0.0   # 0 = auto (board top = board_thickness / 2)
+
+    # ranks_x_files_y: chess ranks along +X (low X = white), files along +Y (a1→a2 step).
+    # board_file_mirror: flip file axis (a↔h) to match physical board label orientation.
+    board_layout: ranks_x_files_y
+    board_file_mirror: true
+    allow_empty_occupancy: false
+    # MoveIt sometimes applies only the first collision object per message; batch adds.
+    planning_scene_batch_size: 8
+    full_snapshot_min_squares: 16
+    use_convex_hull_collision: true
+
+    publish_board_on_startup: true
+    publish_initial_pieces: true
+    publish_board_markers: true
+    publish_piece_markers: true
+    board_markers_topic: /chess_board_markers
+    piece_markers_topic: /chess_piece_markers
+    board_markers_republish_hz: 1.0
+
+    # Board calibration (a1 corner, +file b1, +rank a2) in world frame.
+    board_a1: [0.27, -0.16, 0.02]
+    board_b1: [0.31, -0.16, 0.02]
+    board_a2: [0.27, -0.12, 0.02]
+
+    # [diameter_m, height_m] on 4 cm squares
+    piece_dims:
+      pawn: [0.018, 0.034]
+      bishop: [0.022, 0.047]
+      knight: [0.024, 0.049]
+      rook: [0.026, 0.044]
+      queen: [0.027, 0.058]
+      king: [0.029, 0.066]

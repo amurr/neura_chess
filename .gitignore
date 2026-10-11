@@ -5,6 +5,9 @@ __pycache__/
 .kit_portable/
 assets/neura_lara5/urdf/lara5_relmeshes.urdf
 
+# logs
+ros2_ws/src/articulation_orchestrator/execution_logs
+
 # Colcon (only ros2_ws is the workspace; never build at repo root)
 /build/
 /install/

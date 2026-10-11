@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "lara_interfaces__rs",
+		"source" : "/workspace/neura_chess/ros2_ws/src/build/lara_interfaces/lara_interfaces__rs"
+	}
+}

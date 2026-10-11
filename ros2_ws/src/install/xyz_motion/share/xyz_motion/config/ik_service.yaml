@@ -1,0 +1,20 @@
+ik_service:
+  ros__parameters:
+    service_name: compute_ik
+    urdf_path: ""
+    base_link: "lara5_link0"
+    tip_link: "lara5_gripper"
+    active_joint_names: []
+    default_seed: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    solver.max_iterations: 250
+    solver.damping: 0.05
+    solver.step_scale: 1.0
+    solver.max_step_rad: 0.25
+    solver.position_weight: 1.0
+    solver.orientation_weight: 0.6
+    solver.position_tolerance: 0.003
+    solver.orientation_tolerance: 0.04
+    solver.timeout_sec: 0.2
+    solver.random_restarts: 3
+    solver.enforce_joint_limits: true
+    solver.fail_on_outside_limits: false

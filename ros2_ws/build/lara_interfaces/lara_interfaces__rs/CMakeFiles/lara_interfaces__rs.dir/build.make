@@ -69,15 +69,14 @@ include lara_interfaces__rs/CMakeFiles/lara_interfaces__rs.dir/progress.make
 lara_interfaces__rs/CMakeFiles/lara_interfaces__rs: rosidl_generator_rs/lara_interfaces/rust/src/lib.rs
 lara_interfaces__rs/CMakeFiles/lara_interfaces__rs: rosidl_generator_rs/lara_interfaces/rust/build.rs
 lara_interfaces__rs/CMakeFiles/lara_interfaces__rs: rosidl_generator_rs/lara_interfaces/rust/Cargo.toml
-lara_interfaces__rs/CMakeFiles/lara_interfaces__rs: rosidl_generator_rs/lara_interfaces/rust/src/msg.rs
-lara_interfaces__rs/CMakeFiles/lara_interfaces__rs: rosidl_generator_rs/lara_interfaces/rust/src/msg/rmw.rs
-lara_interfaces__rs/CMakeFiles/lara_interfaces__rs: rosidl_generator_rs/lara_interfaces/rust/src/srv.rs
-lara_interfaces__rs/CMakeFiles/lara_interfaces__rs: rosidl_generator_rs/lara_interfaces/rust/src/srv/rmw.rs
 
 rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: /opt/ros/humble/lib/rosidl_generator_rs/rosidl_generator_rs
 rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: /opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_rs/__init__.py
 rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: /opt/ros/humble/share/rosidl_generator_rs/resource/action.rs.em
 rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: /opt/ros/humble/share/rosidl_generator_rs/resource/action/rmw.rs.em
+rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: /opt/ros/humble/share/rosidl_generator_rs/resource/build.rs.em
+rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: /opt/ros/humble/share/rosidl_generator_rs/resource/Cargo.toml.em
+rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: /opt/ros/humble/share/rosidl_generator_rs/resource/lib.rs.em
 rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: /opt/ros/humble/share/rosidl_generator_rs/resource/msg.rs.em
 rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: /opt/ros/humble/share/rosidl_generator_rs/resource/msg/rmw.rs.em
 rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: /opt/ros/humble/share/rosidl_generator_rs/resource/srv.rs.em
@@ -86,12 +85,6 @@ rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: /opt/ros/humble/share/rosid
 rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: /opt/ros/humble/share/rosidl_generator_rs/resource/templates/msg_rmw.rs.em
 rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: /opt/ros/humble/share/rosidl_generator_rs/resource/templates/srv_idiomatic.rs.em
 rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: /opt/ros/humble/share/rosidl_generator_rs/resource/templates/srv_rmw.rs.em
-rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: rosidl_adapter/lara_interfaces/msg/XyzRpyGoal.idl
-rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: rosidl_adapter/lara_interfaces/srv/GetTCPPose.idl
-rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: rosidl_adapter/lara_interfaces/srv/MoveJoints.idl
-rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: rosidl_adapter/lara_interfaces/srv/MoveLinear.idl
-rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: rosidl_adapter/lara_interfaces/srv/GetAppMode.idl
-rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: rosidl_adapter/lara_interfaces/srv/ComputeIK.idl
 rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: rosidl_adapter/lara_interfaces/msg/XyzRpyGoal.idl
 rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: rosidl_adapter/lara_interfaces/srv/GetTCPPose.idl
 rosidl_generator_rs/lara_interfaces/rust/src/lib.rs: rosidl_adapter/lara_interfaces/srv/MoveJoints.idl
@@ -170,26 +163,10 @@ rosidl_generator_rs/lara_interfaces/rust/build.rs: rosidl_generator_rs/lara_inte
 rosidl_generator_rs/lara_interfaces/rust/Cargo.toml: rosidl_generator_rs/lara_interfaces/rust/src/lib.rs
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_rs/lara_interfaces/rust/Cargo.toml
 
-rosidl_generator_rs/lara_interfaces/rust/src/msg.rs: rosidl_generator_rs/lara_interfaces/rust/src/lib.rs
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_rs/lara_interfaces/rust/src/msg.rs
-
-rosidl_generator_rs/lara_interfaces/rust/src/msg/rmw.rs: rosidl_generator_rs/lara_interfaces/rust/src/lib.rs
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_rs/lara_interfaces/rust/src/msg/rmw.rs
-
-rosidl_generator_rs/lara_interfaces/rust/src/srv.rs: rosidl_generator_rs/lara_interfaces/rust/src/lib.rs
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_rs/lara_interfaces/rust/src/srv.rs
-
-rosidl_generator_rs/lara_interfaces/rust/src/srv/rmw.rs: rosidl_generator_rs/lara_interfaces/rust/src/lib.rs
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_rs/lara_interfaces/rust/src/srv/rmw.rs
-
 lara_interfaces__rs: lara_interfaces__rs/CMakeFiles/lara_interfaces__rs
 lara_interfaces__rs: rosidl_generator_rs/lara_interfaces/rust/Cargo.toml
 lara_interfaces__rs: rosidl_generator_rs/lara_interfaces/rust/build.rs
 lara_interfaces__rs: rosidl_generator_rs/lara_interfaces/rust/src/lib.rs
-lara_interfaces__rs: rosidl_generator_rs/lara_interfaces/rust/src/msg.rs
-lara_interfaces__rs: rosidl_generator_rs/lara_interfaces/rust/src/msg/rmw.rs
-lara_interfaces__rs: rosidl_generator_rs/lara_interfaces/rust/src/srv.rs
-lara_interfaces__rs: rosidl_generator_rs/lara_interfaces/rust/src/srv/rmw.rs
 lara_interfaces__rs: lara_interfaces__rs/CMakeFiles/lara_interfaces__rs.dir/build.make
 .PHONY : lara_interfaces__rs
 

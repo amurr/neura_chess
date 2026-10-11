@@ -1,0 +1,4 @@
+[console_scripts]
+articulation_orchestrator = articulation_orchestrator.articulation_orchestrator:main
+chess_board_server = articulation_orchestrator.chess_board_server:main
+planning_scene_updater = articulation_orchestrator.planning_scene_updater:main

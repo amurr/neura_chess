@@ -1,0 +1,614 @@
+[0.161s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.162s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=256, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x72ed948275b0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x72ed94826b60>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x72ed94826b60>>, mixin_verb=('build',))
+[0.318s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.319s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.320s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.321s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.321s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.322s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.323s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/workspace/neura_chess/ros2_ws/src'
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.331s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.332s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.334s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.371s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.384s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.386s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.389s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.395s] Level 1:colcon.colcon_core.package_identification:_identify(articulation_orchestrator) by extensions ['ignore', 'ignore_ament_install']
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(articulation_orchestrator) by extension 'ignore'
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(articulation_orchestrator) by extension 'ignore_ament_install'
+[0.402s] Level 1:colcon.colcon_core.package_identification:_identify(articulation_orchestrator) by extensions ['colcon_pkg']
+[0.403s] Level 1:colcon.colcon_core.package_identification:_identify(articulation_orchestrator) by extension 'colcon_pkg'
+[0.404s] Level 1:colcon.colcon_core.package_identification:_identify(articulation_orchestrator) by extensions ['colcon_meta']
+[0.405s] Level 1:colcon.colcon_core.package_identification:_identify(articulation_orchestrator) by extension 'colcon_meta'
+[0.406s] Level 1:colcon.colcon_core.package_identification:_identify(articulation_orchestrator) by extensions ['ros']
+[0.408s] Level 1:colcon.colcon_core.package_identification:_identify(articulation_orchestrator) by extension 'ros'
+[0.438s] DEBUG:colcon.colcon_core.package_identification:Package 'articulation_orchestrator' with type 'ros.ament_python' and name 'articulation_orchestrator'
+[0.443s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.443s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.445s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(chess_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(chess_interfaces) by extension 'ignore'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(chess_interfaces) by extension 'ignore_ament_install'
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(chess_interfaces) by extensions ['colcon_pkg']
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(chess_interfaces) by extension 'colcon_pkg'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(chess_interfaces) by extensions ['colcon_meta']
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(chess_interfaces) by extension 'colcon_meta'
+[0.459s] Level 1:colcon.colcon_core.package_identification:_identify(chess_interfaces) by extensions ['ros']
+[0.459s] Level 1:colcon.colcon_core.package_identification:_identify(chess_interfaces) by extension 'ros'
+[0.472s] DEBUG:colcon.colcon_core.package_identification:Package 'chess_interfaces' with type 'ros.ament_cmake' and name 'chess_interfaces'
+[0.486s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.487s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.489s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.494s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.495s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_bringup) by extension 'ignore'
+[0.496s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_bringup) by extension 'ignore_ament_install'
+[0.499s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_bringup) by extensions ['colcon_pkg']
+[0.499s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_bringup) by extension 'colcon_pkg'
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_bringup) by extensions ['colcon_meta']
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_bringup) by extension 'colcon_meta'
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_bringup) by extensions ['ros']
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_bringup) by extension 'ros'
+[0.517s] DEBUG:colcon.colcon_core.package_identification:Package 'lara5_bringup' with type 'ros.ament_python' and name 'lara5_bringup'
+[0.521s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_description) by extensions ['ignore', 'ignore_ament_install']
+[0.523s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_description) by extension 'ignore'
+[0.524s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_description) by extension 'ignore_ament_install'
+[0.526s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_description) by extensions ['colcon_pkg']
+[0.527s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_description) by extension 'colcon_pkg'
+[0.529s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_description) by extensions ['colcon_meta']
+[0.530s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_description) by extension 'colcon_meta'
+[0.531s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_description) by extensions ['ros']
+[0.531s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_description) by extension 'ros'
+[0.543s] DEBUG:colcon.colcon_core.package_identification:Package 'lara5_description' with type 'ros.ament_cmake' and name 'lara5_description'
+[0.547s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit) by extensions ['ignore', 'ignore_ament_install']
+[0.548s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit) by extension 'ignore'
+[0.552s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit) by extension 'ignore_ament_install'
+[0.554s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit) by extensions ['colcon_pkg']
+[0.556s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit) by extension 'colcon_pkg'
+[0.557s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit) by extensions ['colcon_meta']
+[0.558s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit) by extension 'colcon_meta'
+[0.559s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit) by extensions ['ros']
+[0.560s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit) by extension 'ros'
+[0.584s] DEBUG:colcon.colcon_core.package_identification:Package 'lara5_moveit' with type 'ros.ament_python' and name 'lara5_moveit'
+[0.588s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit_config) by extensions ['ignore', 'ignore_ament_install']
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit_config) by extension 'ignore'
+[0.591s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit_config) by extension 'ignore_ament_install'
+[0.593s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit_config) by extensions ['colcon_pkg']
+[0.594s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit_config) by extension 'colcon_pkg'
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit_config) by extensions ['colcon_meta']
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit_config) by extension 'colcon_meta'
+[0.598s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit_config) by extensions ['ros']
+[0.599s] Level 1:colcon.colcon_core.package_identification:_identify(lara5_moveit_config) by extension 'ros'
+[0.612s] DEBUG:colcon.colcon_core.package_identification:Package 'lara5_moveit_config' with type 'ros.ament_cmake' and name 'lara5_moveit_config'
+[0.615s] Level 1:colcon.colcon_core.package_identification:_identify(lara_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.616s] Level 1:colcon.colcon_core.package_identification:_identify(lara_interfaces) by extension 'ignore'
+[0.618s] Level 1:colcon.colcon_core.package_identification:_identify(lara_interfaces) by extension 'ignore_ament_install'
+[0.620s] Level 1:colcon.colcon_core.package_identification:_identify(lara_interfaces) by extensions ['colcon_pkg']
+[0.621s] Level 1:colcon.colcon_core.package_identification:_identify(lara_interfaces) by extension 'colcon_pkg'
+[0.623s] Level 1:colcon.colcon_core.package_identification:_identify(lara_interfaces) by extensions ['colcon_meta']
+[0.624s] Level 1:colcon.colcon_core.package_identification:_identify(lara_interfaces) by extension 'colcon_meta'
+[0.626s] Level 1:colcon.colcon_core.package_identification:_identify(lara_interfaces) by extensions ['ros']
+[0.627s] Level 1:colcon.colcon_core.package_identification:_identify(lara_interfaces) by extension 'ros'
+[0.641s] DEBUG:colcon.colcon_core.package_identification:Package 'lara_interfaces' with type 'ros.ament_cmake' and name 'lara_interfaces'
+[0.647s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.648s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.649s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.653s] Level 1:colcon.colcon_core.package_identification:_identify(moveit_master) by extensions ['ignore', 'ignore_ament_install']
+[0.654s] Level 1:colcon.colcon_core.package_identification:_identify(moveit_master) by extension 'ignore'
+[0.655s] Level 1:colcon.colcon_core.package_identification:_identify(moveit_master) by extension 'ignore_ament_install'
+[0.658s] Level 1:colcon.colcon_core.package_identification:_identify(moveit_master) by extensions ['colcon_pkg']
+[0.658s] Level 1:colcon.colcon_core.package_identification:_identify(moveit_master) by extension 'colcon_pkg'
+[0.660s] Level 1:colcon.colcon_core.package_identification:_identify(moveit_master) by extensions ['colcon_meta']
+[0.660s] Level 1:colcon.colcon_core.package_identification:_identify(moveit_master) by extension 'colcon_meta'
+[0.661s] Level 1:colcon.colcon_core.package_identification:_identify(moveit_master) by extensions ['ros']
+[0.662s] Level 1:colcon.colcon_core.package_identification:_identify(moveit_master) by extension 'ros'
+[0.685s] DEBUG:colcon.colcon_core.package_identification:Package 'moveit_master' with type 'ros.ament_cmake' and name 'moveit_master'
+[0.689s] Level 1:colcon.colcon_core.package_identification:_identify(xyz_motion) by extensions ['ignore', 'ignore_ament_install']
+[0.690s] Level 1:colcon.colcon_core.package_identification:_identify(xyz_motion) by extension 'ignore'
+[0.691s] Level 1:colcon.colcon_core.package_identification:_identify(xyz_motion) by extension 'ignore_ament_install'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(xyz_motion) by extensions ['colcon_pkg']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(xyz_motion) by extension 'colcon_pkg'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(xyz_motion) by extensions ['colcon_meta']
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(xyz_motion) by extension 'colcon_meta'
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(xyz_motion) by extensions ['ros']
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(xyz_motion) by extension 'ros'
+[0.709s] DEBUG:colcon.colcon_core.package_identification:Package 'xyz_motion' with type 'ros.ament_python' and name 'xyz_motion'
+[0.710s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.711s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.711s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.712s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.713s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.819s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.820s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.856s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 2 installed packages in /workspace/ros2_ws/install
+[0.862s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 327 installed packages in /opt/ros/humble
+[0.866s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.997s] Level 5:colcon.colcon_core.verb:set package 'chess_interfaces' build argument 'cmake_args' from command line to 'None'
+[0.998s] Level 5:colcon.colcon_core.verb:set package 'chess_interfaces' build argument 'cmake_target' from command line to 'None'
+[0.999s] Level 5:colcon.colcon_core.verb:set package 'chess_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.999s] Level 5:colcon.colcon_core.verb:set package 'chess_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[1.000s] Level 5:colcon.colcon_core.verb:set package 'chess_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[1.000s] Level 5:colcon.colcon_core.verb:set package 'chess_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[1.001s] Level 5:colcon.colcon_core.verb:set package 'chess_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[1.002s] Level 5:colcon.colcon_core.verb:set package 'chess_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[1.004s] Level 5:colcon.colcon_core.verb:set package 'chess_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.005s] DEBUG:colcon.colcon_core.verb:Building package 'chess_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/workspace/neura_chess/ros2_ws/src/build/chess_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces', 'merge_install': False, 'path': '/workspace/neura_chess/ros2_ws/src/chess_interfaces', 'symlink_install': False, 'test_result_base': None}
+[1.006s] Level 5:colcon.colcon_core.verb:set package 'lara5_description' build argument 'cmake_args' from command line to 'None'
+[1.007s] Level 5:colcon.colcon_core.verb:set package 'lara5_description' build argument 'cmake_target' from command line to 'None'
+[1.008s] Level 5:colcon.colcon_core.verb:set package 'lara5_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.009s] Level 5:colcon.colcon_core.verb:set package 'lara5_description' build argument 'cmake_clean_cache' from command line to 'False'
+[1.010s] Level 5:colcon.colcon_core.verb:set package 'lara5_description' build argument 'cmake_clean_first' from command line to 'False'
+[1.011s] Level 5:colcon.colcon_core.verb:set package 'lara5_description' build argument 'cmake_force_configure' from command line to 'False'
+[1.011s] Level 5:colcon.colcon_core.verb:set package 'lara5_description' build argument 'ament_cmake_args' from command line to 'None'
+[1.012s] Level 5:colcon.colcon_core.verb:set package 'lara5_description' build argument 'catkin_cmake_args' from command line to 'None'
+[1.013s] Level 5:colcon.colcon_core.verb:set package 'lara5_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.014s] DEBUG:colcon.colcon_core.verb:Building package 'lara5_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/workspace/neura_chess/ros2_ws/src/build/lara5_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/workspace/neura_chess/ros2_ws/src/install/lara5_description', 'merge_install': False, 'path': '/workspace/neura_chess/ros2_ws/src/lara5_description', 'symlink_install': False, 'test_result_base': None}
+[1.015s] Level 5:colcon.colcon_core.verb:set package 'lara_interfaces' build argument 'cmake_args' from command line to 'None'
+[1.016s] Level 5:colcon.colcon_core.verb:set package 'lara_interfaces' build argument 'cmake_target' from command line to 'None'
+[1.016s] Level 5:colcon.colcon_core.verb:set package 'lara_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.017s] Level 5:colcon.colcon_core.verb:set package 'lara_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[1.019s] Level 5:colcon.colcon_core.verb:set package 'lara_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[1.020s] Level 5:colcon.colcon_core.verb:set package 'lara_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[1.021s] Level 5:colcon.colcon_core.verb:set package 'lara_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[1.021s] Level 5:colcon.colcon_core.verb:set package 'lara_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[1.022s] Level 5:colcon.colcon_core.verb:set package 'lara_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.023s] DEBUG:colcon.colcon_core.verb:Building package 'lara_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/workspace/neura_chess/ros2_ws/src/build/lara_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces', 'merge_install': False, 'path': '/workspace/neura_chess/ros2_ws/src/lara_interfaces', 'symlink_install': False, 'test_result_base': None}
+[1.025s] Level 5:colcon.colcon_core.verb:set package 'moveit_master' build argument 'cmake_args' from command line to 'None'
+[1.025s] Level 5:colcon.colcon_core.verb:set package 'moveit_master' build argument 'cmake_target' from command line to 'None'
+[1.026s] Level 5:colcon.colcon_core.verb:set package 'moveit_master' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.027s] Level 5:colcon.colcon_core.verb:set package 'moveit_master' build argument 'cmake_clean_cache' from command line to 'False'
+[1.028s] Level 5:colcon.colcon_core.verb:set package 'moveit_master' build argument 'cmake_clean_first' from command line to 'False'
+[1.029s] Level 5:colcon.colcon_core.verb:set package 'moveit_master' build argument 'cmake_force_configure' from command line to 'False'
+[1.030s] Level 5:colcon.colcon_core.verb:set package 'moveit_master' build argument 'ament_cmake_args' from command line to 'None'
+[1.030s] Level 5:colcon.colcon_core.verb:set package 'moveit_master' build argument 'catkin_cmake_args' from command line to 'None'
+[1.031s] Level 5:colcon.colcon_core.verb:set package 'moveit_master' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.031s] DEBUG:colcon.colcon_core.verb:Building package 'moveit_master' with the following arguments: {'ament_cmake_args': None, 'build_base': '/workspace/neura_chess/ros2_ws/src/build/moveit_master', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/workspace/neura_chess/ros2_ws/src/install/moveit_master', 'merge_install': False, 'path': '/workspace/neura_chess/ros2_ws/src/moveit_master', 'symlink_install': False, 'test_result_base': None}
+[1.033s] Level 5:colcon.colcon_core.verb:set package 'lara5_moveit' build argument 'cmake_args' from command line to 'None'
+[1.034s] Level 5:colcon.colcon_core.verb:set package 'lara5_moveit' build argument 'cmake_target' from command line to 'None'
+[1.035s] Level 5:colcon.colcon_core.verb:set package 'lara5_moveit' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.035s] Level 5:colcon.colcon_core.verb:set package 'lara5_moveit' build argument 'cmake_clean_cache' from command line to 'False'
+[1.036s] Level 5:colcon.colcon_core.verb:set package 'lara5_moveit' build argument 'cmake_clean_first' from command line to 'False'
+[1.036s] Level 5:colcon.colcon_core.verb:set package 'lara5_moveit' build argument 'cmake_force_configure' from command line to 'False'
+[1.037s] Level 5:colcon.colcon_core.verb:set package 'lara5_moveit' build argument 'ament_cmake_args' from command line to 'None'
+[1.038s] Level 5:colcon.colcon_core.verb:set package 'lara5_moveit' build argument 'catkin_cmake_args' from command line to 'None'
+[1.039s] Level 5:colcon.colcon_core.verb:set package 'lara5_moveit' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.040s] DEBUG:colcon.colcon_core.verb:Building package 'lara5_moveit' with the following arguments: {'ament_cmake_args': None, 'build_base': '/workspace/neura_chess/ros2_ws/src/build/lara5_moveit', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit', 'merge_install': False, 'path': '/workspace/neura_chess/ros2_ws/src/lara5_moveit', 'symlink_install': False, 'test_result_base': None}
+[1.041s] Level 5:colcon.colcon_core.verb:set package 'xyz_motion' build argument 'cmake_args' from command line to 'None'
+[1.042s] Level 5:colcon.colcon_core.verb:set package 'xyz_motion' build argument 'cmake_target' from command line to 'None'
+[1.043s] Level 5:colcon.colcon_core.verb:set package 'xyz_motion' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.044s] Level 5:colcon.colcon_core.verb:set package 'xyz_motion' build argument 'cmake_clean_cache' from command line to 'False'
+[1.045s] Level 5:colcon.colcon_core.verb:set package 'xyz_motion' build argument 'cmake_clean_first' from command line to 'False'
+[1.045s] Level 5:colcon.colcon_core.verb:set package 'xyz_motion' build argument 'cmake_force_configure' from command line to 'False'
+[1.046s] Level 5:colcon.colcon_core.verb:set package 'xyz_motion' build argument 'ament_cmake_args' from command line to 'None'
+[1.047s] Level 5:colcon.colcon_core.verb:set package 'xyz_motion' build argument 'catkin_cmake_args' from command line to 'None'
+[1.048s] Level 5:colcon.colcon_core.verb:set package 'xyz_motion' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.049s] DEBUG:colcon.colcon_core.verb:Building package 'xyz_motion' with the following arguments: {'ament_cmake_args': None, 'build_base': '/workspace/neura_chess/ros2_ws/src/build/xyz_motion', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/workspace/neura_chess/ros2_ws/src/install/xyz_motion', 'merge_install': False, 'path': '/workspace/neura_chess/ros2_ws/src/xyz_motion', 'symlink_install': False, 'test_result_base': None}
+[1.050s] Level 5:colcon.colcon_core.verb:set package 'articulation_orchestrator' build argument 'cmake_args' from command line to 'None'
+[1.051s] Level 5:colcon.colcon_core.verb:set package 'articulation_orchestrator' build argument 'cmake_target' from command line to 'None'
+[1.051s] Level 5:colcon.colcon_core.verb:set package 'articulation_orchestrator' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.052s] Level 5:colcon.colcon_core.verb:set package 'articulation_orchestrator' build argument 'cmake_clean_cache' from command line to 'False'
+[1.053s] Level 5:colcon.colcon_core.verb:set package 'articulation_orchestrator' build argument 'cmake_clean_first' from command line to 'False'
+[1.054s] Level 5:colcon.colcon_core.verb:set package 'articulation_orchestrator' build argument 'cmake_force_configure' from command line to 'False'
+[1.054s] Level 5:colcon.colcon_core.verb:set package 'articulation_orchestrator' build argument 'ament_cmake_args' from command line to 'None'
+[1.055s] Level 5:colcon.colcon_core.verb:set package 'articulation_orchestrator' build argument 'catkin_cmake_args' from command line to 'None'
+[1.056s] Level 5:colcon.colcon_core.verb:set package 'articulation_orchestrator' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.058s] DEBUG:colcon.colcon_core.verb:Building package 'articulation_orchestrator' with the following arguments: {'ament_cmake_args': None, 'build_base': '/workspace/neura_chess/ros2_ws/src/build/articulation_orchestrator', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator', 'merge_install': False, 'path': '/workspace/neura_chess/ros2_ws/src/articulation_orchestrator', 'symlink_install': False, 'test_result_base': None}
+[1.060s] Level 5:colcon.colcon_core.verb:set package 'lara5_moveit_config' build argument 'cmake_args' from command line to 'None'
+[1.060s] Level 5:colcon.colcon_core.verb:set package 'lara5_moveit_config' build argument 'cmake_target' from command line to 'None'
+[1.061s] Level 5:colcon.colcon_core.verb:set package 'lara5_moveit_config' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.063s] Level 5:colcon.colcon_core.verb:set package 'lara5_moveit_config' build argument 'cmake_clean_cache' from command line to 'False'
+[1.063s] Level 5:colcon.colcon_core.verb:set package 'lara5_moveit_config' build argument 'cmake_clean_first' from command line to 'False'
+[1.064s] Level 5:colcon.colcon_core.verb:set package 'lara5_moveit_config' build argument 'cmake_force_configure' from command line to 'False'
+[1.065s] Level 5:colcon.colcon_core.verb:set package 'lara5_moveit_config' build argument 'ament_cmake_args' from command line to 'None'
+[1.065s] Level 5:colcon.colcon_core.verb:set package 'lara5_moveit_config' build argument 'catkin_cmake_args' from command line to 'None'
+[1.066s] Level 5:colcon.colcon_core.verb:set package 'lara5_moveit_config' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.067s] DEBUG:colcon.colcon_core.verb:Building package 'lara5_moveit_config' with the following arguments: {'ament_cmake_args': None, 'build_base': '/workspace/neura_chess/ros2_ws/src/build/lara5_moveit_config', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config', 'merge_install': False, 'path': '/workspace/neura_chess/ros2_ws/src/lara5_moveit_config', 'symlink_install': False, 'test_result_base': None}
+[1.069s] Level 5:colcon.colcon_core.verb:set package 'lara5_bringup' build argument 'cmake_args' from command line to 'None'
+[1.069s] Level 5:colcon.colcon_core.verb:set package 'lara5_bringup' build argument 'cmake_target' from command line to 'None'
+[1.070s] Level 5:colcon.colcon_core.verb:set package 'lara5_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.071s] Level 5:colcon.colcon_core.verb:set package 'lara5_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[1.071s] Level 5:colcon.colcon_core.verb:set package 'lara5_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[1.082s] Level 5:colcon.colcon_core.verb:set package 'lara5_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[1.084s] Level 5:colcon.colcon_core.verb:set package 'lara5_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[1.084s] Level 5:colcon.colcon_core.verb:set package 'lara5_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[1.085s] Level 5:colcon.colcon_core.verb:set package 'lara5_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.086s] DEBUG:colcon.colcon_core.verb:Building package 'lara5_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/workspace/neura_chess/ros2_ws/src/build/lara5_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/workspace/neura_chess/ros2_ws/src/install/lara5_bringup', 'merge_install': False, 'path': '/workspace/neura_chess/ros2_ws/src/lara5_bringup', 'symlink_install': False, 'test_result_base': None}
+[1.089s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.091s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.093s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/workspace/neura_chess/ros2_ws/src/lara5_description' with build type 'ament_cmake'
+[1.094s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/workspace/neura_chess/ros2_ws/src/lara5_description'
+[1.102s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.103s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.104s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.148s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/workspace/neura_chess/ros2_ws/src/chess_interfaces' with build type 'ament_cmake'
+[1.148s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/workspace/neura_chess/ros2_ws/src/chess_interfaces'
+[1.150s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.150s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.201s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/workspace/neura_chess/ros2_ws/src/moveit_master' with build type 'ament_cmake'
+[1.203s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/workspace/neura_chess/ros2_ws/src/moveit_master'
+[1.203s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.204s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.244s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/workspace/neura_chess/ros2_ws/src/lara_interfaces' with build type 'ament_cmake'
+[1.245s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/workspace/neura_chess/ros2_ws/src/lara_interfaces'
+[1.247s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.248s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.355s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/neura_chess/ros2_ws/src/build/lara5_description': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake /workspace/neura_chess/ros2_ws/src/lara5_description -DCMAKE_INSTALL_PREFIX=/workspace/neura_chess/ros2_ws/src/install/lara5_description
+[1.430s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/neura_chess/ros2_ws/src/build/chess_interfaces': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake /workspace/neura_chess/ros2_ws/src/chess_interfaces -DCMAKE_INSTALL_PREFIX=/workspace/neura_chess/ros2_ws/src/install/chess_interfaces
+[1.490s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/neura_chess/ros2_ws/src/build/moveit_master': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake /workspace/neura_chess/ros2_ws/src/moveit_master -DCMAKE_INSTALL_PREFIX=/workspace/neura_chess/ros2_ws/src/install/moveit_master
+[1.536s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/neura_chess/ros2_ws/src/build/lara_interfaces': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake /workspace/neura_chess/ros2_ws/src/lara_interfaces -DCMAKE_INSTALL_PREFIX=/workspace/neura_chess/ros2_ws/src/install/lara_interfaces
+[7.507s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/neura_chess/ros2_ws/src/build/lara5_description' returned '0': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake /workspace/neura_chess/ros2_ws/src/lara5_description -DCMAKE_INSTALL_PREFIX=/workspace/neura_chess/ros2_ws/src/install/lara5_description
+[7.532s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/neura_chess/ros2_ws/src/build/lara5_description': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake --build /workspace/neura_chess/ros2_ws/src/build/lara5_description -- -j256 -l256
+[7.700s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/neura_chess/ros2_ws/src/build/lara5_description' returned '0': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake --build /workspace/neura_chess/ros2_ws/src/build/lara5_description -- -j256 -l256
+[7.751s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/neura_chess/ros2_ws/src/build/lara5_description': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake --install /workspace/neura_chess/ros2_ws/src/build/lara5_description
+[10.441s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(lara5_description)
+[10.442s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/neura_chess/ros2_ws/src/build/lara5_description' returned '0': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake --install /workspace/neura_chess/ros2_ws/src/build/lara5_description
+[10.451s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_description' for CMake module files
+[10.471s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_description' for CMake config files
+[10.502s] Level 1:colcon.colcon_core.shell:create_environment_hook('lara5_description', 'cmake_prefix_path')
+[10.503s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/hook/cmake_prefix_path.ps1'
+[10.523s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/hook/cmake_prefix_path.dsv'
+[10.536s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/hook/cmake_prefix_path.sh'
+[10.553s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_description/bin'
+[10.554s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_description/lib/pkgconfig/lara5_description.pc'
+[10.556s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_description/lib/python3.10/site-packages'
+[10.558s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_description/bin'
+[10.561s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/package.ps1'
+[10.583s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/package.dsv'
+[10.605s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/package.sh'
+[10.618s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/package.bash'
+[10.638s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/package.zsh'
+[10.652s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/neura_chess/ros2_ws/src/install/lara5_description/share/colcon-core/packages/lara5_description)
+[10.695s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(lara5_description)
+[10.696s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_description' for CMake module files
+[10.714s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_description' for CMake config files
+[10.741s] Level 1:colcon.colcon_core.shell:create_environment_hook('lara5_description', 'cmake_prefix_path')
+[10.742s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/hook/cmake_prefix_path.ps1'
+[10.753s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/hook/cmake_prefix_path.dsv'
+[10.763s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/hook/cmake_prefix_path.sh'
+[10.790s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_description/bin'
+[10.791s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_description/lib/pkgconfig/lara5_description.pc'
+[10.794s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_description/lib/python3.10/site-packages'
+[10.796s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_description/bin'
+[10.798s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/package.ps1'
+[10.824s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/package.dsv'
+[10.835s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/package.sh'
+[10.848s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/package.bash'
+[10.860s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_description/share/lara5_description/package.zsh'
+[10.872s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/neura_chess/ros2_ws/src/install/lara5_description/share/colcon-core/packages/lara5_description)
+[10.896s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/workspace/neura_chess/ros2_ws/src/lara5_moveit' with build type 'ament_python'
+[10.897s] Level 1:colcon.colcon_core.shell:create_environment_hook('lara5_moveit', 'ament_prefix_path')
+[10.898s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/share/lara5_moveit/hook/ament_prefix_path.ps1'
+[10.916s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/share/lara5_moveit/hook/ament_prefix_path.dsv'
+[10.926s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/share/lara5_moveit/hook/ament_prefix_path.sh'
+[10.938s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[10.939s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[11.889s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/workspace/neura_chess/ros2_ws/src/lara5_moveit'
+[11.891s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[11.893s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[13.472s] DEBUG:colcon.colcon_core.task.python.build:Available setuptools commands: dist_info, install_lib, setopt, install_headers, build_clib, build, extract_messages, install, build_ext, install_egg_info, init_catalog, bdist_dumb, bdist, install_scripts, build_scripts, egg_info, sdist, build_py, bdist_wheel, editable_wheel, saveopts, easy_install, clean, alias, develop, install_data, bdist_egg, symlink_data, update_catalog, check, bdist_rpm, rotate, compile_catalog
+[13.518s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/neura_chess/ros2_ws/src/lara5_moveit': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara5_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara5_description PYTHONPATH=/workspace/neura_chess/ros2_ws/src/build/lara5_moveit/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/lara5_moveit build --build-base /workspace/neura_chess/ros2_ws/src/build/lara5_moveit/build install --record /workspace/neura_chess/ros2_ws/src/build/lara5_moveit/install.log --install-scripts $base/lib/lara5_moveit --single-version-externally-managed install_data
+[16.493s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit' for CMake module files
+[16.494s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/neura_chess/ros2_ws/src/lara5_moveit' returned '0': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara5_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara5_description PYTHONPATH=/workspace/neura_chess/ros2_ws/src/build/lara5_moveit/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/lara5_moveit build --build-base /workspace/neura_chess/ros2_ws/src/build/lara5_moveit/build install --record /workspace/neura_chess/ros2_ws/src/build/lara5_moveit/install.log --install-scripts $base/lib/lara5_moveit --single-version-externally-managed install_data
+[16.512s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit' for CMake config files
+[16.555s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/lib'
+[16.557s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/bin'
+[16.559s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/lib/pkgconfig/lara5_moveit.pc'
+[16.561s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/lib/python3.10/site-packages'
+[16.564s] Level 1:colcon.colcon_core.shell:create_environment_hook('lara5_moveit', 'pythonpath')
+[16.565s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/share/lara5_moveit/hook/pythonpath.ps1'
+[16.599s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/share/lara5_moveit/hook/pythonpath.dsv'
+[16.610s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/share/lara5_moveit/hook/pythonpath.sh'
+[16.621s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/bin'
+[16.624s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(lara5_moveit)
+[16.625s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/share/lara5_moveit/package.ps1'
+[16.634s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/share/lara5_moveit/package.dsv'
+[16.645s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/share/lara5_moveit/package.sh'
+[16.656s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/share/lara5_moveit/package.bash'
+[16.665s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/share/lara5_moveit/package.zsh'
+[16.686s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/share/colcon-core/packages/lara5_moveit)
+[16.696s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/workspace/neura_chess/ros2_ws/src/lara5_moveit_config' with build type 'ament_cmake'
+[16.697s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/workspace/neura_chess/ros2_ws/src/lara5_moveit_config'
+[16.698s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[16.699s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[16.851s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/neura_chess/ros2_ws/src/build/lara5_moveit_config': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara5_moveit:/workspace/neura_chess/ros2_ws/src/install/lara5_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara5_description:/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble PYTHONPATH=/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake /workspace/neura_chess/ros2_ws/src/lara5_moveit_config -DCMAKE_INSTALL_PREFIX=/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config
+[20.554s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/neura_chess/ros2_ws/src/build/chess_interfaces' returned '0': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake /workspace/neura_chess/ros2_ws/src/chess_interfaces -DCMAKE_INSTALL_PREFIX=/workspace/neura_chess/ros2_ws/src/install/chess_interfaces
+[20.573s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/neura_chess/ros2_ws/src/build/chess_interfaces': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake --build /workspace/neura_chess/ros2_ws/src/build/chess_interfaces -- -j256 -l256
+[23.815s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/neura_chess/ros2_ws/src/build/lara5_moveit_config' returned '0': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara5_moveit:/workspace/neura_chess/ros2_ws/src/install/lara5_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara5_description:/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble PYTHONPATH=/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake /workspace/neura_chess/ros2_ws/src/lara5_moveit_config -DCMAKE_INSTALL_PREFIX=/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config
+[23.842s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/neura_chess/ros2_ws/src/build/lara5_moveit_config': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara5_moveit:/workspace/neura_chess/ros2_ws/src/install/lara5_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara5_description:/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble PYTHONPATH=/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /workspace/neura_chess/ros2_ws/src/build/lara5_moveit_config -- -j256 -l256
+[24.034s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/neura_chess/ros2_ws/src/build/lara5_moveit_config' returned '0': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara5_moveit:/workspace/neura_chess/ros2_ws/src/install/lara5_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara5_description:/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble PYTHONPATH=/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /workspace/neura_chess/ros2_ws/src/build/lara5_moveit_config -- -j256 -l256
+[24.063s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/neura_chess/ros2_ws/src/build/lara5_moveit_config': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara5_moveit:/workspace/neura_chess/ros2_ws/src/install/lara5_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara5_description:/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble PYTHONPATH=/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --install /workspace/neura_chess/ros2_ws/src/build/lara5_moveit_config
+[25.099s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(lara5_moveit_config)
+[25.101s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config' for CMake module files
+[25.101s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/neura_chess/ros2_ws/src/build/lara5_moveit_config' returned '0': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara5_moveit:/workspace/neura_chess/ros2_ws/src/install/lara5_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara5_description:/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble PYTHONPATH=/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --install /workspace/neura_chess/ros2_ws/src/build/lara5_moveit_config
+[25.119s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config' for CMake config files
+[25.134s] Level 1:colcon.colcon_core.shell:create_environment_hook('lara5_moveit_config', 'cmake_prefix_path')
+[25.135s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/hook/cmake_prefix_path.ps1'
+[25.147s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/hook/cmake_prefix_path.dsv'
+[25.156s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/hook/cmake_prefix_path.sh'
+[25.169s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/bin'
+[25.171s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/lib/pkgconfig/lara5_moveit_config.pc'
+[25.183s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/lib/python3.10/site-packages'
+[25.185s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/bin'
+[25.187s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/package.ps1'
+[25.198s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/package.dsv'
+[25.210s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/package.sh'
+[25.220s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/package.bash'
+[25.235s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/package.zsh'
+[25.246s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/colcon-core/packages/lara5_moveit_config)
+[25.268s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(lara5_moveit_config)
+[25.269s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config' for CMake module files
+[25.301s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config' for CMake config files
+[25.325s] Level 1:colcon.colcon_core.shell:create_environment_hook('lara5_moveit_config', 'cmake_prefix_path')
+[25.327s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/hook/cmake_prefix_path.ps1'
+[25.336s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/hook/cmake_prefix_path.dsv'
+[25.345s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/hook/cmake_prefix_path.sh'
+[25.357s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/bin'
+[25.359s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/lib/pkgconfig/lara5_moveit_config.pc'
+[25.360s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/lib/python3.10/site-packages'
+[25.362s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/bin'
+[25.363s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/package.ps1'
+[25.385s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/package.dsv'
+[25.408s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/package.sh'
+[25.420s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/package.bash'
+[25.431s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/lara5_moveit_config/package.zsh'
+[25.441s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config/share/colcon-core/packages/lara5_moveit_config)
+[28.860s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/neura_chess/ros2_ws/src/build/chess_interfaces' returned '0': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake --build /workspace/neura_chess/ros2_ws/src/build/chess_interfaces -- -j256 -l256
+[28.896s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/neura_chess/ros2_ws/src/build/chess_interfaces': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake --install /workspace/neura_chess/ros2_ws/src/build/chess_interfaces
+[30.466s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/neura_chess/ros2_ws/src/build/lara_interfaces' returned '0': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake /workspace/neura_chess/ros2_ws/src/lara_interfaces -DCMAKE_INSTALL_PREFIX=/workspace/neura_chess/ros2_ws/src/install/lara_interfaces
+[30.496s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/neura_chess/ros2_ws/src/build/lara_interfaces': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake --build /workspace/neura_chess/ros2_ws/src/build/lara_interfaces -- -j256 -l256
+[34.378s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(chess_interfaces)
+[34.385s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces' for CMake module files
+[34.386s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/neura_chess/ros2_ws/src/build/chess_interfaces' returned '0': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake --install /workspace/neura_chess/ros2_ws/src/build/chess_interfaces
+[34.429s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces' for CMake config files
+[34.497s] Level 1:colcon.colcon_core.shell:create_environment_hook('chess_interfaces', 'cmake_prefix_path')
+[34.499s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/chess_interfaces/hook/cmake_prefix_path.ps1'
+[34.512s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/chess_interfaces/hook/cmake_prefix_path.dsv'
+[34.555s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/chess_interfaces/hook/cmake_prefix_path.sh'
+[34.572s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/lib'
+[34.586s] Level 1:colcon.colcon_core.shell:create_environment_hook('chess_interfaces', 'ld_library_path_lib')
+[34.587s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/chess_interfaces/hook/ld_library_path_lib.ps1'
+[34.598s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/chess_interfaces/hook/ld_library_path_lib.dsv'
+[34.610s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/chess_interfaces/hook/ld_library_path_lib.sh'
+[34.622s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/bin'
+[34.624s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/lib/pkgconfig/chess_interfaces.pc'
+[34.626s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/lib/python3.10/site-packages'
+[34.627s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/bin'
+[34.629s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/chess_interfaces/package.ps1'
+[34.639s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/chess_interfaces/package.dsv'
+[34.653s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/chess_interfaces/package.sh'
+[34.665s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/chess_interfaces/package.bash'
+[34.686s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/chess_interfaces/package.zsh'
+[34.703s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/colcon-core/packages/chess_interfaces)
+[34.725s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(chess_interfaces)
+[34.726s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces' for CMake module files
+[34.752s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces' for CMake config files
+[34.812s] Level 1:colcon.colcon_core.shell:create_environment_hook('chess_interfaces', 'cmake_prefix_path')
+[34.813s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/chess_interfaces/hook/cmake_prefix_path.ps1'
+[34.823s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/chess_interfaces/hook/cmake_prefix_path.dsv'
+[34.834s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/chess_interfaces/hook/cmake_prefix_path.sh'
+[34.851s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/lib'
+[34.853s] Level 1:colcon.colcon_core.shell:create_environment_hook('chess_interfaces', 'ld_library_path_lib')
+[34.854s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/chess_interfaces/hook/ld_library_path_lib.ps1'
+[34.884s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/chess_interfaces/hook/ld_library_path_lib.dsv'
+[34.908s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/chess_interfaces/hook/ld_library_path_lib.sh'
+[34.920s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/bin'
+[34.922s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/lib/pkgconfig/chess_interfaces.pc'
+[34.924s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/lib/python3.10/site-packages'
+[34.926s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/bin'
+[34.928s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/chess_interfaces/package.ps1'
+[34.940s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/chess_interfaces/package.dsv'
+[34.951s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/chess_interfaces/package.sh'
+[34.963s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/chess_interfaces/package.bash'
+[34.986s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/chess_interfaces/package.zsh'
+[34.999s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/share/colcon-core/packages/chess_interfaces)
+[38.670s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/neura_chess/ros2_ws/src/build/moveit_master' returned '0': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake /workspace/neura_chess/ros2_ws/src/moveit_master -DCMAKE_INSTALL_PREFIX=/workspace/neura_chess/ros2_ws/src/install/moveit_master
+[38.703s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/neura_chess/ros2_ws/src/build/moveit_master': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake --build /workspace/neura_chess/ros2_ws/src/build/moveit_master -- -j256 -l256
+[43.043s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/neura_chess/ros2_ws/src/build/lara_interfaces' returned '0': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake --build /workspace/neura_chess/ros2_ws/src/build/lara_interfaces -- -j256 -l256
+[43.069s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/neura_chess/ros2_ws/src/build/lara_interfaces': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake --install /workspace/neura_chess/ros2_ws/src/build/lara_interfaces
+[52.654s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(lara_interfaces)
+[52.655s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces' for CMake module files
+[52.655s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/neura_chess/ros2_ws/src/build/lara_interfaces' returned '0': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake --install /workspace/neura_chess/ros2_ws/src/build/lara_interfaces
+[52.690s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces' for CMake config files
+[52.734s] Level 1:colcon.colcon_core.shell:create_environment_hook('lara_interfaces', 'cmake_prefix_path')
+[52.735s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/lara_interfaces/hook/cmake_prefix_path.ps1'
+[52.746s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/lara_interfaces/hook/cmake_prefix_path.dsv'
+[52.755s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/lara_interfaces/hook/cmake_prefix_path.sh'
+[52.769s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/lib'
+[52.771s] Level 1:colcon.colcon_core.shell:create_environment_hook('lara_interfaces', 'ld_library_path_lib')
+[52.771s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/lara_interfaces/hook/ld_library_path_lib.ps1'
+[52.793s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/lara_interfaces/hook/ld_library_path_lib.dsv'
+[52.805s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/lara_interfaces/hook/ld_library_path_lib.sh'
+[52.817s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/bin'
+[52.819s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/lib/pkgconfig/lara_interfaces.pc'
+[52.821s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/lib/python3.10/site-packages'
+[52.822s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/bin'
+[52.824s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/lara_interfaces/package.ps1'
+[52.835s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/lara_interfaces/package.dsv'
+[52.845s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/lara_interfaces/package.sh'
+[52.855s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/lara_interfaces/package.bash'
+[52.866s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/lara_interfaces/package.zsh'
+[52.886s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/colcon-core/packages/lara_interfaces)
+[52.906s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(lara_interfaces)
+[52.907s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces' for CMake module files
+[52.933s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces' for CMake config files
+[52.994s] Level 1:colcon.colcon_core.shell:create_environment_hook('lara_interfaces', 'cmake_prefix_path')
+[52.995s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/lara_interfaces/hook/cmake_prefix_path.ps1'
+[53.004s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/lara_interfaces/hook/cmake_prefix_path.dsv'
+[53.013s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/lara_interfaces/hook/cmake_prefix_path.sh'
+[53.026s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/lib'
+[53.028s] Level 1:colcon.colcon_core.shell:create_environment_hook('lara_interfaces', 'ld_library_path_lib')
+[53.029s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/lara_interfaces/hook/ld_library_path_lib.ps1'
+[53.038s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/lara_interfaces/hook/ld_library_path_lib.dsv'
+[53.047s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/lara_interfaces/hook/ld_library_path_lib.sh'
+[53.056s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/bin'
+[53.057s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/lib/pkgconfig/lara_interfaces.pc'
+[53.060s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/lib/python3.10/site-packages'
+[53.061s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/bin'
+[53.063s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/lara_interfaces/package.ps1'
+[53.086s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/lara_interfaces/package.dsv'
+[53.096s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/lara_interfaces/package.sh'
+[53.106s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/lara_interfaces/package.bash'
+[53.115s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/lara_interfaces/package.zsh'
+[53.125s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/share/colcon-core/packages/lara_interfaces)
+[53.133s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/workspace/neura_chess/ros2_ws/src/xyz_motion' with build type 'ament_python'
+[53.134s] Level 1:colcon.colcon_core.shell:create_environment_hook('xyz_motion', 'ament_prefix_path')
+[53.135s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/xyz_motion/share/xyz_motion/hook/ament_prefix_path.ps1'
+[53.152s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/xyz_motion/share/xyz_motion/hook/ament_prefix_path.dsv'
+[53.162s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/xyz_motion/share/xyz_motion/hook/ament_prefix_path.sh'
+[53.183s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[53.184s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[54.077s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/workspace/neura_chess/ros2_ws/src/xyz_motion'
+[54.083s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[54.084s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[55.642s] DEBUG:colcon.colcon_core.task.python.build:Available setuptools commands: dist_info, install_lib, setopt, install_headers, build_clib, build, extract_messages, install, build_ext, install_egg_info, init_catalog, bdist_dumb, bdist, install_scripts, build_scripts, egg_info, sdist, build_py, bdist_wheel, editable_wheel, saveopts, easy_install, clean, alias, develop, install_data, bdist_egg, symlink_data, update_catalog, check, bdist_rpm, rotate, compile_catalog
+[55.671s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/neura_chess/ros2_ws/src/xyz_motion': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara_interfaces LD_LIBRARY_PATH=/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/workspace/neura_chess/ros2_ws/src/build/xyz_motion/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/neura_chess/ros2_ws/src/install/xyz_motion/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/xyz_motion build --build-base /workspace/neura_chess/ros2_ws/src/build/xyz_motion/build install --record /workspace/neura_chess/ros2_ws/src/build/xyz_motion/install.log --install-scripts $base/lib/xyz_motion --single-version-externally-managed install_data
+[57.844s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/neura_chess/ros2_ws/src/build/moveit_master' returned '0': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake --build /workspace/neura_chess/ros2_ws/src/build/moveit_master -- -j256 -l256
+[57.870s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/neura_chess/ros2_ws/src/build/moveit_master': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake --install /workspace/neura_chess/ros2_ws/src/build/moveit_master
+[59.662s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/xyz_motion' for CMake module files
+[59.663s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/neura_chess/ros2_ws/src/xyz_motion' returned '0': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara_interfaces LD_LIBRARY_PATH=/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/workspace/neura_chess/ros2_ws/src/build/xyz_motion/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/neura_chess/ros2_ws/src/install/xyz_motion/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/src/install/lara_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/xyz_motion build --build-base /workspace/neura_chess/ros2_ws/src/build/xyz_motion/build install --record /workspace/neura_chess/ros2_ws/src/build/xyz_motion/install.log --install-scripts $base/lib/xyz_motion --single-version-externally-managed install_data
+[59.690s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/xyz_motion' for CMake config files
+[59.741s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/xyz_motion/lib'
+[59.744s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/xyz_motion/bin'
+[59.746s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/xyz_motion/lib/pkgconfig/xyz_motion.pc'
+[59.748s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/xyz_motion/lib/python3.10/site-packages'
+[59.750s] Level 1:colcon.colcon_core.shell:create_environment_hook('xyz_motion', 'pythonpath')
+[59.751s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/xyz_motion/share/xyz_motion/hook/pythonpath.ps1'
+[59.763s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/xyz_motion/share/xyz_motion/hook/pythonpath.dsv'
+[59.786s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/xyz_motion/share/xyz_motion/hook/pythonpath.sh'
+[59.798s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/xyz_motion/bin'
+[59.800s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(xyz_motion)
+[59.802s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/xyz_motion/share/xyz_motion/package.ps1'
+[59.828s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/neura_chess/ros2_ws/src/install/xyz_motion/share/xyz_motion/package.dsv'
+[59.838s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/xyz_motion/share/xyz_motion/package.sh'
+[59.848s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/xyz_motion/share/xyz_motion/package.bash'
+[59.882s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/xyz_motion/share/xyz_motion/package.zsh'
+[59.892s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/neura_chess/ros2_ws/src/install/xyz_motion/share/colcon-core/packages/xyz_motion)
+[63.768s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(moveit_master)
+[63.769s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/neura_chess/ros2_ws/src/build/moveit_master' returned '0': CMAKE_PREFIX_PATH=/workspace/ros2_ws/install/image_pub_test:/opt/ros/humble /usr/bin/cmake --install /workspace/neura_chess/ros2_ws/src/build/moveit_master
+[63.770s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/moveit_master' for CMake module files
+[63.806s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/moveit_master' for CMake config files
+[63.841s] Level 1:colcon.colcon_core.shell:create_environment_hook('moveit_master', 'cmake_prefix_path')
+[63.843s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/hook/cmake_prefix_path.ps1'
+[63.853s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/hook/cmake_prefix_path.dsv'
+[63.865s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/hook/cmake_prefix_path.sh'
+[63.889s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/moveit_master/lib'
+[63.891s] Level 1:colcon.colcon_core.shell:create_environment_hook('moveit_master', 'ld_library_path_lib')
+[63.893s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/hook/ld_library_path_lib.ps1'
+[63.915s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/hook/ld_library_path_lib.dsv'
+[63.924s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/hook/ld_library_path_lib.sh'
+[63.936s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/moveit_master/bin'
+[63.937s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/moveit_master/lib/pkgconfig/moveit_master.pc'
+[63.939s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/moveit_master/lib/python3.10/site-packages'
+[63.941s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/moveit_master/bin'
+[63.943s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/package.ps1'
+[63.954s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/package.dsv'
+[63.972s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/package.sh'
+[63.996s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/package.bash'
+[64.007s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/package.zsh'
+[64.018s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/colcon-core/packages/moveit_master)
+[64.040s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(moveit_master)
+[64.041s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/moveit_master' for CMake module files
+[64.069s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/moveit_master' for CMake config files
+[64.134s] Level 1:colcon.colcon_core.shell:create_environment_hook('moveit_master', 'cmake_prefix_path')
+[64.135s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/hook/cmake_prefix_path.ps1'
+[64.158s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/hook/cmake_prefix_path.dsv'
+[64.165s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/hook/cmake_prefix_path.sh'
+[64.188s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/moveit_master/lib'
+[64.190s] Level 1:colcon.colcon_core.shell:create_environment_hook('moveit_master', 'ld_library_path_lib')
+[64.191s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/hook/ld_library_path_lib.ps1'
+[64.203s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/hook/ld_library_path_lib.dsv'
+[64.211s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/hook/ld_library_path_lib.sh'
+[64.220s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/moveit_master/bin'
+[64.221s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/moveit_master/lib/pkgconfig/moveit_master.pc'
+[64.223s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/moveit_master/lib/python3.10/site-packages'
+[64.225s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/moveit_master/bin'
+[64.229s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/package.ps1'
+[64.253s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/package.dsv'
+[64.262s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/package.sh'
+[64.284s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/package.bash'
+[64.295s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/moveit_master/package.zsh'
+[64.305s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/neura_chess/ros2_ws/src/install/moveit_master/share/colcon-core/packages/moveit_master)
+[64.313s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/workspace/neura_chess/ros2_ws/src/articulation_orchestrator' with build type 'ament_python'
+[64.314s] Level 1:colcon.colcon_core.shell:create_environment_hook('articulation_orchestrator', 'ament_prefix_path')
+[64.315s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/share/articulation_orchestrator/hook/ament_prefix_path.ps1'
+[64.332s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/share/articulation_orchestrator/hook/ament_prefix_path.dsv'
+[64.341s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/share/articulation_orchestrator/hook/ament_prefix_path.sh'
+[64.350s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[64.350s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[65.211s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/workspace/neura_chess/ros2_ws/src/articulation_orchestrator'
+[65.213s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[65.213s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[66.930s] DEBUG:colcon.colcon_core.task.python.build:Available setuptools commands: dist_info, install_lib, setopt, install_headers, build_clib, build, extract_messages, install, build_ext, install_egg_info, init_catalog, bdist_dumb, bdist, install_scripts, build_scripts, egg_info, sdist, build_py, bdist_wheel, editable_wheel, saveopts, easy_install, clean, alias, develop, install_data, bdist_egg, symlink_data, update_catalog, check, bdist_rpm, rotate, compile_catalog
+[66.969s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/neura_chess/ros2_ws/src/articulation_orchestrator': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara5_moveit:/workspace/neura_chess/ros2_ws/src/install/moveit_master:/workspace/neura_chess/ros2_ws/src/install/lara5_description:/workspace/neura_chess/ros2_ws/src/install/chess_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/moveit_master:/workspace/neura_chess/ros2_ws/src/install/lara5_description:/workspace/neura_chess/ros2_ws/src/install/chess_interfaces LD_LIBRARY_PATH=/workspace/neura_chess/ros2_ws/src/install/moveit_master/lib:/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/workspace/neura_chess/ros2_ws/src/build/articulation_orchestrator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages:/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/articulation_orchestrator build --build-base /workspace/neura_chess/ros2_ws/src/build/articulation_orchestrator/build install --record /workspace/neura_chess/ros2_ws/src/build/articulation_orchestrator/install.log --install-scripts $base/lib/articulation_orchestrator --single-version-externally-managed install_data
+[69.378s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator' for CMake module files
+[69.380s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/neura_chess/ros2_ws/src/articulation_orchestrator' returned '0': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara5_moveit:/workspace/neura_chess/ros2_ws/src/install/moveit_master:/workspace/neura_chess/ros2_ws/src/install/lara5_description:/workspace/neura_chess/ros2_ws/src/install/chess_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/moveit_master:/workspace/neura_chess/ros2_ws/src/install/lara5_description:/workspace/neura_chess/ros2_ws/src/install/chess_interfaces LD_LIBRARY_PATH=/workspace/neura_chess/ros2_ws/src/install/moveit_master/lib:/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/workspace/neura_chess/ros2_ws/src/build/articulation_orchestrator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages:/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/articulation_orchestrator build --build-base /workspace/neura_chess/ros2_ws/src/build/articulation_orchestrator/build install --record /workspace/neura_chess/ros2_ws/src/build/articulation_orchestrator/install.log --install-scripts $base/lib/articulation_orchestrator --single-version-externally-managed install_data
+[69.405s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator' for CMake config files
+[69.438s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/lib'
+[69.441s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/bin'
+[69.442s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/lib/pkgconfig/articulation_orchestrator.pc'
+[69.444s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/lib/python3.10/site-packages'
+[69.445s] Level 1:colcon.colcon_core.shell:create_environment_hook('articulation_orchestrator', 'pythonpath')
+[69.446s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/share/articulation_orchestrator/hook/pythonpath.ps1'
+[69.471s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/share/articulation_orchestrator/hook/pythonpath.dsv'
+[69.493s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/share/articulation_orchestrator/hook/pythonpath.sh'
+[69.504s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/bin'
+[69.506s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(articulation_orchestrator)
+[69.507s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/share/articulation_orchestrator/package.ps1'
+[69.517s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/share/articulation_orchestrator/package.dsv'
+[69.529s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/share/articulation_orchestrator/package.sh'
+[69.540s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/share/articulation_orchestrator/package.bash'
+[69.550s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/share/articulation_orchestrator/package.zsh'
+[69.558s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/share/colcon-core/packages/articulation_orchestrator)
+[69.570s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/workspace/neura_chess/ros2_ws/src/lara5_bringup' with build type 'ament_python'
+[69.570s] Level 1:colcon.colcon_core.shell:create_environment_hook('lara5_bringup', 'ament_prefix_path')
+[69.571s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/hook/ament_prefix_path.ps1'
+[69.600s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/hook/ament_prefix_path.dsv'
+[69.609s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/hook/ament_prefix_path.sh'
+[69.619s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[69.620s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[70.837s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/workspace/neura_chess/ros2_ws/src/lara5_bringup'
+[70.838s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[70.839s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[72.794s] DEBUG:colcon.colcon_core.task.python.build:Available setuptools commands: dist_info, install_lib, setopt, install_headers, build_clib, build, extract_messages, install, build_ext, install_egg_info, init_catalog, bdist_dumb, bdist, install_scripts, build_scripts, egg_info, sdist, build_py, bdist_wheel, editable_wheel, saveopts, easy_install, clean, alias, develop, install_data, bdist_egg, symlink_data, update_catalog, check, bdist_rpm, rotate, compile_catalog
+[72.831s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/neura_chess/ros2_ws/src/lara5_bringup': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config:/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator:/workspace/neura_chess/ros2_ws/src/install/lara5_moveit:/workspace/neura_chess/ros2_ws/src/install/moveit_master:/workspace/neura_chess/ros2_ws/src/install/lara5_description:/workspace/neura_chess/ros2_ws/src/install/chess_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config:/workspace/neura_chess/ros2_ws/src/install/moveit_master:/workspace/neura_chess/ros2_ws/src/install/lara5_description:/workspace/neura_chess/ros2_ws/src/install/chess_interfaces LD_LIBRARY_PATH=/workspace/neura_chess/ros2_ws/src/install/moveit_master/lib:/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/workspace/neura_chess/ros2_ws/src/build/lara5_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/neura_chess/ros2_ws/src/install/lara5_bringup/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages:/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/lara5_bringup build --build-base /workspace/neura_chess/ros2_ws/src/build/lara5_bringup/build install --record /workspace/neura_chess/ros2_ws/src/build/lara5_bringup/install.log --install-scripts $base/lib/lara5_bringup --single-version-externally-managed install_data
+[75.224s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_bringup' for CMake module files
+[75.225s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/neura_chess/ros2_ws/src/lara5_bringup' returned '0': AMENT_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config:/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator:/workspace/neura_chess/ros2_ws/src/install/lara5_moveit:/workspace/neura_chess/ros2_ws/src/install/moveit_master:/workspace/neura_chess/ros2_ws/src/install/lara5_description:/workspace/neura_chess/ros2_ws/src/install/chess_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspace/neura_chess/ros2_ws/src/install/lara5_moveit_config:/workspace/neura_chess/ros2_ws/src/install/moveit_master:/workspace/neura_chess/ros2_ws/src/install/lara5_description:/workspace/neura_chess/ros2_ws/src/install/chess_interfaces LD_LIBRARY_PATH=/workspace/neura_chess/ros2_ws/src/install/moveit_master/lib:/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/workspace/neura_chess/ros2_ws/src/build/lara5_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/neura_chess/ros2_ws/src/install/lara5_bringup/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/src/install/articulation_orchestrator/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/src/install/lara5_moveit/lib/python3.10/site-packages:/workspace/neura_chess/ros2_ws/src/install/moveit_master/local/lib/python3.10/dist-packages:/workspace/neura_chess/ros2_ws/src/install/chess_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/lara5_bringup build --build-base /workspace/neura_chess/ros2_ws/src/build/lara5_bringup/build install --record /workspace/neura_chess/ros2_ws/src/build/lara5_bringup/install.log --install-scripts $base/lib/lara5_bringup --single-version-externally-managed install_data
+[75.247s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_bringup' for CMake config files
+[75.289s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_bringup/lib'
+[75.291s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_bringup/bin'
+[75.292s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_bringup/lib/pkgconfig/lara5_bringup.pc'
+[75.295s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_bringup/lib/python3.10/site-packages'
+[75.296s] Level 1:colcon.colcon_core.shell:create_environment_hook('lara5_bringup', 'pythonpath')
+[75.298s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/hook/pythonpath.ps1'
+[75.307s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/hook/pythonpath.dsv'
+[75.316s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/hook/pythonpath.sh'
+[75.326s] Level 1:colcon.colcon_core.environment:checking '/workspace/neura_chess/ros2_ws/src/install/lara5_bringup/bin'
+[75.328s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(lara5_bringup)
+[75.329s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/package.ps1'
+[75.340s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/package.dsv'
+[75.350s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/package.sh'
+[75.360s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/package.bash'
+[75.371s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/lara5_bringup/package.zsh'
+[75.395s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/neura_chess/ros2_ws/src/install/lara5_bringup/share/colcon-core/packages/lara5_bringup)
+[75.410s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[75.411s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[75.412s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[75.413s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[75.434s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[75.435s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspace/neura_chess/ros2_ws/src/install/local_setup.ps1'
+[75.447s] INFO:colcon.colcon_core.shell:Creating prefix util module '/workspace/neura_chess/ros2_ws/src/install/_local_setup_util_ps1.py'
+[75.463s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspace/neura_chess/ros2_ws/src/install/setup.ps1'
+[75.493s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspace/neura_chess/ros2_ws/src/install/local_setup.sh'
+[75.504s] INFO:colcon.colcon_core.shell:Creating prefix util module '/workspace/neura_chess/ros2_ws/src/install/_local_setup_util_sh.py'
+[75.514s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspace/neura_chess/ros2_ws/src/install/setup.sh'
+[75.535s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspace/neura_chess/ros2_ws/src/install/local_setup.bash'
+[75.546s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspace/neura_chess/ros2_ws/src/install/setup.bash'
+[75.566s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspace/neura_chess/ros2_ws/src/install/local_setup.zsh'
+[75.586s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspace/neura_chess/ros2_ws/src/install/setup.zsh'
