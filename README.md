@@ -1,4 +1,34 @@
-Use **three terminals**. Do **not** use `ros2 run lara5_moveit moveit_chess` — that node has no SRDF / `robot_description_semantic` and dies immediately.
+# RunPod.io GPU-powered Pods to run Isaac Sim
+Pod is a docker container with mounted S3 bucket
+
+prerequisites:
+- isaac sim installation in S3 bucket
+
+## system check
+cat /etc/os-release
+nvidia-smi
+
+
+# SSH tunnel to Pod
+1. connect through web terminal
+2. add ssh key
+cat ~/.ssh/id_ed25519.pub
+
+echo 'ssh-ed25519 THE_KEY' >> ~/.ssh/authorized_keys
+
+3. ./workspace/lara/pod_scripts/start_xrdp.sh
+4. from your pc shell: 
+ssh -N -L 13389:127.0.0.1:3389 -p <real port> root@<real IP>
+
+5. from Remmina client: 
+127.0.0.1:13389
+
+  user     root
+  pass     xrdp
+  session  xorg
+
+
+# Isaac Sim
 
 **1. Isaac world** (once; leave it running, timeline playing)
 
