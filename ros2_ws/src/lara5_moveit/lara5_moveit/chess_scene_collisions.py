@@ -176,6 +176,7 @@ def load_binary_stl(path: Path) -> tuple[list[tuple[float, float, float]], list[
     data = path.read_bytes()
     tri_count = struct.unpack_from('<I', data, 80)[0]
     raw_verts: list[tuple[float, float, float]] = []
+    triangles: list[tuple[int, int, int]] = []
     offset = 84
     for _ in range(tri_count):
         offset += 12
@@ -186,7 +187,8 @@ def load_binary_stl(path: Path) -> tuple[list[tuple[float, float, float]], list[
             tri.append(len(raw_verts) - 1)
             offset += 12
         offset += 2
-    return raw_verts, [(tri[0], tri[1], tri[2])]
+        triangles.append((tri[0], tri[1], tri[2]))
+    return raw_verts, triangles
 
 
 def stl_to_shape_mesh(path: Path) -> Mesh:
@@ -472,8 +474,10 @@ def calib_to_pose(calib: BoardCalibration, position: Sequence[float]) -> Pose:
 
 
 def board_surface_z(board_thickness: float) -> float:
-    """Board-frame Z of the top playing surface (matches RViz square markers)."""
-    return float(board_thickness) / 2.0
+    """Board-frame Z of the top playing surface: the calibration points (board_a1 ...) lie on
+    it, the collision squares span -thickness .. 0 below it (Isaac board top = board_a1 z)."""
+    del board_thickness
+    return 0.0
 
 
 def piece_board_yaw(
@@ -672,7 +676,7 @@ def build_board_marker_array(
             calib,
             square,
             square_size=s,
-            z_board=0.0,
+            z_board=-t / 2.0,  # same box as board_collision_squares
             board_layout=layout,
             file_mirror=file_mirror,
         )

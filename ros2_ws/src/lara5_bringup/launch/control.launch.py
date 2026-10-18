@@ -13,7 +13,9 @@ Hardware comes from the URDF (config/lara5.urdf.xacro): mock_components/GenericS
 by default, topic_based_ros2_control for Isaac Sim (hardware:=isaac in description.launch.py).
 With hardware:=isaac this stage also starts pad_joint_commands: the plugin publishes
 positions only on /isaac_hw_joint_commands, Isaac's ROS2SubscribeJointState only
-accepts JointState with velocity/effort filled in on /isaac_joint_commands.
+accepts JointState with velocity/effort filled in on /isaac_joint_commands. And
+isaac_state_velocity: the plugin reads /isaac_hw_joint_states, Isaac's states with
+velocities computed from the position change.
 
 Usage:
   ros2 launch lara5_bringup control.launch.py
@@ -101,6 +103,20 @@ def generate_launch_description():
         condition=LaunchConfigurationEquals("hardware", "isaac"),
     )
 
+    # Isaac only: /isaac_joint_states -> velocity from position -> /isaac_hw_joint_states ->
+    # topic_based_ros2_control (Isaac's own joint velocities are solver noise under contact).
+    isaac_state_velocity = Node(
+        package="lara5_moveit",
+        executable="isaac_state_velocity",
+        name="isaac_state_velocity",
+        output="screen",
+        parameters=[
+            {"in_topic": "/isaac_joint_states"},
+            {"out_topic": "/isaac_hw_joint_states"},
+        ],
+        condition=LaunchConfigurationEquals("hardware", "isaac"),
+    )
+
     # Stage the motion controllers after the joint_state_broadcaster is active.
     start_motion_controllers = RegisterEventHandler(
         OnProcessExit(
@@ -114,6 +130,7 @@ def generate_launch_description():
         + [
             controller_manager,
             pad_joint_commands,
+            isaac_state_velocity,
             joint_state_broadcaster_spawner,
             start_motion_controllers,
         ]

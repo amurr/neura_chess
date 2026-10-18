@@ -13,6 +13,7 @@ Chess pieces positions on the board: {square: FEN letter}, e.g. {"e2": "P", "e7"
 (upper case = white). The PlanningScene pieces are kept equal to it: ids "piece_<square>",
 geometry and board calibration from lara5_moveit (the same as chess_scene_collisions).
 """
+import math
 import os
 import threading
 
@@ -170,10 +171,13 @@ class ChessBoardServer(Node):
         for src, dst in plan_transfers(self.board, target, to_pick):
             stage = f"move {src} -> {dst}" if dst else f"capture {src} -> discard"
             self._feedback(goal_handle, stage)
+            after_pick = {sq: p for sq, p in self.board.items() if sq != src}
             steps = self.orchestrator.transfer_steps(
                 piece_object_id(src), TYPES[self.board[src].lower()],
-                self._hover(src), board_square_object_id(src),
-                dst and self._hover(dst), dst and board_square_object_id(dst))
+                self._hover(src), self._support(src),
+                dst and self._hover(dst), dst and self._support(dst),
+                pick_neighbours=self._neighbours(src, self.board),
+                place_neighbours=self._neighbours(dst, after_pick) if dst else ())
             ok, msg = self.orchestrator.run_sequence(
                 steps, velocity_scaling=self.get_parameter("velocity_scaling").value)
             if not ok:
@@ -200,6 +204,52 @@ class ChessBoardServer(Node):
 
     def _hover(self, square) -> str:
         return self.get_parameter("hover_pose_format").value.format(square=square)
+
+    def _neighbours(self, square, board) -> list[tuple[float, float, tuple]]:
+        """Pieces on the squares around `square`: (dx, dy, profile), world offsets from its
+        centre and the piece's radius profile ((z, max radius at or above z), ...) for the
+        orchestrator's check against the gripper's wrist block."""
+        out = []
+        centre = self._centre(square)
+        f, r = FILES.index(square[0]), int(square[1])
+        for ff in range(max(0, f - 1), min(8, f + 2)):
+            for rr in range(max(1, r - 1), min(9, r + 2)):
+                sq = f"{FILES[ff]}{rr}"
+                if sq == square or sq not in board:
+                    continue
+                c = self._centre(sq)
+                out.append((c[0] - centre[0], c[1] - centre[1],
+                             self._profile(TYPES[board[sq].lower()])))
+        return out
+
+    def _profile(self, ptype) -> tuple:
+        """((z, max radius of the piece at or above z), ...) every 1 mm, z from the board."""
+        if ptype not in self._profiles:
+            if self._meshes is not None:
+                pts = [(v.x, v.y, v.z) for v in self._meshes.get(ptype).mesh.vertices]
+            else:
+                diameter, height = piece_dimensions(ptype, self._dims)
+                pts = [(diameter / 2.0, 0.0, 0.0), (diameter / 2.0, 0.0, height)]
+            top = max(p[2] for p in pts)
+            zs = [i * 0.001 for i in range(int(top / 0.001) + 1)]
+            self._profiles[ptype] = tuple(
+                (z, max(math.hypot(x, y) for x, y, pz in pts if pz >= z)) for z in zs)
+        return self._profiles[ptype]
+
+    def _centre(self, square):
+        g = self._geo
+        return square_center_world(self._calib, square, square_size=g["square_size"],
+                                   board_layout=g["board_layout"],
+                                   file_mirror=g["board_file_mirror"])
+
+    @staticmethod
+    def _support(square) -> list[str]:
+        """Board squares a lifted / placed piece may touch: the square and its neighbours (the
+        piece is pressed onto the board and may sit a few mm off-centre in the gripper)."""
+        f, r = FILES.index(square[0]), int(square[1])
+        return [board_square_object_id(f"{FILES[ff]}{rr}")
+                for ff in range(max(0, f - 1), min(8, f + 2))
+                for rr in range(max(1, r - 1), min(9, r + 2))]
 
     # ---------- planning scene ----------
     def sync_scene(self, board) -> bool:
@@ -241,6 +291,7 @@ class ChessBoardServer(Node):
         meshes = default_piece_mesh_library()
         self._meshes = meshes if g["use_convex_hull_collision"] and meshes.available() else None
         self._dims = cfg.get("piece_dims")
+        self._profiles = {}
 
 
 def main():

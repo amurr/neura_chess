@@ -51,7 +51,7 @@ PIECES_RECORD = Path("/tmp/neura_chess_pieces.record")
 
 DEFAULT_LINKS = [
     "lara5_link1", "lara5_link2", "lara5_link3", "lara5_link4", "lara5_link5", "lara5_link6",
-    "lara5_gripper", "lara5_gripper_body", "lara5_gripper_jaw",
+    "lara5_gripper", "lara5_gripper_body", "lara5_gripper_jaw", "lara5_tcp",
 ]
 STAGE_RE = re.compile(r"^(move|capture) ([a-h][1-8]) -> ([a-h][1-8]|discard)$")
 TERMINAL = {GoalStatus.STATUS_SUCCEEDED: "succeeded", GoalStatus.STATUS_CANCELED: "canceled",
@@ -93,6 +93,9 @@ def rnd(v, n=5):
 class _StepStub:
     """Stands in for ArticulationOrchestrator so transfer_steps() can be called offline."""
 
+    grasp_level = ArticulationOrchestrator.grasp_level
+    _wrist_clear = staticmethod(ArticulationOrchestrator._wrist_clear)
+
     def __init__(self, params):
         self._params = params
 
@@ -100,8 +103,10 @@ class _StepStub:
         return self._params[name]
 
     def object_spec(self, _obj_type):
-        return {"lower_distance": 1.0, "lift_distance": 1.0,
-                "gripper_open_position": OPEN, "gripper_close_position": CLOSE}
+        return {"lower_distance": 1.0, "lift_distance": 1.0, "grasp_offset": 0.0,
+                "finger_clearance": 0.0, "place_press": 0.0, "release_retreat": 0.0,
+                "gripper_open_position": OPEN, "gripper_close_position": CLOSE,
+                "gripper_release_position": OPEN}
 
 
 def step_label(s) -> str:
@@ -111,6 +116,10 @@ def step_label(s) -> str:
     if s.type == MotionStep.GRIPPER_JOINT:
         return f"{kind} {'open' if s.joint_value == OPEN else 'close'}"
     if s.type == MotionStep.ARM_CARTESIAN:
+        if s.frame == "tcp":
+            return f"{kind} shift"
+        if s.offset.z == 0.0:
+            return f"{kind} shift"
         return f"{kind} {'down' if s.offset.z < 0 else 'up'}"
     if s.type == MotionStep.ALLOW_COLLISION:
         return f"{kind} {s.object_id} {'allow' if s.allow else 'forbid'}"
@@ -126,7 +135,7 @@ class ExecutionLogger(Node):
         self.declare_parameter("rate_hz", 20.0)
         self.declare_parameter("world_frame", "world")
         self.declare_parameter("links", DEFAULT_LINKS)
-        self.declare_parameter("eef_link", "lara5_gripper")
+        self.declare_parameter("eef_link", "lara5_tcp")
         self.declare_parameter("jaw_link", "lara5_gripper_jaw")
         self.declare_parameter("isaac_pieces_hz", 10.0)   # 0 = do not record Isaac pieces
         # Must match chess_board_server / ArticulationOrchestrator.
@@ -260,7 +269,8 @@ class ExecutionLogger(Node):
         r["step"] = None
 
     def _labels(self, src, dst):
-        stub = _StepStub({k: self._p(k) for k in ("home_pose", "mid_pose", "discard_pose")})
+        stub = _StepStub({**{k: self._p(k) for k in ("home_pose", "mid_pose", "discard_pose")},
+                          "alt_hover_suffix": ""})
         fmt = self._p("hover_pose_format")
         steps = ArticulationOrchestrator.transfer_steps(
             stub, f"piece_{src}", "piece", fmt.format(square=src), f"board_sq_{src}",

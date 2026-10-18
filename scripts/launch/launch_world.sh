@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Launch the neura chess PhysX world into the existing VNC display (:1).
-# Same method as supermarket_world: Isaac python.sh on DISPLAY=:1, no vglrun.
+# Launch the neura chess PhysX world into the existing desktop (xrdp :10, or :1).
+# Same method as supermarket_world: Isaac python.sh on the live DISPLAY, no vglrun.
 # Isolated runtime/log/prims. Only one Kit instance can run on this GPU.
 set -euo pipefail
 # shellcheck source=/dev/null
@@ -10,7 +10,6 @@ LOCAL_ROOT="${NEURA_CHESS_WORLD_LOCAL_ROOT:-/tmp/neura_chess_world_runtime}"
 ISAAC_SIM_ROOT="${ISAAC_SIM_ROOT:-/workspace/isaacsim}"
 LOG="/tmp/neura_chess_world.log"
 
-export DISPLAY="${DISPLAY:-:1}"
 export ACCEPT_EULA="${ACCEPT_EULA:-Y}"
 export PRIVACY_CONSENT="${PRIVACY_CONSENT:-Y}"
 export OMNI_KIT_ALLOW_ROOT=1
@@ -37,6 +36,46 @@ if [[ -z "${XAUTHORITY:-}" ]]; then
     export XAUTHORITY="${HOME}/.Xauthority"
   fi
 fi
+[[ -z "${XAUTHORITY:-}" && -f /root/.Xauthority ]] && export XAUTHORITY=/root/.Xauthority
+
+display_ok() {
+  DISPLAY="$1" xdpyinfo >/dev/null 2>&1
+}
+
+# xrdp gives its desktop :10 (X11DisplayOffset), not :1. A dead DISPLAY makes
+# GLFW fail, Kit starts with no window and omni.physx.ui and friends crash.
+# Prefer $DISPLAY, then the xrdp desktop :10, then :1, then any live socket.
+pick_display() {
+  local d sock
+  for d in "${DISPLAY:-}" :10 :1; do
+    [[ -n "$d" ]] && display_ok "$d" && { echo "$d"; return 0; }
+  done
+  for sock in /tmp/.X11-unix/X*; do
+    [[ -S "$sock" ]] || continue
+    d=":${sock##*/X}"
+    display_ok "$d" && { echo "$d"; return 0; }
+  done
+  return 1
+}
+
+if ! DISPLAY="$(pick_display)"; then
+  echo "error: no reachable X display (DISPLAY=${DISPLAY:-unset}, sockets: $(ls /tmp/.X11-unix 2>/dev/null | tr '\n' ' '))" >&2
+  echo "Start the desktop first: ${ROOT}/scripts/pod_scripts/start_xrdp.sh, then log in over RDP." >&2
+  exit 1
+fi
+export DISPLAY
+
+# Remmina resizes the xrdp desktop to its window (e.g. 592x440) after
+# startwm.sh ran, so the 1440x900 Kit window ends up mostly off-screen.
+MIN_GEOMETRY="${NEURA_CHESS_MIN_GEOMETRY:-1920x1080}"
+if command -v xrandr >/dev/null 2>&1; then
+  cur="$(xdpyinfo 2>/dev/null | awk '/dimensions:/ {print $2; exit}')"
+  if [[ "$cur" =~ ^([0-9]+)x([0-9]+)$ ]] && (( BASH_REMATCH[1] < 1440 || BASH_REMATCH[2] < 900 )); then
+    echo "Display $DISPLAY is ${cur}; resizing to ${MIN_GEOMETRY}"
+    xrandr -s "$MIN_GEOMETRY" >/dev/null 2>&1 || echo "warning: xrandr -s ${MIN_GEOMETRY} failed" >&2
+  fi
+fi
+
 if command -v xhost >/dev/null 2>&1; then
   DISPLAY="$DISPLAY" XAUTHORITY="${XAUTHORITY:-}" xhost +local:root >/dev/null 2>&1 || true
   DISPLAY="$DISPLAY" XAUTHORITY="${XAUTHORITY:-}" xhost +SI:localuser:root >/dev/null 2>&1 || true
@@ -55,14 +94,14 @@ fi
 echo "Stopping any previous Isaac Kit processes..."
 mapfile -t KIT_PIDS < <(
   pgrep -f '/workspace/isaacsim/kit/kit ' || true
-  pgrep -f '/workspace/isaacsim/kit/python/bin/python3 .*/neura_chess_world\\.py' || true
-  pgrep -f '/workspace/neura_chess/neura_chess_world\\.py' || true
-  pgrep -f '/tmp/neura_chess_world_runtime/neura_chess_world\\.py' || true
-  pgrep -f '/workspace/isaacsim/kit/python/bin/python3 .*/supermarket_world\\.py' || true
-  pgrep -f '/tmp/supermarket_world_runtime/supermarket_world\\.py' || true
-  pgrep -f '/workspace/isaacsim/kit/python/bin/python3 .*/piper_chess_world\\.py' || true
-  pgrep -f '/tmp/piper_chess_runtime/piper_chess_world\\.py' || true
-  pgrep -f '/workspace/isaacsim/isaac-sim\\.sh' || true
+  pgrep -f '/workspace/isaacsim/kit/python/bin/python3 .*/neura_chess_world\.py' || true
+  pgrep -f '/workspace/neura_chess/neura_chess_world\.py' || true
+  pgrep -f '/tmp/neura_chess_world_runtime/neura_chess_world\.py' || true
+  pgrep -f '/workspace/isaacsim/kit/python/bin/python3 .*/supermarket_world\.py' || true
+  pgrep -f '/tmp/supermarket_world_runtime/supermarket_world\.py' || true
+  pgrep -f '/workspace/isaacsim/kit/python/bin/python3 .*/piper_chess_world\.py' || true
+  pgrep -f '/tmp/piper_chess_runtime/piper_chess_world\.py' || true
+  pgrep -f '/workspace/isaacsim/isaac-sim\.sh' || true
 )
 declare -A SEEN=()
 KILL_LIST=()

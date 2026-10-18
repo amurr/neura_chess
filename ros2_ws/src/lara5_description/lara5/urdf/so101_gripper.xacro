@@ -8,7 +8,8 @@
   <xacro:macro name="so101_gripper" params="prefix
     so101_mesh_uri:=package://lara5_description/lara5/meshes/so101
     so101_mesh_scale:='0.001 0.001 0.001'
-    so101_adapter_xyz:='0 0 0' so101_adapter_rpy:='1.5708 0 3.14159'">
+    so101_adapter_xyz:='0 0 0' so101_adapter_rpy:='1.5708 0 3.14159'
+    so101_tcp_xyz:='-0.0079 0 -0.1044'">
     <!-- SO-ARM100 Individual STLs are in mm; use 0.001. Onshape meshes (so101_follower_description) use 1 1 1 -->
     <xacro:property name="so101_mesh" value="${so101_mesh_uri}"/>
 
@@ -19,9 +20,22 @@
       <color rgba="0.1 0.1 0.1 1.0"/>
     </material>
 
-    <!-- Tip link for MoveIt / IK -->
+    <!-- Gripper mount on the flange: root of the gripper links (collision touch links) -->
     <link name="${prefix}gripper"/>
     <link name="${prefix}gripper_adapter"/>
+
+    <!-- TCP for MoveIt / IK: tip of the static (fixed) finger, on its inner gripping face.
+         Measured from wrist_roll_follower_so101_v1.stl in the gripper mount frame: finger tip
+         (lowest point) z = -0.1044, inner face x = -0.0079 (finger centre x = -0.0103), y = 0.
+         Same orientation as the gripper mount: +z back up the fingers to the wrist, +x from the
+         static finger towards the moving one -> a piece touching the static finger has its
+         centre at (r_piece, 0, z) in this frame. -->
+    <link name="${prefix}tcp"/>
+    <joint name="${prefix}gripper_to_tcp" type="fixed">
+      <origin xyz="${so101_tcp_xyz}" rpy="0 0 0"/>
+      <parent link="${prefix}gripper"/>
+      <child link="${prefix}tcp"/>
+    </joint>
 
     <link name="${prefix}gripper_body">
       <inertial>
@@ -50,11 +64,30 @@
         </geometry>
         <material name="so101_3d_printed"/>
       </visual>
-      <collision name="wrist_roll_follower_collision">
-        <origin xyz="0 -0.000218214 0.000949706" rpy="-3.14159 0 0"/>
-        <geometry>
-          <mesh filename="${so101_mesh}/wrist_roll_follower_so101_v1.stl" scale="${so101_mesh_scale}"/>
-        </geometry>
+      <!-- Boxes instead of the wrist_roll_follower mesh: Isaac imports collisions as convex
+           hulls, and the hull of that mesh closes the space between the jaws (V-shape) so taller
+           pieces cannot get between the fingers. Boxes fitted to the mesh cross-sections. -->
+      <!-- static finger: inner face -0.0079 at the tip, stepping back to -0.0133 higher up -->
+      <collision name="static_finger_tip_collision">
+        <origin xyz="-0.0143 0 -0.0952" rpy="0 0 0"/>
+        <geometry><box size="0.0128 0.0150 0.0184"/></geometry>
+      </collision>
+      <collision name="static_finger_mid_collision">
+        <origin xyz="-0.0207 0 -0.0710" rpy="0 0 0"/>
+        <geometry><box size="0.0216 0.0200 0.0300"/></geometry>
+      </collision>
+      <collision name="static_finger_root_collision">
+        <origin xyz="-0.02425 0 -0.0470" rpy="0 0 0"/>
+        <geometry><box size="0.0219 0.0280 0.0180"/></geometry>
+      </collision>
+      <!-- wrist part above the fingers -->
+      <collision name="wrist_lower_collision">
+        <origin xyz="-0.0121 0 -0.0260" rpy="0 0 0"/>
+        <geometry><box size="0.0462 0.0480 0.0240"/></geometry>
+      </collision>
+      <collision name="wrist_upper_collision">
+        <origin xyz="-0.0026 -0.0020 -0.0065" rpy="0 0 0"/>
+        <geometry><box size="0.0652 0.0520 0.0150"/></geometry>
       </collision>
     </link>
 
@@ -93,7 +126,7 @@
       <child link="${prefix}gripper_jaw"/>
       <!-- Jaw opens/closes in gripper_body Z; meshes oriented to face each other when open -->
       <axis xyz="0 0 1"/>
-      <limit effort="10" velocity="10" lower="-0.174533" upper="1.74533"/>
+<limit effort="10" velocity="10" lower="-0.174533" upper="1.74533"/>
     </joint>
 
     <joint name="${prefix}link6_to_gripper_adapter" type="fixed">

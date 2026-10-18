@@ -18,14 +18,16 @@ nvidia-smi
 
 
 # SSH tunnel to Pod
-1. connect through web terminal
+1. Runpod web panel: 'Connect to your Pod using a terminal directly in your browser'
+
 2. add ssh key
 cat ~/.ssh/id_ed25519.pub
 
 echo 'ssh-ed25519 THE_KEY' >> ~/.ssh/authorized_keys
 
 ## XRDP connection inside SSH tunnel
-3. ./workspace/lara/pod_scripts/start_xrdp.sh
+3. bash ./workspace/neura_chess/scripts/pod_scripts/start_xrdp.sh
+
 4. from pc terminal: 
 ssh -N -L 13389:127.0.0.1:3389 -p <real port> root@<real IP>
 
@@ -36,21 +38,35 @@ ssh -N -L 13389:127.0.0.1:3389 -p <real port> root@<real IP>
   pass     xrdp
   session  xvnc (select)
 
-## vscode remote
+## vscode remote (optional)
 6. from pc terminal:
 micro /home/USER/.ssh/config
+  redact port, ip:
+```
+Host runpod
+    HostName 157.157.221.29
+    Port 33193
+    User root
+    IdentityFile ~/.ssh/id_ed25519
+    ServerAliveInterval 30
+```
+  ctrl s, ctrl q
+
 code --remote ssh-remote+runpod /workspace/
 
+# on Pod
 ## install ros2 humble
 7. from pod terminal:
-/workspace/neura_chess/scripts/ros2h_installation.sh
+./neura_chess/scripts/ros2h_installation.sh
 
 
 ## Isaac Sim
 
 8. from pod terminal:
-start Isaac Sim with the chess scene (once; leave it running, timeline playing)
-./scripts/launch/launch_world.sh
+start Isaac Sim with the chess scene (once; leave it running, timeline playing):
+```
+./neura_chess/scripts/launch/launch_world.sh
+```
 
 Wait until `/tmp/neura_chess_pieces.ready` exists and `/isaac_joint_states` is publishing.
 
@@ -64,6 +80,7 @@ Right+D/A to move camera
 9. MoveIt + Isaac hardware (once; leave it running)
 
 ```bash
+cd neura_chess
 colcon build
 
 source /opt/ros/humble/setup.bash
@@ -87,12 +104,12 @@ actions pipeline is described in /workspace/neura_chess/ros2_ws/src/README.md
 11. send a test move goal to ChessBoard action server Node
 - change_status: passive is for arm to move a piece; active is for updating move_group PlanningScene (when opponent makes a move)
 
+ros2 action list | grep chess_board # make sure the server is up
+
 ```
 source /opt/ros/humble/setup.bash
 source /workspace/neura_chess/ros2_ws/install/setup.bash
 export ROS_DOMAIN_ID=0 RMW_IMPLEMENTATION=rmw_fastrtps_cpp ROS_LOCALHOST_ONLY=0
-
-#ros2 action list | grep chess_board # make sure the server is up
 
 ros2 action send_goal --feedback /chess_board chess_interfaces/action/ChessBoard \
   "{change_status: passive, piece_type: pawn, to_pick: e2, to_place: e4}"
@@ -111,8 +128,8 @@ source /workspace/neura_chess/ros2_ws/install/setup.bash
 export ROS_DOMAIN_ID=0 RMW_IMPLEMENTATION=rmw_fastrtps_cpp ROS_LOCALHOST_ONLY=0
 ros2 run articulation_orchestrator execution_logger --ros-args \
   -p out_dir:=/workspace/neura_chess/ros2_ws/src/articulation_orchestrator/execution_logs
-# options: --ros-args -p out_dir:=/path -p rate_hz:=50 -p isaac_pieces_hz:=10
 ```
+options: --ros-args -p out_dir:=/path -p rate_hz:=50 -p isaac_pieces_hz:=10
 
 
 # Controlling robot model in Isaac Sim scene
@@ -149,48 +166,96 @@ gripper_controller:
 ```
 
 # Lerobot Gripper TCP
-Lerobot gripper TCP is near the static finger
 
-TCP to use is about (−0.008 + r_piece, 0, −0.095) in lara5_gripper, where r_piece is the radius of the piece where the fingers grip it. For a pawn neck of radius about 5–6 mm, that's x ≈ −0.003.
+MoveIt plans for `lara5_tcp`: the tip of the static (fixed) SO-101 finger, on its inner gripping
+face. It is a fixed link under the gripper mount `lara5_gripper`
+([so101_gripper.xacro](ros2_ws/src/lara5_description/lara5/urdf/so101_gripper.xacro)), at
+(−0.0079, 0, −0.1044) measured from `wrist_roll_follower_so101_v1.stl`, with the same axes:
++x from the static to the moving finger, +z back up the fingers. A piece pressed against the
+static finger has its centre at (r, 0, 0) in this frame.
 
 ```
-            lara5_gripper (wrist mount, origin)
-                  │
-                  │  −z  (finger direction)
+            lara5_gripper (wrist mount)
+                  │  −z (finger direction)
                   ▼
-   fixed finger │     │ moving finger  ← closes toward −x
-   inner face   │ (●) │
-   x = −0.008   │  ↑  │
-                 centre of piece = −0.008 + r   at z ≈ −0.095
-
+   static finger │       │ moving finger (closes toward −x)
+   inner face    │  (●)  │
+                 ●───► +x
+              lara5_tcp     piece centre at +r
 ```
 
+- SRDF: the `arm` chain ends at `lara5_tcp`, and the end effector hangs from it. `moveit_master`
+  uses it for `ARM_POSE`, `ARM_CARTESIAN` and `ATTACH`; the links allowed to touch a held piece
+  are everything below `lara5_gripper` (parameter `gripper_root_link`).
+- `ARM_CARTESIAN` takes `frame: "tcp"` to move along the TCP axes (the sideways shift onto a
+  piece), otherwise the offset is in the planning frame.
+- Hover poses (`{square}_hover` in the SRDF, `lara5_moveit/scripts/generate_hover_goals*.py`):
+  TCP straight above the square centre at z = 0.150, TCP x axis at −45° in the world
+  (`JAW_AXIS_YAW`, the fingers then point along a board diagonal, where the next piece is
+  furthest away), plus a `discard` pose beside the board for captured pieces.
+  `{square}_hover_alt`: the same with the x axis at −60° (`JAW_AXIS_YAW_ALT`), used when the
+  wrist would hit a neighbour at −45° (e.g. the e2 pawn next to the king in the start position).
 
-# TO DO
 
-[] start with step 1, change the board position and height in `neura_chess_world.py`; Isaac would then need a restart to pick it up.
+# Pick and place: where the numbers come from
 
-`ArticulationOrchestrator` controls the up/down distances and the gripper positions. Where the gripper sits over each square comes from the SRDF hover poses, and those only work if the Isaac board sits where the PlanningScene says it does. It doesn't yet.
+All per-piece values are in
+[objects_dictionary.yaml](ros2_ws/src/articulation_orchestrator/assets/objects_dictionary.yaml),
+generated by `ros2_ws/src/lara5_moveit/scripts/compute_piece_grasps.py` from the Isaac pieces
+(OpenChessSet, scaled to 40 mm squares, one PhysX convex hull per mesh) and the gripper collision
+shapes in the URDF. The same script writes the MoveIt piece collision hulls
+(`lara5_moveit/meshes/chess_pieces/collision_hulls`). Rerun it after changing the pieces, the
+gripper geometry or the hover height (it needs `pxr`: `pip install --target /tmp/usdlib usd-core`,
+then `PYTHONPATH=/tmp/usdlib:$PYTHONPATH python3 scripts/compute_piece_grasps.py`).
 
-From most to least important:
+Per piece type:
+- `tip_height`: fingertip height above the board at the grasp: knight 16 mm (not on its
+  asymmetric head, which tips over), the rest 32 mm (king 35.6 mm, its height), above the
+  centre of mass. The pawn's PhysX body hull is a cone: held on it (~22 mm) the closing jaw
+  tips it over, at 32 mm (neck) it holds. `higher`: the same values at higher grips (4 mm steps) up to 35.6 mm,
+  where the wrist above the fingers clears a king on a neighbouring square. The orchestrator
+  checks the wrist boxes (`wrist` in the defaults) against the neighbouring pieces at the pick
+  and the place square, for the default and then the alternative jaw direction, and takes the
+  lowest level that clears both squares (one grip for the whole transfer).
+- `grasp_offset`: piece centre − TCP along x when the piece touches the static finger. The pick
+  shifts the TCP by −(grasp_offset + finger_clearance), the place by −place_offset.
+- `place_offset`: corrected from where the pieces really landed in Isaac:
+  `python3 ros2_ws/src/articulation_orchestrator/scripts/calibrate_place_offsets.py <log dirs>`
+  reads the execution logs (`execution_logger` running) of moves made with the current
+  dictionary, takes the final error of the pieces that stood upright on their target square
+  and adds the median per type to the offset used. Run moves again afterwards to check.
+- `gripper_open/close/release_position`: jaw angles from the hull geometry. The close position
+  is ~0.3 rad past the predicted contact (at most the joint limit, −0.1745): the soft jaw
+  drive in Isaac then squeezes with up to ~1.2 N·m and the gripper controller reports success
+  on the stall.
 
-**1. Put the Isaac board where the PlanningScene board is.** [chess_scene.yaml](ros2_ws/src/lara5_moveit/chess_scene.yaml) sets `board_a1: [0.27, -0.16, 0.02]` as the **corner** of a1, so the a1 square's centre is at x = 0.29 and the board top is at z = 0.02. [neura_chess_world.py](neura_chess_world.py) treats (0.27, −0.16) as the **centre** of a1 (`BOARD_CENTER_X = 0.27 + 3.5*SQUARE`). Two consequences:
-- **x:** the Isaac board is 2 cm (half a square) closer to the robot. That's the 0.310 vs 0.330 seen in the logs.
-- **z:** the Isaac board top appears to be at about 0.01, against 0.02 in the PlanningScene. The Isaac pawn's origin is at z = 0.0105.
+Sequence (`ArticulationOrchestrator.transfer_steps`): hover → open → shift → down → close →
+attach → up → target hover → shift → down (+1 mm) → release → detach → back off 2 mm → up → home.
 
-The fix belongs in the Isaac world, since the hover poses were taught against `chess_scene.yaml`: `BOARD_CENTER_X = 0.27 + 4*SQUARE` (0.43) and a board top at 0.02. Without this, no orchestrator setting will make the grasps work.
 
-**2. Make the arm reach its targets in Isaac.** The tolerance and `goal_time` changes in `ros2_controllers_isaac.yaml` are already done. Better still: stiffer or less damped joint drives in `neura_chess_world.py`.
+# Isaac Sim settings that matter for grasping
 
-**3. Hover poses over each square:** the `{square}_hover` entries in [lara5.srdf](ros2_ws/src/lara5_moveit_config/config/lara5.srdf), which `teach_board` generates. These decide x and y over the square. Only re-teach or shift them if step 2 in `steps.csv` still shows the fingers missing the piece sideways once 1 and 2 are fixed. Remember that `lara5_gripper` is the wrist mount: the grip point is about 9.5 cm below it, offset toward the fixed finger.
+In [neura_chess_world.py](neura_chess_world.py):
+- Board: `BOARD_CENTER_X = 0.27 + 4*SQUARE` so that `board_a1` in
+  [chess_scene.yaml](ros2_ws/src/lara5_moveit/chess_scene.yaml) is the a1 corner on the board
+  top, as in the PlanningScene. Back rank h→a along +y, so kings stand on e, queens on d.
+- Robot: self-collisions off (the jaw hub overlaps link6's convex hull). Arm drives
+  2000 N·m/deg; the jaw is a soft spring (0.07 N·m/deg, max 1.5 N·m) that closes in ~0.3 s.
+  The gripper body (static finger) has a high-friction pad (1.0); the moving jaw keeps the
+  default friction.
+- Gripper collisions are boxes fitted to the finger and wrist (URDF): the convex hull of the
+  wrist mesh closes the gap between the fingers.
+- Pieces: torsional patch friction (a gripped piece does not swing about the finger axis),
+  capped depenetration velocity (released pieces are not shot away).
 
-**4. Orchestrator parameters**, in [objects_dictionary.yaml](ros2_ws/src/articulation_orchestrator/assets/objects_dictionary.yaml). This is the part you tune per piece type, and it's re-read on every move, so no rebuild is needed:
-- `lower_distance` / `lift_distance`: how far to go down from the hover. The grip point should end up about halfway up the piece's neck. Check the "down" row in `steps.csv`: the `lara5_gripper` z minus about 0.095 should equal the board top plus about half the piece's height.
-- `gripper_open_position`: open enough to clear the piece. At 0.25 the fingertip gap is about 34 mm.
-- `gripper_close_position`: at 0.0 there's still a gap of about 16 mm, wider than a pawn neck (the pawn diameter in `chess_scene.yaml` is 18 mm, and the neck is narrower). Close tighter, for example −0.1, and let the gripper's stall detection report success when it hits the piece.
-- `home_pose`, `mid_pose` and `discard_pose` are ROS parameters of the orchestrator, but they're only names of SRDF poses, so you don't need to change them.
-
-**5. Piece sizes in the PlanningScene:** `piece_dims` in `chess_scene.yaml` should match the scaled Isaac pieces. If they don't, MoveIt's collision checks during "down" won't match what happens in Isaac.
+ROS side ([lara5_bringup](ros2_ws/src/lara5_bringup)):
+- `isaac_state_velocity` relays `/isaac_joint_states` to `/isaac_hw_joint_states` with
+  velocities from the position change. Isaac's own joint velocity reads up to ~3 rad/s for a jaw
+  pressed still against a piece, so the gripper controller would never see the stall.
+- `ros2_controllers_isaac.yaml`: arm goal tolerance 0.005 rad on joints 1–3 (0.015 on the wrist),
+  so a pick or place step only starts once the arm really arrived.
+- The first goal right after startup can abort on `mid_move` with CONTROL_FAILED (the Kit
+  command subscriber is not connected yet). Send it again.
 
 
 # TO DO next

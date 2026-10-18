@@ -13,7 +13,7 @@ from typing import Any, Optional
 
 CHESS_PRIM_PATH = "/World/NeuraChess/ChessSet"
 SQUARE = 0.04
-BOARD_CENTER_X = 0.41
+BOARD_CENTER_X = 0.43  # = neura_chess_world.BOARD_CENTER_X
 BOARD_CENTER_Y = 0.0
 BOARD_ORIGIN = -4 * SQUARE  # local XY of square corners
 FILE_MIRROR = True
@@ -74,18 +74,21 @@ def _to_numpy(arr: Any):
     return np.asarray(arr)
 
 
-def _quat_angle_deg(q: Any, q_ref: Any) -> float:
+def _tilt_deg(q: Any, q_rest: Any) -> float:
+    """Angle between the piece's up axis now and at rest (wxyz quaternions). Turning about the
+    vertical (yaw) does not count: a piece spun in place is still upright."""
     import numpy as np
 
-    a = np.asarray(q, dtype=np.float64).reshape(-1)[:4]
-    b = np.asarray(q_ref, dtype=np.float64).reshape(-1)[:4]
-    na = np.linalg.norm(a)
-    nb = np.linalg.norm(b)
-    if na < 1e-9 or nb < 1e-9:
-        return 0.0
-    d = abs(float(np.dot(a / na, b / nb)))
-    d = min(1.0, d)
-    return float(np.degrees(2.0 * math.acos(d)))
+    def rot(qq: Any) -> Any:
+        w, x, y, z = np.asarray(qq, dtype=np.float64).reshape(-1)[:4] / np.linalg.norm(qq)
+        return np.array([
+            [1 - 2 * (y * y + z * z), 2 * (x * y - w * z), 2 * (x * z + w * y)],
+            [2 * (x * y + w * z), 1 - 2 * (x * x + z * z), 2 * (y * z - w * x)],
+            [2 * (x * z - w * y), 2 * (y * z + w * x), 1 - 2 * (x * x + y * y)],
+        ])
+
+    up_local = rot(q_rest).T @ np.array([0.0, 0.0, 1.0])  # world z at rest, in the piece frame
+    return float(np.degrees(math.acos(max(-1.0, min(1.0, float((rot(q) @ up_local)[2]))))))
 
 
 def snap_board_xy(x: float, y: float) -> dict[str, Any]:
@@ -252,7 +255,7 @@ class PiecePositionsRigidPrim:
             color = _piece_color(name)
             board = snap_board_xy(x, y)
             rest = self._rest_quat.get(path)
-            tilt = _quat_angle_deg((qw, qx, qy, qz), rest) if rest is not None else None
+            tilt = _tilt_deg((qw, qx, qy, qz), rest) if rest is not None else None
             upright = None if tilt is None else bool(tilt < UPRIGHT_TILT_DEG)
             row = {
                 "prim": path,

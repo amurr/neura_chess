@@ -41,11 +41,12 @@ CHESS_PIECE_USDS = {
 # OpenChessSet is authored for ~62.5 mm squares; scale to this board.
 CHESS_PIECE_NATIVE_SQUARE_M = 0.0625
 # In front of Lara: ranks along +X (white near the base), files along +Y.
-# Matches ros2_ws chess_scene a1≈(0.27, −0.16) at 40 mm, centered on the arm.
+# Matches ros2_ws chess_scene.yaml: board_a1 (0.27, -0.16, 0.02) is the a1 *corner* on the
+# board top, 40 mm squares, centred on the arm in y.
 SQUARE = 0.04
 BOARD_THICKNESS = 0.02
 BOARD_HALF_M = 4 * SQUARE
-BOARD_CENTER_X = 0.27 + 3.5 * SQUARE  # 0.41 m
+BOARD_CENTER_X = 0.27 + 4 * SQUARE  # 0.43 m
 BOARD_CENTER_Y = 0.0
 CHESS_PIECE_MASS_KG = {
     "king": 0.016,
@@ -62,9 +63,27 @@ BOARD_RESTITUTION = 0.04
 PIECE_STATIC_FRICTION = 0.40
 PIECE_DYNAMIC_FRICTION = 0.30
 PIECE_RESTITUTION = 0.06
+PIECE_TORSIONAL_PATCH_RADIUS = 0.003  # m
+PIECE_MAX_DEPENETRATION_VELOCITY = 0.1  # m/s
+HULL_VERTEX_LIMIT = 255  # PhysX convex hull vertices (pieces and robot meshes; default 64)
+# Pad on the static finger (gripper body): pieces stay put against it while carried. The moving
+# jaw keeps the default material: it needs friction too (a frictionless jaw lets the piece turn
+# about the pad contact and fall out), but a pad on it drags placed pieces along its opening arc.
+GRIPPER_PAD_FRICTION = 1.0
+GRIPPER_PAD_LINKS = ("lara5_gripper_body",)
 
-JOINT_STIFFNESS = 400.0
-JOINT_DAMPING = 80.0
+# USD angular drives: N*m/deg and N*m*s/deg. Stiff arm drives keep the gravity sag well below
+# 1 mm at the TCP; the damping stays ~2.5x critical.
+JOINT_STIFFNESS = 2000.0
+JOINT_DAMPING = 40.0
+# Jaw: soft spring, so a position target past the contact squeezes the piece with
+# ~stiffness * overshoot: the close position (objects_dictionary.yaml) is ~0.3 rad past the
+# predicted contact (up to ~1.2 N*m, ~15 N at the fingertips). Stiffer drives (0.2 and
+# 0.5 N*m/deg tried) knock light pieces (pawns) over or push them away instead of gripping.
+# Damping: time constant ~0.3 s, the jaw does not slam into (and tip over) the piece.
+GRIPPER_STIFFNESS = 0.07  # N*m/deg (~4 N*m/rad)
+GRIPPER_DAMPING = 0.02    # N*m*s/deg
+GRIPPER_MAX_FORCE = 1.5   # N*m, safety cap
 ARM_JOINT_NAMES = (
     "lara5_joint1",
     "lara5_joint2",
@@ -162,7 +181,7 @@ def apply_joint_drives(stage, robot_root: str) -> None:
     robot = stage.GetPrimAtPath(robot_root)
     if not robot.IsValid():
         return
-    n = 0
+    n = n_gripper = 0
     for prim in Usd.PrimRange(robot):
         if prim.IsA(UsdPhysics.RevoluteJoint):
             axis = "angular"
@@ -170,12 +189,37 @@ def apply_joint_drives(stage, robot_root: str) -> None:
             axis = "linear"
         else:
             continue
+        gripper = prim.GetName() in GRIPPER_JOINT_NAMES
         drive = UsdPhysics.DriveAPI.Apply(prim, axis)
-        drive.CreateStiffnessAttr(float(JOINT_STIFFNESS))
-        drive.CreateDampingAttr(float(JOINT_DAMPING))
-        drive.CreateTypeAttr("force")
+        drive.CreateStiffnessAttr().Set(float(GRIPPER_STIFFNESS if gripper else JOINT_STIFFNESS))
+        drive.CreateDampingAttr().Set(float(GRIPPER_DAMPING if gripper else JOINT_DAMPING))
+        drive.CreateTypeAttr().Set("force")
+        if gripper:
+            drive.CreateMaxForceAttr().Set(float(GRIPPER_MAX_FORCE))
+            n_gripper += 1
         n += 1
-    log(f"Joint drives stiffness={JOINT_STIFFNESS} damping={JOINT_DAMPING} on {n} joints")
+    log(f"Joint drives stiffness={JOINT_STIFFNESS} damping={JOINT_DAMPING} on {n} joints, "
+        f"{n_gripper} gripper: stiffness={GRIPPER_STIFFNESS} damping={GRIPPER_DAMPING} "
+        f"max_force={GRIPPER_MAX_FORCE}")
+
+
+def apply_gripper_pads(stage, robot_root: str) -> None:
+    """High-friction physics material on the static finger (gripper body)."""
+    from pxr import PhysxSchema, Usd, UsdPhysics, UsdShade
+
+    material = UsdShade.Material.Define(stage, f"{robot_root}/Looks/PhysicsGripperPad")
+    api = UsdPhysics.MaterialAPI.Apply(material.GetPrim())
+    api.CreateStaticFrictionAttr(GRIPPER_PAD_FRICTION)
+    api.CreateDynamicFrictionAttr(GRIPPER_PAD_FRICTION)
+    api.CreateRestitutionAttr(0.0)
+    PhysxSchema.PhysxMaterialAPI.Apply(material.GetPrim()).CreateFrictionCombineModeAttr("max")
+    n = 0
+    for prim in Usd.PrimRange(stage.GetPrimAtPath(robot_root)):
+        if prim.GetName() in GRIPPER_PAD_LINKS:
+            UsdShade.MaterialBindingAPI.Apply(prim).Bind(
+                material, UsdShade.Tokens.weakerThanDescendants, "physics")
+            n += 1
+    log(f"Gripper pad friction={GRIPPER_PAD_FRICTION} (max combine) on {n} links")
 
 
 def ensure_physx_articulation(simulation_app: Any, robot_root: str) -> str:
@@ -203,7 +247,10 @@ def ensure_physx_articulation(simulation_app: Any, robot_root: str) -> str:
 
     UsdPhysics.ArticulationRootAPI.Apply(root)
     try:
-        PhysxSchema.PhysxArticulationAPI.Apply(root)
+        # A fresh PhysxArticulationAPI enables self-collisions (the importer's
+        # allow_self_collision=False sat on the stripped root): the jaw hub overlaps the
+        # link6 convex hull, so PhysX would keep pushing the jaw shut.
+        PhysxSchema.PhysxArticulationAPI.Apply(root).CreateEnabledSelfCollisionsAttr().Set(False)
     except Exception as e:
         log(f"PhysxArticulationAPI note: {e}")
 
@@ -220,6 +267,14 @@ def ensure_physx_articulation(simulation_app: Any, robot_root: str) -> str:
     else:
         log(f"ArticulationRootAPI on {robot_root} (select this prim for the Articulation panel)")
     apply_joint_drives(stage, robot_root)
+    apply_gripper_pads(stage, robot_root)
+    n_hull = 0
+    for p in Usd.PrimRange(root):
+        if p.HasAPI(UsdPhysics.MeshCollisionAPI):
+            PhysxSchema.PhysxConvexHullCollisionAPI.Apply(p).CreateHullVertexLimitAttr(
+                HULL_VERTEX_LIMIT)
+            n_hull += 1
+    log(f"Convex hull vertex limit {HULL_VERTEX_LIMIT} on {n_hull} robot collision meshes")
     for _ in range(3):
         simulation_app.update()
     return robot_root
@@ -429,7 +484,8 @@ def add_simple_chess(stage, parent_path: str = CHESS_PRIM_PATH) -> None:
     white_pawn = -2.5 * SQUARE
     black_pawn = 2.5 * SQUARE
     black_back = 3.5 * SQUARE
-    back_order = ["rook", "knight", "bishop", "queen", "king", "bishop", "knight", "rook"]
+    # sq row 0 (-Y) is the h-file (ROS board_file_mirror): h..a -> king on e, queen on d
+    back_order = ["rook", "knight", "bishop", "king", "queen", "bishop", "knight", "rook"]
 
     def place_piece(kind: str, prim_path: str, x_row: float, y: float, *, white: bool) -> None:
         usd_path = CHESS_PIECE_USDS[kind]
@@ -626,6 +682,8 @@ def apply_chess_physics(stage, parent_path: str = CHESS_PRIM_PATH) -> None:
             prb.CreateAngularDampingAttr(1.5)
             prb.CreateEnableCCDAttr(True)
             prb.CreateSolverPositionIterationCountAttr(16)
+            # a piece released from a slightly overlapping grip must not be shot away
+            prb.CreateMaxDepenetrationVelocityAttr(PIECE_MAX_DEPENETRATION_VELOCITY)
             prb.CreateSolverVelocityIterationCountAttr(4)
         except Exception as e:
             log(f"PhysxRigidBodyAPI on {child.GetPath()} note: {e}")
@@ -638,12 +696,20 @@ def apply_chess_physics(stage, parent_path: str = CHESS_PRIM_PATH) -> None:
             if not prim.HasAPI(UsdPhysics.CollisionAPI):
                 UsdPhysics.CollisionAPI.Apply(prim)
             UsdPhysics.MeshCollisionAPI.Apply(prim).CreateApproximationAttr("convexHull")
+            # PhysX limits hulls to 64 vertices by default: that shaves the pawn's neck and head
+            # (the jaw closed ~10 mm further than the hull of the mesh says)
+            PhysxSchema.PhysxConvexHullCollisionAPI.Apply(prim).CreateHullVertexLimitAttr(
+                HULL_VERTEX_LIMIT)
             try:
                 if not prim.HasAPI(PhysxSchema.PhysxCollisionAPI):
                     PhysxSchema.PhysxCollisionAPI.Apply(prim)
                 pcol = PhysxSchema.PhysxCollisionAPI(prim)
                 pcol.CreateContactOffsetAttr(0.0015)
                 pcol.CreateRestOffsetAttr(0.0)
+                # Finger pads have area: torsional friction about the contact normal keeps
+                # a gripped piece from swinging about the axis between the two fingers.
+                pcol.CreateTorsionalPatchRadiusAttr(PIECE_TORSIONAL_PATCH_RADIUS)
+                pcol.CreateMinTorsionalPatchRadiusAttr(PIECE_TORSIONAL_PATCH_RADIUS)
             except Exception as e:
                 log(f"PhysxCollisionAPI on mesh {prim.GetPath()} note: {e}")
             bind_physics_material(prim, piece_mat)
@@ -663,7 +729,7 @@ def _promote_piece_xforms_to_world(stage, parent_path: str = CHESS_PRIM_PATH) ->
     """Bake ChessSet parent into piece translates and ignore the parent xform.
 
     PhysX writes the actor *world* pose back into xformOp:translate. Pieces live
-    under ChessSet (0.41 m), so that writeback double-applies the board origin
+    under ChessSet (0.43 m), so that writeback double-applies the board origin
     unless resetXformStack is set and the translate is already world-frame.
     """
     from pxr import Gf, Usd, UsdGeom, UsdPhysics

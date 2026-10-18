@@ -12,7 +12,7 @@ from pathlib import Path
 import numpy as np
 import yaml
 
-from lara5_moveit.board_ik import ARM_JOINTS, ArmModel, fill_hover_joints
+from lara5_moveit.board_ik import ARM_JOINTS, HOVER_TIP_Z, JAW_AXIS_YAW, TIP_LINK, ArmModel, fill_hover_joints
 
 # Same geometry as lara5_moveit/chess_scene_big.py
 A1 = (0.15, -0.16, 0.02)
@@ -49,6 +49,8 @@ def _hover_squares(model: ArmModel) -> tuple[dict, dict]:
         model,
         a1=tuple(A1),
         square_size=S,
+        z_override=HOVER_TIP_Z,
+        jaw_yaw=JAW_AXIS_YAW,
     )
     # h1 is re-solved too: the taught joints only give the seed, hover height and orientation
     squares = packed['squares']
@@ -64,7 +66,7 @@ def _write_hover_yaml(packed: dict, squares: dict) -> dict[str, list[float]]:
                 'board': 'big',
                 'units': 'radians',
                 'joints': list(ARM_JOINTS),
-                'eef': 'lara5_gripper',
+                'eef': TIP_LINK,
                 'seed_square': 'h1',
                 'seed_q': [float(v) for v in H1_Q],
                 'seed_q_deg': [float(v) for v in np.degrees(H1_Q)],
@@ -128,7 +130,7 @@ def _write_grasp_yaml(
                 'board': 'big',
                 'units': 'radians',
                 'joints': list(ARM_JOINTS),
-                'eef': 'lara5_gripper',
+                'eef': TIP_LINK,
                 'seed_square': 'h1',
                 'tendency_dq_rad': [float(v) for v in dq],
                 'tendency_dq_deg': [float(v) for v in np.degrees(dq)],

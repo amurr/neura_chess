@@ -44,6 +44,7 @@ setup(
             'chess_scene_collisions = lara5_moveit.chess_scene_collisions:main',
             'chess_scene_big = lara5_moveit.chess_scene_big:main',
             'pad_joint_commands = lara5_moveit.pad_joint_commands:main',
+            'isaac_state_velocity = lara5_moveit.isaac_state_velocity:main',
         ],
     },
 )

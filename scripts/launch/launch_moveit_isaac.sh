@@ -38,7 +38,8 @@ echo "MoveIt Isaac: domain=$ROS_DOMAIN_ID rmw=$RMW_IMPLEMENTATION"
 # Isaac's state it reports 0.0 for every joint, and the arm would be sent there.
 echo "Waiting for /isaac_joint_states (Isaac world must be playing)..."
 ok=0
-for _ in $(seq 1 60); do
+# Kit can take minutes (first MDL compile 5-8 min, see launch_world.sh)
+for _ in $(seq 1 600); do
   if ros2 topic info /isaac_joint_states >/dev/null 2>&1; then
     ok=1
     break

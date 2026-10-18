@@ -20,12 +20,26 @@ ARM_JOINTS = (
 FILES = 'abcdefgh'
 RANKS = '12345678'
 
-# Grasp point (TCP) in the lara5_gripper frame (m). SO-101 has one fixed jaw: its tip is at
-# x=-0.0109, the moving jaw tip at x=+0.0309 when open (0.25 rad), both ~0.102 below the
-# link. Centre the piece just inside the fixed jaw (typical radius 0.0125 + 0.0015 clearance)
-# so closing does not slide it -> the same point is right for pick and place.
-# Calibrate x: pick + place a piece on the same square, add the measured slide along the jaws.
-GRASP_TCP = (0.003, 0.0, -0.100)
+# IK tip: lara5_tcp = tip of the static SO-101 finger on its inner face (URDF so101_gripper.xacro),
+# same orientation as lara5_gripper. +x points to the moving jaw, +z up the fingers.
+TIP_LINK = 'lara5_tcp'
+
+# Point of the lara5_tcp frame that the hover poses put straight above the square centre: the
+# TCP itself. The per-piece shift to the grasp (piece centre at +grasp_offset along the TCP x
+# axis) is done by the orchestrator, see articulation_orchestrator/assets/objects_dictionary.yaml.
+GRASP_TCP = (0.0, 0.0, 0.0)
+
+# World z of the TCP at the hover poses: fingertips ~3 cm above the tallest piece (king, 97 mm
+# on the 0.02 board top).
+HOVER_TIP_Z = 0.150
+
+# World yaw of the TCP x axis (static -> moving finger) at the hover poses. The fingers reach
+# ~4 cm from the piece centre; along a board diagonal the next piece is 5.7 cm away instead of
+# 4 cm, so the fingers fit between the neighbours of a full board.
+JAW_AXIS_YAW = math.radians(-45.0)
+# Second set of hover poses ({square}_hover_alt): where the wrist above the fingers would hit a
+# tall neighbour at -45 deg (e.g. the e2 pawn next to the king), turning it 15 deg clears it.
+JAW_AXIS_YAW_ALT = math.radians(-60.0)
 
 
 def all_squares() -> list[str]:
@@ -108,7 +122,7 @@ class _Joint:
 
 
 class ArmModel:
-    def __init__(self, urdf_path: str, base: str = 'world', tip: str = 'lara5_gripper') -> None:
+    def __init__(self, urdf_path: str, base: str = 'world', tip: str = TIP_LINK) -> None:
         self.chain, self.active = self._parse(urdf_path, base, tip)
         self.lower = np.array([j.lo for j in self.active], dtype=float)
         self.upper = np.array([j.hi for j in self.active], dtype=float)
@@ -249,11 +263,16 @@ def fill_hover_joints(
     file_mirror: bool = True,
     z_override: float | None = None,
     tcp: Sequence[float] = GRASP_TCP,
+    jaw_yaw: float | None = None,
 ) -> dict[str, dict[str, object]]:
     """IK every square at the seed pose's height and orientation, with the grasp point
-    `tcp` (lara5_gripper frame) straight above the square centre."""
+    `tcp` (frame of the model tip, lara5_tcp) straight above the square centre.
+    jaw_yaw: turn the seed orientation about world z so the tip x axis has this world yaw."""
     t0 = model.fk(seed_q)
     rot = t0[:3, :3]
+    if jaw_yaw is not None:
+        rot = _axis_angle(np.array([0.0, 0.0, 1.0]),
+                          jaw_yaw - math.atan2(rot[1, 0], rot[0, 0])) @ rot
     tcp_world = rot @ np.asarray(tcp, dtype=float)
     hover_z = float((t0[:3, 3] + tcp_world)[2] if z_override is None else z_override)
     tool_z = rot @ np.array([0.0, 0.0, 1.0])

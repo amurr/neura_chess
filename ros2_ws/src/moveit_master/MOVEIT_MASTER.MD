@@ -8,12 +8,12 @@
 
 # lara5 neura_chess pipeline: When one chess move runs, `moveit_master.cpp` does this:
 
-- **Startup:** it opens `MoveGroupInterface` for the `arm` and `gripper` groups, collects the gripper links (`lara5_gripper` and every link below it, e.g. the jaw), connects to `/get_planning_scene`, and offers the action `/moveit_master/execute_sequence`.
+- **Startup:** it opens `MoveGroupInterface` for the `arm` and `gripper` groups, takes the TCP from the SRDF end effector (`lara5_tcp`, static finger tip; override with parameter `tcp_link`), collects the gripper links (`gripper_root_link`, default `lara5_gripper`, and every link below it, e.g. the jaw), connects to `/get_planning_scene`, and offers the action `/moveit_master/execute_sequence`.
 - **Goal arrives:** it accepts one goal at a time (others are rejected while busy) and runs `execute()` in a separate thread.
 - **`execute()`:** it sets the speed scaling (default 0.2), clears its record of scene changes, and runs the `MotionStep`s in order, sending feedback with `current_step` each time.
 - **`runStep()` for each step type:**
   - `ARM_NAMED` (stand, mid_move, e2_hover, …): sets the named target, then plans and executes through move_group.
-  - `ARM_CARTESIAN` (down/up): reads the current gripper pose, adds the offset, plans a straight path with `computeCartesianPath` and fails if less than 100% of it is possible. It then re-times the path to the speed scaling and executes it.
+  - `ARM_CARTESIAN` (down/up/shift): reads the current TCP pose, adds the offset (`frame` "" = planning frame, "tcp" = TCP axes, x from the static to the moving finger), plans a straight path with `computeCartesianPath` and fails if less than 100% of it is possible. It then re-times the path to the speed scaling and executes it.
   - `GRIPPER_JOINT` (0.25 open, close value): sets the jaw joint angle, then plans and executes.
   - `ALLOW_COLLISION`: fetches the current collision-allowance table, allows or removes contact between the piece and the gripper links plus the board square, then applies it.
   - `ATTACH` / `DETACH`: moves the piece from the world onto the gripper link (touch allowed for the gripper links), or puts it back into the world where it was released.

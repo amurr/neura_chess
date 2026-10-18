@@ -23,7 +23,8 @@ import yaml
 from rclpy.node import Node
 from sensor_msgs.msg import JointState
 
-from lara5_moveit.board_ik import ARM_JOINTS, ArmModel, all_squares, default_urdf, fill_hover_joints
+from lara5_moveit.board_ik import (
+    ARM_JOINTS, TIP_LINK, ArmModel, all_squares, default_urdf, fill_hover_joints)
 
 
 class TeachBoard(Node):
@@ -91,7 +92,7 @@ class TeachBoard(Node):
         payload = {
             'units': 'radians',
             'joints': list(ARM_JOINTS),
-            'eef': 'lara5_gripper',
+            'eef': TIP_LINK,
             **self._meta,
             'hover': squares,
             'hover_deg': {k: [float(np.degrees(v)) for v in q] for k, q in squares.items()},

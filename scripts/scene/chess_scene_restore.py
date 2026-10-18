@@ -3,7 +3,7 @@
 
 Kit must be running a world that wrote /tmp/neura_chess_restore.ready (SceneRestore).
 SceneRestore rewrites *local* ChessSet xform ops and reloads PhysX from that USD.
-It must not world-teleport: pieces are parented under ChessSet (x=0.41 m).
+It must not world-teleport: pieces are parented under ChessSet (x=0.43 m).
 This client: homes ros2_control, pokes Kit (ROS + file), then republishes MoveIt chess scene.
 """
 

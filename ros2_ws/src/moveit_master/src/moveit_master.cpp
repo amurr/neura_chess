@@ -12,6 +12,7 @@
 #include <map>
 #include <memory>
 #include <set>
+#include <stdexcept>
 #include <string>
 #include <thread>
 #include <vector>
@@ -45,14 +46,27 @@ public:
     arm_.setPlanningTime(5.0);
     arm_.setNumPlanningAttempts(5);
 
-    // EEF link + every link below it: allowed to touch a grasped object
-    eef_link_ = arm_.getEndEffectorLink();
+    // TCP: pose / cartesian targets and attached objects refer to this link. Default is the
+    // SRDF end effector (lara5_tcp, static finger tip); parameter tcp_link overrides it.
+    eef_link_ = node_->get_parameter_or<std::string>("tcp_link", "");
+    if (eef_link_.empty()) {
+      eef_link_ = arm_.getEndEffectorLink();
+    }
     if (eef_link_.empty()) {
       eef_link_ = arm_.getLinkNames().back();
     }
-    addLinksBelow(arm_.getRobotModel()->getLinkModel(eef_link_));
-    RCLCPP_INFO(node_->get_logger(), "eef link '%s', %zu gripper links",
-                eef_link_.c_str(), gripper_links_.size());
+    arm_.setEndEffectorLink(eef_link_);
+
+    // Gripper mount + every link below it (body, jaw, TCP): allowed to touch a grasped object.
+    // Not taken from the TCP: lara5_tcp is a leaf below the mount and has no geometry.
+    const auto gripper_root = node_->get_parameter_or<std::string>("gripper_root_link", "lara5_gripper");
+    const auto * root_model = arm_.getRobotModel()->getLinkModel(gripper_root);
+    if (root_model == nullptr) {
+      throw std::runtime_error("gripper_root_link '" + gripper_root + "' not in the robot model");
+    }
+    addLinksBelow(root_model);
+    RCLCPP_INFO(node_->get_logger(), "tcp link '%s', %zu gripper links below '%s'",
+                eef_link_.c_str(), gripper_links_.size(), gripper_root.c_str());
 
     scene_client_ = node_->create_client<GetPlanningScene>("/get_planning_scene");
 
@@ -97,13 +111,21 @@ private:
     return ec;
   }
 
-  // Straight-line EEF move by `offset` (planning frame), collision-checked.
-  MoveItErrorCode moveCartesian(const geometry_msgs::msg::Vector3 & offset)
+  // Straight-line TCP move by `offset`, collision-checked. frame "" = planning frame,
+  // "tcp" = axes of the TCP link at the start of the move (orientation is kept).
+  MoveItErrorCode moveCartesian(const geometry_msgs::msg::Vector3 & offset, const std::string & frame)
   {
+    Eigen::Vector3d d(offset.x, offset.y, offset.z);
+    if (frame == "tcp") {
+      d = arm_.getCurrentState()->getGlobalLinkTransform(eef_link_).rotation() * d;
+    } else if (!frame.empty()) {
+      RCLCPP_ERROR(node_->get_logger(), "cartesian frame '%s' unknown (\"\" or \"tcp\")", frame.c_str());
+      return MoveItErrorCode::INVALID_GOAL_CONSTRAINTS;
+    }
     auto target = arm_.getCurrentPose(eef_link_).pose;
-    target.position.x += offset.x;
-    target.position.y += offset.y;
-    target.position.z += offset.z;
+    target.position.x += d.x();
+    target.position.y += d.y();
+    target.position.z += d.z();
 
     moveit_msgs::msg::RobotTrajectory traj;
     const double fraction = arm_.computeCartesianPath({target}, 0.005, 0.0, traj);
@@ -122,7 +144,7 @@ private:
     return arm_.execute(traj);
   }
 
-  // Attach a world object to the EEF link (attach=true) or put it back into the world.
+  // Attach a world object to the TCP link (attach=true) or put it back into the world.
   MoveItErrorCode attach(const std::string & id, bool attach)
   {
     moveit_msgs::msg::AttachedCollisionObject aco;
@@ -196,7 +218,7 @@ private:
   {
     switch (step.type) {
       case MotionStep::ARM_POSE:
-        arm_.setPoseTarget(step.pose);
+        arm_.setPoseTarget(step.pose, eef_link_);
         return planAndExecute(arm_);
       case MotionStep::ARM_NAMED:
         if (!arm_.setNamedTarget(step.named_target)) {
@@ -204,7 +226,7 @@ private:
         }
         return planAndExecute(arm_);
       case MotionStep::ARM_CARTESIAN:
-        return moveCartesian(step.offset);
+        return moveCartesian(step.offset, step.frame);
       case MotionStep::GRIPPER_NAMED:
         if (!gripper_.setNamedTarget(step.named_target)) {
           return MoveItErrorCode::INVALID_GOAL_CONSTRAINTS;

@@ -8,7 +8,7 @@ from pathlib import Path
 import numpy as np
 import yaml
 
-from lara5_moveit.board_ik import ARM_JOINTS, ArmModel
+from lara5_moveit.board_ik import ARM_JOINTS, TIP_LINK, ArmModel
 
 ROOT = Path(__file__).resolve().parents[2]
 URDF = ROOT / 'lara5_description' / 'lara5' / 'urdf' / 'lara5.urdf'
@@ -81,7 +81,7 @@ def main() -> None:
             {
                 'units': 'radians',
                 'joints': list(ARM_JOINTS),
-                'eef': 'lara5_gripper',
+                'eef': TIP_LINK,
                 'seed_square': 'h1',
                 'tendency_dq_rad': [float(v) for v in dq],
                 'tendency_dq_deg': [float(v) for v in np.degrees(dq)],

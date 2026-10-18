@@ -7,7 +7,7 @@ chess_scene_collisions:
     board_thickness: 0.02
     piece_diameter: 0.035
     piece_height: 0.05
-    initial_piece_z: 0.0   # 0 = auto (board top = board_thickness / 2)
+    initial_piece_z: 0.0   # 0 = auto (board top = board_a1 z; squares are below it)
 
     # ranks_x_files_y: chess ranks along +X (low X = white), files along +Y (a1→a2 step).
     # board_file_mirror: flip file axis (a↔h) to match physical board label orientation.
@@ -32,11 +32,12 @@ chess_scene_collisions:
     board_b1: [0.31, -0.16, 0.02]
     board_a2: [0.27, -0.12, 0.02]
 
-    # [diameter_m, height_m] on 4 cm squares
+    # [diameter_m, height_m] on 4 cm squares: fallback cylinders when the convex hulls in
+    # meshes/chess_pieces/collision_hulls (Isaac pieces, scripts/compute_piece_grasps.py) are missing
     piece_dims:
-      pawn: [0.018, 0.034]
-      bishop: [0.022, 0.047]
-      knight: [0.024, 0.049]
-      rook: [0.026, 0.044]
-      queen: [0.027, 0.058]
-      king: [0.029, 0.066]
+      pawn: [0.027, 0.0425]
+      bishop: [0.031, 0.0794]
+      knight: [0.035, 0.0641]
+      rook: [0.034, 0.0621]
+      queen: [0.034, 0.0871]
+      king: [0.036, 0.0970]
